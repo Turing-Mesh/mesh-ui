@@ -28,6 +28,10 @@ $turing-red: #ef3852;
   width: 100px;
 }
 
+.calendar {
+  width: 30px;
+}
+
 .link-container {
   display: flex;
   flex-flow: row nowrap;
@@ -35,6 +39,7 @@ $turing-red: #ef3852;
   align-items: center;
   font-size: 2rem;
   margin-right: 20px;
+  color: #4C4D4F;
 }
 
 span {
