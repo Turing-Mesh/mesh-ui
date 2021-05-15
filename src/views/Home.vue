@@ -9,7 +9,20 @@
         <h1 class="module">Module 4</h1>
       </section>
       <section class="right-section">
-        <h1>right side</h1>
+        <section class="projects-container">
+          <h1 class="project">Project 1</h1>
+          <h1 class="project">Project 2</h1>
+          <h1 class="project">Project 3</h1>
+          <h1 class="project">Project 4</h1>
+        </section>
+
+        <section class="feedback-container">
+          <h2>Feedback goes here</h2>
+        </section>
+
+        <section class="notes-container">
+          <h2>Notes section goes here</h2>
+        </section>
       </section>
     </div>
   </div>
