@@ -49,5 +49,24 @@ span {
 a {
   margin: 0 20px;
   text-decoration: none;
+}
 
+.home {
+  margin: 40px;
+}
+
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 20px auto;
+}
+
+.left-section {
+  width: 25%;
+  border: 2px solid red;
+}
+
+.right-section {
+  width: 75%;
+  border: 2px solid red;
 }

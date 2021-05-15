@@ -1,6 +1,17 @@
 <template>
   <div class="home">
     <h1>This is a 🏡 component.</h1>
+    <div class="main">
+      <section class="left-section">
+        <h1 class="module">Module 1</h1>
+        <h1 class="module">Module 2</h1>
+        <h1 class="module">Module 3</h1>
+        <h1 class="module">Module 4</h1>
+      </section>
+      <section class="right-section">
+        <h1>right side</h1>
+      </section>
+    </div>
   </div>
 </template>
 
