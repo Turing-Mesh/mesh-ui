@@ -1,14 +1,15 @@
 <template>
-  <div class="navbar">
-    <div id="nav">
+  <div id="navbar" class="navbar">
+    <div class="nav">
       <div class="logo-container">
-        <img class="logo" alt="Vue logo" src="../assets/mesh-logo.png">
+        <img class="logo" alt="Mesh logo" src="../assets/mesh-logo.png">
       </div>
       <div class="link-container">
-        <span>5/15/2011</span> |
-        <span>Hi, Nikki</span> |
-        Student |
-        Welcome to the NavBar!
+        <span class="date">{{ date }}</span> |
+        <span class="name">Hi, Nikki</span> |
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+        <router-view/>
       </div>
     </div>
   </div>
@@ -16,28 +17,10 @@
 
 <script>
 export default {
+  data () {
+    return {
+      date: '05/15/2015'
+    }
+  }
 }
 </script>
-
-<style lang="scss" scoped>
-.navbar {
-  background: #1DEEF8;
-}
-
-.logo {
-  width: 50px;
-}
-
-.logo-container {
-  float: left;
-}
-
-.link-container {
-  float: right;
-}
-
-span {
-  color: purple;
-}
-
-</style>

@@ -1,23 +1,48 @@
-$poiple: purple;
-$red: blue;
+$turing-blue: #12f1fc;
+$turing-yellow: #f9ae06;
+$turing-red: #ef3852;
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $red;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-#nav {
-  padding: 30px;
+.navbar {
+  background: $turing-blue;
+  margin: 0 auto;
+}
 
-  a {
-    font-weight: bold;
-    color: $poiple;
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.logo-container {
+  margin: 20px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.link-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  margin-right: 20px;
+}
+
+span {
+  margin: 0 10px;
+}
+
+a {
+  margin: 0 20px;
+  text-decoration: none;
+
 }
