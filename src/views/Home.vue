@@ -19,6 +19,7 @@
         <section class="feedback-container">
           <h2>Feedback goes here</h2>
         </section>
+        <StudentFeedback />
 
         <section class="notes-container">
           <h2>Notes section goes here</h2>
@@ -30,6 +31,11 @@
 
 <script>
 // @ is an alias to /src
+<<<<<<< HEAD
+=======
+import HelloWorld from '@/components/HelloWorld.vue'
+import StudentFeedback from '@/components/StudentFeedback.vue'
+>>>>>>> eccb071... Put some placeholder content on the page
 
 export default {
   name: 'Home',
@@ -38,6 +44,11 @@ export default {
     }
   },
   components: {
+<<<<<<< HEAD
+=======
+    HelloWorld,
+    StudentFeedback
+>>>>>>> eccb071... Put some placeholder content on the page
   }
 }
 </script>
