@@ -1,0 +1,23 @@
+$poiple: purple;
+$red: blue;
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $red;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: $poiple;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}

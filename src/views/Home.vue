@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <router-link to="/about">
-      <img class="rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
-    </router-link>
-    <HelloWorld msg="Welcome to Mesh"/>
+    <img alt="Vue logo" src="../assets/mesh-logo.png">
+    <HelloWorld :msg="msg"/>
   </div>
 </template>
 
@@ -13,6 +11,11 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
+  data () {
+    return {
+      msg: 'Welcome to Mesh'
+    }
+  },
   components: {
     HelloWorld
   }
