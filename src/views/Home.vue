@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <router-link to="/about">
-      <img class="rotating" alt="Vue logo" src="../assets/mesh-logo.png">
+      <img class="rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
     </router-link>
     <HelloWorld msg="Welcome to Mesh"/>
   </div>
