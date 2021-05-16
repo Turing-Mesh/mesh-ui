@@ -1,20 +1,43 @@
 <template>
   <div class="home">
-    <router-link to="/about">
-      <img class="rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
-    </router-link>
-    <HelloWorld msg="Welcome to Mesh"/>
+    <h1>This is a 🏡 component.</h1>
+    <div class="main">
+      <section class="left-section">
+        <h1 class="module">Module 1</h1>
+        <h1 class="module">Module 2</h1>
+        <h1 class="module">Module 3</h1>
+        <h1 class="module">Module 4</h1>
+      </section>
+      <section class="right-section">
+        <section class="projects-container">
+          <h1 class="project">Project 1</h1>
+          <h1 class="project">Project 2</h1>
+          <h1 class="project">Project 3</h1>
+          <h1 class="project">Project 4</h1>
+        </section>
+
+        <section class="feedback-container">
+          <h2>Feedback goes here</h2>
+        </section>
+
+        <section class="notes-container">
+          <h2>Notes section goes here</h2>
+        </section>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
+  data () {
+    return {
+    }
+  },
   components: {
-    HelloWorld
   }
 }
 </script>
