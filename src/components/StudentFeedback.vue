@@ -1,26 +1,27 @@
 <template>
   <section class="feedback-container">
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{this.categories[0]}}</p>
+      <p class="feedback-container__category--label">{{this.categories[0]}} </p>
       <div class="progress-bar" id="bar1">3.5</div>
       <p class="feedback-container__category--comments">
         Solid work here! Blah blah.
       </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{this.categories[1]}}</p>
+      <p class="feedback-container__category--label">{{this.categories[1]}} </p>
       <div class="progress-bar" id="bar2">2.5</div>
       <p class="feedback-container__category--comments">
         Some comments here about this category.
       </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{this.categories[2]}}</p>
+      <p class="feedback-container__category--label">{{this.categories[2]}} </p>
       <div class="progress-bar" id="bar3">3</div>
       <p class="feedback-container__category--comments">
         Looking good. Just make sure to foo!
       </p>
     </div>
+    <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
         feedback-container__category--label
@@ -50,18 +51,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '@/styles/styles.scss';
   .feedback-container {
   }
   .feedback-container__category {
-    width: 400px;
-    height: 40px;
+    margin-top: 15px;
   }
   .feedback-container__category--label {
     display: inline;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
   .progress-bar {
     display: inline;
     width: 100px;
-    background-color: aqua;
+    background-color: $turing-yellow;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  #bar-average {
+    background-color: $turing-blue;
+  }
+  .feedback-container__dividing-line {
+    margin-top: 20px;
   }
 </style>
