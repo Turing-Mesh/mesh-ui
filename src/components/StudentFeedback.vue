@@ -1,19 +1,25 @@
 <template>
   <section class="feedback-container">
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">JavaScript</p>
+      <p class="feedback-container__category--label">{{this.categories[0]}}</p>
       <div class="progress-bar" id="bar1">3.5</div>
-      <p class="feedback-container__category--comments">Solid work here! Blah blah.</p>
+      <p class="feedback-container__category--comments">
+        Solid work here! Blah blah.
+      </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">React</p>
+      <p class="feedback-container__category--label">{{this.categories[1]}}</p>
       <div class="progress-bar" id="bar2">2.5</div>
-      <p class="feedback-container__category--comments">Some comments here about this category.</p>
+      <p class="feedback-container__category--comments">
+        Some comments here about this category.
+      </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">Professionalism</p>
+      <p class="feedback-container__category--label">{{this.categories[2]}}</p>
       <div class="progress-bar" id="bar3">3</div>
-      <p class="feedback-container__category--comments">Looking good. Just make sure to foo!</p>
+      <p class="feedback-container__category--comments">
+        Looking good. Just make sure to foo!
+      </p>
     </div>
     <div class="feedback-container__category">
       <p class="
@@ -35,6 +41,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      categories: ['JavaScript', 'React', 'Professionalism']
+    }
+  }
 }
 </script>
 
