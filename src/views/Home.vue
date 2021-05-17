@@ -2,55 +2,36 @@
   <div class="home">
     <h1>This is a 🏡 component.</h1>
     <div class="main">
-<<<<<<< HEAD
       <ModuleNav />
 <!--      <section class="left-section">-->
-<!--        <router-link to="/module" moduleNumber="1">-->
+<!--        <router-link :to="{-->
+<!--          name: 'Module',-->
+<!--          params: { id: 1}-->
+<!--        }">-->
 <!--          <h1 class="module">Module 1</h1>-->
 <!--        </router-link>-->
 
-<!--        <router-link to="/module" moduleNumber="2">-->
+<!--        <router-link :to="{-->
+<!--          name: 'Module',-->
+<!--          params: { id: 2}-->
+<!--        }">-->
 <!--          <h1 class="module">Module 2</h1>-->
 <!--        </router-link>-->
 
-<!--        <router-link to="/module" moduleNumber="3">-->
+<!--        <router-link :to="{-->
+<!--          name: 'Module',-->
+<!--          params: { id: 3}-->
+<!--        }">-->
 <!--          <h1 class="module">Module 3</h1>-->
 <!--        </router-link>-->
 
-<!--        <router-link to="/module" moduleNumber="4">-->
+<!--        <router-link :to="{-->
+<!--          name: 'Module',-->
+<!--          params: { id: 4}-->
+<!--        }">-->
 <!--          <h1 class="module">Module 4</h1>-->
 <!--        </router-link>-->
 <!--      </section>-->
-=======
-      <section class="left-section">
-        <router-link :to="{
-          name: 'Module',
-          params: { id: 1}
-        }">
-          <h1 class="module">Module 1</h1>
-        </router-link>
-
-        <router-link :to="{
-          name: 'Module',
-          params: { id: 2}
-        }">
-          <h1 class="module">Module 2</h1>
-        </router-link>
-
-        <router-link :to="{
-          name: 'Module',
-          params: { id: 3}
-        }">
-          <h1 class="module">Module 3</h1>
-        </router-link>
-
-        <router-link :to="{
-          name: 'Module',
-          params: { id: 4}
-        }">
-          <h1 class="module">Module 4</h1>
-        </router-link>
-      </section>
       <section class="right-section">
         <ProjectNav />
         <StudentFeedback />
