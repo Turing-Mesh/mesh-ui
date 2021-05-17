@@ -51,7 +51,6 @@
           <h1 class="module">Module 4</h1>
         </router-link>
       </section>
->>>>>>> 88f65d2 (resolve next rebase conflict)
       <section class="right-section">
         <ProjectNav />
         <StudentFeedback />

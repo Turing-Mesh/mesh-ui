@@ -1,21 +1,22 @@
 <template>
   <section class="feedback-container">
+    <router-view  :key="$route.path" :moduleId="$route.path"/>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{this.categories[0]}} </p>
+      <p class="feedback-container__category--label">{{ categories[0] }} </p>
       <div class="progress-bar" id="bar1">3.5</div>
       <p class="feedback-container__category--comments">
         Solid work here! Blah blah.
       </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{this.categories[1]}} </p>
+      <p class="feedback-container__category--label">{{ categories[1] }} </p>
       <div class="progress-bar" id="bar2">2.5</div>
       <p class="feedback-container__category--comments">
         Some comments here about this category.
       </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{this.categories[2]}} </p>
+      <p class="feedback-container__category--label">{{ categories[2] }} </p>
       <div class="progress-bar" id="bar3">3</div>
       <p class="feedback-container__category--comments">
         Looking good. Just make sure to foo!
