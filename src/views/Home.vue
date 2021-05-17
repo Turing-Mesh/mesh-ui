@@ -2,12 +2,7 @@
   <div class="home">
     <h1>This is a 🏡 component.</h1>
     <div class="main">
-      <section class="left-section">
-        <h1 class="module">Module 1</h1>
-        <h1 class="module">Module 2</h1>
-        <h1 class="module">Module 3</h1>
-        <h1 class="module">Module 4</h1>
-      </section>
+      <ModuleNav />
       <section class="right-section">
         <ProjectNav />
         <StudentFeedback />
@@ -23,6 +18,7 @@
 <script>
 // @ is an alias to /src
 import ProjectNav from '@/components/ProjectNav.vue'
+import ModuleNav from '@/components/ModuleNav.vue'
 import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
@@ -32,6 +28,7 @@ export default {
     }
   },
   components: {
+    ModuleNav,
     ProjectNav
     StudentFeedback
   }
