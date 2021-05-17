@@ -13,7 +13,19 @@
 <style lang="scss" scoped>
 @import '@/styles/styles.scss';
 
+a.module {
+  color: $turing-red;
+  text-align: center;
+  line-height: 70px;
+
+  &:hover {
+    text-decoration: underline;
+    background-color: $turing-blue;
+  }
+}
+
 .module {
+  text-decoration: unset;
   margin: 0;
   text-align: center;
   line-height: 70px;
