@@ -75,18 +75,6 @@ a {
   border: 2px solid red;
 }
 
-.projects-container {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.project {
-  border: 1px solid black;
-  padding: 10px;
-}
-
 .feedback-container {
   min-height: 300px;
   margin: 20px;
