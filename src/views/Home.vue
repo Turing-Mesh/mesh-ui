@@ -2,6 +2,7 @@
   <div class="home">
     <h1>This is a 🏡 component.</h1>
     <div class="main">
+<<<<<<< HEAD
       <ModuleNav />
 <!--      <section class="left-section">-->
 <!--        <router-link to="/module" moduleNumber="1">-->
@@ -20,9 +21,44 @@
 <!--          <h1 class="module">Module 4</h1>-->
 <!--        </router-link>-->
 <!--      </section>-->
+=======
+      <section class="left-section">
+        <router-link :to="{
+          name: 'Module',
+          params: { id: 1}
+        }">
+          <h1 class="module">Module 1</h1>
+        </router-link>
+
+        <router-link :to="{
+          name: 'Module',
+          params: { id: 2}
+        }">
+          <h1 class="module">Module 2</h1>
+        </router-link>
+
+        <router-link :to="{
+          name: 'Module',
+          params: { id: 3}
+        }">
+          <h1 class="module">Module 3</h1>
+        </router-link>
+
+        <router-link :to="{
+          name: 'Module',
+          params: { id: 4}
+        }">
+          <h1 class="module">Module 4</h1>
+        </router-link>
+      </section>
+>>>>>>> 88f65d2 (resolve next rebase conflict)
       <section class="right-section">
         <ProjectNav />
         <StudentFeedback />
+
+        <section class="feedback-container">
+          <router-view  :key="$route.path" :moduleId="$route.path"/>
+        </section>
 
         <section class="notes-container">
           <h2>Notes section goes here</h2>
@@ -42,6 +78,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      id: this.$route.params.id
     }
   },
   components: {

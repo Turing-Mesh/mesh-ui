@@ -13,10 +13,7 @@ const routes = [
   {
     path: '/modules/:id',
     name: 'Module',
-    component: () => import(/* webpackChunkName: "about" */ '../components/Module.vue'),
-    props: {
-      default: true
-    }
+    component: () => import(/* webpackChunkName: "about" */ '../components/Module.vue')
   },
   {
     path: '/about',

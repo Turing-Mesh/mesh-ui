@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Module number {{ moduleNumber }}</h1>
+    <h1>Module number {{ moduleId }}</h1>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'Module',
   props: {
-    moduleNumber: String
+    moduleId: String
   }
 }
 </script>
