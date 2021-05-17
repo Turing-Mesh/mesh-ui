@@ -37,7 +37,7 @@
         <StudentFeedback />
 
         <section class="feedback-container">
-          <router-view  :key="$route.path" :moduleId="$route.path"/>
+<!--          <router-view  :key="$route.path" :moduleId="$route.path"/>-->
         </section>
 
         <section class="notes-container">
