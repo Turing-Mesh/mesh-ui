@@ -29,7 +29,7 @@ export default {
   },
   components: {
     ModuleNav,
-    ProjectNav
+    ProjectNav,
     StudentFeedback
   }
 }
