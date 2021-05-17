@@ -31,4 +31,8 @@
   }
 }
 
+.router-link-active {
+  background-color: $turing-yellow;
+}
+
 </style>
