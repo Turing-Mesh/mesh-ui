@@ -1,9 +1,9 @@
 <template>
   <section class="left-section">
     <router-link to="/mod-1" class="module">Module 1</router-link>
-    <h1 class="module">Module 2</h1>
-    <h1 class="module">Module 3</h1>
-    <h1 class="module">Module 4</h1>
+    <router-link to="/mod-2" class="module">Module 2</router-link>
+    <router-link to="/mod-3" class="module">Module 3</router-link>
+    <router-link to="/mod-4" class="module">Module 4</router-link>
   </section>
 </template>
 
@@ -14,20 +14,11 @@
 @import '@/styles/styles.scss';
 
 a.module {
-  color: $turing-red;
-  text-align: center;
-  line-height: 70px;
-
-  &:hover {
-    text-decoration: underline;
-    background-color: $turing-blue;
-  }
-}
-
-.module {
-  text-decoration: unset;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
   margin: 0;
   text-align: center;
+  height: 70px;
   line-height: 70px;
 
   &:hover {
