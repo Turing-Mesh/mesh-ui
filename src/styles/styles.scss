@@ -88,15 +88,15 @@ a {
 }
 
 .feedback-container {
-  height: 300px;
+  min-height: 300px;
   margin: 20px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   border: 2px solid grey;
   border-radius: 15px;
 }
 
 .notes-container {
-  height: 300px;
+  min-height: 300px;
   margin: 20px;
   padding: 20px;
   border: 2px solid grey;

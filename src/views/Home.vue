@@ -16,9 +16,7 @@
           <h1 class="project">Project 4</h1>
         </section>
 
-        <section class="feedback-container">
-          <h2>Feedback goes here</h2>
-        </section>
+        <StudentFeedback />
 
         <section class="notes-container">
           <h2>Notes section goes here</h2>
@@ -30,6 +28,7 @@
 
 <script>
 // @ is an alias to /src
+import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
   name: 'Home',
@@ -38,6 +37,7 @@ export default {
     }
   },
   components: {
+    StudentFeedback
   }
 }
 </script>
