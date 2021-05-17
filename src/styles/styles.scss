@@ -8,12 +8,12 @@ $turing-red: #ef3852;
   padding: 0;
 }
 
-.navbar {
+.header {
   background: $turing-blue;
   margin: 0 auto;
 }
 
-.nav {
+.header-wrapper {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -89,4 +89,12 @@ a {
   padding: 20px;
   border: 2px solid grey;
   border-radius: 15px;
+}
+
+.rotating {
+  width: 150px;
+  transition: transform 3s ease-in-out;
+}
+.rotating:hover {
+  transform: rotateZ(360deg);
 }

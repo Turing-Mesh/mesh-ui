@@ -3,6 +3,23 @@
     <h1>This is a 🏡 component.</h1>
     <div class="main">
       <ModuleNav />
+<!--      <section class="left-section">-->
+<!--        <router-link to="/module" moduleNumber="1">-->
+<!--          <h1 class="module">Module 1</h1>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/module" moduleNumber="2">-->
+<!--          <h1 class="module">Module 2</h1>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/module" moduleNumber="3">-->
+<!--          <h1 class="module">Module 3</h1>-->
+<!--        </router-link>-->
+
+<!--        <router-link to="/module" moduleNumber="4">-->
+<!--          <h1 class="module">Module 4</h1>-->
+<!--        </router-link>-->
+<!--      </section>-->
       <section class="right-section">
         <ProjectNav />
         <StudentFeedback />
