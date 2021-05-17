@@ -9,13 +9,7 @@
         <h1 class="module">Module 4</h1>
       </section>
       <section class="right-section">
-        <section class="projects-container">
-          <h1 class="project">Project 1</h1>
-          <h1 class="project">Project 2</h1>
-          <h1 class="project">Project 3</h1>
-          <h1 class="project">Project 4</h1>
-        </section>
-
+        <ProjectNav />
         <StudentFeedback />
 
         <section class="notes-container">
@@ -28,6 +22,7 @@
 
 <script>
 // @ is an alias to /src
+import ProjectNav from '@/components/ProjectNav.vue'
 import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
@@ -37,6 +32,7 @@ export default {
     }
   },
   components: {
+    ProjectNav
     StudentFeedback
   }
 }
