@@ -64,7 +64,7 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
-      modData: { data: { id: 1, type: 'projects', attributes: { mod: 1, student_projects: [{ id: 109, name: 'war or peace', program: 'BE', project_number: 1, project_type: 'solo', is_final_project: false, instructor_comments: 'Some real good stuff', student_comments: 'My personal notes', project_feedback: [{ id: 1, rubric_category_name: 'Code Quality', score: 2.5, comment: 'Overall good work.' }, { id: 2, rubric_category_name: 'Testing', score: 1.5, comment: 'Just ok.' }, { id: 1, rubric_category_name: 'Completion', score: 4, comment: 'Nice.' }] }] } } }
+      modData: { data: { id: 1, type: 'projects', attributes: { mod: 1, student_projects: [{ id: 109, name: 'war or peace', program: 'BE', project_number: 1, project_type: 'solo', is_final_project: false, instructor_comments: 'Some real good stuff, truly a miracle you pulled this off. I couldnt be more proud of you. Here, have a job 👩🏻‍💻', student_comments: 'My personal notes', project_feedback: [{ id: 1, rubric_category_name: 'Code Quality', score: 2.5, comment: 'Overall good work. I love you.' }, { id: 2, rubric_category_name: 'Testing', score: 1.5, comment: 'Just ok.' }, { id: 1, rubric_category_name: 'Completion', score: 4, comment: 'Nice. This is really rather quite nice.' }] }] } } }
     }
   },
   components: {

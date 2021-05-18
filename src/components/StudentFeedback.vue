@@ -1,27 +1,9 @@
 <template>
   <section class="feedback-container">
     <router-view  :key="$route.path" :moduleId="$route.path"/>
-    <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ this.projects[0].project_feedback[0].rubric_category_name }} </p>
-      <div class="progress-bar" id="bar1">{{ this.projects[0].project_feedback[0].score }}</div>
-      <p class="feedback-container__category--comments">
-        {{ this.projects[0].project_feedback[0].comment }}
-      </p>
-    </div>
-    <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ this.projects[0].project_feedback[1].rubric_category_name }} </p>
-      <div class="progress-bar" id="bar2">{{ this.projects[0].project_feedback[1].score }}</div>
-      <p class="feedback-container__category--comments">
-        {{ this.projects[0].project_feedback[1].comment }}
-      </p>
-    </div>
-    <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ this.projects[0].project_feedback[2].rubric_category_name }} </p>
-      <div class="progress-bar" id="bar3">{{ this.projects[0].project_feedback[2].score }}</div>
-      <p class="feedback-container__category--comments">
-        {{ this.projects[0].project_feedback[2].comment }}
-      </p>
-    </div>
+    <Category :projectFeedback="projects[0].project_feedback[0]"/>
+    <Category :projectFeedback="projects[0].project_feedback[1]"/>
+    <Category :projectFeedback="projects[0].project_feedback[2]"/>
     <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
@@ -42,12 +24,16 @@
 </template>
 
 <script>
+import Category from '@/components/Category.vue'
 export default {
   data () {
     return {
       projects: [],
       categories: ['JavaScript', 'React', 'Professionalism']
     }
+  },
+  components: {
+    Category
   },
   props: {
     modData: Object
@@ -59,14 +45,14 @@ export default {
   },
   mounted () {
     this.projects = this.modData.data.attributes.student_projects
+    this.displayCategories()
   }
 }
 </script>
 
 <style lang="scss" scoped>
   @import '@/styles/styles.scss';
-  .feedback-container {
-  }
+
   .feedback-container__category {
     margin-top: 15px;
   }
