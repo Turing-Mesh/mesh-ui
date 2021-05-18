@@ -74,7 +74,10 @@ export default {
   },
   methods: {
     // findModuleClicked () {
-    //   /* pass this down to module nav to figure out which module is clicked, then set modData state with fetched data */
+    //   /* do some router matching */
+    // }
+    // findModuleData () {
+    //   /* this will be called from updated; makes a fetch request based on the module clicked and stores that data in state (modData) */
     // }
   },
   updated () {

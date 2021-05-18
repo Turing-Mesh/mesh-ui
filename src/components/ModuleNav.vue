@@ -35,11 +35,6 @@
 </template>
 
 <script>
-export default {
-  // props: {
-  //   findModuleClicked: Function
-  // }
-}
 </script>
 
 <style lang="scss" scoped>
