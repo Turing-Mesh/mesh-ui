@@ -64,11 +64,11 @@ a.module {
   background: #4C4D4F;
   color: whitesmoke;
   height: auto;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   width: 50%;
   padding: 20px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 </style>
