@@ -19,10 +19,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
+  font-family: $roboto;
+  font-size: 1.5rem;
 }
 
 a.project {
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
 
@@ -32,7 +33,6 @@ a.project {
 }
 
 .project {
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
 

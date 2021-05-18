@@ -8,28 +8,28 @@
       name: 'Module',
       params: { id: 1}
     }">
-      Module 1
+        <button class="btn">Module 1</button>
     </router-link>
 
     <router-link class="module" :to="{
       name: 'Module',
       params: { id: 2}
     }">
-      Module 2
+      <button class="btn">Module 2</button>
     </router-link>
 
     <router-link class="module" :to="{
       name: 'Module',
       params: { id: 3}
     }">
-      Module 3
+      <button class="btn">Module 3</button>
     </router-link>
 
     <router-link class="module" :to="{
       name: 'Module',
       params: { id: 4}
     }">
-      Module 4
+      <button class="btn">Module 4</button>
     </router-link>
   </section>
 </template>
@@ -41,21 +41,34 @@
 @import '@/styles/styles.scss';
 
 a.module {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  margin: 0;
-  text-align: center;
-  height: 70px;
-  line-height: 70px;
+  //display: grid;
+  //grid-template-rows: repeat(4, 1fr);
+  //margin: 0;
+  //text-align: center;
+  ////height: 70px;
+  ////line-height: 70px;
 
   &:hover {
-    text-decoration: underline;
-    background-color: $turing-blue;
+    text-decoration: none;
   }
 }
 
-.router-link-active {
-  background-color: $turing-blue;
+.router-link-active .btn {
+  //background-color: $turing-blue;
+  background: #036575;
+  color: #12F1FC;
+}
+
+.btn {
+  border-radius: 50px;
+  background: #4C4D4F;
+  color: whitesmoke;
+  height: auto;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 50%;
+  padding: 20px;
+  text-transform: capitalize;
 }
 
 </style>

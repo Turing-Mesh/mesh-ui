@@ -1,11 +1,18 @@
 $turing-blue: #12f1fc;
 $turing-yellow: #f9ae06;
 $turing-red: #ef3852;
+$open: 'Open Sans', sans-serif;
+$roboto: 'Roboto Slab', serif;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: $open;
+  color: #4C4D4F;
 }
 
 .header {
@@ -62,17 +69,19 @@ a {
 }
 
 .left-section {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
   width: 25%;
-  border: 2px solid red;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.module {
-  margin: 10px 20px;
-}
+//.module {
+//  margin: 10px 20px;
+//}
 
 .right-section {
   width: 75%;
-  border: 2px solid red;
 }
 
 .feedback-container {
