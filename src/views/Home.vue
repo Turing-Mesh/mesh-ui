@@ -60,15 +60,29 @@ import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
   name: 'Home',
+
   data () {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      modData: { data: { id: 1, type: 'projects', attributes: { mod: 1, student_projects: [{ id: 109, name: 'war or peace', program: 'BE', project_number: 1, project_type: 'solo', is_final_project: false, instructor_comments: 'Some real good stuff', student_comments: 'My personal notes', project_feedback: [{ id: 1, rubric_category_name: 'Code Quality', score: 2.5, comment: 'Overall good work.' }] }] } } }
     }
   },
   components: {
     ModuleNav,
     ProjectNav,
     StudentFeedback
+  },
+  methods: {
+    // async getFeedbackData () {
+    //   const response = await fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
+    //   const data = await response.json()
+    //   this.modData = data
+    //   console.log(this.modData)
+  },
+  beforeMount () {
+    // this.getFeedbackData()
+  },
+  created () {
   }
 }
 </script>
