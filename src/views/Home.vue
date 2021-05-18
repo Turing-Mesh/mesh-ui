@@ -36,9 +36,9 @@
         <ProjectNav />
         <StudentFeedback />
 
-        <section class="feedback-container">
+<!--        <section class="feedback-container">-->
 <!--          <router-view  :key="$route.path" :moduleId="$route.path"/>-->
-        </section>
+<!--        </section>-->
 
         <section class="notes-container">
           <h2>Notes section goes here</h2>
