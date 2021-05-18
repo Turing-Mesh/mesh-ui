@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <h1>This is a 🏡 component.</h1>
+    <div class="greeting">
+      <h3>Welcome to Mesh.</h3>
+      <p> Click on a module and then a project, to see your feedback.</p>
+    </div>
+
     <div class="main">
       <ModuleNav />
 <!--      <section class="left-section">-->
@@ -70,6 +74,10 @@ export default {
 </script>
 
 <style scoped>
+.greeting {
+  margin: 0 40px;
+  font-size: 1.2rem;
+}
 .rotating {
   width: 150px;
   transition: transform 3s ease-in-out;
