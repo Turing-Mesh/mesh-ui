@@ -30,8 +30,8 @@
 }
 
 a.project {
-  padding: 10px;
-  text-align: center;
+  //padding: 10px;
+  //text-align: center;
 
   &:hover {
     //background-color: $turing-yellow;
@@ -56,10 +56,12 @@ a.project {
   background: white;
   font-family: $roboto;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .router-link-active {
   //background-color: $turing-yellow;
+  width: auto;
   border-bottom: 5px solid $turing-blue;
 }
 
