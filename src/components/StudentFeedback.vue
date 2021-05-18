@@ -45,7 +45,6 @@ export default {
   },
   mounted () {
     this.projects = this.modData.data.attributes.student_projects
-    this.displayCategories()
   }
 }
 </script>
