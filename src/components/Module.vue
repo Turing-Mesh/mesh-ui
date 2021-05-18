@@ -9,8 +9,11 @@ export default {
   name: 'Module',
   props: {
     moduleId: String
+    // ,
+    // findModuleClicked: Function
   }
 }
+
 </script>
 
 <style scoped>

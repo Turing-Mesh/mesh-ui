@@ -4,7 +4,7 @@
 <!--    <router-link to="/mod-2" class="module">Module 2</router-link>-->
 <!--    <router-link to="/mod-3" class="module">Module 3</router-link>-->
 <!--    <router-link to="/mod-4" class="module">Module 4</router-link>-->
-    <router-link class="module" :to="{
+    <router-link class="module" :findModuleClicked="FindModuleClicked" :to="{
       name: 'Module',
       params: { id: 1}
     }">
@@ -35,6 +35,11 @@
 </template>
 
 <script>
+export default {
+  // props: {
+  //   findModuleClicked: Function
+  // }
+}
 </script>
 
 <style lang="scss" scoped>

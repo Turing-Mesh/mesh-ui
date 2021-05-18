@@ -38,7 +38,7 @@
 <!--      </section>-->
       <section class="right-section">
         <ProjectNav />
-        <StudentFeedback />
+        <StudentFeedback :modData="modData"/>
 
 <!--        <section class="feedback-container">-->
 <!--          <router-view  :key="$route.path" :moduleId="$route.path"/>-->
@@ -64,7 +64,7 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
-      modData: { data: { id: 1, type: 'projects', attributes: { mod: 1, student_projects: [{ id: 109, name: 'war or peace', program: 'BE', project_number: 1, project_type: 'solo', is_final_project: false, instructor_comments: 'Some real good stuff', student_comments: 'My personal notes', project_feedback: [{ id: 1, rubric_category_name: 'Code Quality', score: 2.5, comment: 'Overall good work.' }] }] } } }
+      modData: { data: { id: 1, type: 'projects', attributes: { mod: 1, student_projects: [{ id: 109, name: 'war or peace', program: 'BE', project_number: 1, project_type: 'solo', is_final_project: false, instructor_comments: 'Some real good stuff', student_comments: 'My personal notes', project_feedback: [{ id: 1, rubric_category_name: 'Code Quality', score: 2.5, comment: 'Overall good work.' }, { id: 2, rubric_category_name: 'Testing', score: 1.5, comment: 'Just ok.' }, { id: 1, rubric_category_name: 'Completion', score: 4, comment: 'Nice.' }] }] } } }
     }
   },
   components: {
@@ -73,14 +73,12 @@ export default {
     StudentFeedback
   },
   methods: {
-    // async getFeedbackData () {
-    //   const response = await fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
-    //   const data = await response.json()
-    //   this.modData = data
-    //   console.log(this.modData)
+    // findModuleClicked () {
+    //   /* pass this down to module nav to figure out which module is clicked, then set modData state with fetched data */
+    // }
   },
-  beforeMount () {
-    // this.getFeedbackData()
+  updated () {
+    // this.findModuleClicked()
   },
   created () {
   }

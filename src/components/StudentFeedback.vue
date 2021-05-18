@@ -2,24 +2,24 @@
   <section class="feedback-container">
     <router-view  :key="$route.path" :moduleId="$route.path"/>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ categories[0] }} </p>
-      <div class="progress-bar" id="bar1">3.5</div>
+      <p class="feedback-container__category--label">{{ this.projects[0].project_feedback[0].rubric_category_name }} </p>
+      <div class="progress-bar" id="bar1">{{ this.projects[0].project_feedback[0].score }}</div>
       <p class="feedback-container__category--comments">
-        Solid work here! Blah blah.
+        {{ this.projects[0].project_feedback[0].comment }}
       </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ categories[1] }} </p>
-      <div class="progress-bar" id="bar2">2.5</div>
+      <p class="feedback-container__category--label">{{ this.projects[0].project_feedback[1].rubric_category_name }} </p>
+      <div class="progress-bar" id="bar2">{{ this.projects[0].project_feedback[1].score }}</div>
       <p class="feedback-container__category--comments">
-        Some comments here about this category.
+        {{ this.projects[0].project_feedback[1].comment }}
       </p>
     </div>
     <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ categories[2] }} </p>
-      <div class="progress-bar" id="bar3">3</div>
+      <p class="feedback-container__category--label">{{ this.projects[0].project_feedback[2].rubric_category_name }} </p>
+      <div class="progress-bar" id="bar3">{{ this.projects[0].project_feedback[2].score }}</div>
       <p class="feedback-container__category--comments">
-        Looking good. Just make sure to foo!
+        {{ this.projects[0].project_feedback[2].comment }}
       </p>
     </div>
     <hr class="feedback-container__dividing-line">
@@ -30,12 +30,12 @@
       ">
         Overall
       </p>
-      <div class="progress-bar" id="bar-average">3</div>
+      <div class="progress-bar" id="bar-average">{{ this.findAverage() }}</div>
       <p class="
         feedback-container__category--comments
         feedback-container__category--comments-overall
       ">
-        You like cats because they are fat and fluffy inspect anything brought into the house, yet flee in terror at cucumber discovered on floor ask for petting trip on catnip. Run off table persian cat jump eat fish. Loves cheeseburgers meowing chowing and wowing and human is behind a closed door, emergency! abandoned! meeooowwww!!!.
+        {{ this.projects[0].instructor_comments }}
       </p>
     </div>
   </section>
@@ -45,8 +45,20 @@
 export default {
   data () {
     return {
+      projects: [],
       categories: ['JavaScript', 'React', 'Professionalism']
     }
+  },
+  props: {
+    modData: Object
+  },
+  methods: {
+    findAverage () {
+      return 'Function placeholder'
+    }
+  },
+  mounted () {
+    this.projects = this.modData.data.attributes.student_projects
   }
 }
 </script>
