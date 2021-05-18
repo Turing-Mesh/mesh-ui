@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer">Created by Jessica, Katie, and Nikki, with 🦑, 🐢, and 👖.</footer>
+  <footer id="footer">Created by Ben, Genevieve, Jessica 🦑, Jesus, Katie 🐢, and Nikki 👖.</footer>
 </template>
 
 <script>
