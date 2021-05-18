@@ -9,6 +9,7 @@ describe('Mesh landing page after login', () => {
 
     cy.get('.feedback-container').should('exist')
     cy.get('.notes-container').should('exist')
+    cy.contains('footer', '🦑')
   })
 })
 
