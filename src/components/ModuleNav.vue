@@ -8,28 +8,28 @@
       name: 'Module',
       params: { id: 1}
     }">
-        <button class="btn">Module 1</button>
+        <button class="module-btn">Module 1</button>
     </router-link>
 
     <router-link class="module" :to="{
       name: 'Module',
       params: { id: 2}
     }">
-      <button class="btn">Module 2</button>
+      <button class="module-btn">Module 2</button>
     </router-link>
 
     <router-link class="module" :to="{
       name: 'Module',
       params: { id: 3}
     }">
-      <button class="btn">Module 3</button>
+      <button class="module-btn">Module 3</button>
     </router-link>
 
     <router-link class="module" :to="{
       name: 'Module',
       params: { id: 4}
     }">
-      <button class="btn">Module 4</button>
+      <button class="module-btn">Module 4</button>
     </router-link>
   </section>
 </template>
@@ -53,13 +53,13 @@ a.module {
   }
 }
 
-.router-link-active .btn {
+.router-link-active .module-btn {
   //background-color: $turing-blue;
   background: #036575;
   color: #12F1FC;
 }
 
-.btn {
+.module-btn {
   border-radius: 50px;
   background: #4C4D4F;
   color: whitesmoke;
