@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
+import NoRoute from '@/views/NoRoute'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
   {
     path: '/modules/:id',
     name: 'StudentFeedback',
@@ -19,9 +25,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '*',
+    name: 'NoRoute',
+    component: NoRoute
   }
 ]
 
