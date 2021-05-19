@@ -11,7 +11,10 @@
           <img class="calendar" alt="Calendar icon" src="../assets/calendar.svg">
           {{ date }}
         </h3> |
-        <h3 class="name">Hi, Nikki</h3>
+        <h3 class="name">Hi, Nikki</h3> |
+        <router-link to="/about">
+          About
+        </router-link>
       </div>
     </div>
     <div class="greeting">

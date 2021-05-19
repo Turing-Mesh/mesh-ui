@@ -1,27 +1,32 @@
 <template>
   <section class="feedback-container">
+    <h3>Module {{ this.$route.params.id }}</h3>
     <ProjectNav />
-    <h1>Module {{ this.moduleData.data.attributes.mod}}</h1>
-    <router-view  :key="$route.path" :moduleId="$route.path"/>
-    <Category :projectFeedback="projects[0].project_feedback[0]"/>
-    <Category :projectFeedback="projects[0].project_feedback[1]"/>
-    <Category :projectFeedback="projects[0].project_feedback[2]"/>
-    <hr class="feedback-container__dividing-line">
-    <div class="feedback-container__category">
-      <p class="
+    <div>
+      <Category :projectFeedback="projects[0].project_feedback[0]"/>
+      <Category :projectFeedback="projects[0].project_feedback[1]"/>
+      <Category :projectFeedback="projects[0].project_feedback[2]"/>
+      <hr class="feedback-container__dividing-line">
+      <div class="feedback-container__category">
+        <p class="
         feedback-container__category--label
         feedback-container__category--label-overall
       ">
-        Overall
-      </p>
-      <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
-      <p class="
+          Overall
+        </p>
+        <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
+        <p class="
         feedback-container__category--comments
         feedback-container__category--comments-overall
       ">
-        {{ projects[0].instructor_comments }}
-      </p>
+          {{ projects[0].instructor_comments }}
+        </p>
+      </div>
     </div>
+
+    <section class="notes-container">
+      <h2>Notes section goes here</h2>
+    </section>
   </section>
 </template>
 
@@ -55,19 +60,26 @@ export default {
   methods: {
     findAverage () {
       return 'Function placeholder'
-    },
-    async findModuleData () {
-      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
-      const data = await response.json()
-      this.moduleData = data
     }
+    // async findModuleData () {
+    //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
+    //   const data = await response.json()
+    //   this.moduleData = data
+    // }
   },
   created () {
-  },
-  updated () {
-    this.projects = this.moduleData.data.attributes.student_projects
-    console.log(this.projects)
+    fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        this.moduleData = data
+        this.projects = this.moduleData.data.attributes.student_projects
+      })
   }
+  // updated () {
+  //   this.projects = this.moduleData.data.attributes.student_projects
+  //   console.log(this.projects)
+  // }
 }
 </script>
 
