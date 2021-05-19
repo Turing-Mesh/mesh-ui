@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "ci": "start-server-and-test 'npm run serve' http://localhost:8080 'npm cy-run'",
+    "test": "start-server-and-test 'npm run serve' http://localhost:8080 'npm cy-run'",
     "cy-run": "cypress run",
     "test": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
