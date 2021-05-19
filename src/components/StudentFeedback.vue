@@ -36,12 +36,6 @@ import ProjectNav from '@/components/ProjectNav'
 
 export default {
   name: 'StudentFeedback',
-  watch: {
-    $route (to, from) {
-      // this.module = parseInt(this.$route.fullPath.slice(-1))
-      this.findModuleData(this.$route.params.id)
-    }
-  },
   data () {
     return {
       projects: [],
@@ -60,11 +54,11 @@ export default {
   methods: {
     findAverage () {
       return 'Function placeholder'
-    },
-    async findModuleData (module) {
-      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
-      this.moduleData = await response.json()
     }
+    // async findModuleData (module) {
+    //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
+    //   this.moduleData = await response.json()
+    // }
   },
   created () {
     fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
