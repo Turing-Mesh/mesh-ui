@@ -1,6 +1,6 @@
 <template>
   <section class="feedback-container">
-    <h3>Module {{ this.$route.params.id }}</h3>
+    <h3>Module {{ $route.params.id }}</h3>
     <ProjectNav />
     <div>
       <Category :projectFeedback="projects[0].project_feedback[0]"/>
@@ -38,8 +38,8 @@ export default {
   name: 'StudentFeedback',
   watch: {
     $route (to, from) {
-      this.module = parseInt(this.$route.fullPath.slice(-1))
-      this.findModuleData()
+      // this.module = parseInt(this.$route.fullPath.slice(-1))
+      this.findModuleData(this.$route.params.id)
     }
   },
   data () {
@@ -61,14 +61,13 @@ export default {
     findAverage () {
       return 'Function placeholder'
     },
-    async findModuleData () {
-      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
-      const data = await response.json()
-      this.moduleData = data
+    async findModuleData (module) {
+      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
+      this.moduleData = await response.json()
     }
   },
   created () {
-    fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
+    fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
