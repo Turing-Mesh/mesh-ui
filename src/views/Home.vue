@@ -6,36 +6,36 @@
     </div>
 
     <div class="main">
-      <ModuleNav />
-<!--      <section class="left-section">-->
-<!--        <router-link :to="{-->
-<!--          name: 'Module',-->
-<!--          params: { id: 1}-->
-<!--        }">-->
-<!--          <h1 class="module">Module 1</h1>-->
-<!--        </router-link>-->
+      <!-- <ModuleNav /> -->
+      <div class="left-section">
+      <router-link class="module" :to="{
+       name: 'StudentFeedback',
+       params: { id: 1 }
+     }">
+         <button class="module-btn">Module 1</button>
+     </router-link>
 
-<!--        <router-link :to="{-->
-<!--          name: 'Module',-->
-<!--          params: { id: 2}-->
-<!--        }">-->
-<!--          <h1 class="module">Module 2</h1>-->
-<!--        </router-link>-->
+     <router-link class="module" :to="{
+       name: 'StudentFeedback',
+       params: { id: 2 }
+     }">
+       <button class="module-btn">Module 2</button>
+     </router-link>
 
-<!--        <router-link :to="{-->
-<!--          name: 'Module',-->
-<!--          params: { id: 3}-->
-<!--        }">-->
-<!--          <h1 class="module">Module 3</h1>-->
-<!--        </router-link>-->
+     <router-link class="module" :to="{
+       name: 'StudentFeedback',
+       params: { id: 3 }
+     }">
+       <button class="module-btn">Module 3</button>
+     </router-link>
 
-<!--        <router-link :to="{-->
-<!--          name: 'Module',-->
-<!--          params: { id: 4}-->
-<!--        }">-->
-<!--          <h1 class="module">Module 4</h1>-->
-<!--        </router-link>-->
-<!--      </section>-->
+     <router-link class="module" :to="{
+       name: 'StudentFeedback',
+       params: { id: 4 }
+     }">
+       <button class="module-btn">Module 4</button>
+     </router-link>
+   </div>
       <section class="right-section">
         <ProjectNav />
         <StudentFeedback />
@@ -55,7 +55,7 @@
 <script>
 // @ is an alias to /src
 import ProjectNav from '@/components/ProjectNav.vue'
-import ModuleNav from '@/components/ModuleNav.vue'
+// import ModuleNav from '@/components/ModuleNav.vue'
 import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
@@ -66,7 +66,6 @@ export default {
     }
   },
   components: {
-    ModuleNav,
     ProjectNav,
     StudentFeedback
   }

@@ -62,7 +62,7 @@ export default {
   },
   updated () {
     this.projects = this.moduleData.data.attributes.student_projects
-    console.log(this.projects)
+    // console.log(this.projects)
   }
 }
 </script>
