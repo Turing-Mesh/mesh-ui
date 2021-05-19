@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "node"
-script:
-  - "npm test:e2e"
+# script:
+  # - "npm run ci"
 notifications:
   email: false
