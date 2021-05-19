@@ -32,15 +32,13 @@ export default {
     $route (to, from) {
       this.module = parseInt(this.$route.fullPath.slice(-1))
       this.findModuleData()
-      // console.log(typeof parseInt(this.$route.fullPath.slice(-1)))
     }
   },
   data () {
     return {
       projects: [],
       module: null,
-      moduleData: {},
-      categories: ['JavaScript', 'React', 'Professionalism']
+      moduleData: {}
     }
   },
   components: {
@@ -55,19 +53,16 @@ export default {
       return 'Function placeholder'
     },
     async findModuleData () {
-      /* this will be called from updated; makes a fetch request based on the module clicked and stores that data in state (modData) */
       const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
       const data = await response.json()
       this.moduleData = data
-      // console.log(this.moduleData.data.attributes.student_projects)
     }
   },
   created () {
-    // console.log(this.module)
   },
   updated () {
-    // console.log(this.module)
-    this.projects = this.modData.data.attributes.student_projects
+    this.projects = this.moduleData.data.attributes.student_projects
+    console.log(this.projects)
   }
 }
 </script>
