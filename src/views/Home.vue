@@ -6,7 +6,6 @@
     </div>
 
     <div class="main">
-      <!-- <ModuleNav /> -->
       <div class="left-section">
       <router-link class="module" :to="{
        name: 'StudentFeedback',
@@ -55,7 +54,6 @@
 <script>
 // @ is an alias to /src
 import ProjectNav from '@/components/ProjectNav.vue'
-// import ModuleNav from '@/components/ModuleNav.vue'
 import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
