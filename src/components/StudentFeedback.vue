@@ -1,5 +1,6 @@
 <template>
   <section class="feedback-container">
+    <h1>Module {{ this.moduleData.data.attributes.mod}}</h1>
     <router-view  :key="$route.path" :moduleId="$route.path"/>
     <Category :projectFeedback="projects[0].project_feedback[0]"/>
     <Category :projectFeedback="projects[0].project_feedback[1]"/>
@@ -12,12 +13,12 @@
       ">
         Overall
       </p>
-      <div class="progress-bar" id="bar-average">{{ this.findAverage() }}</div>
+      <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
       <p class="
         feedback-container__category--comments
         feedback-container__category--comments-overall
       ">
-        {{ this.projects[0].instructor_comments }}
+        {{ projects[0].instructor_comments }}
       </p>
     </div>
   </section>
@@ -26,9 +27,19 @@
 <script>
 import Category from '@/components/Category.vue'
 export default {
+  name: 'StudentFeedback',
+  watch: {
+    $route (to, from) {
+      this.module = parseInt(this.$route.fullPath.slice(-1))
+      this.findModuleData()
+      // console.log(typeof parseInt(this.$route.fullPath.slice(-1)))
+    }
+  },
   data () {
     return {
       projects: [],
+      module: null,
+      moduleData: {},
       categories: ['JavaScript', 'React', 'Professionalism']
     }
   },
@@ -36,14 +47,26 @@ export default {
     Category
   },
   props: {
-    modData: Object
+    modData: Object,
+    moduleId: String
   },
   methods: {
     findAverage () {
       return 'Function placeholder'
+    },
+    async findModuleData () {
+      /* this will be called from updated; makes a fetch request based on the module clicked and stores that data in state (modData) */
+      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
+      const data = await response.json()
+      this.moduleData = data
+      // console.log(this.moduleData.data.attributes.student_projects)
     }
   },
-  mounted () {
+  created () {
+    // console.log(this.module)
+  },
+  updated () {
+    // console.log(this.module)
     this.projects = this.modData.data.attributes.student_projects
   }
 }

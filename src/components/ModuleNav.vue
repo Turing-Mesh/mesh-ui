@@ -5,29 +5,29 @@
 <!--    <router-link to="/mod-3" class="module">Module 3</router-link>-->
 <!--    <router-link to="/mod-4" class="module">Module 4</router-link>-->
     <router-link class="module" :to="{
-      name: 'Module',
-      params: { id: 1}
+      name: 'StudentFeedback',
+      params: { id: 1 }
     }">
         <button class="module-btn">Module 1</button>
     </router-link>
 
     <router-link class="module" :to="{
-      name: 'Module',
-      params: { id: 2}
+      name: 'StudentFeedback',
+      params: { id: 2 }
     }">
       <button class="module-btn">Module 2</button>
     </router-link>
 
     <router-link class="module" :to="{
-      name: 'Module',
-      params: { id: 3}
+      name: 'StudentFeedback',
+      params: { id: 3 }
     }">
       <button class="module-btn">Module 3</button>
     </router-link>
 
     <router-link class="module" :to="{
-      name: 'Module',
-      params: { id: 4}
+      name: 'StudentFeedback',
+      params: { id: 4 }
     }">
       <button class="module-btn">Module 4</button>
     </router-link>
