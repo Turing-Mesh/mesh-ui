@@ -4,28 +4,28 @@
          name: 'StudentFeedback',
          params: { id: 1 }
        }">
-      <button class="module-btn">Module 1</button>
+      <button data-cy="mod1" class="module-btn">Module 1</button>
     </router-link>
 
     <router-link class="module" :to="{
          name: 'StudentFeedback',
          params: { id: 2 }
        }">
-      <button class="module-btn">Module 2</button>
+      <button data-cy="mod2" class="module-btn">Module 2</button>
     </router-link>
 
     <router-link class="module" :to="{
          name: 'StudentFeedback',
          params: { id: 3 }
        }">
-      <button class="module-btn">Module 3</button>
+      <button data-cy="mod3" class="module-btn">Module 3</button>
     </router-link>
 
     <router-link class="module" :to="{
          name: 'StudentFeedback',
          params: { id: 4 }
        }">
-      <button class="module-btn">Module 4</button>
+      <button data-cy="mod4" class="module-btn">Module 4</button>
     </router-link>
   </section>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <section class="feedback-container">
-    <h3>Module {{ $route.params.id }}</h3>
+    <h3 data-cy="moduleTitle">Module {{ $route.params.id }}</h3>
     <ProjectNav />
     <div>
       <Category :projectFeedback="projects[0].project_feedback[0]"/>
