@@ -1,7 +1,7 @@
 // https://docs.cypress.io/api/introduction/api.html
 
 describe('Mesh landing page after login', () => {
-  it('Visits the app root url and renders without errors', () => {
+  it.skip('Visits the app root url and renders without errors', () => {
     cy.visit('/localhost:8080')
     cy.contains('h3', 'Hi, Nikki')
     cy.get('.left-section').find('a').should('have.length', 4)
