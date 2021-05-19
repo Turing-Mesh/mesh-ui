@@ -1,9 +1,17 @@
 <template>
   <nav class="projects-container">
-    <router-link to="/project-1" class="project">Project 1</router-link>
-    <router-link to="/project-2" class="project">Project 2</router-link>
-    <router-link to="/project-3" class="project">Project 3</router-link>
-    <router-link to="/project-4" class="project">Project 4</router-link>
+    <router-link to="/project-1" class="project">
+      <button class="project-btn">Project 1</button>
+    </router-link>
+    <router-link to="/project-2" class="project">
+      <button class="project-btn">Project 2</button>
+    </router-link>
+    <router-link to="/project-3" class="project">
+      <button class="project-btn">Project 3</button>
+    </router-link>
+    <router-link to="/project-4" class="project">
+      <button class="project-btn">Project 4</button>
+    </router-link>
 <!--    <router-view />-->
   </nav>
 </template>
@@ -22,27 +30,39 @@
 }
 
 a.project {
-  border: 1px solid black;
-  padding: 10px;
-  text-align: center;
+  //padding: 10px;
+  //text-align: center;
 
   &:hover {
-    background-color: $turing-yellow;
+    //background-color: $turing-yellow;
   }
 }
 
 .project {
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
+  border: 5px solid transparent;
+  width: auto;
+  transition: border-color 0.3s;
 
   &:hover {
-    background-color: $turing-yellow;
+    //background-color: $turing-yellow;
+    border-bottom: 5px solid $turing-blue;
   }
 }
 
+.project-btn {
+  border: none;
+  background: white;
+  font-family: $roboto;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .router-link-active {
-  background-color: $turing-yellow;
+  //background-color: $turing-yellow;
+  width: auto;
+  border-bottom: 5px solid $turing-blue;
 }
 
 </style>
