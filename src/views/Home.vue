@@ -6,46 +6,9 @@
     </div>
 
     <div class="main">
-      <div class="left-section">
-      <router-link class="module" :to="{
-       name: 'StudentFeedback',
-       params: { id: 1 }
-     }">
-         <button class="module-btn">Module 1</button>
-     </router-link>
 
-     <router-link class="module" :to="{
-       name: 'StudentFeedback',
-       params: { id: 2 }
-     }">
-       <button class="module-btn">Module 2</button>
-     </router-link>
-
-     <router-link class="module" :to="{
-       name: 'StudentFeedback',
-       params: { id: 3 }
-     }">
-       <button class="module-btn">Module 3</button>
-     </router-link>
-
-     <router-link class="module" :to="{
-       name: 'StudentFeedback',
-       params: { id: 4 }
-     }">
-       <button class="module-btn">Module 4</button>
-     </router-link>
-   </div>
       <section class="right-section">
-        <ProjectNav />
         <StudentFeedback />
-
-<!--        <section class="feedback-container">-->
-<!--          <router-view  :key="$route.path" :moduleId="$route.path"/>-->
-<!--        </section>-->
-
-        <section class="notes-container">
-          <h2>Notes section goes here</h2>
-        </section>
       </section>
     </div>
   </div>
@@ -53,7 +16,6 @@
 
 <script>
 // @ is an alias to /src
-import ProjectNav from '@/components/ProjectNav.vue'
 import StudentFeedback from '@/components/StudentFeedback.vue'
 
 export default {
@@ -64,13 +26,15 @@ export default {
     }
   },
   components: {
-    ProjectNav,
     StudentFeedback
   }
 }
 </script>
 
 <style scoped>
+.home {
+  border: 1px solid red;
+}
 .greeting {
   margin: 0 40px;
   font-size: 1.2rem;
@@ -97,5 +61,9 @@ export default {
   width: 50%;
   padding: 20px;
   text-transform: uppercase;
+}
+
+.left-section {
+  border: 1px solid blue;
 }
 </style>

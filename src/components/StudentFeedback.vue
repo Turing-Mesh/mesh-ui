@@ -1,7 +1,8 @@
 <template>
   <section class="feedback-container">
+    <ProjectNav />
+
     <h1>Module {{ this.moduleData.data.attributes.mod}}</h1>
-    <router-view  :key="$route.path" :moduleId="$route.path"/>
     <Category :projectFeedback="projects[0].project_feedback[0]"/>
     <Category :projectFeedback="projects[0].project_feedback[1]"/>
     <Category :projectFeedback="projects[0].project_feedback[2]"/>
@@ -21,11 +22,17 @@
         {{ projects[0].instructor_comments }}
       </p>
     </div>
+
+    <section class="notes-container">
+      <h2>Notes section goes here</h2>
+    </section>
   </section>
 </template>
 
 <script>
 import Category from '@/components/Category.vue'
+import ProjectNav from '@/components/ProjectNav.vue'
+
 export default {
   name: 'StudentFeedback',
   watch: {
@@ -42,7 +49,8 @@ export default {
     }
   },
   components: {
-    Category
+    Category,
+    ProjectNav
   },
   props: {
     modData: Object,
