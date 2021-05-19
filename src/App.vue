@@ -6,7 +6,7 @@
       <ModuleNav />
 
       <section class="right-section">
-        <router-view  :key="$route.path" :moduleId="$route.path"/>
+        <router-view  :key="$route.path" />
 <!--        <router-view />-->
       </section>
     </div>

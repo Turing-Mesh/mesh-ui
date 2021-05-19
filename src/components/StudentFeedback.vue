@@ -60,12 +60,12 @@ export default {
   methods: {
     findAverage () {
       return 'Function placeholder'
+    },
+    async findModuleData () {
+      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
+      const data = await response.json()
+      this.moduleData = data
     }
-    // async findModuleData () {
-    //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
-    //   const data = await response.json()
-    //   this.moduleData = data
-    // }
   },
   created () {
     fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
@@ -75,11 +75,11 @@ export default {
         this.moduleData = data
         this.projects = this.moduleData.data.attributes.student_projects
       })
+  },
+  updated () {
+    this.projects = this.moduleData.data.attributes.student_projects
+    // console.log(this.projects)
   }
-  // updated () {
-  //   this.projects = this.moduleData.data.attributes.student_projects
-  //   console.log(this.projects)
-  // }
 }
 </script>
 

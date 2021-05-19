@@ -11,9 +11,8 @@
           <img class="calendar" alt="Calendar icon" src="../assets/calendar.svg">
           {{ date }}
         </h3> |
-        <h3 class="name">Hi, Nikki</h3> |
         <router-link to="/about">
-          About
+          <h3 class="name">Hi, Jessica</h3>
         </router-link>
       </div>
     </div>
@@ -39,6 +38,7 @@ export default {
 .name {
   font-size: 2rem;
   padding: 0 20px;
+  color: #4C4D4F;
 }
 
 .calendar {
