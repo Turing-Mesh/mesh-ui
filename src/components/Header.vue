@@ -14,6 +14,10 @@
         <h3 class="name">Hi, Nikki</h3>
       </div>
     </div>
+    <div class="greeting">
+      <h3>Welcome to Mesh.</h3>
+      <p> Click on a module and then a project, to see your feedback.</p>
+    </div>
   </div>
 </template>
 
@@ -36,5 +40,10 @@ export default {
 
 .calendar {
   margin: 0 10px;
+}
+
+.greeting {
+  margin: 0 40px;
+  font-size: 1.2rem;
 }
 </style>

@@ -1,16 +1,9 @@
 <template>
   <div class="home">
-    <div class="greeting">
-      <h3>Welcome to Mesh.</h3>
-      <p> Click on a module and then a project, to see your feedback.</p>
-    </div>
-
-    <div class="main">
-
-      <section class="right-section">
-        <StudentFeedback />
-      </section>
-    </div>
+    This is home
+    this is home
+    <h2>this is home</h2>
+   <StudentFeedback />
   </div>
 </template>
 
@@ -22,11 +15,30 @@ export default {
   name: 'Home',
   data () {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      projects: [],
+      module: null,
+      moduleData: {}
     }
   },
   components: {
     StudentFeedback
+  },
+  watch: {
+    $route (to, from) {
+      this.module = parseInt(this.$route.fullPath.slice(-1))
+      this.findModuleData()
+    }
+  },
+  methods: {
+    findAverage () {
+      return 'Function placeholder'
+    },
+    async findModuleData () {
+      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
+      const data = await response.json()
+      this.moduleData = data
+    }
   }
 }
 </script>
@@ -35,22 +47,13 @@ export default {
 .home {
   border: 1px solid red;
 }
-.greeting {
-  margin: 0 40px;
-  font-size: 1.2rem;
-}
-.rotating {
-  width: 150px;
-  transition: transform 3s ease-in-out;
-}
-.rotating:hover {
-  transform: rotateZ(360deg);
-}
+
 .router-link-active .module-btn {
   //background-color: $turing-blue;
   background: #036575;
   color: #12F1FC;
 }
+
 .module-btn {
   border-radius: 50px;
   background: #4C4D4F;

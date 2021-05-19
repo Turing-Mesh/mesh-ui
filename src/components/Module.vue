@@ -34,13 +34,13 @@ import Category from '@/components/Category.vue'
 import ProjectNav from '@/components/ProjectNav.vue'
 
 export default {
-  name: 'StudentFeedback',
-  watch: {
-    $route (to, from) {
-      this.module = parseInt(this.$route.fullPath.slice(-1))
-      this.findModuleData()
-    }
-  },
+  name: 'Module',
+  // watch: {
+  //   $route (to, from) {
+  //     this.module = parseInt(this.$route.fullPath.slice(-1))
+  //     this.findModuleData()
+  //   }
+  // },
   data () {
     return {
       projects: [],
@@ -76,28 +76,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '@/styles/styles.scss';
+@import '@/styles/styles.scss';
 
-  .feedback-container__category {
-    margin-top: 15px;
-  }
-  .feedback-container__category--label {
-    display: inline;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .progress-bar {
-    display: inline;
-    width: 100px;
-    background-color: $turing-yellow;
-    margin-left: 15px;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  #bar-average {
-    background-color: $turing-blue;
-  }
-  .feedback-container__dividing-line {
-    margin-top: 20px;
-  }
+.feedback-container__category {
+  margin-top: 15px;
+}
+.feedback-container__category--label {
+  display: inline;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.progress-bar {
+  display: inline;
+  width: 100px;
+  background-color: $turing-yellow;
+  margin-left: 15px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+#bar-average {
+  background-color: $turing-blue;
+}
+.feedback-container__dividing-line {
+  margin-top: 20px;
+}
 </style>

@@ -1,8 +1,16 @@
 <template>
   <div id="app">
     <Header />
-    <ModuleNav />
-    <router-view  :key="$route.path" :moduleId="$route.path"/>
+
+    <div class="main">
+      <ModuleNav />
+
+      <section class="right-section">
+        <router-view  :key="$route.path" :moduleId="$route.path"/>
+<!--        <router-view />-->
+      </section>
+    </div>
+
     <Footer />
   </div>
 </template>
