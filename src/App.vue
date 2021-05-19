@@ -10,7 +10,6 @@
 <!--        <router-view />-->
       </section>
     </div>
-
     <Footer />
   </div>
 </template>
@@ -23,8 +22,8 @@ import Footer from '@/components/Footer'
 export default {
   components: {
     Footer,
-    Header,
-    ModuleNav
+    ModuleNav,
+    Header
   }
 }
 </script>

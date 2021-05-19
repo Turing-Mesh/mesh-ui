@@ -44,10 +44,24 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .home {
   border: 1px solid red;
 }
 
+=======
+.greeting {
+  margin: 0 40px;
+  font-size: 1.2rem;
+}
+.rotating {
+  width: 150px;
+  transition: transform 3s ease-in-out;
+}
+.rotating:hover {
+  transform: rotateZ(360deg);
+}
+>>>>>>> parent of 28bdfcc... Move stuff and add modulenav back in
 .router-link-active .module-btn {
   //background-color: $turing-blue;
   background: #036575;
@@ -64,9 +78,5 @@ export default {
   width: 50%;
   padding: 20px;
   text-transform: uppercase;
-}
-
-.left-section {
-  border: 1px solid blue;
 }
 </style>
