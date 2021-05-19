@@ -1,27 +1,10 @@
 <template>
   <section class="feedback-container">
+    <h1>Module {{ this.moduleData.data.attributes.mod}}</h1>
     <router-view  :key="$route.path" :moduleId="$route.path"/>
-    <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ categories[0] }} </p>
-      <div class="progress-bar" id="bar1">3.5</div>
-      <p class="feedback-container__category--comments">
-        Solid work here! Blah blah.
-      </p>
-    </div>
-    <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ categories[1] }} </p>
-      <div class="progress-bar" id="bar2">2.5</div>
-      <p class="feedback-container__category--comments">
-        Some comments here about this category.
-      </p>
-    </div>
-    <div class="feedback-container__category">
-      <p class="feedback-container__category--label">{{ categories[2] }} </p>
-      <div class="progress-bar" id="bar3">3</div>
-      <p class="feedback-container__category--comments">
-        Looking good. Just make sure to foo!
-      </p>
-    </div>
+    <Category :projectFeedback="projects[0].project_feedback[0]"/>
+    <Category :projectFeedback="projects[0].project_feedback[1]"/>
+    <Category :projectFeedback="projects[0].project_feedback[2]"/>
     <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
@@ -30,31 +13,63 @@
       ">
         Overall
       </p>
-      <div class="progress-bar" id="bar-average">3</div>
+      <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
       <p class="
         feedback-container__category--comments
         feedback-container__category--comments-overall
       ">
-        You like cats because they are fat and fluffy inspect anything brought into the house, yet flee in terror at cucumber discovered on floor ask for petting trip on catnip. Run off table persian cat jump eat fish. Loves cheeseburgers meowing chowing and wowing and human is behind a closed door, emergency! abandoned! meeooowwww!!!.
+        {{ projects[0].instructor_comments }}
       </p>
     </div>
   </section>
 </template>
 
 <script>
+import Category from '@/components/Category.vue'
 export default {
+  name: 'StudentFeedback',
+  watch: {
+    $route (to, from) {
+      this.module = parseInt(this.$route.fullPath.slice(-1))
+      this.findModuleData()
+    }
+  },
   data () {
     return {
-      categories: ['JavaScript', 'React', 'Professionalism']
+      projects: [],
+      module: null,
+      moduleData: {}
     }
+  },
+  components: {
+    Category
+  },
+  props: {
+    modData: Object,
+    moduleId: String
+  },
+  methods: {
+    findAverage () {
+      return 'Function placeholder'
+    },
+    async findModuleData () {
+      const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.module}`)
+      const data = await response.json()
+      this.moduleData = data
+    }
+  },
+  created () {
+  },
+  updated () {
+    this.projects = this.moduleData.data.attributes.student_projects
+    // console.log(this.projects)
   }
 }
 </script>
 
 <style lang="scss" scoped>
   @import '@/styles/styles.scss';
-  .feedback-container {
-  }
+
   .feedback-container__category {
     margin-top: 15px;
   }
