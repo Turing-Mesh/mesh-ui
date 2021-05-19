@@ -1,4 +1,10 @@
 // https://docs.cypress.io/api/introduction/api.html
+describe('temp', () => {
+  it('simple test for testing test', () => {
+    cy.visit('/localhost:8080')
+      .contains('h3', 'Hi, Nikki')
+  })
+})
 
 describe('Mesh landing page after login', () => {
   it('Visits the app root url and renders without errors', () => {
