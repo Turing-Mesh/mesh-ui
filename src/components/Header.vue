@@ -24,7 +24,6 @@
 
     <div v-else-if="!loggedIn" class="greeting">
       <h3>You must log in to see your feedback.</h3>
-      <p>Put a button here to take user to login view</p>
     </div>
   </div>
 </template>
