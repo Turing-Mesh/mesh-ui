@@ -60,8 +60,7 @@ export default {
     }
   },
   components: {
-<<<<<<< HEAD
-    Category,
+    Project,
     ProjectNav
   },
   props: {
@@ -81,10 +80,6 @@ export default {
       // do a fetch here to POST the new note to the student's data
       this.formData.note = ''
     }
-    // async findModuleData (module) {
-    //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
-    //   this.moduleData = await response.json()
-    // }
   },
   created () {
     fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
@@ -92,15 +87,11 @@ export default {
       .then(data => {
         this.moduleData = data
         this.projects = this.moduleData.data.attributes.student_projects
+        this.$forceUpdate()
       })
   },
   updated () {
-    this.projects = this.moduleData.data.attributes.student_projects
-    // console.log(this.projects)
-=======
-    ProjectNav,
-    Project
->>>>>>> 3232b20 (Add Project component and corresponding route)
+    console.log('student feedback component updated', this.projects)
   }
 }
 </script>

@@ -15,6 +15,9 @@
 export default {
   props: {
     projectFeedback: Object
+  },
+  created () {
+    console.log('category component', this.projectFeedback)
   }
 }
 </script>

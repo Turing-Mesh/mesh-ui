@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Category :projectFeedback="projects[0].project_feedback[0]"/>
-    <Category :projectFeedback="projects[0].project_feedback[1]"/>
-    <Category :projectFeedback="projects[0].project_feedback[2]"/>
+    <Category :projectFeedback="allProjects[0].project_feedback[0]"/>
+    <Category :projectFeedback="allProjects[0].project_feedback[1]"/>
+    <Category :projectFeedback="allProjects[0].project_feedback[2]"/>
     <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
@@ -36,19 +36,16 @@ export default {
     Category
   },
   props: {
-    modData: Object,
-    moduleId: String
+    allProjects: Array
+  },
+  beforeMount () {
+    console.log('Project beforeMount props', this.allProjects)
   },
   created () {
-    fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.project_id}`)
-      .then(response => response.json())
-      .then(data => {
-        this.moduleData = data
-        this.projects = this.moduleData.data.attributes.student_projects
-      })
+    console.log('Project created props', this.allProjects)
   },
   updated () {
-    this.projects = this.moduleData.data.attributes.student_projects
+    console.log('Project updated props', this.allProjects)
   }
 }
 
