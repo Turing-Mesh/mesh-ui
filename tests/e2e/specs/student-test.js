@@ -2,13 +2,13 @@
 describe('temp', () => {
   it('simple test for testing test', () => {
     cy.visit('http://localhost:8080/')
-      .contains('h3', 'Hi, Nikki')
+      .contains('h3', 'Hi, Jessica')
   })
 })
 
 describe('Mesh landing page after login', () => {
   it('Visits the app root url and renders without errors', () => {
-    cy.visit('/')
+    cy.visit('http://localhost:8080/')
     cy.contains('h3', 'Hi, Jessica')
     cy.get('.left-section').find('a').should('have.length', 4)
     cy.get('.feedback-container').should('exist')
@@ -17,7 +17,7 @@ describe('Mesh landing page after login', () => {
 
   it('Shows module stuff after clicking on a button', () => {
     cy.get('[data-cy=mod1]').click()
-    cy.url().should('eq', 'http://localhost:8081/modules/1')
+    cy.url().should('eq', 'http://localhost:8080/modules/1')
   })
 })
 
