@@ -1,8 +1,9 @@
 <template>
   <div>
-    <Category :projectFeedback="allProjects[0].project_feedback[0]"/>
-    <Category :projectFeedback="allProjects[0].project_feedback[1]"/>
-    <Category :projectFeedback="allProjects[0].project_feedback[2]"/>
+    <!-- <h1>{{ allProjects }}</h1> -->
+    <Category :projectFeedback="allProjects.project_feedback[0]"/>
+    <Category :projectFeedback="allProjects.project_feedback[1]"/>
+    <Category :projectFeedback="allProjects.project_feedback[2]"/>
     <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
@@ -16,7 +17,7 @@
       feedback-container__category--comments
       feedback-container__category--comments-overall
     ">
-        {{ projects[0].instructor_comments }}
+        {{ projects.instructor_comments }}
       </p>
     </div>
   </div>
@@ -39,13 +40,16 @@ export default {
     allProjects: Array
   },
   beforeMount () {
-    console.log('Project beforeMount props', this.allProjects)
+    // this.projects = this.allProjects
+    // console.log('Project beforeMount props', this.allProjects)
   },
   created () {
-    console.log('Project created props', this.allProjects)
+    // this.projects = this.allProjects
+    // console.log('Project created props', this.allProjects)
   },
   updated () {
-    console.log('Project updated props', this.allProjects)
+    // this.projects = this.allProjects
+    // console.log('Project updated props', this.allProjects)
   }
 }
 

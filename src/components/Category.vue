@@ -17,7 +17,10 @@ export default {
     projectFeedback: Object
   },
   created () {
-    console.log('category component', this.projectFeedback)
+    // console.log('category component created', this.projectFeedback)
+  },
+  updated () {
+    // console.log('category component updated', this.projectFeedback)
   }
 }
 </script>

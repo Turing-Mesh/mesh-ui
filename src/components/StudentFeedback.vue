@@ -49,7 +49,7 @@ export default {
   name: 'StudentFeedback',
   data () {
     return {
-      projects: [],
+      projects: ['hello'],
       module: null,
       moduleData: {},
       showNoteForm: false,
@@ -89,6 +89,9 @@ export default {
         this.projects = this.moduleData.data.attributes.student_projects
         this.$forceUpdate()
       })
+  },
+  mounted () {
+    console.log('student feedback component mounted', this.projects)
   },
   updated () {
     console.log('student feedback component updated', this.projects)
