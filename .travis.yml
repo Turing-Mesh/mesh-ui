@@ -1,7 +1,12 @@
 language: node_js
 node_js:
-  - "node"
-# script:
-  # - "npm run ci"
+- node
+script:
+- npm run ci
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: fVyQxfoGuJXaQ67fWoIPNbOLoF9cVHhIs6w+lvOQUEfeyG6ICEy21LTTQcirZ0HjE7n3Ysxqg2po3+o8B00UMTtz4XgONCny6Czoxee1+IE1xDXyxteHroJNb5E08QNZ7gMgr5aBrNVZXGDRGiw7Wv/Xs8JVEqsve4gQL/bvAMS9HugEN5QttPvxtPAslXRtudkHOgzq/APqug/CemcoOUPdW1BJvo6nKDOQ17NFi5qq1Hybr3m0lGHpKGPoIFZPyZG2+0NXUGkS+3Ebonv2PC7DieShIfb6xuhH1Pb3hM6UJb4qu491n/KD4KfbCszR46hAH+bvJsgsp6cQKEFKsC8TtO89VK2WJArH/vZvR96CKnDVNQi0/rzpbLJgNq7SA+k4DdvTpiKqvJ4GePm1k1NaEEmEUXEjATCRJy9N7Xqpl4mBUceGGc7+H26g+XxohzFTsHHCni4C/KlBH6i4QgcVXUHkLdwmLTfaFV8XRf0fzXgiE3i0C2XecjvWIH6NMTKE2nux/V8lP3jiTCah3y80H/qFARywbSUzg6p5QzZEeoLiJigqa9FF8cIj0VsKD/iu8IizCSwa1q35VD8Z6+vcWLqds39BR8NGWsZyEvWfTCHy+ULoWG8EjM2l/FP62+/Ym+WJWjv3BllKyTvRAmPijy0rU0q9cAkFVjuYmOk=
+  app: turing-mesh
