@@ -37,6 +37,9 @@ export default {
   },
   props: {
     project: Object
+  },
+  created () {
+    console.log('project component updated', this.project)
   }
 }
 
