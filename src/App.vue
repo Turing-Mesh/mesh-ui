@@ -25,8 +25,8 @@ import Footer from '@/components/Footer'
 export default {
   data () {
     return {
-      loggedIn: false,
-      authenticated: false
+      loggedIn: true,
+      authenticated: true
     }
   },
   components: {
