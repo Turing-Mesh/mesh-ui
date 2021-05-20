@@ -48,8 +48,8 @@
             </textarea>
           </div>
           <div class="buttons form-container__item--buttons">
-            <button class="s-button-primary add">Add</button>
             <button class="s-button-primary-inverse reset" type="reset">Reset</button>
+            <button class="s-button-primary add">Add</button>
           </div>
         </form>
       </div>
