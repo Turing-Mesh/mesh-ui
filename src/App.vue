@@ -3,7 +3,7 @@
     <Header :loggedIn="loggedIn"/>
 
     <div class="main">
-      <ModuleNav />
+      <ModuleNav :loggedIn="loggedIn"/>
 
       <section class="right-section">
         <router-view :key="$route.path" />

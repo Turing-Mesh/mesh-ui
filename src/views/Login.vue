@@ -44,6 +44,9 @@ export default {
       password: null
     }
   },
+  props: {
+    loggedIn: Boolean
+  },
   methods: {
     login () {
       // do a fetch POST request
