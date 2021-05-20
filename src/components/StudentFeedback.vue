@@ -81,7 +81,8 @@ export default {
       this.showNoteForm = !this.showNoteForm
     },
     AddNote () {
-      const newNote = this.formData
+      const newNote = this.formData.note
+      console.log(newNote)
       this.studentNotes.push(newNote)
     }
     // async findModuleData (module) {
