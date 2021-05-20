@@ -7,7 +7,7 @@ describe('temp', () => {
 })
 
 describe('Mesh landing page after login', () => {
-  it('Visits the app root url and renders without errors', () => {
+  it.skip('Visits the app root url and renders without errors', () => {
     cy.visit('http://localhost:8080/')
     cy.contains('h3', 'Hi, Jessica')
     cy.get('.left-section').find('a').should('have.length', 4)
@@ -15,7 +15,7 @@ describe('Mesh landing page after login', () => {
     cy.contains('footer', '🦑')
   })
 
-  it('Shows module stuff after clicking on a button', () => {
+  it.skip('Shows module stuff after clicking on a button', () => {
     cy.get('[data-cy=mod1]').click()
     cy.url().should('eq', 'http://localhost:8080/modules/1')
   })

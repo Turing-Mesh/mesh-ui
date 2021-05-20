@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :loggedIn="loggedIn"/>
 
     <div class="main">
-      <ModuleNav />
+      <ModuleNav :loggedIn="loggedIn"/>
 
       <section class="right-section">
-        <router-view :key="$route.path" />
-<!--        <router-view />-->
+        <router-view
+          :key="$route.path"
+          :loggedIn="loggedIn"
+          :authenticated="authenticated"
+        />
       </section>
     </div>
     <Footer />
@@ -20,6 +23,12 @@ import ModuleNav from '@/components/ModuleNav'
 import Footer from '@/components/Footer'
 
 export default {
+  data () {
+    return {
+      loggedIn: true,
+      authenticated: true
+    }
+  },
   components: {
     Footer,
     ModuleNav,

@@ -16,9 +16,14 @@
         </router-link>
       </div>
     </div>
-    <div class="greeting s-content">
+
+    <div v-if="loggedIn" class="greeting s-content">
       <h3 class="s-h3">Welcome to Mesh.</h3>
       <p>Click on a module and then a project, to see your feedback.</p>
+    </div>
+
+    <div v-else-if="!loggedIn" class="greeting">
+      <h3>You must log in to see your feedback.</h3>
     </div>
   </div>
 </template>
@@ -29,6 +34,9 @@ export default {
     return {
       date: new Date().toLocaleDateString()
     }
+  },
+  props: {
+    loggedIn: Boolean
   }
 }
 </script>

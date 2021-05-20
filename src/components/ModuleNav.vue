@@ -1,5 +1,5 @@
 <template>
-  <section class="left-section">
+  <section v-if="loggedIn" class="left-section">
     <router-link class="module" :to="{
          name: 'StudentFeedback',
          params: { id: 1 }
@@ -29,3 +29,15 @@
     </router-link>
   </section>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+    }
+  },
+  props: {
+    loggedIn: Boolean
+  }
+}
+</script>
