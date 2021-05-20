@@ -49,7 +49,7 @@ export default {
   name: 'StudentFeedback',
   data () {
     return {
-      projects: ['hello'],
+      projects: [],
       module: null,
       moduleData: {},
       showNoteForm: false,
