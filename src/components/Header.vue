@@ -27,7 +27,7 @@
 export default {
   data () {
     return {
-      date: '05/15/2015'
+      date: new Date().toLocaleDateString()
     }
   }
 }
