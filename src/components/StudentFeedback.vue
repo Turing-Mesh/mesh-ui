@@ -1,6 +1,6 @@
 <template>
   <section class="feedback-container s-content">
-    <h3 data-cy="moduleTitle">Module {{ $route.params.id }}</h3>
+    <button data-cy="moduleTitle" class="s-border-radius-pill mod-title">Module {{ $route.params.id }}</button>
     <ProjectNav />
     <div v-if="projects.length > 0">
       <Category :projectFeedback="projects[0].project_feedback[0]"/>
