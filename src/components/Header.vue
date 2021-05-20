@@ -3,7 +3,7 @@
     <div class="header-wrapper">
       <div class="logo-container">
         <router-link to="/">
-          <img class="logo" alt="Mesh logo" src="../assets/mesh-logo.png">
+          <img class="logo rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
         </router-link>
       </div>
       <div class="link-container">
@@ -16,9 +16,9 @@
         </router-link>
       </div>
     </div>
-    <div class="greeting">
-      <h3>Welcome to Mesh.</h3>
-      <p> Click on a module and then a project, to see your feedback.</p>
+    <div class="greeting s-content">
+      <h3 class="s-h3">Welcome to Mesh.</h3>
+      <p>Click on a module and then a project, to see your feedback.</p>
     </div>
   </div>
 </template>

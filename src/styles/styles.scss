@@ -31,6 +31,10 @@ body {
   align-items: center;
 }
 
+.greeting {
+  margin: 0 40px;
+}
+
 .logo-container {
   margin: 20px;
 }
@@ -39,12 +43,20 @@ body {
   width: 100px;
 }
 
+.rotating {
+  transition: transform 3s ease-in-out;
+}
+.rotating:hover {
+  transform: rotateZ(360deg);
+}
+
 .landing {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
+
 .turing-logo {
   width: 250px;
 }
@@ -68,7 +80,6 @@ span {
 }
 
 a {
-  color: black;
   text-decoration:none;
 }
 
@@ -122,6 +133,33 @@ a {
   padding: 0 20px 20px 20px;
   border: 2px solid grey;
   border-radius: 15px;
+
+  &__category {
+    margin-top: 15px;
+
+    &--label {
+      display: inline;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  &__dividing-line {
+    margin-top: 20px;
+  }
+}
+
+.progress-bar {
+  display: inline;
+  width: 100px;
+  background-color: $turing-yellow;
+  margin-left: 15px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#bar-average {
+  background-color: $turing-blue;
 }
 
 .notes-container {
@@ -132,12 +170,31 @@ a {
   border-radius: 15px;
 }
 
-.rotating {
-  width: 150px;
-  transition: transform 3s ease-in-out;
+.form-container {
+
+  &__item {
+    margin: 15px;
+
+    &--note,
+    &--buttons {
+      margin: 15px;
+    }
+  }
 }
-.rotating:hover {
-  transform: rotateZ(360deg);
+
+.show,
+.add,
+.reset {
+  border-radius: 50px;
+  //background: #4C4D4F;
+  font-weight: 600;
+  width: 200px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.current-notes {
+  margin: 15px;
 }
 
 footer {
@@ -146,7 +203,3 @@ footer {
   font-size: 1.5rem;
 }
 
-.greeting {
-  margin: 0 40px;
-  font-size: 1.2rem;
-}

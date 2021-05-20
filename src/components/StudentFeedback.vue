@@ -1,5 +1,5 @@
 <template>
-  <section class="feedback-container">
+  <section class="feedback-container s-content">
     <h3 data-cy="moduleTitle">Module {{ $route.params.id }}</h3>
     <ProjectNav />
     <div>
@@ -27,17 +27,24 @@
     <section class="notes-container">
       <h2 class="s-h2">Student Notes</h2>
       <div class="form-container">
-        <button @click="toggleNoteForm" class="module-btn">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
-        <form @submit.prevent="AddNote" v-if="showNoteForm">
-          <div class="note">
-            <textarea class="note__textarea" v-model="formData.note" rows="4" placeholder="Make notes for yourself here . . . "></textarea>
+        <button @click="toggleNoteForm" class="s-button-secondary show form-container__item">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
+        <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
+          <div class="note form-container__item--note">
+            <textarea class="note__textarea"
+                      v-model="formData.note"
+                      rows="4"
+                      placeholder="Make notes for yourself here . . . "
+                      required
+            >
+            </textarea>
           </div>
-          <div class="buttons">
-            <button class="s-button-primary">Add</button>
-            <button class="s-button-primary-inverse" type="reset">Reset</button>
+          <div class="buttons form-container__item--buttons">
+            <button class="s-button-primary add">Add</button>
+            <button class="s-button-primary-inverse reset" type="reset">Reset</button>
           </div>
         </form>
       </div>
+
       <div class="current-notes">
         <ul>
           <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
@@ -83,6 +90,7 @@ export default {
     AddNote () {
       const newNote = this.formData.note
       this.studentNotes.push(newNote)
+      this.formData.note = ''
     }
     // async findModuleData (module) {
     //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
@@ -103,30 +111,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  @import '@/styles/styles.scss';
-
-  .feedback-container__category {
-    margin-top: 15px;
-  }
-  .feedback-container__category--label {
-    display: inline;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .progress-bar {
-    display: inline;
-    width: 100px;
-    background-color: $turing-yellow;
-    margin-left: 15px;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  #bar-average {
-    background-color: $turing-blue;
-  }
-  .feedback-container__dividing-line {
-    margin-top: 20px;
-  }
-</style>
