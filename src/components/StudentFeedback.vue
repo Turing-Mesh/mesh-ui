@@ -28,7 +28,9 @@
     </div>
 
     <section class="notes-container">
-      <h2 class="s-h2">Student Notes</h2>
+      <p class="feedback-container__category--label">
+        <span class="s-h2">Student Notes</span>
+      </p>
       <div class="current-notes">
         <ul>
           <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
