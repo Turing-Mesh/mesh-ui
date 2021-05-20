@@ -1,7 +1,7 @@
 // https://docs.cypress.io/api/introduction/api.html
 describe('temp', () => {
   it('simple test for testing test', () => {
-    cy.visit('/')
+    cy.visit('http://localhost:8080/')
       .contains('h3', 'Hi, Nikki')
   })
 })
