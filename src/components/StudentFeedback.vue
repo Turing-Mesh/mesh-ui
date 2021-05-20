@@ -25,7 +25,24 @@
     </div>
 
     <section class="notes-container">
-      <h2>Notes section goes here</h2>
+      <h2 class="s-h2">Student Notes</h2>
+      <div class="form-container">
+        <button @click="toggleNoteForm" class="btn">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
+        <form @submit.prevent="AddNote" v-if="showNoteForm">
+          <div class="note">
+            <textarea class="note__textarea" v-model="formData.note" rows="4" placeholder="Make notes for yourself here . . . "></textarea>
+          </div>
+          <div class="buttons">
+            <button class="note-submit-btn">Add</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="current-notes">
+        <ul>
+          <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
+        </ul>
+      </div>
     </section>
   </section>
 </template>
@@ -40,7 +57,12 @@ export default {
     return {
       projects: [],
       module: null,
-      moduleData: {}
+      moduleData: {},
+      showNoteForm: false,
+      studentNotes: [],
+      formData: {
+        note: ''
+      }
     }
   },
   components: {
@@ -54,6 +76,13 @@ export default {
   methods: {
     findAverage () {
       return 'Function placeholder'
+    },
+    toggleNoteForm () {
+      this.showNoteForm = !this.showNoteForm
+    },
+    AddNote () {
+      const newNote = this.formData
+      this.studentNotes.push(newNote)
     }
     // async findModuleData (module) {
     //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)

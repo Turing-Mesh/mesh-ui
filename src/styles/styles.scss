@@ -1,7 +1,11 @@
+@font-face {
+  font-family: Helvetica;
+  src: url(../assets/fonts/Helvetica_Neue_LT_Std-W55_Normal.otf);
+}
+
 $turing-blue: #12f1fc;
 $turing-yellow: #f9ae06;
 $turing-red: #ef3852;
-$open: 'Open Sans', sans-serif;
 $roboto: 'Roboto Slab', serif;
 
 * {
@@ -11,7 +15,7 @@ $roboto: 'Roboto Slab', serif;
 }
 
 body {
-  font-family: $open;
+  font-family: Helvetica, sans-serif;
   color: #4C4D4F;
 }
 
@@ -33,6 +37,16 @@ body {
 
 .logo {
   width: 100px;
+}
+
+.landing {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.turing-logo {
+  width: 250px;
 }
 
 .calendar {
