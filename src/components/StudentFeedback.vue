@@ -1,8 +1,8 @@
 <template>
-  <section class="feedback-container">
-    <h3 data-cy="moduleTitle">Module {{ $route.params.id }}</h3>
+  <section class="feedback-container s-content">
+    <button data-cy="moduleTitle" class="s-border-radius-pill mod-title">Module {{ $route.params.id }}</button>
     <ProjectNav />
-    <div>
+    <div v-if="projects.length > 0">
       <Category :projectFeedback="projects[0].project_feedback[0]"/>
       <Category :projectFeedback="projects[0].project_feedback[1]"/>
       <Category :projectFeedback="projects[0].project_feedback[2]"/>
@@ -12,7 +12,7 @@
         feedback-container__category--label
         feedback-container__category--label-overall
       ">
-          Overall
+          <span class="s-h2">Overall</span>
         </p>
         <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
         <p class="
@@ -23,9 +23,38 @@
         </p>
       </div>
     </div>
+    <div v-else>
+      <h1 class="s-h1">There is nothing for this module yet. Stay tuned.</h1>
+    </div>
 
     <section class="notes-container">
-      <h2>Notes section goes here</h2>
+      <p class="feedback-container__category--label">
+        <span class="s-h2">Student Notes</span>
+      </p>
+      <div class="current-notes">
+        <ul>
+          <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
+        </ul>
+      </div>
+
+      <div class="form-container">
+        <button @click="toggleNoteForm" class="s-button-secondary show form-container__item">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
+        <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
+          <div class="note form-container__item--note">
+            <textarea class="note__textarea"
+                      v-model="formData.note"
+                      rows="4"
+                      placeholder="Make notes for yourself here . . . "
+                      required
+            >
+            </textarea>
+          </div>
+          <div class="buttons form-container__item--buttons">
+            <button class="s-button-primary-inverse reset" type="reset">Reset</button>
+            <button class="s-button-primary add">Add</button>
+          </div>
+        </form>
+      </div>
     </section>
   </section>
 </template>
@@ -40,7 +69,12 @@ export default {
     return {
       projects: [],
       module: null,
-      moduleData: {}
+      moduleData: {},
+      showNoteForm: false,
+      studentNotes: [],
+      formData: {
+        note: ''
+      }
     }
   },
   components: {
@@ -54,6 +88,15 @@ export default {
   methods: {
     findAverage () {
       return 'Function placeholder'
+    },
+    toggleNoteForm () {
+      this.showNoteForm = !this.showNoteForm
+    },
+    AddNote () {
+      const newNote = this.formData.note
+      this.studentNotes.push(newNote)
+      // do a fetch here to POST the new note to the student's data
+      this.formData.note = ''
     }
     // async findModuleData (module) {
     //   const response = await fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
@@ -64,7 +107,6 @@ export default {
     fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.moduleData = data
         this.projects = this.moduleData.data.attributes.student_projects
       })
@@ -75,30 +117,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  @import '@/styles/styles.scss';
-
-  .feedback-container__category {
-    margin-top: 15px;
-  }
-  .feedback-container__category--label {
-    display: inline;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .progress-bar {
-    display: inline;
-    width: 100px;
-    background-color: $turing-yellow;
-    margin-left: 15px;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  #bar-average {
-    background-color: $turing-blue;
-  }
-  .feedback-container__dividing-line {
-    margin-top: 20px;
-  }
-</style>

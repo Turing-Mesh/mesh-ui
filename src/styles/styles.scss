@@ -1,7 +1,11 @@
+@font-face {
+  font-family: Helvetica;
+  src: url(../assets/fonts/Helvetica_Neue_LT_Std-W55_Normal.otf);
+}
+
 $turing-blue: #12f1fc;
 $turing-yellow: #f9ae06;
 $turing-red: #ef3852;
-$open: 'Open Sans', sans-serif;
 $roboto: 'Roboto Slab', serif;
 
 * {
@@ -11,7 +15,7 @@ $roboto: 'Roboto Slab', serif;
 }
 
 body {
-  font-family: $open;
+  font-family: Helvetica, sans-serif;
   color: #4C4D4F;
 }
 
@@ -27,12 +31,34 @@ body {
   align-items: center;
 }
 
+.greeting {
+  margin: 0 40px;
+}
+
 .logo-container {
   margin: 20px;
 }
 
 .logo {
   width: 100px;
+}
+
+.rotating {
+  transition: transform 3s ease-in-out;
+}
+.rotating:hover {
+  transform: rotateZ(360deg);
+}
+
+.landing {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.turing-logo {
+  width: 250px;
 }
 
 .calendar {
@@ -54,7 +80,6 @@ span {
 }
 
 a {
-  color: black;
   text-decoration:none;
 }
 
@@ -77,6 +102,27 @@ a {
   text-align: center;
 }
 
+.router-link-active .module-btn {
+  background: #036575;
+  color: #12F1FC;
+}
+
+.module-btn {
+  border-radius: 50px;
+  background: #4C4D4F;
+  color: whitesmoke;
+  height: auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 50%;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.module-btn:hover {
+  cursor: pointer;
+}
+
 .right-section {
   width: 75%;
 }
@@ -84,9 +130,47 @@ a {
 .feedback-container {
   min-height: 300px;
   margin: 20px;
-  padding: 0 20px 20px 20px;
+  padding: 20px;
   border: 2px solid grey;
   border-radius: 15px;
+
+  &__category {
+    margin-top: 15px;
+
+    &--label {
+      display: inline;
+      color: #4C4D4F;
+    }
+
+    &--comments {
+      margin-left: 20px;
+    }
+  }
+
+  &__dividing-line {
+    margin-top: 20px;
+  }
+}
+
+.mod-title {
+  background: darkcyan;
+  color: white;
+  padding-top: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+.progress-bar {
+  display: inline;
+  width: 100px;
+  background-color: $turing-yellow;
+  margin-left: 15px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#bar-average {
+  background-color: $turing-blue;
 }
 
 .notes-container {
@@ -97,12 +181,45 @@ a {
   border-radius: 15px;
 }
 
-.rotating {
-  width: 150px;
-  transition: transform 3s ease-in-out;
+.form-container {
+
+  &__item {
+    margin: 15px;
+    padding: 0 40px;
+
+    &--note,
+    &--buttons {
+      margin: 15px;
+    }
+
+    &--buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
-.rotating:hover {
-  transform: rotateZ(360deg);
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+}
+
+.show,
+.add,
+.reset {
+  border-radius: 50px;
+  //background: #4C4D4F;
+  font-weight: 600;
+  width: 200px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.current-notes {
+  padding: 15px;
 }
 
 footer {
@@ -111,7 +228,3 @@ footer {
   font-size: 1.5rem;
 }
 
-.greeting {
-  margin: 0 40px;
-  font-size: 1.2rem;
-}
