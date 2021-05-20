@@ -3,25 +3,7 @@
     <button data-cy="moduleTitle" class="s-border-radius-pill mod-title">Module {{ $route.params.id }}</button>
     <ProjectNav />
     <div v-if="projects.length > 0">
-      <Category :projectFeedback="projects[0].project_feedback[0]"/>
-      <Category :projectFeedback="projects[0].project_feedback[1]"/>
-      <Category :projectFeedback="projects[0].project_feedback[2]"/>
-      <hr class="feedback-container__dividing-line">
-      <div class="feedback-container__category">
-        <p class="
-        feedback-container__category--label
-        feedback-container__category--label-overall
-      ">
-          <span class="s-h2">Overall</span>
-        </p>
-        <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
-        <p class="
-        feedback-container__category--comments
-        feedback-container__category--comments-overall
-      ">
-          {{ projects[0].instructor_comments }}
-        </p>
-      </div>
+      <Project />
     </div>
     <div v-else>
       <h1 class="s-h1">There is nothing for this module yet. Stay tuned.</h1>
@@ -60,8 +42,8 @@
 </template>
 
 <script>
-import Category from '@/components/Category.vue'
 import ProjectNav from '@/components/ProjectNav'
+import Project from '@/components/Project'
 
 export default {
   name: 'StudentFeedback',
@@ -78,6 +60,7 @@ export default {
     }
   },
   components: {
+<<<<<<< HEAD
     Category,
     ProjectNav
   },
@@ -114,6 +97,10 @@ export default {
   updated () {
     this.projects = this.moduleData.data.attributes.student_projects
     // console.log(this.projects)
+=======
+    ProjectNav,
+    Project
+>>>>>>> 3232b20 (Add Project component and corresponding route)
   }
 }
 </script>

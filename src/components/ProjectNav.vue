@@ -1,18 +1,29 @@
 <template>
   <nav class="projects-container">
-    <router-link to="/project-1" class="project">
+    <router-link class="project" :to="{
+         name: 'Project',
+         params: { id: $route.params.id, project_id: 1 }
+       }">
       <button class="project-btn">Project 1</button>
     </router-link>
-    <router-link to="/project-2" class="project">
+    <router-link class="project" :to="{
+         name: 'Project',
+         params: { id: $route.params.id, project_id: 2 }
+       }">
       <button class="project-btn">Project 2</button>
     </router-link>
-    <router-link to="/project-3" class="project">
+    <router-link class="project" :to="{
+         name: 'Project',
+         params: { id: $route.params.id, project_id: 3 }
+       }">
       <button class="project-btn">Project 3</button>
     </router-link>
-    <router-link to="/project-4" class="project">
+    <router-link class="project" :to="{
+         name: 'Project',
+         params: { id: $route.params.id, project_id: 4 }
+       }">
       <button class="project-btn">Project 4</button>
     </router-link>
-<!--    <router-view />-->
   </nav>
 </template>
 
