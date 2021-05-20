@@ -29,6 +29,12 @@
 
     <section class="notes-container">
       <h2 class="s-h2">Student Notes</h2>
+      <div class="current-notes">
+        <ul>
+          <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
+        </ul>
+      </div>
+
       <div class="form-container">
         <button @click="toggleNoteForm" class="s-button-secondary show form-container__item">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
         <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
@@ -46,12 +52,6 @@
             <button class="s-button-primary-inverse reset" type="reset">Reset</button>
           </div>
         </form>
-      </div>
-
-      <div class="current-notes">
-        <ul>
-          <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
-        </ul>
       </div>
     </section>
   </section>
