@@ -27,14 +27,14 @@
     <section class="notes-container">
       <h2 class="s-h2">Student Notes</h2>
       <div class="form-container">
-        <button @click="toggleNoteForm" class="btn">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
+        <button @click="toggleNoteForm" class="module-btn">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
         <form @submit.prevent="AddNote" v-if="showNoteForm">
           <div class="note">
             <textarea class="note__textarea" v-model="formData.note" rows="4" placeholder="Make notes for yourself here . . . "></textarea>
           </div>
           <div class="buttons">
-            <button class="note-submit-btn">Add</button>
-            <button type="reset">Reset</button>
+            <button class="s-button-primary">Add</button>
+            <button class="s-button-primary-inverse" type="reset">Reset</button>
           </div>
         </form>
       </div>
@@ -82,7 +82,6 @@ export default {
     },
     AddNote () {
       const newNote = this.formData.note
-      console.log(newNote)
       this.studentNotes.push(newNote)
     }
     // async findModuleData (module) {
@@ -94,7 +93,6 @@ export default {
     fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.moduleData = data
         this.projects = this.moduleData.data.attributes.student_projects
       })

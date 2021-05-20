@@ -91,6 +91,27 @@ a {
   text-align: center;
 }
 
+.router-link-active .module-btn {
+  background: #036575;
+  color: #12F1FC;
+}
+
+.module-btn {
+  border-radius: 50px;
+  background: #4C4D4F;
+  color: whitesmoke;
+  height: auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 50%;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.module-btn:hover {
+  cursor: pointer;
+}
+
 .right-section {
   width: 75%;
 }
