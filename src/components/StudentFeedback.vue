@@ -49,7 +49,7 @@ export default {
   name: 'StudentFeedback',
   data () {
     return {
-      projects: [],
+      project: [],
       module: null,
       moduleData: {},
       showNoteForm: false,
@@ -81,20 +81,21 @@ export default {
       this.formData.note = ''
     }
   },
+  methods: {
+    findProjectSelected () {
+      if (this.moduleData.data.attributes.student_projects.find(project => Number(project.project_number) === this.$route.params.project_id)) {
+        this.project.push(this.moduleData.data.attributes.student_projects.find(project => Number(project.project_number) === this.$route.params.project_id))
+      }
+    }
+  },
   created () {
     fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
       .then(response => response.json())
       .then(data => {
         this.moduleData = data
-        this.projects = this.moduleData.data.attributes.student_projects
+        this.findProjectSelected()
         this.$forceUpdate()
       })
-  },
-  mounted () {
-    console.log('student feedback component mounted', this.projects)
-  },
-  updated () {
-    console.log('student feedback component updated', this.projects)
   }
 }
 </script>

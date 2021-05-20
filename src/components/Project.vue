@@ -1,9 +1,8 @@
 <template>
   <div>
-    <!-- <h1>{{ allProjects }}</h1> -->
-    <Category :projectFeedback="allProjects.project_feedback[0]"/>
-    <Category :projectFeedback="allProjects.project_feedback[1]"/>
-    <Category :projectFeedback="allProjects.project_feedback[2]"/>
+    <Category :projectFeedback="project.project_feedback[0]"/>
+    <Category :projectFeedback="project.project_feedback[1]"/>
+    <Category :projectFeedback="project.project_feedback[2]"/>
     <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
@@ -37,19 +36,7 @@ export default {
     Category
   },
   props: {
-    allProjects: Array
-  },
-  beforeMount () {
-    // this.projects = this.allProjects
-    // console.log('Project beforeMount props', this.allProjects)
-  },
-  created () {
-    // this.projects = this.allProjects
-    // console.log('Project created props', this.allProjects)
-  },
-  updated () {
-    // this.projects = this.allProjects
-    // console.log('Project updated props', this.allProjects)
+    project: Object
   }
 }
 
