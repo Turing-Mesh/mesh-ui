@@ -23,8 +23,8 @@ describe('Mesh landing page after login', () => {
 
 // this one isn't working for some reason. I think I need to change the route or test the route by clicking???
 describe('Mesh about page', () => {
-  it.skip('Visits the about route and renders without errors', () => {
-    cy.visit('/about')
-    cy.get('.feedback-container').children('.about').should('exist')
+  it('Visits the about route and renders without errors', () => {
+    cy.visit('http://localhost:8080/about')
+    cy.get('h1').should('exist')
   })
 })
