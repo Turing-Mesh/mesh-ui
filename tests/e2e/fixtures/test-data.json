@@ -1,0 +1,76 @@
+{
+  "data":
+  {
+    "id": 1,
+    "type": "projects",
+    "attributes":
+    {
+      "mod": 1,
+      "student_projects":
+      [
+        {
+          "id": 109,
+          "name": "war or peace",
+          "program": "BE",
+          "project_number": 1,
+          "project_type": "solo",
+          "is_final_project": false,
+          "instructor_comments": "Some real good stuff, truly a miracle you pulled this off. I couldnt be more proud of you. Here, have a job 👩🏻‍💻",
+          "student_comments": "My personal notes",
+          "project_feedback":
+          [
+            {
+              "id": 1,
+              "rubric_category_name": "Code Quality",
+              "score": 2.5,
+              "comment": "Overall good work. I love you."
+            },
+            {
+              "id": 2,
+              "rubric_category_name": "Testing",
+              "score": 1.5,
+              "comment": "Just ok."
+            },
+            {
+              "id": 1,
+              "rubric_category_name": "Completion",
+              "score": 4,
+              "comment": "Nice. This is really rather quite nice."
+            }
+          ]
+        },
+        {
+          "id": 110,
+          "name": "Hot Cheetos",
+          "program": "BE",
+          "project_number": 2,
+          "project_type": "group",
+          "is_final_project": false,
+          "instructor_comments": "Never gonna give you up, Never gonna let you down, Never gonna run around and desert you, Never gonna make you cry, Never gonna say goodbye, Never gonna tell a lie and hurt you",
+          "student_comments": "(Ooh, give you up)(Ooh, give you up) Never gonna give, never gonna give (Give you up), Never gonna give, never gonna give (Give you up)",
+          "project_feedback":
+          [
+            {
+              "id": 1,
+              "rubric_category_name": "Code Quality",
+              "score": 4,
+              "comment": "THIS IS AMAZING WORK I'M REALLY PROUD HOLY SMOKES."
+            },
+            {
+              "id": 2,
+              "rubric_category_name": "Testing",
+              "score": 1,
+              "comment": "Yikes. Get it together"
+            },
+            {
+              "id": 1,
+              "rubric_category_name": "Completion",
+              "score": 4,
+              "comment": "Wow. Neat. Grand. Great. Awesome. Amazing. Stupendous. Supercalifragilisticexpialidocious (Extra credit opportunity: Is this a real word? Explain.)."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
