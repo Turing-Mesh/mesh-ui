@@ -12,7 +12,7 @@
         feedback-container__category--label
         feedback-container__category--label-overall
       ">
-          Overall
+          <span class="s-h2">Overall</span>
         </p>
         <div class="progress-bar" id="bar-average">{{ findAverage() }}</div>
         <p class="

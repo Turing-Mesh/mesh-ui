@@ -139,8 +139,11 @@ a {
 
     &--label {
       display: inline;
-      font-size: 1.5rem;
-      font-weight: bold;
+      color: #4C4D4F;
+    }
+
+    &--comments {
+      margin-left: 20px;
     }
   }
 
