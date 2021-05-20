@@ -90,6 +90,7 @@ export default {
     AddNote () {
       const newNote = this.formData.note
       this.studentNotes.push(newNote)
+      // do a fetch here to POST the new note to the student's data
       this.formData.note = ''
     }
     // async findModuleData (module) {
