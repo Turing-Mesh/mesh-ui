@@ -2,7 +2,7 @@
   <section class="feedback-container s-content">
     <h3 data-cy="moduleTitle">Module {{ $route.params.id }}</h3>
     <ProjectNav />
-    <div>
+    <div v-if="projects.length > 0">
       <Category :projectFeedback="projects[0].project_feedback[0]"/>
       <Category :projectFeedback="projects[0].project_feedback[1]"/>
       <Category :projectFeedback="projects[0].project_feedback[2]"/>
@@ -22,6 +22,9 @@
           {{ projects[0].instructor_comments }}
         </p>
       </div>
+    </div>
+    <div v-else>
+      <h1 class="s-h1">There is nothing for this module yet. Stay tuned.</h1>
     </div>
 
     <section class="notes-container">
