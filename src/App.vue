@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :loggedIn="loggedIn"/>
 
     <div class="main">
       <ModuleNav />
@@ -20,6 +20,11 @@ import ModuleNav from '@/components/ModuleNav'
 import Footer from '@/components/Footer'
 
 export default {
+  data () {
+    return {
+      loggedIn: true
+    }
+  },
   components: {
     Footer,
     ModuleNav,
