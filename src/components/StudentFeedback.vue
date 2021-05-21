@@ -24,7 +24,9 @@
         </div>
 
         <div class="form-container">
-          <button @click="toggleNoteForm" class="s-button-secondary show form-container__item">{{ showNoteForm ? 'Hide form' : 'Add new note' }}</button>
+          <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
+            {{ showNoteForm ? 'Hide form' : 'Add new note' }}
+          </button>
           <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
             <div class="note form-container__item--note">
               <textarea class="note__textarea"
@@ -36,8 +38,8 @@
               </textarea>
             </div>
             <div class="buttons form-container__item--buttons">
-              <button class="s-button-primary-inverse reset" type="reset">Reset</button>
-              <button class="s-button-primary add">Add</button>
+              <button class="s-button s-button-primary-inverse reset" type="reset">Reset</button>
+              <button class="s-button s-button-primary add">Add</button>
             </div>
           </form>
         </div>
