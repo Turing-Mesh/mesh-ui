@@ -26,7 +26,14 @@ const routes = [
   {
     path: '/modules/:id',
     name: 'StudentFeedback',
-    component: () => import(/* webpackChunkName: "student feedback" */ '../components/StudentFeedback.vue')
+    component: () => import(/* webpackChunkName: "student feedback" */ '../components/StudentFeedback.vue'),
+    children: [
+      {
+        path: '/modules/:id/project/:project_id',
+        name: 'Project',
+        component: () => import(/* webpackChunkName: "student feedback" */ '../components/Project.vue')
+      }
+    ]
   },
   {
     path: '/about',
