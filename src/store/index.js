@@ -3,16 +3,27 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+// should get something when we're authenticated
 export default new Vuex.Store({
   state: {
     // currentMod in state after initial auth
     // allModules stored here also then currentMod changes when button click
+    // currentModule
+    // allModules
   },
   mutations: {
+    // mutations update state
+    // appendNote to project in module
   },
   actions: {
+    // actions call mutations
+    // addNote
   },
   modules: {
+  },
+  getters: {
+    // getCurrentModule
+    // getAllModules
   }
 })
 
