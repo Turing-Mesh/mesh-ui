@@ -18,7 +18,7 @@
     </div>
 
     <div v-if="loggedIn" class="greeting s-content">
-      <h3 class="s-h3">Welcome to Mesh.</h3>
+      <h2 class="s-h2">Welcome to Mesh.</h2>
       <p>Click on a module and then a project, to see your feedback.</p>
     </div>
 

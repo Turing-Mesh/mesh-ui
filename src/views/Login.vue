@@ -25,8 +25,8 @@
 
         <div class="field">
           <div class="buttons form-container__item--buttons">
-            <button class="s-button-primary-inverse cancel" type="reset">Cancel</button>
-            <button class="s-button-primary submit">Submit</button>
+            <button class="s-button s-button-primary-inverse cancel-btn" type="reset">Cancel</button>
+            <button class="s-button s-button-primary submit-btn">Submit</button>
           </div>
         </div>
 
@@ -51,6 +51,7 @@ export default {
     login () {
       // do a fetch POST request
       // re-route to home??
+      // this.loggedIn = true
       this.$router.push({ name: 'Home' })
     }
   }
