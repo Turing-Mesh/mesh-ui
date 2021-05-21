@@ -10,13 +10,14 @@ $roboto: 'Roboto Slab', serif;
 
 * {
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 0;
   padding: 0;
 }
 
 body {
   font-family: Helvetica, sans-serif;
   color: #4C4D4F;
+  margin: 10px 40px;
 }
 
 a {
@@ -139,13 +140,17 @@ a {
 
     &--comments {
       margin-left: 20px;
-      font-size: 1.2rem;
+      //font-size: 1.3em;
     }
   }
 
   &__dividing-line {
     margin-top: 20px;
   }
+}
+
+.s-text-body {
+  font-size: 1.6em;
 }
 
 .mod-title {
@@ -167,10 +172,6 @@ a {
 
 #bar-average {
   background-color: $turing-blue;
-}
-
-.s-text-body {
-  font-size: 1.1rem;
 }
 
 // *** Project Navigation *** //
@@ -263,7 +264,11 @@ textarea {
 }
 
 footer {
-  margin: 30px auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 20px;
   text-align: center;
   font-size: 1.5rem;
 }
