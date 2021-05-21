@@ -4,7 +4,7 @@
       <span class="s-h2">{{ projectFeedback.rubric_category_name }}</span>
     </p>
     <div class="progress-bar" id="bar1">{{ projectFeedback.score }}</div>
-    <p class="feedback-container__category--comments">
+    <p class="feedback-container__category--comments s-text-body">
       {{ projectFeedback.comment }}
       Lorem ipsum dolor sit amet.
     </p>

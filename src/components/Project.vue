@@ -9,14 +9,16 @@
       feedback-container__category--label
       feedback-container__category--label-overall
     ">
-        Overall
+        <span class="s-h2">Overall</span>
       </p>
       <div class="progress-bar" id="bar-average">AVERAGE SCORE</div>
       <p class="
       feedback-container__category--comments
       feedback-container__category--comments-overall
+      s-text-body
     ">
         {{ projects.instructor_comments }}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque eaque enim error nesciunt perspiciatis sapiente. Ad animi, aut, cumque dicta esse id illo ipsum libero nobis quibusdam saepe tempore!
       </p>
     </div>
   </div>

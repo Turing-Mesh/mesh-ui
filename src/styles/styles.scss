@@ -19,6 +19,15 @@ body {
   color: #4C4D4F;
 }
 
+a {
+  text-decoration:none;
+}
+
+.s-h2 {
+  color: #4C4D4F;
+}
+
+// *** Header *** //
 .header {
   padding: 10px 20px;
   margin: 0 auto;
@@ -50,17 +59,6 @@ body {
   transform: rotateZ(360deg);
 }
 
-.landing {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.turing-logo {
-  width: 250px;
-}
-
 .calendar {
   width: 30px;
 }
@@ -75,16 +73,12 @@ body {
   color: #4C4D4F;
 }
 
-span {
-  margin: 0 10px;
-}
-
-a {
-  text-decoration:none;
-}
-
-.home {
-  margin: 40px;
+// *** Main *** //
+.landing {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -92,6 +86,10 @@ a {
   flex-flow: row nowrap;
   margin: 20px auto;
   height: 90%;
+}
+
+.turing-logo {
+  width: 250px;
 }
 
 .left-section {
@@ -102,31 +100,24 @@ a {
   text-align: center;
 }
 
-.router-link-active .module-btn {
-  background: #036575;
-  color: #12F1FC;
-}
-
-.module-btn {
-  border-radius: 50px;
-  background: #4C4D4F;
-  color: whitesmoke;
-  height: auto;
-  font-size: 1.4rem;
-  font-weight: 600;
-  width: 50%;
-  padding: 20px;
-  text-transform: uppercase;
-}
-
-.module-btn:hover {
-  cursor: pointer;
-}
-
 .right-section {
   width: 75%;
 }
 
+// *** Home *** //
+.home {
+  margin: 40px;
+}
+
+// *** Module Navigation *** //
+.router-link-active .s-button {
+  background: #036575;
+  //color: var(--s-color-cyan-400);
+  color: #12F1FC !important;
+}
+
+
+// *** Student Feedback *** //
 .feedback-container {
   min-height: 300px;
   margin: 20px;
@@ -144,6 +135,7 @@ a {
 
     &--comments {
       margin-left: 20px;
+      font-size: 1.2rem;
     }
   }
 
@@ -173,9 +165,50 @@ a {
   background-color: $turing-blue;
 }
 
+.s-text-body {
+  font-size: 1.1rem;
+}
+
+// *** Project Navigation *** //
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.project-tab {
+  width: auto;
+}
+
+.project-tab:hover {
+  border-bottom: 5px solid $turing-blue;
+}
+
+.project {
+  padding: 10px;
+  text-align: center;
+  border: 5px solid transparent;
+  width: auto;
+  transition: border-color 0.3s;
+}
+
+.project-btn {
+  border: none;
+  background: white;
+  font-family: $roboto;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.router-link-active .project-tab {
+  width: auto;
+  border-bottom: 5px solid $turing-blue;
+}
+
+// *** Student Notes *** //
 .notes-container {
   min-height: 300px;
-  margin: 20px;
+  margin-top: 40px;
   padding: 20px;
   border: 2px solid grey;
   border-radius: 15px;
