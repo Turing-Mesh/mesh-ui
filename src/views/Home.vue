@@ -1,13 +1,9 @@
 <template>
   <div class="home">
     <section class="feedback-container landing">
-      <div v-if="authenticated && !loggedIn">
-        <Login />
-      </div>
+      <Login v-if="authenticated && !loggedIn"/>
 
-      <div v-else-if="!authenticated">
-        <Signup />
-      </div>
+      <Signup v-else-if="!authenticated"/>
 
       <div v-else class="landing">
         <h1 class="s-h1" id="hello">Welcome, Turing student!</h1>
