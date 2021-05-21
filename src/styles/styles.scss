@@ -289,10 +289,17 @@ footer {
   font-size: 1.5rem;
 }
 
+.control {
+  align-self: center;
+}
+
 .input {
-  padding: 5px 10px;
+  padding: 8px 10px 2px;
+  width: 400px;
   margin: 0 5px;
   border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: var(--s-font-weight-light);
 }
 
 .submit-btn,

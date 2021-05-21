@@ -5,7 +5,7 @@
       <form @submit.prevent="login">
         <div class="field">
           <label class="label" for="email">Email</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control">
             <input id="email" v-model="email" class="input" type="text" >
             <!--            <span class="icon is-small is-left">-->
             <!--              <i class="fas fa-envelope"></i>-->
@@ -15,7 +15,7 @@
 
         <div class="field">
           <label for="password" class="label">Password</label>
-          <div class="control has-icons-left has-icons-right">
+          <div class="control">
             <input id="password" v-model="password" class="input" type="password" >
             <!--            <span class="icon is-small is-left">-->
             <!--              <i class="fas fa-unlock-alt"></i>-->
