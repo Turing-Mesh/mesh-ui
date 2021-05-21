@@ -63,6 +63,7 @@ a {
   width: 30px;
 }
 
+
 .link-container {
   display: flex;
   flex-flow: row nowrap;
@@ -70,6 +71,12 @@ a {
   align-items: center;
   font-size: 2rem;
   margin-right: 0;
+}
+
+.date,
+.name {
+  font-size: 2rem;
+  padding: 0 20px;
   color: #4C4D4F;
 }
 
