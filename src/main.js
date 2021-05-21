@@ -7,6 +7,8 @@ import './styles/styles.scss'
 
 Vue.config.productionTip = false
 
+// wrap auth around this
+// then put route guards on routes
 new Vue({
   router,
   store,

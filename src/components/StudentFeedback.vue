@@ -1,6 +1,5 @@
 <template>
   <section class="feedback-container s-content">
-<!--    <button data-cy="moduleTitle" class="s-border-radius-pill mod-title">Module {{ $route.params.id }}</button>-->
     <ProjectNav />
 
     <div v-if="!$route.params.project_id">

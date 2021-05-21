@@ -23,6 +23,8 @@ import ModuleNav from '@/components/ModuleNav'
 import Footer from '@/components/Footer'
 
 export default {
+  // set initial state here
+  // save in state in store
   data () {
     return {
       loggedIn: true,
