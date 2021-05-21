@@ -44,32 +44,4 @@ export default {
     console.log('project component updated', this.project)
   }
 }
-
 </script>
-
-<style lang="scss" scoped>
-  @import '@/styles/styles.scss';
-
-  .feedback-container__category {
-    margin-top: 15px;
-  }
-  .feedback-container__category--label {
-    display: inline;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .progress-bar {
-    display: inline;
-    width: 100px;
-    background-color: $turing-yellow;
-    margin-left: 15px;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  #bar-average {
-    background-color: $turing-blue;
-  }
-  .feedback-container__dividing-line {
-    margin-top: 20px;
-  }
-</style>
