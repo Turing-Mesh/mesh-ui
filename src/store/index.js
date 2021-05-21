@@ -8,16 +8,26 @@ export default new Vuex.Store({
   state: {
     // currentMod in state after initial auth
     // allModules stored here also then currentMod changes when button click
-    // currentModule
-    // allModules
+    currentModule: {},
+    allModules: []
   },
   mutations: {
     // mutations update state
     // appendNote to project in module
+    // payload is all modules??
+    setAllModules (state, payload) {
+      state.allModules = payload
+    }
   },
   actions: {
     // actions call mutations
     // addNote
+    fetchCurrentModule () {
+      // do api call for current
+    },
+    fetchAllModules () {
+      // do api call for all modules
+    }
   },
   modules: {
   },
