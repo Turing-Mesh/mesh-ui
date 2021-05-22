@@ -49,7 +49,6 @@
 </template>
 
 <script>
-import store from '../store/index'
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
 
@@ -97,12 +96,12 @@ export default {
   },
   computed: {
     projects () {
-      return store.getters.currentModuleProjects
+      return this.$store.getters.currentModuleProjects
     }
   },
   created () {
     this.loading = true
-    store.dispatch('fetchModule', this.$route.params.id)
+    this.$store.dispatch('fetchModule', this.$route.params.id)
       .then(() => {
         this.loading = false
       })
