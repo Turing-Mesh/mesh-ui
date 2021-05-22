@@ -15,8 +15,8 @@ export default new Vuex.Store({
     // mutations update state
     // appendNote to project in module
     // payload is all modules??
-    setModule (state, payload) {
-      state.allModules = payload
+    setCurrentModule (state, payload) {
+      state.currentModule = payload
     }
   },
   actions: {
@@ -31,12 +31,13 @@ export default new Vuex.Store({
     //       console.log('all data FROM STORE: ', data)
     //     })
     // },
-    fetchModule ({ commit, module }) {
+    fetchModule (context, module) {
       // do api call for all modules
+      // this is only getting one module, so it will need to be fixed for all modules ???
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
         .then(response => response.json())
         .then(data => {
-          commit('setModule', data)
+          context.commit('setCurrentModule', data)
           console.log('all data FROM STORE: ', data)
         })
     }
