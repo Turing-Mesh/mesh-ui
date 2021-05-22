@@ -164,16 +164,22 @@ a {
 .progress-bar {
   display: inline-block;
   width: 100px;
-  height: 32px;
-  background-color: $turing-yellow;
-  margin-left: 15px;
+  height: 28px;
+  background-color: var(--s-color-yellow-500);
+  margin-left: 20px;
   padding-left: 10px;
   font-size: 1.25rem;
   font-weight: bold;
 }
+ 
+.progress-bar__score {
+  margin: 0;
+  line-height: 28px;
+  font-weight: var(--s-font-weight-bold);
+}
 
 #bar-average {
-  background-color: $turing-blue;
+  background-color: var(--s-color-cyan-400);
 }
 
 // *** Project Navigation *** //
