@@ -3,6 +3,7 @@
     <ProjectNav />
 
     <div v-if="!$route.params.project_id">
+<!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 class="s-h1">Select a project to get started!</h1>
     </div>
 
@@ -48,6 +49,7 @@
 </template>
 
 <script>
+import store from '../store/index'
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
 
@@ -55,6 +57,7 @@ export default {
   name: 'StudentFeedback',
   data () {
     return {
+      loading: false,
       project: [],
       module: null,
       moduleData: {},
@@ -92,13 +95,16 @@ export default {
       }
     }
   },
+  computed: {
+    projects () {
+      return store.getters.currentModuleProjects
+    }
+  },
   created () {
-    fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
-      .then(response => response.json())
-      .then(data => {
-        this.moduleData = data
-        this.findProjectSelected()
-        this.$forceUpdate()
+    this.loading = true
+    store.dispatch('fetchModule', this.$route.params.id)
+      .then(() => {
+        this.loading = false
       })
   }
 }
