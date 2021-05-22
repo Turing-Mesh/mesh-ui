@@ -162,10 +162,12 @@ a {
 }
 
 .progress-bar {
-  display: inline;
+  display: inline-block;
   width: 100px;
+  height: 32px;
   background-color: $turing-yellow;
   margin-left: 15px;
+  padding-left: 10px;
   font-size: 1.25rem;
   font-weight: bold;
 }
