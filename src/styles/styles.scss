@@ -165,6 +165,7 @@ a {
   display: inline-block;
   width: 100px;
   height: 28px;
+  border-radius: 800px;
   background-color: var(--s-color-yellow-500);
   margin-left: 20px;
   padding-left: 10px;
@@ -172,9 +173,18 @@ a {
   font-weight: bold;
 }
  
-.progress-bar__score {
-  margin: 0;
-  line-height: 28px;
+.progress-bar__score-wrapper {
+  margin-left: auto;
+  width: 40px;
+  background-color: white;
+  border: 2px solid var(--s-color-yellow-500);
+  border-radius: 800px;
+}
+
+.progress-bar__score-wrapper--number {
+  text-align: center;
+  line-height: 24px;
+  font-size: var(--s-font-size-md);
   font-weight: var(--s-font-weight-bold);
 }
 
