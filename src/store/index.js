@@ -15,18 +15,30 @@ export default new Vuex.Store({
     // mutations update state
     // appendNote to project in module
     // payload is all modules??
-    setAllModules (state, payload) {
+    setModule (state, payload) {
       state.allModules = payload
     }
   },
   actions: {
     // actions call mutations
     // addNote
-    fetchCurrentModule () {
-      // do api call for current
-    },
-    fetchAllModules () {
+    // fetchCurrentModule () {
+    //   // do api call for current
+    //   fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       // state.allModules = data
+    //       console.log('all data FROM STORE: ', data)
+    //     })
+    // },
+    fetchModule ({ commit, module }) {
       // do api call for all modules
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
+        .then(response => response.json())
+        .then(data => {
+          commit('setModule', data)
+          console.log('all data FROM STORE: ', data)
+        })
     }
   },
   modules: {
@@ -34,6 +46,11 @@ export default new Vuex.Store({
   getters: {
     // getCurrentModule
     // getAllModules
+    currentModuleProjects (state, getters) {
+      // state.currentModule.projects
+      console.log('mod projects FROM STORE: ', state.currentModule.data.attributes.student_projects)
+      return state.currentModule.data.attributes.student_projects
+    }
   }
 })
 
