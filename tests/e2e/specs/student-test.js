@@ -7,17 +7,17 @@ describe('temp', () => {
 })
 
 describe('Mesh landing page after login', () => {
-  it.skip('Visits the app root url and renders without errors', () => {
+  it('Visits the app root url and renders without errors', () => {
     cy.visit('http://localhost:8080/')
-    cy.contains('h3', 'Hi, Jessica')
-    cy.get('.left-section').find('a').should('have.length', 4)
-    cy.get('.feedback-container').should('exist')
-    cy.contains('footer', '🦑')
+      .contains('h3', 'Hi, Jessica')
+      .get('.left-section').find('a').should('have.length', 4)
+      .get('.feedback-container').should('exist')
+      .get('footer').contains('🦑')
   })
 
-  it.skip('Shows module stuff after clicking on a button', () => {
+  it('Shows module stuff after clicking on a button', () => {
     cy.get('[data-cy=mod1]').click()
-    cy.url().should('eq', 'http://localhost:8080/modules/1')
+      .url().should('eq', 'http://localhost:8080/modules/1')
   })
 })
 
@@ -25,6 +25,6 @@ describe('Mesh landing page after login', () => {
 describe('Mesh about page', () => {
   it('Visits the about route and renders without errors', () => {
     cy.visit('http://localhost:8080/about')
-    cy.get('h1').should('exist')
+      .get('h1').should('exist')
   })
 })
