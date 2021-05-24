@@ -7,12 +7,12 @@
       <h1 class="s-h1">Select a project to get started!</h1>
     </div>
 
-    <div v-else-if="!$store.state.selectedProject">
+    <div v-else-if="!this.project">
       <h1 class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
     </div>
 
-    <div v-if="this.$store.state.selectedProject">
-      <Project :project="$store.state.selectedProject"/>
+    <div v-if="this.project">
+      <Project :project="this.project"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
           <span class="s-h2">Student Notes</span>
@@ -49,7 +49,6 @@
 </template>
 
 <script>
-// import store from '@/store/index.js'
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
 
@@ -80,19 +79,17 @@ export default {
       this.studentNotes.push(newNote)
       // do a fetch here to POST the new note to the student's data
       this.formData.note = ''
-    },
-    findProjectSelected () {
-      if (this.moduleData.data.attributes.student_projects.find(project => Number(project.project_number) === this.$route.params.project_id)) {
-        this.project.push(this.moduleData.data.attributes.student_projects.find(project => Number(project.project_number) === this.$route.params.project_id))
-      }
     }
   },
-  // projects () {
-  //   return this.$store.getters.currentModuleProjects
-  // }
+  computed: {
+    project: function () {
+      return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
+    }
+  },
   created () {
-    this.$store.dispatch('updateSelectedModule', this.$route.params.id)
-    this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)
+    // store.getters.getSelectedModule(this.$route.params.id)
+    // this.$store.dispatch('updateSelectedModule', this.$route.params.id)
+    // this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)
     // this.loading = true
     // this.$store.dispatch('fetchModule', this.$route.params.id)
     //   .then(() => {
