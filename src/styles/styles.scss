@@ -223,6 +223,10 @@ a {
   cursor: pointer;
 }
 
+.project-name {
+  border-radius: 50px;
+}
+
 .router-link-active .project-tab {
   width: auto;
   border-bottom: 5px solid $turing-blue;
@@ -266,11 +270,7 @@ textarea {
 .show,
 .add,
 .reset {
-  border-radius: 50px;
-  //background: #4C4D4F;
-  font-weight: 600;
   width: 200px;
-  text-transform: uppercase;
 }
 
 .show {
@@ -327,7 +327,7 @@ footer {
   padding: 8px 10px 2px;
   width: 400px;
   margin: 0 5px;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 1.3rem;
   font-weight: var(--s-font-weight-light);
 }

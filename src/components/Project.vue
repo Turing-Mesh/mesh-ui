@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3 class="project-name"><em>{{ project.name }}</em></h3>
     <Category :projectFeedback="project.project_feedback[0]"/>
     <Category :projectFeedback="project.project_feedback[1]"/>
     <Category :projectFeedback="project.project_feedback[2]"/>
