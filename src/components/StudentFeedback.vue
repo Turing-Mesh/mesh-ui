@@ -7,12 +7,12 @@
       <h1 class="s-h1">Select a project to get started!</h1>
     </div>
 
-    <div v-else-if="project.length === 0">
+    <div v-else-if="!this.$store.state.selectedProject">
       <h1 class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
     </div>
 
-    <div v-if="project.length > 0">
-      <Project :project="project[0]"/>
+    <div v-if="this.$store.state.selectedProject">
+      <Project :project="this.$store.state.selectedProject"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
           <span class="s-h2">Student Notes</span>
