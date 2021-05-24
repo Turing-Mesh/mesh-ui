@@ -27,10 +27,10 @@ export default new Vuex.Store({
     },
     setSelectedProject (state, selectedProject) {
       state.selectedProject = selectedProject
-    },
-    setNotes (state, notes) {
-      state.selectedProject.studentNotes.unshift(notes)
     }
+    // setNotes (state, notes) {
+    //   state.selectedProject.studentNotes.unshift(notes)
+    // }
   },
   actions: {
     // actions call mutations
@@ -73,7 +73,6 @@ export default new Vuex.Store({
         .then(response => response.json)
         .then(data => {
           console.log(data)
-          context.commit('setNotes', data)
         })
     }
   },

@@ -82,7 +82,11 @@ export default {
       this.formData.note = ''
     },
     CreateNotes () {
-      this.studentNotes = [...this.studentNotes, this.project.student_comments]
+      if (typeof this.project.student_comments === 'string') {
+        this.studentNotes = [...this.studentNotes, this.project.student_comments]
+      } else {
+        this.studentNotes = JSON.parse(this.project.student_comments)
+      }
     }
   },
   computed: {
