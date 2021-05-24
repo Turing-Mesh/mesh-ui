@@ -49,6 +49,7 @@
 </template>
 
 <script>
+// import store from '@/store/index.js'
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
 
@@ -70,10 +71,6 @@ export default {
   components: {
     Project,
     ProjectNav
-  },
-  props: {
-    modData: Object,
-    moduleId: String
   },
   methods: {
     findAverage () {
@@ -100,11 +97,11 @@ export default {
     }
   },
   created () {
-    this.loading = true
-    this.$store.dispatch('fetchModule', this.$route.params.id)
-      .then(() => {
-        this.loading = false
-      })
+    // this.loading = true
+    // this.$store.dispatch('fetchModule', this.$route.params.id)
+    //   .then(() => {
+    //     this.loading = false
+    //   })
   }
 }
 </script>

@@ -17,6 +17,9 @@ export default new Vuex.Store({
     // payload is all modules??
     setCurrentModule (state, payload) {
       state.currentModule = payload
+    },
+    setAllModules (state, singleModule) {
+      state.allModules.push(singleModule)
     }
   },
   actions: {
@@ -31,14 +34,21 @@ export default new Vuex.Store({
     //       console.log('all data FROM STORE: ', data)
     //     })
     // },
+    // fetchModule (context, module) {
+    // do api call for all modules
+    // this is only getting one module, so it will need to be fixed for all modules ???
+    // return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     context.commit('setCurrentModule', data)
+    //     console.log('all data FROM STORE: ', data)
+    //   })
     fetchModule (context, module) {
-      // do api call for all modules
-      // this is only getting one module, so it will need to be fixed for all modules ???
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
         .then(response => response.json())
         .then(data => {
-          context.commit('setCurrentModule', data)
-          console.log('all data FROM STORE: ', data)
+          context.commit('setAllModules', data)
+          console.log('all modules from store', this.state.allModules)
         })
     }
   },

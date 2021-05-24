@@ -35,6 +35,12 @@ export default {
     Footer,
     ModuleNav,
     Header
+  },
+  created () {
+    this.$store.dispatch('fetchModule', 1)
+    this.$store.dispatch('fetchModule', 2)
+    this.$store.dispatch('fetchModule', 3)
+    this.$store.dispatch('fetchModule', 4)
   }
 }
 </script>
