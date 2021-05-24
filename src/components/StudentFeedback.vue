@@ -94,7 +94,7 @@ export default {
   // }
   created () {
     store.dispatch('updateSelectedModule', this.$route.params.id)
-    console.log(store.state.allModules)
+    store.dispatch('updateSelectedProject', this.$route.params.project_id)
     // this.loading = true
     // this.$store.dispatch('fetchModule', this.$route.params.id)
     //   .then(() => {
