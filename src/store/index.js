@@ -9,7 +9,8 @@ export default new Vuex.Store({
     // currentMod in state after initial auth
     // allModules stored here also then currentMod changes when button click
     currentModule: {},
-    allModules: []
+    allModules: [],
+    selectedProject: {}
   },
   mutations: {
     // mutations update state
@@ -27,8 +28,8 @@ export default new Vuex.Store({
     setSelectedProject (state, selectedProject) {
       state.selectedProject = selectedProject
     },
-    setNote (state, note) {
-      state.selectedProject.studentNotes.unshift(note)
+    setNotes (state, notes) {
+      state.selectedProject.studentNotes.unshift(notes)
     }
   },
   actions: {
@@ -72,7 +73,7 @@ export default new Vuex.Store({
         .then(response => response.json)
         .then(data => {
           console.log(data)
-          context.commit('setNote', data)
+          context.commit('setNotes', data)
         })
     }
   },
