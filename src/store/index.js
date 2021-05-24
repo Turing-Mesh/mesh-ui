@@ -9,7 +9,8 @@ export default new Vuex.Store({
     // currentMod in state after initial auth
     // allModules stored here also then currentMod changes when button click
     currentModule: {},
-    allModules: []
+    allModules: [],
+    selectedModule: {}
   },
   mutations: {
     // mutations update state
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     },
     setAllModules (state, singleModule) {
       state.allModules.push(singleModule)
+    },
+    setSelectedModule (state, selectedModule) {
+      state.selectedModule = selectedModule
     }
   },
   actions: {
@@ -48,8 +52,11 @@ export default new Vuex.Store({
         .then(response => response.json())
         .then(data => {
           context.commit('setAllModules', data)
-          console.log('all modules from store', this.state.allModules)
         })
+    },
+    updateSelectedModule (context, selectedModuleNum) {
+      const foundModule = this.state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
+      context.commit('setSelectedModule', foundModule)
     }
   },
   modules: {
