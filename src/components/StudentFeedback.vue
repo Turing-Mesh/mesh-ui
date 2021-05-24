@@ -74,9 +74,8 @@ export default {
     },
     AddNote () {
       const newNote = this.formData.note
-      const projectId = this.project.id
       this.studentNote = newNote
-      this.$store.dispatch('addNoteToProject', projectId, this.studentNote)
+      this.$store.dispatch('addNoteToProject', this.studentNote)
       this.formData.note = ''
     },
     CreateNotes () {
