@@ -72,11 +72,14 @@ export default new Vuex.Store({
   getters: {
     // getCurrentModule
     // getAllModules
-    currentModuleProjects (state, getters) {
-      // state.currentModule.projects
-      console.log('mod projects FROM STORE: ', state.currentModule.data.attributes.student_projects)
-      return state.currentModule.data.attributes.student_projects
-    }
+    // currentModuleProjects (state, getters) {
+    // state.currentModule.projects
+    //   console.log('mod projects FROM STORE: ', state.currentModule.data.attributes.student_projects)
+    //   return state.currentModule.data.attributes.student_projects
+    // },
+    // getCurrentModule (state, getters) {
+    // const sortedModules = this.state.allModules.sort((a, b) => a - b)
+    // }
   }
 })
 
