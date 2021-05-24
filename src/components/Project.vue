@@ -3,6 +3,7 @@
     <Category :projectFeedback="project.project_feedback[0]"/>
     <Category :projectFeedback="project.project_feedback[1]"/>
     <Category :projectFeedback="project.project_feedback[2]"/>
+    <Category :projectFeedback="project.project_feedback[3]"/>
     <hr class="feedback-container__dividing-line">
     <div class="feedback-container__category">
       <p class="
