@@ -9,9 +9,7 @@ export default new Vuex.Store({
     // currentMod in state after initial auth
     // allModules stored here also then currentMod changes when button click
     currentModule: {},
-    allModules: [],
-    selectedModule: {},
-    selectedProject: {}
+    allModules: []
   },
   mutations: {
     // mutations update state
@@ -70,6 +68,11 @@ export default new Vuex.Store({
   modules: {
   },
   getters: {
+    getSelectedProject: (state) => (selectedModuleNum, selectedProjectNum) => {
+      const foundModule = state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
+      const foundProject = foundModule.data.attributes.student_projects.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
+      return foundProject
+    }
     // getCurrentModule
     // getAllModules
     // currentModuleProjects (state, getters) {
