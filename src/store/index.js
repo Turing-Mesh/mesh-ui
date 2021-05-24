@@ -56,6 +56,17 @@ export default new Vuex.Store({
           context.commit('setAllModules', data)
         })
     }
+    // addNote (context, note) {
+    //   return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects/${this.$route.params.id}`, {
+    //     method: 'PATCH',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    //   })
+    //     .then(response => response.json)
+    //     .then(data => console.log(data))
+    // }
   },
   modules: {
   },
