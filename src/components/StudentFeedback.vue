@@ -18,9 +18,7 @@
           <span class="s-h2">Student Notes</span>
         </p>
         <div class="current-notes">
-          <ul>
-            <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
-          </ul>
+          <p>{{ studentNote }}</p>
         </div>
 
         <div class="form-container">
@@ -60,7 +58,7 @@ export default {
       loading: false,
       module: null,
       showNoteForm: false,
-      studentNotes: [],
+      studentNote: null,
       formData: {
         note: ''
       }
@@ -77,16 +75,12 @@ export default {
     AddNote () {
       const newNote = this.formData.note
       const projectId = this.project.id
-      this.studentNotes.push(newNote)
-      this.$store.dispatch('addNoteToProject', projectId, this.studentNotes)
+      this.studentNote = newNote
+      this.$store.dispatch('addNoteToProject', projectId, this.studentNote)
       this.formData.note = ''
     },
     CreateNotes () {
-      if (typeof this.project.student_comments === 'string') {
-        this.studentNotes = [...this.studentNotes, this.project.student_comments]
-      } else {
-        this.studentNotes = JSON.parse(this.project.student_comments)
-      }
+      this.studentNote = this.project.student_comments
     }
   },
   computed: {
