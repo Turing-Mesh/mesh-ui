@@ -59,9 +59,7 @@ export default {
     return {
       // I think all of these can be removed once we get everything into global state
       loading: false,
-      project: [],
       module: null,
-      moduleData: {},
       showNoteForm: false,
       studentNotes: [],
       formData: {
