@@ -20,7 +20,6 @@
         <div class="current-notes">
           <p>{{ studentNote }}</p>
         </div>
-
         <div class="form-container">
           <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
             {{ showNoteForm ? 'Hide form' : 'Add new note' }}
@@ -73,8 +72,7 @@ export default {
       this.showNoteForm = !this.showNoteForm
     },
     AddNote () {
-      const newNote = this.formData.note
-      this.studentNote = newNote
+      this.studentNote = this.formData.note
       this.$store.dispatch('addNoteToProject', this.studentNote)
       this.formData.note = ''
     },
@@ -88,7 +86,7 @@ export default {
     }
   },
   created () {
-    this.CreateNotes()
+    this.studentNote = this.project.student_comments
     // store.getters.getSelectedModule(this.$route.params.id)
     // this.$store.dispatch('updateSelectedModule', this.$route.params.id)
     // this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)
