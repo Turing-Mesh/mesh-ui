@@ -76,9 +76,12 @@ export default {
     },
     AddNote () {
       const newNote = this.formData.note
-      this.studentNotes.push(newNote)
-      // do a fetch here to POST the new note to the student's data
+      const projectId = this.project.id
+      this.$store.dispatch('addNoteToProject', projectId, newNote)
       this.formData.note = ''
+    },
+    CreateNotes () {
+      this.studentNotes = [...this.studentNotes, this.project.student_comments]
     }
   },
   computed: {
@@ -87,6 +90,7 @@ export default {
     }
   },
   created () {
+    this.CreateNotes()
     // store.getters.getSelectedModule(this.$route.params.id)
     // this.$store.dispatch('updateSelectedModule', this.$route.params.id)
     // this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)

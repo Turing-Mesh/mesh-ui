@@ -26,6 +26,9 @@ export default new Vuex.Store({
     },
     setSelectedProject (state, selectedProject) {
       state.selectedProject = selectedProject
+    },
+    setNote (state, note) {
+      state.selectedProject.studentNotes.unshift(note)
     }
   },
   actions: {
@@ -55,18 +58,23 @@ export default new Vuex.Store({
         .then(data => {
           context.commit('setAllModules', data)
         })
+    },
+    addNoteToProject (context, projectId, note) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects/${projectId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: {
+          student_comments: JSON.stringify(note)
+        }
+      })
+        .then(response => response.json)
+        .then(data => {
+          console.log(data)
+          context.commit('setNote', data)
+        })
     }
-    // addNote (context, note) {
-    //   return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects/${this.$route.params.id}`, {
-    //     method: 'PATCH',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    //   })
-    //     .then(response => response.json)
-    //     .then(data => console.log(data))
-    // }
   },
   modules: {
   },
