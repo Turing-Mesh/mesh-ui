@@ -66,9 +66,7 @@ export default new Vuex.Store({
         headers: {
           'Content-Type': 'application/json'
         },
-        body: {
-          student_comments: note
-        }
+        body: JSON.stringify({ student_comments: note })
       })
         .then(response => response.json)
         .then(data => {
