@@ -10,7 +10,8 @@ export default new Vuex.Store({
     // allModules stored here also then currentMod changes when button click
     currentModule: {},
     allModules: [],
-    selectedModule: {}
+    selectedModule: {},
+    selectedProject: {}
   },
   mutations: {
     // mutations update state
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     },
     setSelectedModule (state, selectedModule) {
       state.selectedModule = selectedModule
+    },
+    setSelectedProject (state, selectedProject) {
+      state.selectedProject = selectedProject
     }
   },
   actions: {
@@ -56,7 +60,11 @@ export default new Vuex.Store({
     },
     updateSelectedModule (context, selectedModuleNum) {
       const foundModule = this.state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
-      context.commit('setSelectedModule', foundModule)
+      context.commit('setSelectedModule', foundModule.data.attributes.student_projects)
+    },
+    updateSelectedProject (context, selectedProjectNum) {
+      const foundProject = this.state.selectedModule.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
+      context.commit('setSelectedProject', foundProject)
     }
   },
   modules: {
