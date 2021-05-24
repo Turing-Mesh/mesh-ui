@@ -54,14 +54,14 @@ export default new Vuex.Store({
     //     console.log('all data FROM STORE: ', data)
     //   })
     fetchModule (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects?mod=${module}`)
         .then(response => response.json())
         .then(data => {
           context.commit('setAllModules', data)
         })
     },
     addNoteToProject (context, projectId, note) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects/${projectId}`, {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
