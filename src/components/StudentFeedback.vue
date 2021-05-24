@@ -49,7 +49,7 @@
 </template>
 
 <script>
-// import store from '@/store/index.js'
+import store from '@/store/index.js'
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
 
@@ -57,6 +57,7 @@ export default {
   name: 'StudentFeedback',
   data () {
     return {
+      // I think all of these can be removed once we get everything into global state
       loading: false,
       project: [],
       module: null,
@@ -73,9 +74,6 @@ export default {
     ProjectNav
   },
   methods: {
-    findAverage () {
-      return 'Function placeholder'
-    },
     toggleNoteForm () {
       this.showNoteForm = !this.showNoteForm
     },
@@ -91,12 +89,12 @@ export default {
       }
     }
   },
-  computed: {
-    projects () {
-      return this.$store.getters.currentModuleProjects
-    }
-  },
+  // projects () {
+  //   return this.$store.getters.currentModuleProjects
+  // }
   created () {
+    store.dispatch('updateSelectedModule', this.$route.params.id)
+    console.log(store.state.allModules)
     // this.loading = true
     // this.$store.dispatch('fetchModule', this.$route.params.id)
     //   .then(() => {
