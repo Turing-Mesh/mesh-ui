@@ -55,14 +55,6 @@ export default new Vuex.Store({
         .then(data => {
           context.commit('setAllModules', data)
         })
-    },
-    updateSelectedModule (context, selectedModuleNum) {
-      const foundModule = this.state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
-      context.commit('setSelectedModule', foundModule.data.attributes.student_projects)
-    },
-    updateSelectedProject (context, selectedProjectNum) {
-      const foundProject = this.state.selectedModule.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
-      context.commit('setSelectedProject', foundProject)
     }
   },
   modules: {
