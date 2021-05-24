@@ -12,13 +12,13 @@
     ">
         <span class="s-h2">Overall</span>
       </p>
-      <div class="progress-bar" id="bar-average">AVERAGE SCORE</div>
+      <div class="progress-bar" id="bar-average">{{ project.average_score }}</div>
       <p class="
       feedback-container__category--comments
       feedback-container__category--comments-overall
       s-text-body
     ">
-        {{ projects.instructor_comments }}
+        {{ project.instructor_comments }}
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque eaque enim error nesciunt perspiciatis sapiente. Ad animi, aut, cumque dicta esse id illo ipsum libero nobis quibusdam saepe tempore!
       </p>
     </div>
@@ -30,19 +30,11 @@ import Category from '@/components/Category.vue'
 
 export default {
   name: 'Project',
-  data () {
-    return {
-      projects: []
-    }
-  },
   components: {
     Category
   },
   props: {
     project: Object
-  },
-  created () {
-    console.log('project component updated', this.project)
   }
 }
 </script>
