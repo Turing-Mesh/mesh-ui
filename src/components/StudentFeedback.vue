@@ -18,7 +18,7 @@
           <span class="s-h2">Student Notes</span>
         </p>
         <div class="current-notes">
-          <p>{{ studentNote }}</p>
+          <p v-bind="studentNote">{{ studentNote }}</p>
         </div>
         <div class="form-container">
           <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
@@ -73,6 +73,7 @@ export default {
     },
     AddNote () {
       this.studentNote = this.formData.note
+      this.project.student_comments = this.studentNote
       this.$store.dispatch('addNoteToProject', this.studentNote)
       this.formData.note = ''
     }
@@ -80,9 +81,6 @@ export default {
   computed: {
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
-    },
-    note: function () {
-      return this.project.student_comments
     }
   },
   created () {
