@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import store from '@/store/index.js'
+// import store from '@/store/index.js'
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
 
@@ -91,8 +91,8 @@ export default {
   //   return this.$store.getters.currentModuleProjects
   // }
   created () {
-    store.dispatch('updateSelectedModule', this.$route.params.id)
-    store.dispatch('updateSelectedProject', this.$route.params.project_id)
+    this.$store.dispatch('updateSelectedModule', this.$route.params.id)
+    this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)
     // this.loading = true
     // this.$store.dispatch('fetchModule', this.$route.params.id)
     //   .then(() => {
