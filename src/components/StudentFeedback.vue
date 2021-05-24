@@ -3,25 +3,23 @@
     <ProjectNav />
 
     <div v-if="!$route.params.project_id">
+<!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 class="s-h1">Select a project to get started!</h1>
     </div>
 
-    <div v-else-if="project.length === 0">
+    <div v-else-if="!this.project">
       <h1 class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
     </div>
 
-    <div v-if="project.length > 0">
-      <Project :project="project[0]"/>
+    <div v-if="this.project">
+      <Project :project="this.project"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
           <span class="s-h2">Student Notes</span>
         </p>
         <div class="current-notes">
-          <ul>
-            <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
-          </ul>
+          <p>{{ studentNote }}</p>
         </div>
-
         <div class="form-container">
           <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
             {{ showNoteForm ? 'Hide form' : 'Add new note' }}
@@ -55,11 +53,11 @@ export default {
   name: 'StudentFeedback',
   data () {
     return {
-      project: [],
+      // I think all of these can be removed once we get everything into global state
+      loading: false,
       module: null,
-      moduleData: {},
       showNoteForm: false,
-      studentNotes: [],
+      studentNote: null,
       formData: {
         note: ''
       }
@@ -69,37 +67,34 @@ export default {
     Project,
     ProjectNav
   },
-  props: {
-    modData: Object,
-    moduleId: String
-  },
   methods: {
-    findAverage () {
-      return 'Function placeholder'
-    },
     toggleNoteForm () {
       this.showNoteForm = !this.showNoteForm
     },
     AddNote () {
-      const newNote = this.formData.note
-      this.studentNotes.push(newNote)
-      // do a fetch here to POST the new note to the student's data
+      this.studentNote = this.formData.note
+      this.$store.dispatch('addNoteToProject', this.studentNote)
       this.formData.note = ''
     },
-    findProjectSelected () {
-      if (this.moduleData.data.attributes.student_projects.find(project => Number(project.project_number) === this.$route.params.project_id)) {
-        this.project.push(this.moduleData.data.attributes.student_projects.find(project => Number(project.project_number) === this.$route.params.project_id))
-      }
+    CreateNotes () {
+      this.studentNote = this.project.student_comments
+    }
+  },
+  computed: {
+    project: function () {
+      return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
     }
   },
   created () {
-    fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${this.$route.params.id}`)
-      .then(response => response.json())
-      .then(data => {
-        this.moduleData = data
-        this.findProjectSelected()
-        this.$forceUpdate()
-      })
+    this.studentNote = this.project.student_comments
+    // store.getters.getSelectedModule(this.$route.params.id)
+    // this.$store.dispatch('updateSelectedModule', this.$route.params.id)
+    // this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)
+    // this.loading = true
+    // this.$store.dispatch('fetchModule', this.$route.params.id)
+    //   .then(() => {
+    //     this.loading = false
+    //   })
   }
 }
 </script>
