@@ -2,21 +2,17 @@
   <InstructorDashboard />
   <!-- <div id="app">
     <Header :loggedIn="loggedIn"/>
+    <div class="main">
+      <ModuleNav :loggedIn="loggedIn"/>
 
-    <div v-else >
-      <div class="main">
-        <ModuleNav :loggedIn="loggedIn"/>
-
-        <section class="right-section">
-          <router-view
-            :key="$route.path"
-            :loggedIn="loggedIn"
-            :authenticated="authenticated"
-          />
-        </section>
-      </div>
+      <section class="right-section">
+        <router-view
+          :key="$route.path"
+          :loggedIn="loggedIn"
+          :authenticated="authenticated"
+        />
+      </section>
     </div>
-
     <Footer />
   </div> -->
 </template>
