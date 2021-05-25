@@ -1,6 +1,6 @@
 <template>
-  <InstructorDashboard />
-  <!-- <div id="app">
+<!--  <InstructorDashboard />-->
+   <div id="app">
     <Header :loggedIn="loggedIn"/>
     <div class="main">
       <ModuleNav :loggedIn="loggedIn"/>
@@ -14,16 +14,16 @@
       </section>
     </div>
     <Footer />
-  </div> -->
+  </div>
 </template>
 
 <script>
-// import Header from '@/components/Header'
-// import ModuleNav from '@/components/ModuleNav'
-// import Footer from '@/components/Footer'
-import InstructorDashboard from '@/views/InstructorDashboard'
+import Header from '@/components/Header'
+import ModuleNav from '@/components/ModuleNav'
+import Footer from '@/components/Footer'
+// import InstructorDashboard from '@/views/InstructorDashboard'
 import { mapActions, mapState } from 'vuex'
-// import Instructor from '@/views/Instructor'
+import Instructor from '@/views/Instructor'
 
 export default {
   // set initial state here
@@ -35,22 +35,17 @@ export default {
     }
   },
   components: {
-    // Footer,
-    // ModuleNav,
-    // Header,
-    InstructorDashboard
-    // Instructor
+    Footer,
+    ModuleNav,
+    Header,
+    // InstructorDashboard
+    Instructor
   },
   computed: {
     ...mapState([
       'loggedIn',
       'authenticated',
       'instructorAuth'
-    ])
-  },
-  methods: {
-    ...mapActions([
-      'fetchModule'
     ])
   },
   methods: {
