@@ -60,9 +60,8 @@ export default {
   created () {
     let payload
     for (let i = 1; i < 5; i++) {
-      payload = { moduleId: i, studentId: this.studentIdHardCoded }
+      payload = { studentMod: i, studentId: 94 }
       this.fetchModule(payload)
-      this.$store.dispatch('fetchModule', payload)
     }
     // this.$store.dispatch('fetchModule', 1)
     // this.$store.dispatch('fetchModule', 2)
