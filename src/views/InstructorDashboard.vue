@@ -11,6 +11,11 @@
           :loggedIn="loggedIn"
           :authenticated="authenticated"
         />
+        <p>These will need to be formatted and used in a v-for directive, but I put them here to show you that the data is hooked up from BE and stored in Vuex!</p>
+        <button >{{ this.$store.state.myStudents.data[0].attributes.first_name }}</button>
+        <button >{{ this.$store.state.myStudents.data[1].attributes.first_name }}</button>
+        <button >{{ this.$store.state.myStudents.data[2].attributes.first_name }}</button>
+        <button >{{ this.$store.state.myStudents.data[3].attributes.first_name }}</button>
       </section>
     </div>
     <Footer />
