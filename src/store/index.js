@@ -37,10 +37,8 @@ export default new Vuex.Store({
   },
   actions: {
     // actions call mutations
-<<<<<<< HEAD
-    fetchModule ({ commit }, { moduleId, studentId }) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentId}/student_projects?mod=${moduleId}`)
-=======
+    // fetchModule ({ commit }, { moduleId, studentId }) {
+    //   return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentId}/student_projects?mod=${moduleId}`)
     // addNote
     // fetchCurrentModule () {
     //   // do api call for current
@@ -62,10 +60,9 @@ export default new Vuex.Store({
     //   })
     fetchModule (context, studentData) {
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
->>>>>>> 7eed6f9 (Reuse components for instructor dashboard view)
         .then(response => response.json())
         .then(data => {
-          commit('setAllModules', data)
+          context.commit('setAllModules', data)
         })
     },
     addNoteToProject (context, { projectId, note }) {
@@ -98,8 +95,13 @@ export default new Vuex.Store({
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
         .then(response => response.json())
         .then(data => {
-          context.commit('setForm', data.data.attributes.rubric_template)
+          context.commit('setForm', data)
         })
+    },
+    clearForm (context, projectNum) {
+      if (this.state.form.data.attributes.mod !== projectNum) {
+        context.commit('setForm', {})
+      }
     }
   },
   modules: {
