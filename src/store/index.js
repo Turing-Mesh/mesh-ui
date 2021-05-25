@@ -11,7 +11,8 @@ export default new Vuex.Store({
     currentModule: {},
     allModules: [],
     selectedProject: {},
-    myStudents: []
+    myStudents: [],
+    currentStudent: {}
   },
   mutations: {
     // mutations update state
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     setMyStudents (state, myStudents) {
       state.myStudents = myStudents
+    },
+    setCurrentStudent (state, foundStudent) {
+      state.currentStudent = foundStudent
     }
     // setNotes (state, notes) {
     //   state.selectedProject.studentNotes.unshift(notes)
@@ -76,8 +80,13 @@ export default new Vuex.Store({
         .then(response => response.json())
         .then(data => {
           context.commit('setMyStudents', data)
-          console.log(this.state.myStudents)
         })
+    },
+    setStudentData (context, studentId) {
+      const foundStudent = this.state.myStudents.data.find(student => student.id === studentId)
+      if (foundStudent) {
+        context.commit('setCurrentStudent', foundStudent)
+      }
     }
   },
   modules: {
@@ -100,6 +109,12 @@ export default new Vuex.Store({
     // },
     // getCurrentModule (state, getters) {
     // const sortedModules = this.state.allModules.sort((a, b) => a - b)
+    // }
+    // getStudentData: (state) => (studentId) => {
+    //   const foundStudent = state.myStudents.data.find(student => student.id === studentId)
+    //   if (foundStudent) {
+    //     context.commit('setCurrentStudent', foundStudent)
+    //   }
     // }
   }
 })
