@@ -24,11 +24,11 @@ export default new Vuex.Store({
   },
   actions: {
     // actions call mutations
-    fetchModule (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects?mod=${module}`)
+    fetchModule ({ commit }, { moduleId, studentId }) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentId}/student_projects?mod=${moduleId}`)
         .then(response => response.json())
         .then(data => {
-          context.commit('setAllModules', data)
+          commit('setAllModules', data)
         })
     },
     addNoteToProject (context, { projectId, note }) {
