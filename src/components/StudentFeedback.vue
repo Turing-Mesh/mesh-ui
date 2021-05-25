@@ -75,14 +75,14 @@ export default {
       this.studentNote = this.formData.note
       this.$store.dispatch('addNoteToProject', this.studentNote)
       this.formData.note = ''
-    },
-    CreateNotes () {
-      this.studentNote = this.project.student_comments
     }
   },
   computed: {
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
+    },
+    note: function () {
+      return this.project.student_comments
     }
   },
   created () {
