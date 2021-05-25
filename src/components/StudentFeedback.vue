@@ -14,7 +14,7 @@
         <h1>{{ this.$store.state.form.data.attributes.rubric_template[1].rubric_category_name }}</h1>
         <h1>{{ this.$store.state.form.data.attributes.rubric_template[2].rubric_category_name }}</h1>
         <h1>{{ this.$store.state.form.data.attributes.rubric_template[3].rubric_category_name }}</h1>
-        <!-- <Project :project="this.project"/>
+        <Project :project="this.project"/>
         <section class="notes-container">
           <p class="feedback-container__category--label">
             <span class="s-h2">Student Notes</span>
@@ -42,7 +42,7 @@
               </div>
             </form>
           </div>
-        </section> -->
+        </section>
       </div>
 
     <div v-else-if="this.project">
@@ -88,6 +88,7 @@ export default {
   watch: {
     $route (to, from) {
       this.$store.dispatch('clearForm', this.$route.params.project_id)
+      // Add a way to clear out Student Notes on path change
     }
   },
   data () {

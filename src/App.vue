@@ -47,12 +47,12 @@ export default {
     ])
   },
   created () {
-    let payload
-    for (let i = 1; i < 5; i++) {
-      payload = { moduleId: i, studentId: this.studentIdHardCoded }
-      this.fetchModule(payload)
-      // this.$store.dispatch('fetchModule', payload)
-    }
+    // let payload
+    // for (let i = 1; i < 5; i++) {
+    //   payload = { moduleId: i, studentId: this.studentIdHardCoded }
+    //   this.fetchModule(payload)
+    // this.$store.dispatch('fetchModule', payload)
+    // }
     // this.$store.dispatch('fetchModule', 1)
     // this.$store.dispatch('fetchModule', 2)
     // this.$store.dispatch('fetchModule', 3)
