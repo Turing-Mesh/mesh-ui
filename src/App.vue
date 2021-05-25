@@ -3,17 +3,20 @@
   <!-- <div id="app">
     <Header :loggedIn="loggedIn"/>
 
-    <div class="main">
-      <ModuleNav :loggedIn="loggedIn"/>
+    <div v-else >
+      <div class="main">
+        <ModuleNav :loggedIn="loggedIn"/>
 
-      <section class="right-section">
-        <router-view
-          :key="$route.path"
-          :loggedIn="loggedIn"
-          :authenticated="authenticated"
-        />
-      </section>
+        <section class="right-section">
+          <router-view
+            :key="$route.path"
+            :loggedIn="loggedIn"
+            :authenticated="authenticated"
+          />
+        </section>
+      </div>
     </div>
+
     <Footer />
   </div> -->
 </template>
@@ -38,7 +41,7 @@ export default {
     return {
       loggedIn: true,
       authenticated: true,
-      studentIdHardCoded: 94
+      instructorAuth: true
     }
   },
   components: {
