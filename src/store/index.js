@@ -33,8 +33,32 @@ export default new Vuex.Store({
   },
   actions: {
     // actions call mutations
+<<<<<<< HEAD
     fetchModule ({ commit }, { moduleId, studentId }) {
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentId}/student_projects?mod=${moduleId}`)
+=======
+    // addNote
+    // fetchCurrentModule () {
+    //   // do api call for current
+    //   fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       // state.allModules = data
+    //       console.log('all data FROM STORE: ', data)
+    //     })
+    // },
+    // fetchModule (context, module) {
+    // do api call for all modules
+    // this is only getting one module, so it will need to be fixed for all modules ???
+    // return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     context.commit('setCurrentModule', data)
+    //     console.log('all data FROM STORE: ', data)
+    //   })
+    fetchModule (context, studentData) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
+>>>>>>> 7eed6f9 (Reuse components for instructor dashboard view)
         .then(response => response.json())
         .then(data => {
           commit('setAllModules', data)
