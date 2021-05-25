@@ -1,7 +1,7 @@
 <template>
 <!--  <InstructorDashboard />-->
   <div id="app">
-    <Header :loggedIn="loggedIn" :userName="userNameHardCoded"/>
+    <Header :loggedIn="loggedIn" :userName="instructorAuth ? instructorNameHardCoded : studentNameHardCoded"/>
 
     <InstructorDashboard v-if="instructorAuth"
                 :loggedIn="loggedIn"
@@ -9,7 +9,7 @@
                 :instructorAuth="instructorAuth"
     />
 
-    <div v-else class="main">
+    <div class="main">
       <ModuleNav :loggedIn="loggedIn"/>
 
       <section class="right-section">
@@ -36,8 +36,8 @@ export default {
   // save in state in store
   data () {
     return {
-      instructorNameHardCoded: 'LetaLeta',
-      studentNameHardCoded: 'JessicaJessica'
+      instructorNameHardCoded: 'Leta',
+      studentNameHardCoded: 'Jessica'
     }
   },
   components: {
