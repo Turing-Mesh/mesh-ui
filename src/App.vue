@@ -21,6 +21,7 @@
 import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
 import Footer from '@/components/Footer'
+import { mapActions } from 'vuex'
 
 export default {
   // set initial state here
@@ -28,7 +29,8 @@ export default {
   data () {
     return {
       loggedIn: true,
-      authenticated: true
+      authenticated: true,
+      studentIdHardCoded: 94
     }
   },
   components: {
@@ -36,11 +38,22 @@ export default {
     ModuleNav,
     Header
   },
+  methods: {
+    ...mapActions([
+      'fetchModule'
+    ])
+  },
   created () {
-    this.$store.dispatch('fetchModule', 1)
-    this.$store.dispatch('fetchModule', 2)
-    this.$store.dispatch('fetchModule', 3)
-    this.$store.dispatch('fetchModule', 4)
+    let payload
+    for (let i = 1; i < 5; i++) {
+      payload = { moduleId: i, studentId: this.studentIdHardCoded }
+      this.fetchModule(payload)
+      // this.$store.dispatch('fetchModule', payload)
+    }
+    // this.$store.dispatch('fetchModule', 1)
+    // this.$store.dispatch('fetchModule', 2)
+    // this.$store.dispatch('fetchModule', 3)
+    // this.$store.dispatch('fetchModule', 4)
   }
 }
 </script>

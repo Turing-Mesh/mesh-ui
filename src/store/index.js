@@ -6,56 +6,33 @@ Vue.use(Vuex)
 // should get something when we're authenticated
 export default new Vuex.Store({
   state: {
-    // currentMod in state after initial auth
-    // allModules stored here also then currentMod changes when button click
     currentModule: {},
     allModules: [],
-    selectedProject: {}
+    currentProject: {}
   },
   mutations: {
     // mutations update state
-    // appendNote to project in module
-    // payload is all modules??
     setCurrentModule (state, payload) {
       state.currentModule = payload
     },
     setAllModules (state, singleModule) {
       state.allModules.push(singleModule)
+    },
+    setCurrentProject (state, payload) {
+      state.currentProject = payload
     }
-    // setNotes (state, notes) {
-    //   state.selectedProject.studentNotes.unshift(notes)
-    // }
   },
   actions: {
     // actions call mutations
-    // addNote
-    // fetchCurrentModule () {
-    //   // do api call for current
-    //   fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       // state.allModules = data
-    //       console.log('all data FROM STORE: ', data)
-    //     })
-    // },
-    // fetchModule (context, module) {
-    // do api call for all modules
-    // this is only getting one module, so it will need to be fixed for all modules ???
-    // return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=${module}`)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     context.commit('setCurrentModule', data)
-    //     console.log('all data FROM STORE: ', data)
-    //   })
-    fetchModule (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects?mod=${module}`)
+    fetchModule ({ commit }, { moduleId, studentId }) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentId}/student_projects?mod=${moduleId}`)
         .then(response => response.json())
         .then(data => {
-          context.commit('setAllModules', data)
+          commit('setAllModules', data)
         })
     },
-    addNoteToProject (context, note) {
-      return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/1', {
+    addNoteToProject (context, { projectId, note }) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +41,7 @@ export default new Vuex.Store({
       })
         .then(response => response.json)
         .then(data => {
-          console.log(data)
+          context.commit('setCurrentProject', data)
         })
     }
   },

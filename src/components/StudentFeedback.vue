@@ -73,11 +73,9 @@ export default {
     },
     AddNote () {
       this.studentNote = this.formData.note
-      this.$store.dispatch('addNoteToProject', this.studentNote)
+      const payload = { projectId: this.project.id, note: this.formData.note }
+      this.$store.dispatch('addNoteToProject', payload)
       this.formData.note = ''
-    },
-    CreateNotes () {
-      this.studentNote = this.project.student_comments
     }
   },
   computed: {
@@ -87,14 +85,6 @@ export default {
   },
   created () {
     this.studentNote = this.project.student_comments
-    // store.getters.getSelectedModule(this.$route.params.id)
-    // this.$store.dispatch('updateSelectedModule', this.$route.params.id)
-    // this.$store.dispatch('updateSelectedProject', this.$route.params.project_id)
-    // this.loading = true
-    // this.$store.dispatch('fetchModule', this.$route.params.id)
-    //   .then(() => {
-    //     this.loading = false
-    //   })
   }
 }
 </script>
