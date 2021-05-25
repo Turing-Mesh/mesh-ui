@@ -19,10 +19,17 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 // import Header from '@/components/Header'
 // import ModuleNav from '@/components/ModuleNav'
 // import Footer from '@/components/Footer'
 import InstructorDashboard from '@/views/InstructorDashboard'
+=======
+import Header from '@/components/Header'
+import ModuleNav from '@/components/ModuleNav'
+import Footer from '@/components/Footer'
+import { mapActions } from 'vuex'
+>>>>>>> 857981b (map actions in app)
 
 export default {
   // set initial state here
@@ -30,7 +37,8 @@ export default {
   data () {
     return {
       loggedIn: true,
-      authenticated: true
+      authenticated: true,
+      studentIdHardCoded: 94
     }
   },
   components: {
@@ -39,7 +47,21 @@ export default {
     // Header,
     InstructorDashboard
   },
+  methods: {
+    ...mapActions([
+      'fetchModule'
+    ])
+  },
   created () {
+<<<<<<< HEAD
+=======
+    let payload
+    for (let i = 1; i < 5; i++) {
+      payload = { moduleId: i, studentId: this.studentIdHardCoded }
+      this.fetchModule(payload)
+      // this.$store.dispatch('fetchModule', payload)
+    }
+>>>>>>> 857981b (map actions in app)
     // this.$store.dispatch('fetchModule', 1)
     // this.$store.dispatch('fetchModule', 2)
     // this.$store.dispatch('fetchModule', 3)
