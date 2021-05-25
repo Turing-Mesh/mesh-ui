@@ -21,12 +21,6 @@ export default new Vuex.Store({
     },
     setAllModules (state, singleModule) {
       state.allModules.push(singleModule)
-    },
-    setSelectedModule (state, selectedModule) {
-      state.selectedModule = selectedModule
-    },
-    setSelectedProject (state, selectedProject) {
-      state.selectedProject = selectedProject
     }
     // setNotes (state, notes) {
     //   state.selectedProject.studentNotes.unshift(notes)
@@ -79,8 +73,11 @@ export default new Vuex.Store({
   getters: {
     getSelectedProject: (state) => (selectedModuleNum, selectedProjectNum) => {
       const foundModule = state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
-      const foundProject = foundModule.data.attributes.student_projects.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
-      return foundProject
+      if (foundModule.data.attributes.student_projects) {
+        return foundModule.data.attributes.student_projects.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
+      } else {
+        return undefined
+      }
     }
     // getCurrentModule
     // getAllModules
