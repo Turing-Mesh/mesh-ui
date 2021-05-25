@@ -1,6 +1,5 @@
 <template>
-  <InstructorDashboard />
-  <!-- <div id="app">
+  <div>
     <Header :loggedIn="loggedIn"/>
 
     <div class="main">
@@ -15,14 +14,13 @@
       </section>
     </div>
     <Footer />
-  </div> -->
+  </div>
 </template>
 
 <script>
-// import Header from '@/components/Header'
-// import ModuleNav from '@/components/ModuleNav'
-// import Footer from '@/components/Footer'
-import InstructorDashboard from '@/views/InstructorDashboard'
+import Header from '@/components/Header'
+import ModuleNav from '@/components/ModuleNav'
+import Footer from '@/components/Footer'
 
 export default {
   // set initial state here
@@ -34,16 +32,11 @@ export default {
     }
   },
   components: {
-    // Footer,
-    // ModuleNav,
-    // Header,
-    InstructorDashboard
+    Footer,
+    ModuleNav,
+    Header
   },
   created () {
-    // this.$store.dispatch('fetchModule', 1)
-    // this.$store.dispatch('fetchModule', 2)
-    // this.$store.dispatch('fetchModule', 3)
-    // this.$store.dispatch('fetchModule', 4)
   }
 }
 </script>
