@@ -160,13 +160,14 @@ a {
   align-items: center;
 
   &--label {
+    width: 60%;
     padding-top: 10px;
     display: inline;
     color: #4C4D4F;
   }
 
   &--progress {
-
+    width: 40%;
   }
 
   &--comments {
