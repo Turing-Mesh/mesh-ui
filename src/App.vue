@@ -18,6 +18,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 
 // import Header from '@/components/Header'
 // import ModuleNav from '@/components/ModuleNav'
@@ -25,15 +26,22 @@
 import InstructorDashboard from '@/views/InstructorDashboard'
 import { mapActions } from 'vuex'
 // import Instructor from '@/views/Instructor'
+=======
+import Header from '@/components/Header'
+import ModuleNav from '@/components/ModuleNav'
+import Footer from '@/components/Footer'
+import { mapActions, mapState } from 'vuex'
+import Instructor from '@/views/Instructor'
+>>>>>>> 1098c31 (map state in app)
 
 export default {
   // set initial state here
   // save in state in store
   data () {
     return {
-      loggedIn: true,
-      authenticated: true,
-      instructorAuth: true,
+      // loggedIn: true,
+      // authenticated: true,
+      // instructorAuth: true,
       instructorNameHardCoded: 'LetaLeta',
       studentNameHardCoded: 'JessicaJessica'
     }
@@ -44,6 +52,13 @@ export default {
     // Header,
     InstructorDashboard
     // Instructor
+  },
+  computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth'
+    ])
   },
   methods: {
     ...mapActions([

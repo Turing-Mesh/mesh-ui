@@ -12,7 +12,10 @@ export default new Vuex.Store({
     myStudents: [],
     currentStudent: {},
     form: {},
-    currentProject: {}
+    currentProject: {},
+    loggedIn: true,
+    authenticated: true,
+    instructorAuth: true
   },
   mutations: {
     // mutations update state
