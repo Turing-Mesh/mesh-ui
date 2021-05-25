@@ -4,21 +4,15 @@ describe('Student dashboard', () => {
 
   it('Should have a header', () => {
     cy.visit('http://localhost:8080/')
-      // TODO logo
-      // TODO date
-      .contains('h3', 'Hi, Jessica')
-
-      // TODO move to separate test
-      .get('.left-section').find('a').should('have.length', 4)
-      .get('.feedback-container').should('exist')
-      .get('footer').contains('🦑')
+      .get('img').should('have.class', 'logo rotating')
+      .get('.date').contains(/\d\d\d\d/) //regex to find four digits in a row
+      .get('h3').contains(/Hi\,\s[A-Z][a-z]/) //regex to find "Hi,", space, capital letter, lowercase letter
   })
 
   it('Should have a sidebar', () => {
     cy.visit('http://localhost:8080/')
       .get('.left-section').find('a').should('have.length', 4)
       .get('.feedback-container').should('exist')
-      .get('footer').contains('🦑')
   })
 
   it('Should have a main feedback section', () => {
