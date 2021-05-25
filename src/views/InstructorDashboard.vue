@@ -1,7 +1,4 @@
 <template>
-  <div>
-    <Header :loggedIn="loggedIn"/>
-
     <div class="main">
       <ModuleNav :loggedIn="loggedIn"/>
       <section class="left-section">
@@ -27,15 +24,11 @@
         />
       </section>
     </div>
-    <Footer />
-  </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
 import StudentFeedback from '@/components/StudentFeedback'
-import Footer from '@/components/Footer'
 
 export default {
   // set initial state here
@@ -47,10 +40,8 @@ export default {
     }
   },
   components: {
-    Footer,
     ModuleNav,
-    StudentFeedback,
-    Header
+    StudentFeedback
   },
   methods: {
     getInfo () {

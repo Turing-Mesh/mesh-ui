@@ -1,8 +1,15 @@
 <template>
 <!--  <InstructorDashboard />-->
-   <div id="app">
-    <Header :loggedIn="loggedIn"/>
-    <div class="main">
+  <div id="app">
+    <Header :loggedIn="loggedIn" :userName="userNameHardCoded"/>
+
+    <InstructorDashboard v-if="instructorAuth"
+                :loggedIn="loggedIn"
+                :authenticated="authenticated"
+                :instructorAuth="instructorAuth"
+    />
+
+    <div v-else class="main">
       <ModuleNav :loggedIn="loggedIn"/>
 
       <section class="right-section">
@@ -21,9 +28,8 @@
 import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
 import Footer from '@/components/Footer'
-// import InstructorDashboard from '@/views/InstructorDashboard'
 import { mapActions, mapState } from 'vuex'
-import Instructor from '@/views/Instructor'
+import InstructorDashboard from '@/views/InstructorDashboard'
 
 export default {
   // set initial state here
@@ -38,8 +44,7 @@ export default {
     Footer,
     ModuleNav,
     Header,
-    // InstructorDashboard
-    Instructor
+    InstructorDashboard
   },
   computed: {
     ...mapState([
