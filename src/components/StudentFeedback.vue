@@ -7,7 +7,7 @@
       <h1 v-else-if="!$route.params.project_id && this.$store.state.myStudents" class="s-h1">Select a project to submit some feedback!</h1>
 
       <h1 v-else-if="!this.project && !this.$store.state.myStudents" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-      <button v-else-if="!this.project && this.$store.state.myStudents" class="s-h1">Submit Feedback</button>
+      <button v-else-if="!this.project && this.$store.state.myStudents" class="s-h1" @click="getForm">Submit Feedback</button>
 
     <div v-if="this.project">
       <Project :project="this.project"/>
@@ -76,6 +76,10 @@ export default {
     },
     CreateNotes () {
       this.studentNote = this.project.student_comments
+    },
+    getForm () {
+      this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
+      // console.log(this.$store.state.form)
     }
   },
   computed: {
