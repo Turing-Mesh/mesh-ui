@@ -171,25 +171,54 @@ a {
   padding-left: 10px;
   font-size: 1.25rem;
   font-weight: bold;
+
+  &__score-wrapper {
+    margin-left: auto;
+    width: 40px;
+    background-color: white;
+    border: 2px solid var(--s-color-yellow-500);
+    border-radius: 800px;
+
+    &--number {
+      text-align: center;
+      line-height: 24px;
+      font-size: var(--s-font-size-md);
+      font-weight: var(--s-font-weight-bold);
+    }
+  }
 }
- 
-.progress-bar__score-wrapper {
-  margin-left: auto;
-  width: 40px;
-  background-color: white;
-  border: 2px solid var(--s-color-yellow-500);
+
+.overall-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.progress-bar-overall {
+  display: inline-block;
+  width: 100px;
+  height: 28px;
   border-radius: 800px;
-}
-
-.progress-bar__score-wrapper--number {
-  text-align: center;
-  line-height: 24px;
-  font-size: var(--s-font-size-md);
-  font-weight: var(--s-font-weight-bold);
-}
-
-#bar-average {
+  margin-left: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
   background-color: var(--s-color-cyan-400);
+
+  &__score-wrapper {
+    margin: 0 auto;
+    width: 55px;
+    background-color: white;
+    border-radius: 800px;
+    border: 2px solid var(--s-color-cyan-400);
+
+    &--number {
+      text-align: center;
+      line-height: 24px;
+      font-size: var(--s-font-size-md);
+      font-weight: var(--s-font-weight-bold);
+    }
+  }
 }
 
 // *** Project Navigation *** //

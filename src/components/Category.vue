@@ -1,8 +1,8 @@
 <template>
   <div class="feedback-container__category">
-    <p class="feedback-container__category--label">
-      <span class="s-h2">{{ projectFeedback.rubric_category_name }}</span>
-    </p>
+    <span class="s-h2 feedback-container__category--label">
+      {{ projectFeedback.rubric_category_name }}
+    </span>
     <div class="progress-bar" :style="{ width: projectFeedback.score * 80 + 'px'}">
       <div class="progress-bar__score-wrapper">
         <div class="progress-bar__score-wrapper--number">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <p class="feedback-container__category--comments" s-text-body>
+    <p class="feedback-container__category--comments s-text-body">
       {{ projectFeedback.comment }}
     </p>
   </div>
