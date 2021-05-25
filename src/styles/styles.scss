@@ -189,7 +189,6 @@ a {
 .progress-bar {
   display: inline-block;
   width: 100px;
-  height: 28px;
   border-radius: 800px;
   background-color: var(--s-color-yellow-500);
   margin-left: 20px;
@@ -205,6 +204,8 @@ a {
     border-radius: 800px;
 
     &--number {
+      height: 26px;
+      margin-top: 4px;
       text-align: center;
       line-height: 24px;
       font-size: var(--s-font-size-md);
@@ -227,7 +228,6 @@ a {
 .progress-bar-overall {
   display: inline-block;
   width: 100px;
-  height: 28px;
   border-radius: 800px;
   margin-left: 20px;
   font-size: 1.25rem;
@@ -242,6 +242,8 @@ a {
     border: 2px solid var(--s-color-cyan-400);
 
     &--number {
+      height: 26px;
+      margin-top: 4px;
       text-align: center;
       line-height: 24px;
       font-size: var(--s-font-size-md);
