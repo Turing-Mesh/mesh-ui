@@ -13,6 +13,10 @@ describe('Student dashboard', () => {
     cy.visit('http://localhost:8080/')
       .get('.left-section').find('a').should('have.length', 4)
       .get('.feedback-container').should('exist')
+      .get('[data-cy=mod1').contains('Module 1')
+      .get('[data-cy=mod2').contains('Module 2')
+      .get('[data-cy=mod3').contains('Module 3')
+      .get('[data-cy=mod4').contains('Module 4')
   })
 
   it('Should have a main feedback section', () => {
