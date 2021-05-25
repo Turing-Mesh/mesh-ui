@@ -1,12 +1,14 @@
 <template>
   <div class="feedback-container__category">
-    <span class="s-h2 feedback-container__category--label">
+    <div class="feedback-container__category-item">
+      <span class="s-h2 feedback-container__category-item--label">
       {{ projectFeedback.rubric_category_name }}
-    </span>
-    <div class="progress-bar" :style="{ width: projectFeedback.score * 80 + 'px'}">
-      <div class="progress-bar__score-wrapper">
-        <div class="progress-bar__score-wrapper--number">
-          {{ projectFeedback.score }}
+      </span>
+      <div class="feedback-container__category-item--label progress-bar" :style="{ width: projectFeedback.score * 80 + 'px'}">
+        <div class="progress-bar__score-wrapper">
+          <div class="progress-bar__score-wrapper--number">
+            {{ projectFeedback.score }}
+          </div>
         </div>
       </div>
     </div>

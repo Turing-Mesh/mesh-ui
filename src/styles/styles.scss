@@ -123,6 +123,10 @@ a {
 
 
 // *** Student Feedback *** //
+.upper-project {
+  margin: 10px 0;
+}
+
 .feedback-container {
   min-height: 300px;
   margin: 20px;
@@ -133,14 +137,16 @@ a {
   &__category {
     margin-top: 15px;
 
-    &--label {
-      display: inline;
-      color: #4C4D4F;
-    }
+    &__category-item {
+      &--label {
+        display: inline;
+        color: #4C4D4F;
+      }
 
-    &--comments {
-      margin-left: 20px;
-      //font-size: 1.3em;
+      &--comments {
+        margin-left: 20px;
+        //font-size: 1.3em;
+      }
     }
   }
 
@@ -250,10 +256,6 @@ a {
   font-family: $roboto;
   font-size: 1.5rem;
   cursor: pointer;
-}
-
-.project-name {
-  border-radius: 50px;
 }
 
 .router-link-active .project-tab {
