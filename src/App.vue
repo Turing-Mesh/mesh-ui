@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <InstructorDashboard />
+  <!-- <div id="app">
     <Header :loggedIn="loggedIn"/>
-
     <div class="main">
       <ModuleNav :loggedIn="loggedIn"/>
 
@@ -14,29 +14,44 @@
       </section>
     </div>
     <Footer />
-  </div>
+  </div> -->
 </template>
 
 <script>
-import Header from '@/components/Header'
-import ModuleNav from '@/components/ModuleNav'
-import Footer from '@/components/Footer'
-import { mapActions } from 'vuex'
+// import Header from '@/components/Header'
+// import ModuleNav from '@/components/ModuleNav'
+// import Footer from '@/components/Footer'
+import InstructorDashboard from '@/views/InstructorDashboard'
+import { mapActions, mapState } from 'vuex'
+// import Instructor from '@/views/Instructor'
 
 export default {
   // set initial state here
   // save in state in store
   data () {
     return {
-      loggedIn: true,
-      authenticated: true,
-      studentIdHardCoded: 94
+      instructorNameHardCoded: 'LetaLeta',
+      studentNameHardCoded: 'JessicaJessica'
     }
   },
   components: {
-    Footer,
-    ModuleNav,
-    Header
+    // Footer,
+    // ModuleNav,
+    // Header,
+    InstructorDashboard
+    // Instructor
+  },
+  computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'fetchModule'
+    ])
   },
   methods: {
     ...mapActions([
@@ -44,12 +59,12 @@ export default {
     ])
   },
   created () {
-    let payload
-    for (let i = 1; i < 5; i++) {
-      payload = { moduleId: i, studentId: this.studentIdHardCoded }
-      this.fetchModule(payload)
-      // this.$store.dispatch('fetchModule', payload)
-    }
+    // let payload
+    // for (let i = 1; i < 5; i++) {
+    //   payload = { moduleId: i, studentId: this.studentIdHardCoded }
+    //   this.fetchModule(payload)
+    // this.$store.dispatch('fetchModule', payload)
+    // }
     // this.$store.dispatch('fetchModule', 1)
     // this.$store.dispatch('fetchModule', 2)
     // this.$store.dispatch('fetchModule', 3)

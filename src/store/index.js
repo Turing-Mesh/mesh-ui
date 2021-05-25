@@ -8,6 +8,14 @@ export default new Vuex.Store({
   state: {
     currentModule: {},
     allModules: [],
+    selectedProject: {},
+    myStudents: [],
+    currentStudent: {},
+    form: {},
+    currentProject: {},
+    loggedIn: true,
+    authenticated: true,
+    instructorAuth: false,
     currentProject: {}
   },
   mutations: {
@@ -18,14 +26,23 @@ export default new Vuex.Store({
     setAllModules (state, singleModule) {
       state.allModules.push(singleModule)
     },
+    setMyStudents (state, myStudents) {
+      state.myStudents = myStudents
+    },
+    setCurrentStudent (state, foundStudent) {
+      state.currentStudent = foundStudent
+    },
+    setForm (state, formData) {
+      state.form = formData
+    },
     setCurrentProject (state, payload) {
       state.currentProject = payload
     }
   },
   actions: {
     // actions call mutations
-    fetchModule ({ commit }, { moduleId, studentId }) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentId}/student_projects?mod=${moduleId}`)
+    fetchModule (context, studentData) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
         .then(response => response.json())
         .then(data => {
           commit('setAllModules', data)
@@ -43,6 +60,33 @@ export default new Vuex.Store({
         .then(data => {
           context.commit('setCurrentProject', data)
         })
+    },
+    fetchMyStudents (context, module) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/122/students?mod=${module}`)
+        .then(response => response.json())
+        .then(data => {
+          context.commit('setMyStudents', data)
+        })
+    },
+    setStudentData (context, studentId) {
+      const foundStudent = this.state.myStudents.data.find(student => student.id === studentId)
+      if (foundStudent) {
+        context.commit('setCurrentStudent', foundStudent)
+      }
+    },
+    getForm (context, fetchDetails) {
+      // console.log(fetchDetails)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
+        .then(response => response.json())
+        .then(data => {
+          // console.log(data)
+          context.commit('setForm', data)
+        })
+    },
+    clearForm (context, projectNum) {
+      if (this.state.form.data.attributes.mod !== projectNum) {
+        context.commit('setForm', {})
+      }
     }
   },
   modules: {
@@ -65,6 +109,12 @@ export default new Vuex.Store({
     // },
     // getCurrentModule (state, getters) {
     // const sortedModules = this.state.allModules.sort((a, b) => a - b)
+    // }
+    // getStudentData: (state) => (studentId) => {
+    //   const foundStudent = state.myStudents.data.find(student => student.id === studentId)
+    //   if (foundStudent) {
+    //     context.commit('setCurrentStudent', foundStudent)
+    //   }
     // }
   }
 })
