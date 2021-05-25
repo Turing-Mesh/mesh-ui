@@ -37,6 +37,7 @@ export default {
     Header
   },
   created () {
+    this.$store.dispatch('fetchMyStudents', 1)
   }
 }
 </script>

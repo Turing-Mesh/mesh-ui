@@ -10,7 +10,8 @@ export default new Vuex.Store({
     // allModules stored here also then currentMod changes when button click
     currentModule: {},
     allModules: [],
-    selectedProject: {}
+    selectedProject: {},
+    myStudents: []
   },
   mutations: {
     // mutations update state
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     },
     setAllModules (state, singleModule) {
       state.allModules.push(singleModule)
+    },
+    setMyStudents (state, myStudents) {
+      state.myStudents = myStudents
     }
     // setNotes (state, notes) {
     //   state.selectedProject.studentNotes.unshift(notes)
@@ -65,6 +69,14 @@ export default new Vuex.Store({
         .then(response => response.json)
         .then(data => {
           console.log(data)
+        })
+    },
+    fetchMyStudents (context, module) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/122/students?mod=${module}`)
+        .then(response => response.json())
+        .then(data => {
+          context.commit('setMyStudents', data)
+          console.log(this.state.myStudents)
         })
     }
   },
