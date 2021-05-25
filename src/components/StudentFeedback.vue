@@ -48,14 +48,15 @@
 <script>
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
+import { mapState } from 'vuex'
 
 export default {
   name: 'StudentFeedback',
-  watch: {
-    $route (to, from) {
-      this.$store.dispatch('clearForm', this.$route.params.project_id)
-    }
-  },
+  // watch: {
+  //   $route (to, from) {
+  //     this.$store.dispatch('clearForm', this.$route.params.project_id)
+  //   }
+  // },
   data () {
     return {
       // I think all of these can be removed once we get everything into global state
@@ -73,6 +74,11 @@ export default {
     ProjectNav
   },
   computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth'
+    ]),
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
     }

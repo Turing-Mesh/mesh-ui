@@ -15,7 +15,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true
+    instructorAuth: false
   },
   mutations: {
     // mutations update state
