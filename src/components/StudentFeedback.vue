@@ -2,14 +2,12 @@
   <section class="feedback-container s-content">
     <ProjectNav />
 
-    <div v-if="!$route.params.project_id">
 <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
-      <h1 class="s-h1">Select a project to get started!</h1>
-    </div>
+      <h1 v-if="!$route.params.project_id && !this.$store.state.myStudents" class="s-h1">Select a project to get started!</h1>
+      <h1 v-else-if="!$route.params.project_id && this.$store.state.myStudents" class="s-h1">Select a project to submit some feedback!</h1>
 
-    <div v-else-if="!this.project">
-      <h1 class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-    </div>
+      <h1 v-else-if="!this.project && !this.$store.state.myStudents" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
+      <button v-else-if="!this.project && this.$store.state.myStudents" class="s-h1">Submit Feedback</button>
 
     <div v-if="this.project">
       <Project :project="this.project"/>
