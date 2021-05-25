@@ -92,9 +92,11 @@ export default new Vuex.Store({
       }
     },
     getForm (context, fetchDetails) {
+      // console.log(fetchDetails)
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
         .then(response => response.json())
         .then(data => {
+          // console.log(data)
           context.commit('setForm', data)
         })
     },
