@@ -5,7 +5,7 @@
           <div class="instructor-main">
             <ul>
               <li class="student-name" v-for="student in myStudents.data" :key="student.id">
-                <button class="s-button s-button-secondary stu-btn" @click="getInfo">{{ student.attributes.first_name }}</button>
+                <button class="s-button s-button-secondary stu-btn" @click="getInfo(student.id)">{{ student.attributes.first_name }}</button>
               </li>
             </ul>
 <!--          <button class="s-button s-button-secondary stu-btn" @click="getInfo">{{ this.$store.state.myStudents.data[0].attributes.first_name }}</button>-->
@@ -17,9 +17,7 @@
 
         <section v-if="this.$store.state.currentStudent.id" class="right-section">
           <ModuleNav :loggedIn="loggedIn" :class="{ 'instructor-left-section': instructorAuth }"/>
-          <p>{{ this.$store.state.currentStudent.attributes.first_name + " " + this.$store.state.currentStudent.attributes.last_name}}</p>
-          <p>Student ID: {{ this.$store.state.currentStudent.attributes.user_id }}</p>
-          <p>Cohort {{ this.$store.state.currentStudent.attributes.current_cohort }}</p>
+          <StudentData :student="student"/>
           <StudentFeedback />
         </section>
 
@@ -38,17 +36,17 @@
 import ModuleNav from '@/components/ModuleNav'
 import StudentFeedback from '@/components/StudentFeedback'
 import { mapState } from 'vuex'
+import StudentData from '@/components/StudentData'
 
 export default {
   // set initial state here
   // save in state in store
   data () {
     return {
-      loggedIn: true,
-      authenticated: true
     }
   },
   components: {
+    StudentData,
     ModuleNav,
     StudentFeedback
   },
@@ -61,8 +59,8 @@ export default {
     ])
   },
   methods: {
-    getInfo () {
-      this.$store.dispatch('setStudentData', '1')
+    getInfo (id) {
+      this.$store.dispatch('setStudentData', id)
     }
   },
   created () {
