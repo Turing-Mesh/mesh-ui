@@ -59,13 +59,13 @@ export default {
   },
   created () {
     this.$store.dispatch('fetchMyStudents', 1)
-    console.log(this.$store.state.currentStudent.user_id)
   },
   updated () {
     this.$store.dispatch('fetchModule', { studentMod: 1, studentId: this.$store.state.currentStudent.attributes.user_id })
     this.$store.dispatch('fetchModule', { studentMod: 2, studentId: this.$store.state.currentStudent.attributes.user_id })
     this.$store.dispatch('fetchModule', { studentMod: 3, studentId: this.$store.state.currentStudent.attributes.user_id })
     this.$store.dispatch('fetchModule', { studentMod: 4, studentId: this.$store.state.currentStudent.attributes.user_id })
+    console.log(this.$store.state)
   }
 }
 </script>
