@@ -1,10 +1,18 @@
 <template>
-  <h1>Instructor View</h1>
+  <div class="instructor-container">
+    <h1>Instructor View</h1>
+    <ModuleNav />
+  </div>
 </template>
 
 <script>
+import ModuleNav from '@/components/ModuleNav'
+
 export default {
-  name: 'Instructor'
+  name: 'Instructor',
+  components: {
+    ModuleNav
+  }
 }
 </script>
 
