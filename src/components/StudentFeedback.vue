@@ -85,17 +85,23 @@ export default {
       this.studentNote = this.formData.note
       this.$store.dispatch('addNoteToProject', this.studentNote)
       this.formData.note = ''
+<<<<<<< HEAD
     },
     CreateNotes () {
       this.studentNote = this.project.student_comments
     },
     getForm () {
       this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
+=======
+>>>>>>> 2007cf0 (fix index)
     }
   },
   computed: {
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
+    },
+    note: function () {
+      return this.project.student_comments
     }
   },
   created () {

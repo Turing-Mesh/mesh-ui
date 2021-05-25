@@ -13,7 +13,9 @@ export default new Vuex.Store({
     selectedProject: {},
     myStudents: [],
     currentStudent: {},
-    form: {}
+    form: {},
+    currentProject: {}
+    // currentProjectNote: null
   },
   mutations: {
     // mutations update state
@@ -33,10 +35,10 @@ export default new Vuex.Store({
     },
     setForm (state, formData) {
       state.form = formData
+    },
+    setCurrentProject (state, payload) {
+      state.currentProject = payload
     }
-    // setNotes (state, notes) {
-    //   state.selectedProject.studentNotes.unshift(notes)
-    // }
   },
   actions: {
     // actions call mutations
@@ -76,7 +78,7 @@ export default new Vuex.Store({
       })
         .then(response => response.json)
         .then(data => {
-          console.log(data)
+          context.commit('setCurrentProject', data)
         })
     },
     fetchMyStudents (context, module) {
