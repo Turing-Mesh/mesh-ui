@@ -8,7 +8,9 @@ export default new Vuex.Store({
   state: {
     currentModule: {},
     allModules: [],
-    currentProject: {}
+    currentProject: {},
+    selectedProject: {},
+    myStudents: []
   },
   mutations: {
     // mutations update state
@@ -20,6 +22,9 @@ export default new Vuex.Store({
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
+    },
+    setMyStudents (state, myStudents) {
+      state.myStudents = myStudents
     }
   },
   actions: {
@@ -42,6 +47,14 @@ export default new Vuex.Store({
         .then(response => response.json)
         .then(data => {
           context.commit('setCurrentProject', data)
+        })
+    },
+    fetchMyStudents (context, module) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/122/students?mod=${module}`)
+        .then(response => response.json())
+        .then(data => {
+          context.commit('setMyStudents', data)
+          console.log(this.state.myStudents)
         })
     }
   },
