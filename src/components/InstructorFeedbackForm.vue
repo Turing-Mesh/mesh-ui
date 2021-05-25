@@ -16,13 +16,13 @@
 
     <div v-if="instructorAuth === false && this.project">
       <Project :project="this.project"/>
-      <section class="notes-container">
-        <p class="feedback-container__category--label">
-          <span class="s-h2">Student Notes</span>
-        </p>
-        <div class="current-notes">
-          <p>{{ studentNote }}</p>
-        </div>
+<!--      <section class="notes-container">-->
+<!--        <p class="feedback-container__category&#45;&#45;label">-->
+<!--          <span class="s-h2">Student Notes</span>-->
+<!--        </p>-->
+<!--        <div class="current-notes">-->
+<!--          <p>{{ studentNote }}</p>-->
+<!--        </div>-->
 <!--        <div class="form-container">-->
 <!--          <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">-->
 <!--            {{ showNoteForm ? 'Hide form' : 'Add new note' }}-->
@@ -43,8 +43,8 @@
 <!--            </div>-->
 <!--          </form>-->
 <!--        </div>-->
-      </section>
-      <!--    </div>-->
+<!--      </section>-->
+          </div>
   </section>
 </template>
 

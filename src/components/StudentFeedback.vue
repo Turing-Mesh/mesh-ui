@@ -52,11 +52,11 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'StudentFeedback',
-  // watch: {
-  //   $route (to, from) {
-  //     this.$store.dispatch('clearForm', this.$route.params.project_id)
-  //   }
-  // },
+  watch: {
+    $route (to, from) {
+      this.$store.dispatch('clearForm', this.$route.params.project_id)
+    }
+  },
   data () {
     return {
       // I think all of these can be removed once we get everything into global state
