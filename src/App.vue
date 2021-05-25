@@ -37,8 +37,8 @@ export default {
     return {
       loggedIn: true,
       authenticated: true,
-      instructorAuth: true,
-      userNameHardCoded: 'Jessica'
+      instructorAuth: false,
+      userNameHardCoded: 'JessicaJessica'
     }
   },
   components: {

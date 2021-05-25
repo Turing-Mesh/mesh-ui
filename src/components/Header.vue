@@ -12,7 +12,7 @@
           {{ date }}
         </h2>
         <router-link v-if="loggedIn" to="/about">
-          <h3 class="name">Hi, Jessica</h3>
+          <h3 class="name">Hi, {{ userName }}</h3>
         </router-link>
       </div>
     </div>
@@ -36,7 +36,8 @@ export default {
     }
   },
   props: {
-    loggedIn: Boolean
+    loggedIn: Boolean,
+    userName: String
   }
 }
 </script>
