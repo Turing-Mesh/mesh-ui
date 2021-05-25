@@ -4,6 +4,7 @@ import Home from '../views/Home'
 import NoRoute from '@/views/NoRoute'
 import Signup from '@/views/Signup'
 import Login from '@/views/Login'
+import InstructorDashboard from '@/views/InstructorDashboard'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ const routes = [
     path: '*',
     name: 'NoRoute',
     component: NoRoute
+  },
+  {
+    path: '/instructor-dashboard',
+    name: 'InstructorDashboard',
+    component: InstructorDashboard
   }
 ]
 

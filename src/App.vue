@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <InstructorDashboard />
+  <!-- <div id="app">
     <Header :loggedIn="loggedIn"/>
 
     <div class="main">
@@ -14,14 +15,15 @@
       </section>
     </div>
     <Footer />
-  </div>
+  </div> -->
 </template>
 
 <script>
-import Header from '@/components/Header'
-import ModuleNav from '@/components/ModuleNav'
-import Footer from '@/components/Footer'
+// import Header from '@/components/Header'
+// import ModuleNav from '@/components/ModuleNav'
+// import Footer from '@/components/Footer'
 import { mapActions } from 'vuex'
+import InstructorDashboard from '@/views/InstructorDashboard'
 
 export default {
   // set initial state here
@@ -34,9 +36,10 @@ export default {
     }
   },
   components: {
-    Footer,
-    ModuleNav,
-    Header
+    // Footer,
+    // ModuleNav,
+    // Header,
+    InstructorDashboard
   },
   methods: {
     ...mapActions([
