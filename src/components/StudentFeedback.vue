@@ -23,7 +23,7 @@
           <span class="s-h2">Student Notes</span>
         </p>
         <div class="current-notes">
-          <p v-bind="studentNote">{{ studentNote }}</p>
+          <p>{{ studentNote }}</p>
         </div>
         <div class="form-container">
           <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
@@ -83,8 +83,8 @@ export default {
     },
     AddNote () {
       this.studentNote = this.formData.note
-      this.project.student_comments = this.studentNote
-      this.$store.dispatch('addNoteToProject', this.studentNote)
+      const payload = { projectId: this.project.id, note: this.formData.note }
+      this.$store.dispatch('addNoteToProject', payload)
       this.formData.note = ''
 <<<<<<< HEAD
     },

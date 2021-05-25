@@ -44,8 +44,8 @@ export default new Vuex.Store({
           context.commit('setAllModules', data)
         })
     },
-    addNoteToProject (context, note) {
-      return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/1', {
+    addNoteToProject (context, { projectId, note }) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
