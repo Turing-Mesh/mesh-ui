@@ -11,7 +11,7 @@
     <hr class="feedback-container__dividing-line">
 
     <div class="overall-container">
-      <span class="s-h2 feedback-container__category--label">Overall</span>
+      <span class="s-h2 feedback-container__category--label overall">Overall</span>
       <div class="progress-bar-overall" id="bar-average">
         <div class="progress-bar-overall__score-wrapper">
           <div class="progress-bar-overall__score-wrapper--number">
