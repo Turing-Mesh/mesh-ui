@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <Header :loggedIn="loggedIn"/>
-    <div class="main">
+    <Header :loggedIn="loggedIn" :userName="userNameHardCoded"/>
+
+    <Instructor v-if="instructorAuth"
+      :loggedIn="loggedIn"
+      :authenticated="authenticated"
+      :instructorAuth="instructorAuth"
+    />
+
+    <div v-else class="main">
       <ModuleNav :loggedIn="loggedIn"/>
 
       <section class="right-section">
@@ -21,6 +28,7 @@ import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
 import Footer from '@/components/Footer'
 import { mapActions } from 'vuex'
+import Instructor from '@/views/Instructor'
 
 export default {
   // set initial state here
@@ -29,13 +37,15 @@ export default {
     return {
       loggedIn: true,
       authenticated: true,
-      instructorAuth: true
+      instructorAuth: true,
+      userNameHardCoded: 'Jessica'
     }
   },
   components: {
     Footer,
     ModuleNav,
-    Header
+    Header,
+    Instructor
   },
   methods: {
     ...mapActions([
