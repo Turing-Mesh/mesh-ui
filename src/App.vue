@@ -18,21 +18,12 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-
 // import Header from '@/components/Header'
 // import ModuleNav from '@/components/ModuleNav'
 // import Footer from '@/components/Footer'
 import InstructorDashboard from '@/views/InstructorDashboard'
-import { mapActions } from 'vuex'
-// import Instructor from '@/views/Instructor'
-=======
-import Header from '@/components/Header'
-import ModuleNav from '@/components/ModuleNav'
-import Footer from '@/components/Footer'
 import { mapActions, mapState } from 'vuex'
-import Instructor from '@/views/Instructor'
->>>>>>> 1098c31 (map state in app)
+// import Instructor from '@/views/Instructor'
 
 export default {
   // set initial state here
