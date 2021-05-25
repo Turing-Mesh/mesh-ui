@@ -137,21 +137,40 @@ a {
   &__category {
     margin-top: 15px;
 
-    &__category-item {
-      &--label {
-        display: inline;
-        color: #4C4D4F;
-      }
+    &--label {
+      margin: 10px 0;
+      display: inline;
+      color: #4C4D4F;
+    }
 
-      &--comments {
-        margin-left: 20px;
-        //font-size: 1.3em;
-      }
+    &--comments {
+      margin-left: 20px;
+      //font-size: 1.3em;
     }
   }
 
   &__dividing-line {
     margin-top: 20px;
+  }
+}
+
+.feedback-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  &--label {
+    padding-top: 10px;
+    display: inline;
+    color: #4C4D4F;
+  }
+
+  &--progress {
+
+  }
+
+  &--comments {
+    margin-left: 20px;
   }
 }
 
@@ -199,6 +218,10 @@ a {
   flex-flow: row nowrap;
   align-items: center;
   margin: 10px 0;
+}
+
+.overall {
+  padding-top: 10px;
 }
 
 .progress-bar-overall {
