@@ -39,9 +39,6 @@ export default {
   // save in state in store
   data () {
     return {
-      // loggedIn: true,
-      // authenticated: true,
-      // instructorAuth: true,
       instructorNameHardCoded: 'LetaLeta',
       studentNameHardCoded: 'JessicaJessica'
     }
