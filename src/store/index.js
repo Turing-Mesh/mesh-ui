@@ -11,7 +11,8 @@ export default new Vuex.Store({
     currentProject: {},
     selectedProject: {},
     myStudents: [],
-    currentStudent: {}
+    currentStudent: {},
+    form: {}
   },
   mutations: {
     // mutations update state
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     },
     setCurrentStudent (state, foundStudent) {
       state.currentStudent = foundStudent
+    },
+    setForm (state, formData) {
+      state.form = formData
     }
   },
   actions: {
@@ -89,6 +93,13 @@ export default new Vuex.Store({
       if (foundStudent) {
         context.commit('setCurrentStudent', foundStudent)
       }
+    },
+    getForm (context, fetchDetails) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
+        .then(response => response.json())
+        .then(data => {
+          context.commit('setForm', data.data.attributes.rubric_template)
+        })
     }
   },
   modules: {
