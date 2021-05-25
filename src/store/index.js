@@ -55,8 +55,8 @@ export default new Vuex.Store({
     //     context.commit('setCurrentModule', data)
     //     console.log('all data FROM STORE: ', data)
     //   })
-    fetchModule (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects?mod=${module}`)
+    fetchModule (context, studentData) {
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
         .then(response => response.json())
         .then(data => {
           context.commit('setAllModules', data)
