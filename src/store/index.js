@@ -15,7 +15,8 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: false
+    instructorAuth: false,
+    currentProject: {}
   },
   mutations: {
     // mutations update state
@@ -44,7 +45,7 @@ export default new Vuex.Store({
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
         .then(response => response.json())
         .then(data => {
-          context.commit('setAllModules', data)
+          commit('setAllModules', data)
         })
     },
     addNoteToProject (context, { projectId, note }) {

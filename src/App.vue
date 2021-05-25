@@ -53,6 +53,11 @@ export default {
       'fetchModule'
     ])
   },
+  methods: {
+    ...mapActions([
+      'fetchModule'
+    ])
+  },
   created () {
     // let payload
     // for (let i = 1; i < 5; i++) {
