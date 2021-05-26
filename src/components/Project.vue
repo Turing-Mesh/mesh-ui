@@ -16,6 +16,7 @@
         <div class="progress-bar-overall__score-wrapper">
           <div class="progress-bar-overall__score-wrapper--number">
             {{ project.average_score }}
+<!--            {{ project.average_score.toFixed(2) }}-->
           </div>
         </div>
       </div>
@@ -31,6 +32,10 @@ import Category from '@/components/Category.vue'
 
 export default {
   name: 'Project',
+  data () {
+    return {
+    }
+  },
   components: {
     Category
   },
