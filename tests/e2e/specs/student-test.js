@@ -48,6 +48,9 @@ describe('Student dashboard', () => {
       .get('.progress-bar-overall').should('exist')
       .get('.notes-container').contains('Student Notes')
       .url().should('eq', 'http://localhost:8080/modules/1/project/3')
+      .get('[data-cy=mod2').click()
+      .get('.project-tab').contains('Project 4').click()
+      .url().should('eq', 'http://localhost:8080/modules/2/project/4')
   })
 
   it('Should accept and display user-entered notes', () => {
@@ -68,10 +71,11 @@ describe('Student dashboard', () => {
 })
 
 describe('About page', () => {
-  it('Visits the about route and renders without errors', () => {
-    cy.visit('http://localhost:8080/about')
-    // TODO flesh this out
-    // TODO also test actually clicking on something to get to about route
+  it('Should display a giant squid on the about page', () => {
+    cy.visit('http://localhost:8080/')
+      .get('.name').click()
+      .url().should('eq', 'http://localhost:8080/about')
       .get('h1').should('exist')
+      .get('.squid').should('exist')
   })
 })
