@@ -32,7 +32,7 @@ describe('Student dashboard', () => {
       .get('[data-cy=mod2').click()
       .wait(1000)
       .get('[data-cy=mod1').click()
-      .wait(4000)
+      .wait(5000)
       .get('.project-tab').contains('Project 1')
       .get('.project-tab').contains('Project 2')
       .get('.project-tab').contains('Project 4')
@@ -55,7 +55,20 @@ describe('Student dashboard', () => {
 
   it('Should accept and display user-entered notes', () => {
     cy.visit('http://localhost:8080/')
-    // TODO add tests for entering and seeing notes
+      .get('[data-cy=mod2').click()
+      .wait(1000)
+      .get('[data-cy=mod1').click()
+      .wait(5000)
+      .get('.project-tab').contains('Project 2').click()
+      .get('.current-notes').children().children().should('have.length', 0)
+      .get('button').contains('Add new note').click()
+      .get('.note__textarea').type('This is my first test note!')
+      .get('button').contains('Add').click()
+      .get('button').contains('Hide form').click()
+      .get('.note__textarea').should('not.exist')
+      .get('button').contains('Add new note').click()
+      .get('.note__textarea').type('This is my second test note!')
+    // TODO add test for all notes showing up in DOM
   })
 
   it('Should have a footer', () => {
