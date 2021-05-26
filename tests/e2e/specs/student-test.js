@@ -1,6 +1,4 @@
-// https://docs.cypress.io/api/introduction/api.html
 describe('Student dashboard', () => {
-  // TODO beforeEach to .visit
   beforeEach(() => {
     cy.visit('http://localhost:8080/')
   })
@@ -82,9 +80,17 @@ describe('Student dashboard', () => {
 
 describe('About page', () => {
   it('Should display a giant squid on the about page', () => {
-    cy.get('.name').click()
+    cy.visit('http://localhost:8080/')
+      .get('.name').click()
       .url().should('eq', 'http://localhost:8080/about')
       .get('h1').should('exist')
       .get('.squid').should('exist')
+  })
+})
+
+describe('Invalid route', () => {
+  it('Should display a giant squid on the about page', () => {
+    cy.visit('http://localhost:8080/squiddddddd')
+      .get('#nope').contains('Go fish')
   })
 })
