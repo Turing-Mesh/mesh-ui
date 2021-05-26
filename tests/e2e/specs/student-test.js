@@ -25,9 +25,7 @@ describe('Student dashboard', () => {
   })
 
   it('Should have a main feedback section', () => {
-    cy.get('.feedback-container')
-      .get('[data-cy=mod2').click()
-      .wait(1000)
+    cy.get('.feedback-container').should('exist')
       .get('[data-cy=mod1').click()
       .wait(6000)
       .get('.project-tab').contains('Project 1')
@@ -51,9 +49,7 @@ describe('Student dashboard', () => {
   })
 
   it('Should accept and display user-entered notes', () => {
-    cy.get('[data-cy=mod2').click()
-      .wait(1000)
-      .get('[data-cy=mod1').click()
+    cy.get('[data-cy=mod1').click()
       .wait(6000)
       .get('.project-tab').contains('Project 2').click()
       .get('.current-notes').children().children().should('have.length', 0)
@@ -67,7 +63,7 @@ describe('Student dashboard', () => {
     // TODO add test for all notes showing up in DOM
   })
 
-  it('Should have a footer', () => {
+  it.skip('Should have a footer', () => {
     cy.get('footer').contains('Ben')
       .get('footer').contains('Genevieve')
       .get('footer').contains('Jessica')
