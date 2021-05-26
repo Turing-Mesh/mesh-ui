@@ -15,7 +15,7 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
-    userId: 94,
+    userId: 1,
     userName: ''
   },
   mutations: {
@@ -36,12 +36,12 @@ export default new Vuex.Store({
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
+    },
+    setCurrentUser (state, payload) {
+      state.userId = payload.userId
+      state.userName = payload.userName
+      state.instructorAuth = payload.instructorAuth
     }
-    // setCurrentUser (state, payload) {
-    //   state.userId = payload.userId
-    //   state.userName = payload.userName
-    //   state.instructorAuth = payload.instructorAuth
-    // }
   },
   actions: {
     // actions call mutations

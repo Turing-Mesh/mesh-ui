@@ -93,18 +93,23 @@ export default {
       this.showNoteForm = !this.showNoteForm
     },
     AddNote () {
-      console.log(this.$route.params.project_id)
+      console.log(this.project.id)
       this.studentNotes.push(this.formData.note)
       const payload = {
         userId: this.userId,
-        projectId: this.$route.params.project_id,
+        projectId: this.project.id,
         notes: this.studentNotes
       }
       this.$store.dispatch('addNotesToProject', payload)
       this.formData.note = ''
     },
     CreateNotes () {
-      this.studentNotes = this.project.student_comments
+      if (this.project.student_comments === null) {
+        this.studentNotes = []
+      } else {
+        this.studentNotes = this.project.student_comments
+      }
+      return this.studentNotes
     },
     getForm () {
       this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
