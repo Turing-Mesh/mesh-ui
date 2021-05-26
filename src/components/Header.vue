@@ -19,7 +19,7 @@
 
     <div v-if="loggedIn" class="greeting s-content">
       <h2 class="s-h2">Welcome to Mesh.</h2>
-      <p>Click on a module and then a project, to see your feedback.</p>
+      <p v-if="this.$store.state.instructorAuth === false">Click on a module and then a project, to see your feedback.</p>
     </div>
 
     <div v-else-if="!loggedIn" class="greeting">

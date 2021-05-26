@@ -8,10 +8,6 @@
                 <button class="s-button s-button-secondary stu-btn" @click="getInfo(student.id)">{{ student.attributes.first_name }}</button>
               </li>
             </ul>
-<!--          <button class="s-button s-button-secondary stu-btn" @click="getInfo">{{ this.$store.state.myStudents.data[0].attributes.first_name }}</button>-->
-<!--          <button class="s-button s-button-secondary">{{ this.$store.state.myStudents.data[1].attributes.first_name }}</button>-->
-<!--          <button class="s-button s-button-secondary">{{ this.$store.state.myStudents.data[2].attributes.first_name }}</button>-->
-<!--          <button class="s-button s-button-secondary">{{ this.$store.state.myStudents.data[3].attributes.first_name }}</button>-->
           </div>
         </section>
 
