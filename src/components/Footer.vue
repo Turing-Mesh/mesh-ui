@@ -22,15 +22,35 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 export default {
   name: 'Footer.vue',
+  computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth',
+      'userId',
+      'userName'
+    ])
+  },
   methods: {
+    ...mapActions([
+      'fetchModule'
+    ]),
     updateUser (userId, userName, instructorAuth) {
       this.$store.dispatch('setLoggedInUser', {
         userId,
         userName,
         instructorAuth
       })
+      let payload
+      for (let i = 1; i < 5; i++) {
+        payload = { studentMod: i, studentId: userId }
+        // payload = { studentMod: i, studentId: 94 }
+        this.fetchModule(payload)
+      }
     }
   }
 }

@@ -15,7 +15,7 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
-    userId: 1,
+    userId: 94,
     userName: ''
   },
   mutations: {
