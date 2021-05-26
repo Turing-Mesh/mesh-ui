@@ -130,7 +130,7 @@ export default new Vuex.Store({
   getters: {
     getSelectedProject: (state) => (selectedModuleNum, selectedProjectNum) => {
       const foundModule = state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
-      if (foundModule) {
+      if (foundModule && foundModule.data.attributes.student_projects) {
         return foundModule.data.attributes.student_projects.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
       } else {
         return undefined

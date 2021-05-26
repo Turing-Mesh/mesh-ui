@@ -5,7 +5,7 @@
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
-      <h1 v-else-if="!this.project" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
+      <button v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
 
     <div v-if="this.project">
       <Project :project="this.project"/>
@@ -52,24 +52,6 @@ import Rubric from '@/components/Rubric'
 import { mapState } from 'vuex'
 
 export default {
-  name: 'StudentFeedback',
-  // watch: {
-  //   $route (to, from) {
-  //     this.$store.dispatch('clearForm', this.$route.params.project_id)
-  //   }
-  // },
-  data () {
-    return {
-      // I think all of these can be removed once we get everything into global state
-      loading: false,
-      module: null,
-      showNoteForm: false,
-      studentNote: null,
-      formData: {
-        note: ''
-      }
-    }
-  },
   components: {
     Project,
     ProjectNav,
@@ -86,24 +68,9 @@ export default {
     }
   },
   methods: {
-    toggleNoteForm () {
-      this.showNoteForm = !this.showNoteForm
-    },
-    AddNote () {
-      this.studentNote = this.formData.note
-      const payload = { projectId: this.project.id, note: this.formData.note }
-      this.$store.dispatch('addNoteToProject', payload)
-      this.formData.note = ''
-    },
-    CreateNotes () {
-      this.studentNote = this.project.student_comments
-    },
     getForm () {
       this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
     }
-  },
-  created () {
-    // this.studentNote = this.project.student_comments
   }
 }
 </script>

@@ -16,7 +16,7 @@
         <section v-if="this.$store.state.currentStudent.id" class="right-section">
           <ModuleNav :loggedIn="loggedIn" :class="{ 'instructor-left-section': instructorAuth }"/>
           <StudentData />
-          <StudentFeedback />
+          <InstructorFeedback v-if="$route.params.id"/>
         </section>
 
         <section v-else-if="!this.$store.state.currentStudent.user_id" class="right-section">
@@ -32,7 +32,7 @@
 
 <script>
 import ModuleNav from '@/components/ModuleNav'
-import StudentFeedback from '@/components/StudentFeedback'
+import InstructorFeedback from '@/components/InstructorFeedback'
 import { mapActions, mapState } from 'vuex'
 import StudentData from '@/components/StudentData'
 
@@ -46,7 +46,7 @@ export default {
   components: {
     StudentData,
     ModuleNav,
-    StudentFeedback
+    InstructorFeedback
   },
   computed: {
     ...mapState([
