@@ -2,14 +2,11 @@
   <section class="feedback-container s-content">
     <ProjectNav />
 
-    <div v-if="!$route.params.project_id">
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
-      <h1 class="s-h1">Select a project to get started!</h1>
-    </div>
+      <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
-    <div v-else-if="!this.project">
-      <h1 class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-    </div>
+      <h1 v-else-if="!this.project && !this.$store.state.myStudents" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
+      <button v-else-if="!this.project && this.$store.state.myStudents && !this.$store.state.form.data" class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
 
     <div v-if="this.project">
       <Project :project="this.project"/>
@@ -42,12 +39,17 @@
         </div>
       </section>
     </div>
+
+    <div v-else-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
+      <Rubric />
+    </div>
   </section>
 </template>
 
 <script>
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
+import Rubric from '@/components/Rubric'
 import { mapState } from 'vuex'
 
 export default {
@@ -71,7 +73,8 @@ export default {
   },
   components: {
     Project,
-    ProjectNav
+    ProjectNav,
+    Rubric
   },
   computed: {
     ...mapState([
@@ -95,6 +98,9 @@ export default {
     },
     CreateNotes () {
       this.studentNote = this.project.student_comments
+    },
+    getForm () {
+      this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
     }
   },
   created () {

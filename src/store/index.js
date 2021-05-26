@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// should get something when we're authenticated
 export default new Vuex.Store({
   state: {
     currentModule: {},
@@ -18,7 +17,6 @@ export default new Vuex.Store({
     instructorAuth: true
   },
   mutations: {
-    // mutations update state
     setCurrentModule (state, payload) {
       state.currentModule = payload
     },
@@ -74,11 +72,9 @@ export default new Vuex.Store({
       }
     },
     getForm (context, fetchDetails) {
-      // console.log(fetchDetails)
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
         .then(response => response.json())
         .then(data => {
-          // console.log(data)
           context.commit('setForm', data)
         })
     },
@@ -86,6 +82,47 @@ export default new Vuex.Store({
       if (this.state.form.data.attributes.mod !== projectNum) {
         context.commit('setForm', {})
       }
+    },
+    sendFeedback (context, feedback) {
+      console.log(feedback)
+      return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/10/students/201/student_projects', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          instructor_id: 10,
+          student_id: 201,
+          project_template_id: 16,
+          instructor_comments: 'Aw yeeeahhh',
+          project_feedback: [
+            {
+              rubric_template_category_id: 3,
+              score: 4.0,
+              comment: 'yes sire'
+            },
+            {
+              rubric_template_category_id: 4,
+              score: 2.0,
+              comment: 'gangsta shit'
+            },
+            {
+              rubric_template_category_id: 5,
+              score: 1.0,
+              comment: 'wow'
+            },
+            {
+              rubric_template_category_id: 6,
+              score: 3.0,
+              comment: 'holy moly'
+            }
+          ]
+        })
+      })
+        .then(response => response.json)
+        .then(data => {
+          console.log(data)
+        })
     }
   },
   modules: {
@@ -99,29 +136,5 @@ export default new Vuex.Store({
         return undefined
       }
     }
-    // getCurrentModule
-    // getAllModules
-    // currentModuleProjects (state, getters) {
-    // state.currentModule.projects
-    //   console.log('mod projects FROM STORE: ', state.currentModule.data.attributes.student_projects)
-    //   return state.currentModule.data.attributes.student_projects
-    // },
-    // getCurrentModule (state, getters) {
-    // const sortedModules = this.state.allModules.sort((a, b) => a - b)
-    // }
-    // getStudentData: (state) => (studentId) => {
-    //   const foundStudent = state.myStudents.data.find(student => student.id === studentId)
-    //   if (foundStudent) {
-    //     context.commit('setCurrentStudent', foundStudent)
-    //   }
-    // }
   }
 })
-
-// getter to get data
-// do api call once if small
-// per module if it's medium amount
-// in actions -- trigger dispatch to store to get modules
-// load first module by default -- currentModule ??
-// what does user want, what is their intent when using
-// mapState. mapGetters

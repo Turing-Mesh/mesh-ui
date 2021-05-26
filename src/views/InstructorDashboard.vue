@@ -3,7 +3,9 @@
       <div class="main">
         <section class="left-section">
           <div class="instructor-main">
-            <ul>
+            <button class="s-button">Search All Students</button>
+            <h2>Current Students</h2>
+            <ul class="student-name-container">
               <li class="student-name" v-for="student in myStudents.data" :key="student.id">
                 <button class="s-button s-button-secondary stu-btn" @click="getInfo(student.id)">{{ student.attributes.first_name }}</button>
               </li>
@@ -77,10 +79,10 @@ export default {
 /*  margin: 0 auto;*/
 /*}*/
 
-/*.instructor-main {*/
+/* .instructor-main {*/
 /*  width: 100%;*/
 /*  height: 95vh;*/
-/*}*/
+/*} */
 
 /*.instructor-left-section {*/
 /*  !*background: purple;*!*/
