@@ -12,7 +12,7 @@
     </div>
 
     <div v-else-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
-      <Rubric />
+      <Rubric v-if="$route.params.project_id"/>
     </div>
   </section>
 </template>
@@ -24,6 +24,11 @@ import Rubric from '@/components/Rubric'
 import { mapState } from 'vuex'
 
 export default {
+  watch: {
+    $route (to, from) {
+      this.$store.dispatch('clearForm', this.$route.params.project_id)
+    }
+  },
   components: {
     Project,
     ProjectNav,
