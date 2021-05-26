@@ -33,7 +33,6 @@ export default {
   name: 'Project',
   data () {
     return {
-      // avgScore: this.project.average_score
     }
   },
   components: {

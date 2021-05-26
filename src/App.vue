@@ -63,7 +63,7 @@ export default {
     let payload
     for (let i = 1; i < 5; i++) {
       // payload = { studentMod: i, studentId: this.userId }
-      payload = { studentMod: i, studentId: 1 }
+      payload = { studentMod: i, studentId: 94 }
       this.fetchModule(payload)
     }
   }

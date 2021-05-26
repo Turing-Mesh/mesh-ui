@@ -15,7 +15,7 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
-    userId: null,
+    userId: 94,
     userName: ''
   },
   mutations: {
@@ -52,13 +52,14 @@ export default new Vuex.Store({
           context.commit('setAllModules', data)
         })
     },
-    addNoteToProject (context, { projectId, note }) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/${projectId}`, {
+    addNotesToProject (context, { userId, projectId, notes }) {
+      console.log(notes)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${userId}/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ student_comments: note })
+        body: JSON.stringify({ student_comments: notes })
       })
         .then(response => response.json)
         .then(data => {
