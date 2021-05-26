@@ -15,8 +15,7 @@
       <div class="progress-bar-overall" id="bar-average">
         <div class="progress-bar-overall__score-wrapper">
           <div class="progress-bar-overall__score-wrapper--number">
-            {{ project.average_score }}
-<!--            {{ project.average_score.toFixed(2) }}-->
+            {{ Number(this.project.average_score).toFixed(2) }}
           </div>
         </div>
       </div>
@@ -34,6 +33,7 @@ export default {
   name: 'Project',
   data () {
     return {
+      // avgScore: this.project.average_score
     }
   },
   components: {
