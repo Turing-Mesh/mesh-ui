@@ -51,7 +51,12 @@ describe('Student dashboard', () => {
 
   it('Should have a footer', () => {
     cy.visit('http://localhost:8080/')
-    // TODO add more tests
+      .get('footer').contains('Ben')
+      .get('footer').contains('Genevieve')
+      .get('footer').contains('Jessica')
+      .get('footer').contains('Jesus')
+      .get('footer').contains('Katie')
+      .get('footer').contains('Nikki')
       .get('footer').contains('🦑')
   })
 
