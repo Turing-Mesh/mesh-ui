@@ -15,7 +15,7 @@
 
         <section v-if="this.$store.state.currentStudent.id" class="right-section">
           <ModuleNav :loggedIn="loggedIn" :class="{ 'instructor-left-section': instructorAuth }"/>
-          <StudentData :student="student"/>
+          <StudentData />
           <StudentFeedback />
         </section>
 

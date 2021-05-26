@@ -14,7 +14,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true
+    instructorAuth: false
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -130,7 +130,7 @@ export default new Vuex.Store({
   getters: {
     getSelectedProject: (state) => (selectedModuleNum, selectedProjectNum) => {
       const foundModule = state.allModules.find(dataSet => Number(dataSet.data.attributes.mod) === selectedModuleNum)
-      if (foundModule.data.attributes.student_projects) {
+      if (foundModule) {
         return foundModule.data.attributes.student_projects.find(dataSet => Number(dataSet.project_number) === selectedProjectNum)
       } else {
         return undefined

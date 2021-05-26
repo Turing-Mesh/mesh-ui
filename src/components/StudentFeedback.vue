@@ -5,8 +5,8 @@
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
-      <h1 v-else-if="!this.project && !this.$store.state.myStudents" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-      <button v-else-if="!this.project && this.$store.state.myStudents && !this.$store.state.form.data" class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
+      <h1 v-else-if="!this.project && !this.$store.state.myStudents.length" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
+      <button v-else-if="!this.project && this.$store.state.myStudents.length && !this.$store.state.form.data" class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
 
     <div v-if="this.project">
       <Project :project="this.project"/>
@@ -104,7 +104,7 @@ export default {
     }
   },
   created () {
-    this.studentNote = this.project.student_comments
+    // this.studentNote = this.project.student_comments
   }
 }
 </script>
