@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :loggedIn="loggedIn" :userName="instructorAuth ? instructorNameHardCoded : studentNameHardCoded"/>
+    <Header :loggedIn="loggedIn" :userName="userName"/>
 
     <InstructorDashboard v-if="instructorAuth"
                 :loggedIn="loggedIn"
@@ -19,14 +19,14 @@
         />
       </section>
     </div>
-<!--    <Footer />-->
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
-// import Footer from '@/components/Footer'
+import Footer from '@/components/Footer'
 import { mapActions, mapState } from 'vuex'
 import InstructorDashboard from '@/views/InstructorDashboard'
 
@@ -35,12 +35,12 @@ export default {
   // save in state in store
   data () {
     return {
-      instructorNameHardCoded: 'Leta',
-      studentNameHardCoded: 'Jessica'
+      // instructorNameHardCoded: 'Leta',
+      // studentNameHardCoded: 'Jessica'
     }
   },
   components: {
-    // Footer,
+    Footer,
     ModuleNav,
     Header,
     InstructorDashboard
@@ -49,7 +49,9 @@ export default {
     ...mapState([
       'loggedIn',
       'authenticated',
-      'instructorAuth'
+      'instructorAuth',
+      'userId',
+      'userName'
     ])
   },
   methods: {
@@ -60,7 +62,7 @@ export default {
   created () {
     let payload
     for (let i = 1; i < 5; i++) {
-      payload = { studentMod: i, studentId: 94 }
+      payload = { studentMod: i, studentId: this.userId }
       this.fetchModule(payload)
     }
   }

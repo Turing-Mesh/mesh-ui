@@ -14,7 +14,9 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true
+    instructorAuth: false,
+    userId: null,
+    userName: ''
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -34,6 +36,11 @@ export default new Vuex.Store({
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
+    },
+    setCurrentUser (state, payload) {
+      state.userId = payload.userId
+      state.userName = payload.userName
+      state.instructorAuth = payload.instructorAuth
     }
   },
   actions: {
@@ -123,6 +130,9 @@ export default new Vuex.Store({
         .then(data => {
           console.log(data)
         })
+    },
+    setLoggedInUser (context, payload) {
+      return context.commit('setCurrentUser', payload)
     }
   },
   modules: {
