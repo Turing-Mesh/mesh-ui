@@ -33,7 +33,7 @@
 <script>
 import ModuleNav from '@/components/ModuleNav'
 import StudentFeedback from '@/components/StudentFeedback'
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import StudentData from '@/components/StudentData'
 
 export default {
@@ -53,10 +53,14 @@ export default {
       'loggedIn',
       'authenticated',
       'instructorAuth',
-      'myStudents'
+      'myStudents',
+      'currentStudent'
     ])
   },
   methods: {
+    ...mapActions([
+      'fetchModule'
+    ]),
     getInfo (id) {
       this.$store.dispatch('setStudentData', id)
     }
@@ -65,10 +69,13 @@ export default {
     this.$store.dispatch('fetchMyStudents', 1)
   },
   updated () {
-    this.$store.dispatch('fetchModule', { studentMod: 1, studentId: this.$store.state.currentStudent.attributes.user_id })
-    this.$store.dispatch('fetchModule', { studentMod: 2, studentId: this.$store.state.currentStudent.attributes.user_id })
-    this.$store.dispatch('fetchModule', { studentMod: 3, studentId: this.$store.state.currentStudent.attributes.user_id })
-    this.$store.dispatch('fetchModule', { studentMod: 4, studentId: this.$store.state.currentStudent.attributes.user_id })
+    if (this.currentStudent.attributes) {
+      let payload
+      for (let i = 1; i < 5; i++) {
+        payload = { studentMod: i, studentId: this.currentStudent.attributes.user_id }
+        this.fetchModule(payload)
+      }
+    }
   }
 }
 </script>
