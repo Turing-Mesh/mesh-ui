@@ -14,7 +14,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: false,
+    instructorAuth: true,
     userId: 94,
     userName: 'Lesha'
     // userId: 1,
@@ -28,7 +28,11 @@ export default new Vuex.Store({
       state.currentModule = payload
     },
     setAllModules (state, singleModule) {
-      state.allModules.push(singleModule)
+      if (singleModule === []) {
+        state.allModules = singleModule
+      } else {
+        state.allModules.push(singleModule)
+      }
     },
     setMyStudents (state, myStudents) {
       state.myStudents = myStudents
@@ -56,6 +60,9 @@ export default new Vuex.Store({
         .then(data => {
           context.commit('setAllModules', data)
         })
+    },
+    clearAllModules (context, payload) {
+      context.commit('setAllModules', payload)
     },
     addNotesToProject (context, { userId, projectId, notes }) {
       console.log(notes)
