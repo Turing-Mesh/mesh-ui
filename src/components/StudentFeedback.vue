@@ -1,7 +1,6 @@
 <template>
   <section class="feedback-container s-content">
-    <ProjectNav />
-
+    <ProjectNav :mod="this.$route.params.id"/>
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
@@ -103,21 +102,15 @@ export default {
       this.$store.dispatch('addNotesToProject', payload)
       this.formData.note = ''
     },
-    CreateNotes () {
-      if (this.project.student_comments === null) {
-        this.studentNotes = []
-      } else {
-        this.studentNotes = this.project.student_comments
-      }
-      return this.studentNotes
-    },
     getForm () {
       this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
     }
   },
   created () {
-    this.CreateNotes()
-    // this.studentNotes = this.project.student_comments
+    console.log(this.$route.params.id)
+    if (this.project) {
+      this.studentNotes = this.project.student_comments
+    }
   }
 }
 </script>
