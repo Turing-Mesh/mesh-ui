@@ -1,8 +1,14 @@
 <template>
-  <InstructorDashboard />
-  <!-- <div id="app">
-    <Header :loggedIn="loggedIn"/>
-    <div class="main">
+  <div id="app">
+    <Header :loggedIn="loggedIn" :userName="instructorAuth ? instructorNameHardCoded : studentNameHardCoded"/>
+
+    <InstructorDashboard v-if="instructorAuth"
+                :loggedIn="loggedIn"
+                :authenticated="authenticated"
+                :instructorAuth="instructorAuth"
+    />
+
+    <div v-else class="main">
       <ModuleNav :loggedIn="loggedIn"/>
 
       <section class="right-section">
@@ -13,33 +19,31 @@
         />
       </section>
     </div>
-    <Footer />
-  </div> -->
+<!--    <Footer />-->
+  </div>
 </template>
 
 <script>
-// import Header from '@/components/Header'
-// import ModuleNav from '@/components/ModuleNav'
+import Header from '@/components/Header'
+import ModuleNav from '@/components/ModuleNav'
 // import Footer from '@/components/Footer'
-import InstructorDashboard from '@/views/InstructorDashboard'
 import { mapActions, mapState } from 'vuex'
-// import Instructor from '@/views/Instructor'
+import InstructorDashboard from '@/views/InstructorDashboard'
 
 export default {
   // set initial state here
   // save in state in store
   data () {
     return {
-      instructorNameHardCoded: 'LetaLeta',
-      studentNameHardCoded: 'JessicaJessica'
+      instructorNameHardCoded: 'Leta',
+      studentNameHardCoded: 'Jessica'
     }
   },
   components: {
     // Footer,
-    // ModuleNav,
-    // Header,
+    ModuleNav,
+    Header,
     InstructorDashboard
-    // Instructor
   },
   computed: {
     ...mapState([
@@ -53,22 +57,12 @@ export default {
       'fetchModule'
     ])
   },
-  methods: {
-    ...mapActions([
-      'fetchModule'
-    ])
-  },
   created () {
-    // let payload
-    // for (let i = 1; i < 5; i++) {
-    //   payload = { moduleId: i, studentId: this.studentIdHardCoded }
-    //   this.fetchModule(payload)
-    // this.$store.dispatch('fetchModule', payload)
-    // }
-    // this.$store.dispatch('fetchModule', 1)
-    // this.$store.dispatch('fetchModule', 2)
-    // this.$store.dispatch('fetchModule', 3)
-    // this.$store.dispatch('fetchModule', 4)
+    let payload
+    for (let i = 1; i < 5; i++) {
+      payload = { studentMod: i, studentId: 94 }
+      this.fetchModule(payload)
+    }
   }
 }
 </script>

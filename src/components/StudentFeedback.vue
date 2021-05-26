@@ -2,21 +2,12 @@
   <section class="feedback-container s-content">
     <ProjectNav />
 
-<!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
-      <h1 v-if="!$route.params.project_id && !this.$store.state.myStudents" class="s-h1">Select a project to get started!</h1>
-      <h1 v-else-if="!$route.params.project_id && this.$store.state.myStudents" class="s-h1">Select a project to submit some feedback!</h1>
+      <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
+      <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
-      <h1 v-else-if="!this.project && !this.$store.state.myStudents" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-      <button v-else-if="!this.project && this.$store.state.myStudents && !this.$store.state.form.data" class="s-h1" @click="getForm">Submit Feedback</button>
+      <h1 v-else-if="!this.project" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
 
-      <div v-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
-        <h1>{{ this.$store.state.form.data.attributes.rubric_template[0].rubric_category_name }}</h1>
-        <h1>{{ this.$store.state.form.data.attributes.rubric_template[1].rubric_category_name }}</h1>
-        <h1>{{ this.$store.state.form.data.attributes.rubric_template[2].rubric_category_name }}</h1>
-        <h1>{{ this.$store.state.form.data.attributes.rubric_template[3].rubric_category_name }}</h1>
-      </div>
-
-    <div v-else-if="this.project">
+    <div v-if="this.project">
       <Project :project="this.project"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
@@ -47,20 +38,26 @@
         </div>
       </section>
     </div>
+
+    <div v-else-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
+      <Rubric />
+    </div>
   </section>
 </template>
 
 <script>
 import ProjectNav from '@/components/ProjectNav'
 import Project from '@/components/Project'
+import Rubric from '@/components/Rubric'
+import { mapState } from 'vuex'
 
 export default {
   name: 'StudentFeedback',
-  watch: {
-    $route (to, from) {
-      this.$store.dispatch('clearForm', this.$route.params.project_id)
-    }
-  },
+  // watch: {
+  //   $route (to, from) {
+  //     this.$store.dispatch('clearForm', this.$route.params.project_id)
+  //   }
+  // },
   data () {
     return {
       // I think all of these can be removed once we get everything into global state
@@ -75,7 +72,18 @@ export default {
   },
   components: {
     Project,
-    ProjectNav
+    ProjectNav,
+    Rubric
+  },
+  computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth'
+    ]),
+    project: function () {
+      return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
+    }
   },
   methods: {
     toggleNoteForm () {
@@ -94,13 +102,8 @@ export default {
       this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
     }
   },
-  computed: {
-    project: function () {
-      return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
-    }
-  },
   created () {
-    this.studentNote = this.project.student_comments
+    // this.studentNote = this.project.student_comments
   }
 }
 </script>

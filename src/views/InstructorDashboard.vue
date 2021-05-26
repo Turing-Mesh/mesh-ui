@@ -1,70 +1,110 @@
 <template>
-  <div>
-    <Header :loggedIn="loggedIn"/>
+    <div class="instructor-container">
+      <div class="main">
+        <section class="left-section">
+          <div class="instructor-main">
+            <button class="s-button">Search All Students</button>
+            <h2>Current Students</h2>
+            <ul class="student-name-container">
+              <li class="student-name" v-for="student in myStudents.data" :key="student.id">
+                <button class="s-button s-button-secondary stu-btn" @click="getInfo(student.id)">{{ student.attributes.first_name }}</button>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-    <div class="main">
-      <ModuleNav :loggedIn="loggedIn"/>
-      <section class="left-section">
-        <p>These will need to be formatted and used in a v-for directive, but I put them here to show you that the data is hooked up from BE and stored in Vuex!</p>
-        <button class="s-button" @click="getInfo">{{ this.$store.state.myStudents.data[0].attributes.first_name }}</button>
-        <button class="s-button">{{ this.$store.state.myStudents.data[1].attributes.first_name }}</button>
-        <button class="s-button">{{ this.$store.state.myStudents.data[2].attributes.first_name }}</button>
-        <button class="s-button">{{ this.$store.state.myStudents.data[3].attributes.first_name }}</button>
-      </section>
+        <section v-if="this.$store.state.currentStudent.id" class="right-section">
+          <ModuleNav :loggedIn="loggedIn" :class="{ 'instructor-left-section': instructorAuth }"/>
+          <StudentData />
+          <InstructorFeedback v-if="$route.params.id"/>
+        </section>
 
-      <section v-if="this.$store.state.currentStudent.id" class="right-section">
-        <p>{{ this.$store.state.currentStudent.attributes.first_name + " " + this.$store.state.currentStudent.attributes.last_name}}</p>
-        <p>Student ID: {{ this.$store.state.currentStudent.attributes.user_id }}</p>
-        <p>Cohort {{ this.$store.state.currentStudent.attributes.current_cohort }}</p>
-        <StudentFeedback />
-      </section>
-
-      <section v-else-if="!this.$store.state.currentStudent.user_id" class="right-section">
-        <router-view
-          :key="$route.path"
-          :loggedIn="loggedIn"
-          :authenticated="authenticated"
-        />
-      </section>
+        <section v-else-if="!this.$store.state.currentStudent.user_id" class="right-section">
+          <router-view
+            :key="$route.path"
+            :loggedIn="loggedIn"
+            :authenticated="authenticated"
+          />
+        </section>
+      </div>
     </div>
-    <Footer />
-  </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
-import StudentFeedback from '@/components/StudentFeedback'
-import Footer from '@/components/Footer'
+import InstructorFeedback from '@/components/InstructorFeedback'
+import { mapActions, mapState } from 'vuex'
+import StudentData from '@/components/StudentData'
 
 export default {
   // set initial state here
   // save in state in store
   data () {
     return {
-      loggedIn: true,
-      authenticated: true
     }
   },
   components: {
-    Footer,
+    StudentData,
     ModuleNav,
-    StudentFeedback,
-    Header
+    InstructorFeedback
+  },
+  computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth',
+      'myStudents',
+      'currentStudent'
+    ])
   },
   methods: {
-    getInfo () {
-      this.$store.dispatch('setStudentData', '1')
+    ...mapActions([
+      'fetchModule'
+    ]),
+    getInfo (id) {
+      this.$store.dispatch('setStudentData', id)
     }
   },
   created () {
     this.$store.dispatch('fetchMyStudents', 1)
   },
   updated () {
-    this.$store.dispatch('fetchModule', { studentMod: 1, studentId: this.$store.state.currentStudent.attributes.user_id })
-    this.$store.dispatch('fetchModule', { studentMod: 2, studentId: this.$store.state.currentStudent.attributes.user_id })
-    this.$store.dispatch('fetchModule', { studentMod: 3, studentId: this.$store.state.currentStudent.attributes.user_id })
-    this.$store.dispatch('fetchModule', { studentMod: 4, studentId: this.$store.state.currentStudent.attributes.user_id })
+    if (this.currentStudent.attributes) {
+      let payload
+      for (let i = 1; i < 5; i++) {
+        payload = { studentMod: i, studentId: this.currentStudent.attributes.user_id }
+        this.fetchModule(payload)
+      }
+    }
   }
 }
 </script>
+
+<style scoped>
+/*.instructor-container {*/
+/*  width: 90%;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/* .instructor-main {*/
+/*  width: 100%;*/
+/*  height: 95vh;*/
+/*} */
+
+/*.instructor-left-section {*/
+/*  !*background: purple;*!*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(4, 1fr);*/
+/*  width: 100%;*/
+/*  height: 60px;*/
+/*  margin: 30px auto;*/
+/*  text-align: center;*/
+/*}*/
+
+.student-name {
+  list-style-type: none;
+  color: #4C4D4F;
+  margin: 10px;
+}
+
+</style>
