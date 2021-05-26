@@ -23,14 +23,24 @@
 
 ## About the Project
 
-Mesh is a feedback tracker for students at the Turing School of Software & Design. 
-[TODO add more sentences here, basic overview of what the app does and who it's for. Mention the FE and BE teams working together.]
+Mesh is a project feedback tracker for students at the Turing School of Software & Design. It is a full-stack application built by a FE team and BE team from the 2011 cohort. The overarching goals of this project were to get experience working on a full stack team and to learn and implement a new stretch technology, both on the BE and FE.
+
+### MVP
+
+The MVP goal of this application is to offer students a centralized location for finding their project feedback for each project they complete in each of the four modules they move through during their time at Turing. The userflow for this goal would involve a student logging into their dashboard, selecting a module, and finding project tabs that correspond to the various projects associated with a given mod. Selecting a project will give the student access to their project feedback (if the project has been graded), including the rubric categories for that project, scores for these categories, and any instructor comments associated with those categories. The student will also find an overall score for the project as well as any final comments an instructor has included. Below the feedback section, students are provided with a place to take notes on their progress or areas for improvement.
+
+### Extensions
+
+The extension goal of this application is to offer instructors with a convenient, standardized way to grade student projects and provide student feedback. The userflow for this goal would involve an instructor logging into their dashboard, selecting a student from the list of students they are currently teaching, selecting a module for that student, then selecting the project they wish to grade. Instructors will then be given a rubric template, auto-populated with the rubric categories associated with that project, and the option to leave comments on any given category or general notes. The overall score would be calculated and rendered automatically once all rubric categories had been given a score. Upon submission, a student would be able to find their feedback by navigating to this project from their dashboard. Instructors also have access to all of thier students' past projects and can search all actively enrolled Turing students to find project feedback history.
+
 
 View the deployed frontend site on Heroku: [Mesh](https://turing-mesh.herokuapp.com)
 
-Mesh backend API repo:
+Mesh backend API repo: ![Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
 
-Mesh backend API deployed site:
+Mesh backend microservice repo: ![Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
+
+Mesh backend API deployed site: ![]()
 
 ## Installation
 
@@ -44,7 +54,7 @@ Mesh backend API deployed site:
 ## Functionality
 * [Student Dashboard](#student-dashboard)
 * [Adding Notes](#adding-notes)
-* [Responsive Design](#responsive-design)
+<!-- * [Responsive Design](#responsive-design) -->
 * [Accessibility](#accessibility)
 * [Error Handling](#error-handling)
 * [Loading Screen](#loading-screen)
@@ -53,30 +63,28 @@ Mesh backend API deployed site:
 <!-- TODO finish this -->
 When a user visits the site they... 
 
-<!-- TODO add screenshot/gif -->
-![image]()
+![image](https://media.giphy.com/media/XYM26YSii6u59bZE87/giphy.gif)
 
-#### Adding Notes
+<!-- #### Adding Notes
 <!-- TODO finish this -->
-When a user ... add notes ...
+<!-- When a user ... add notes ... -->
 
 <!-- TODO add screenshot/gif -->
-![image]()
+<!-- ![image]() --> -->
 
-#### Responsive Design
+<!-- #### Responsive Design -->
 <!-- TODO finish this -->
- - The app is fully responsive across all screen sizes. Viewed on an iPhone 6/7/8:
+<!--  - The app is fully responsive across all screen sizes. Viewed on an iPhone 6/7/8: -->
 
 <!-- TODO add screenshot/gif -->
-![image]()
+<!-- ![image]() -->
 
 #### Accessibility 
 <!-- TODO finish this -- need to check accessibility! -->
 Accessibility was a consideration throughout the development of this app. Mesh earned a score of xx% using the Lighthouse audit tool.
 <!-- , and the WAVE Web Accessibility Evaluation Tools shows zero errors and zero contrast errors.  -->
 
-<!-- TODO add screenshot/gif -->
-![accessibility]()
+<img width="1137" alt="Screen Shot 2021-05-26 at 5 55 11 PM" src="https://user-images.githubusercontent.com/73088654/119745536-91085880-be4b-11eb-8c54-3b6d754f2df0.png">
 
 <!-- #### Error Handling -->
 <!-- To help prevent user frustration, network request errors and bad URLs are handled gracefully, with a message displayed to the user. -->
@@ -87,8 +95,7 @@ Accessibility was a consideration throughout the development of this app. Mesh e
 #### Bad Routes
 When a user enters an invalid URL in the address bar, an error message appears. 🐾 
 
-<!-- TODO add screenshot/gif -->
-![image]()
+<img width="1138" alt="Screen Shot 2021-05-26 at 5 56 53 PM" src="https://user-images.githubusercontent.com/73088654/119745633-c3b25100-be4b-11eb-9bb7-6c54f7468d1a.png">
 
 ## Learning Goals
 - Learn and gain fluency with the Vue framework and Vuex for global state management
@@ -99,8 +106,8 @@ When a user enters an invalid URL in the address bar, an error message appears. 
 - Use best practices for UI/UX, including wireframes, user personas, and testing
 
 ## Future Iterations
-- Allow instructor to leave new feedback for their current students.
-- Allow instructors to search for students by name.
+- Finish rubric component and POST request that would allow instructor to leave new feedback for their current students.
+- Build feature that would allow instructors to search for students by name.
 
 ## Technologies Used
 <!-- TODO find web badge image for Vue and Vuex -->
