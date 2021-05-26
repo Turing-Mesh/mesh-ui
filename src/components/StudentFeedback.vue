@@ -107,9 +107,13 @@ export default {
     }
   },
   created () {
-    console.log(this.$route.params.id)
+    console.log(this.project)
     if (this.project) {
       this.studentNotes = this.project.student_comments
+    }
+
+    if (this.project.student_comments === null) {
+      this.studentNotes.push('')
     }
   }
 }

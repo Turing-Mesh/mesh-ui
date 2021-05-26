@@ -16,7 +16,12 @@ export default new Vuex.Store({
     authenticated: true,
     instructorAuth: false,
     userId: 94,
-    userName: ''
+    userName: 'Lesha'
+    // userId: 1,
+    // userName: 'Olive'
+    // instructorAuth: true,
+    // userId: 112,
+    // userName: 'Daniele'
   },
   mutations: {
     setCurrentModule (state, payload) {
