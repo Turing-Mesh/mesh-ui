@@ -32,7 +32,7 @@ describe('Student dashboard', () => {
       .get('[data-cy=mod2').click()
       .wait(1000)
       .get('[data-cy=mod1').click()
-      .wait(1000)
+      .wait(4000)
       .get('.project-tab').contains('Project 1')
       .get('.project-tab').contains('Project 2')
       .get('.project-tab').contains('Project 4')
@@ -47,6 +47,12 @@ describe('Student dashboard', () => {
       .get('.overall').contains('Overall')
       .get('.progress-bar-overall').should('exist')
       .get('.notes-container').contains('Student Notes')
+      .url().should('eq', 'http://localhost:8080/modules/1/project/3')
+  })
+
+  it('Should accept and display user-entered notes', () => {
+    cy.visit('http://localhost:8080/')
+    // TODO add tests for entering and seeing notes
   })
 
   it('Should have a footer', () => {
@@ -59,21 +65,6 @@ describe('Student dashboard', () => {
       .get('footer').contains('Nikki')
       .get('footer').contains('🦑')
   })
-
-  it('Shows module stuff after clicking on a button', () => {
-    cy.get('[data-cy=mod1]').click()
-      .url().should('eq', 'http://localhost:8080/modules/1')
-  })
-})
-
-describe('Student feedback', () => {
-  // TODO beforeEach to .visit
-  it('Shows module stuff after clicking on a button', () => {
-    cy.get('[data-cy=mod1]').click()
-      .url().should('eq', 'http://localhost:8080/modules/1')
-  })
-
-  // TODO test for adding notes
 })
 
 describe('About page', () => {
