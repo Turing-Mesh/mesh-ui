@@ -14,7 +14,14 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true
+    instructorAuth: false,
+    userId: 94,
+    userName: 'Lesha'
+    // userId: 1,
+    // userName: 'Olive'
+    // instructorAuth: true,
+    // userId: 112,
+    // userName: 'Daniele'
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -34,6 +41,11 @@ export default new Vuex.Store({
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
+    },
+    setCurrentUser (state, payload) {
+      state.userId = payload.userId
+      state.userName = payload.userName
+      state.instructorAuth = payload.instructorAuth
     }
   },
   actions: {
@@ -45,13 +57,14 @@ export default new Vuex.Store({
           context.commit('setAllModules', data)
         })
     },
-    addNoteToProject (context, { projectId, note }) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/94/student_projects/${projectId}`, {
+    addNotesToProject (context, { userId, projectId, notes }) {
+      console.log(notes)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${userId}/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ student_comments: note })
+        body: JSON.stringify({ student_comments: notes })
       })
         .then(response => response.json)
         .then(data => {
@@ -123,6 +136,9 @@ export default new Vuex.Store({
         .then(data => {
           console.log(data)
         })
+    },
+    setLoggedInUser (context, payload) {
+      return context.commit('setCurrentUser', payload)
     }
   },
   modules: {

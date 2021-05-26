@@ -1,7 +1,6 @@
 <template>
   <section class="feedback-container s-content">
-    <ProjectNav />
-
+    <ProjectNav :mod="this.$route.params.id"/>
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
@@ -14,7 +13,9 @@
           <span class="s-h2">Student Notes</span>
         </p>
         <div class="current-notes">
-          <p>{{ studentNote }}</p>
+          <ul>
+            <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
+          </ul>
         </div>
         <div class="form-container">
           <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
@@ -64,7 +65,7 @@ export default {
       loading: false,
       module: null,
       showNoteForm: false,
-      studentNote: null,
+      studentNotes: [],
       formData: {
         note: ''
       }
@@ -79,7 +80,8 @@ export default {
     ...mapState([
       'loggedIn',
       'authenticated',
-      'instructorAuth'
+      'instructorAuth',
+      'userId'
     ]),
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
@@ -90,20 +92,29 @@ export default {
       this.showNoteForm = !this.showNoteForm
     },
     AddNote () {
-      this.studentNote = this.formData.note
-      const payload = { projectId: this.project.id, note: this.formData.note }
-      this.$store.dispatch('addNoteToProject', payload)
+      console.log(this.project.id)
+      this.studentNotes.push(this.formData.note)
+      const payload = {
+        userId: this.userId,
+        projectId: this.project.id,
+        notes: this.studentNotes
+      }
+      this.$store.dispatch('addNotesToProject', payload)
       this.formData.note = ''
-    },
-    CreateNotes () {
-      this.studentNote = this.project.student_comments
     },
     getForm () {
       this.$store.dispatch('getForm', { instructorId: 122, studentId: this.$store.state.currentStudent.attributes.user_id, modNum: this.$route.params.id, projectNum: this.$route.params.project_id })
     }
   },
   created () {
-    // this.studentNote = this.project.student_comments
+    console.log(this.project)
+    if (this.project) {
+      this.studentNotes = this.project.student_comments
+    }
+
+    if (this.project.student_comments === null) {
+      this.studentNotes.push('')
+    }
   }
 }
 </script>

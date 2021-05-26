@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :loggedIn="loggedIn" :userName="instructorAuth ? instructorNameHardCoded : studentNameHardCoded"/>
+    <Header :loggedIn="loggedIn" :userName="userName"/>
 
     <InstructorDashboard v-if="instructorAuth"
                 :loggedIn="loggedIn"
@@ -35,8 +35,8 @@ export default {
   // save in state in store
   data () {
     return {
-      instructorNameHardCoded: 'Leta',
-      studentNameHardCoded: 'Jessica'
+      // instructorNameHardCoded: 'Leta',
+      // studentNameHardCoded: 'Jessica'
     }
   },
   components: {
@@ -49,7 +49,9 @@ export default {
     ...mapState([
       'loggedIn',
       'authenticated',
-      'instructorAuth'
+      'instructorAuth',
+      'userId',
+      'userName'
     ])
   },
   methods: {
@@ -60,7 +62,9 @@ export default {
   created () {
     let payload
     for (let i = 1; i < 5; i++) {
-      payload = { studentMod: i, studentId: 94 }
+      payload = { studentMod: i, studentId: this.userId }
+      // payload = { studentMod: i, studentId: 94 }
+      console.log(payload)
       this.fetchModule(payload)
     }
   }

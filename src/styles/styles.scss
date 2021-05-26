@@ -53,12 +53,12 @@ a {
   width: 100px;
 }
 
-.rotating {
-  transition: transform 3s ease-in-out;
-}
-.rotating:hover {
-  transform: rotateZ(360deg);
-}
+//.rotating {
+//  transition: transform 3s ease-in-out;
+//}
+//.rotating:hover {
+//  transform: rotateZ(360deg);
+//}
 
 .calendar {
   width: 30px;
@@ -144,7 +144,7 @@ a {
     }
 
     &--comments {
-      margin-left: 20px;
+      margin: 20px;
       //font-size: 1.3em;
     }
   }
