@@ -23,7 +23,7 @@
 
 ## About the Project
 
-Mesh is the ![capstone project](https://mod4.turing.edu/projects/capstone.html) for students of the 2011 cohort at Turing School of Software and Design. It is a full-stack application built by a FE team and BE team from the 2011 Turing cohort. The overarching goals of this project were to get experience working on a full stack team and to learn and implement a new stretch technology along the way. In a nutshell, Mesh is a project feedback tracker for students at the Turing School of Software & Design.
+Mesh is the [capstone project](https://mod4.turing.edu/projects/capstone.html) for students of the 2011 cohort at Turing School of Software and Design. It is a full-stack application built by a FE team and BE team from the 2011 Turing cohort. The overarching goals of this project were to get experience working on a full stack team and to learn and implement a new stretch technology along the way. In a nutshell, Mesh is a project feedback tracker for students at the Turing School of Software & Design.
 
 ### MVP
 
