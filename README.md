@@ -155,6 +155,7 @@ When a user enters an invalid URL in the address bar, an error message appears.
 - ![Turing Savile Style Guide](https://img.shields.io/badge/Savile-13F1FB?style=for-the-badge&logoColor=white)
 - ![Cypress](https://img.shields.io/badge/cypress%20-%2317202C.svg?&style=for-the-badge&logo=cypress&logoColor=white)
 - ![Travis CI](https://img.shields.io/travis/73VW/TechnicalReport.svg?style=for-the-badge&label=Travis+CI)
+- [![Build Status](https://travis-ci.com/Turing-Mesh/mesh-ui.svg?branch=main)](https://travis-ci.com/Turing-Mesh/mesh-ui)
 - ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Contributors
