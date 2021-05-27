@@ -52,7 +52,7 @@ describe('Student dashboard', () => {
     cy.get('[data-cy=mod1').click()
       .wait(6000)
       .get('.project-tab').contains('Project 2').click()
-      .get('.current-notes').children().children().should('have.length', 0)
+      .get('.current-notes').children().children().should('have.length', 1)
       .get('button').contains('Add new note').click()
       .get('.note__textarea').type('This is my first test note!')
       .get('button').contains('Add').click()
