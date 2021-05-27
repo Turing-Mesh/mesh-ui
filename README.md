@@ -23,15 +23,31 @@
 
 ## About the Project
 
-Mesh is a project feedback tracker for students at the Turing School of Software & Design. It is a full-stack application built by a FE team and BE team from the 2011 cohort. The overarching goals of this project were to get experience working on a full stack team and to learn and implement a new stretch technology, both on the BE and FE.
+Mesh is the ![capstone project](https://mod4.turing.edu/projects/capstone.html) for students of the 2011 cohort at Turing School of Software and Design. It is a full-stack application built by a FE team and BE team from the 2011 Turing cohort. The overarching goals of this project were to get experience working on a full stack team and to learn and implement a new stretch technology along the way. In a nutshell, Mesh is a project feedback tracker for students at the Turing School of Software & Design.
 
 ### MVP
 
-The MVP goal of this application is to offer students a centralized location for finding their project feedback for each project they complete in each of the four modules they move through during their time at Turing. The userflow for this goal would involve a student logging into their dashboard, selecting a module, and finding project tabs that correspond to the various projects associated with a given mod. Selecting a project will give the student access to their project feedback (if the project has been graded), including the rubric categories for that project, scores for these categories, and any instructor comments associated with those categories. The student will also find an overall score for the project as well as any final comments an instructor has included. Below the feedback section, students are provided with a place to take notes on their progress or areas for improvement.
+The MVP goal of this application is to offer students a centralized location for finding their project feedback for any project they complete in each of the four modules they move through during their time at Turing. 
+ 
+The userflow for this goal involves:
+
+   - Logging into the student dashboard
+   - Selecting a module and project to view
+   - Finding the corresponding project feedback, including:
+       - Rubric categories, scores for these categories, and any associated instructor comments
+       - An overall score and any final comments included by the instructor
+       - A student notes section
 
 ### Extensions
 
-The extension goal of this application is to offer instructors with a convenient, standardized way to grade student projects and provide student feedback. The userflow for this goal would involve an instructor logging into their dashboard, selecting a student from the list of students they are currently teaching, selecting a module for that student, then selecting the project they wish to grade. Instructors will then be given a rubric template, auto-populated with the rubric categories associated with that project, and the option to leave comments on any given category or general notes. The overall score would be calculated and rendered automatically once all rubric categories had been given a score. Upon submission, a student would be able to find their feedback by navigating to this project from their dashboard. Instructors also have access to all of thier students' past projects and can search all actively enrolled Turing students to find project feedback history.
+The extension goal of this application is to offer instructors with a convenient, standardized way to grade student projects and provide student feedback. 
+
+The userflow for this goal would involve:
+
+   - Logging into the instructor dashboard
+   - Selecting a student, a module, and a project to view
+   - Filling out a form auto-populated with the rubric categories associated with the project selected
+   - Submitting their feedback through the Mesh app
 
 
 View the deployed frontend site on Heroku: [Mesh](https://turing-mesh.herokuapp.com)
