@@ -3,18 +3,18 @@ describe('Student dashboard', () => {
     cy.visit('http://localhost:8080/')
   })
 
-  it('Should have a header', () => {
+  it('Should have a header with all components present', () => {
     cy.get('img').should('have.class', 'logo rotating')
       .get('.date').contains(/\d\d\d\d/) //regex to find four digits in a row
       .get('h3').contains(/Hi\,\s[A-Z][a-z]/) //regex to find "Hi,", space, capital letter, lowercase letter
   })
 
-  it('Should have a have a subheader', () => {
+  it('Should have a have a subheader with all components present', () => {
     cy.get('h2').contains('Welcome to Mesh.')
       .get('p').contains('see your feedback')
   })
 
-  it('Should have a sidebar', () => {
+  it('Should have a sidebar with all components present', () => {
     cy.get('.left-section').find('a').should('have.length', 4)
       .get('.feedback-container').should('exist')
       .get('[data-cy=mod1').contains('Module 1')
@@ -24,7 +24,7 @@ describe('Student dashboard', () => {
       .get('a').should('not.contain', 'Module 5')
   })
 
-  it('Should have a main feedback section', () => {
+  it('Should have a main feedback section with all components present', () => {
     cy.get('.feedback-container').should('exist')
       .get('[data-cy=mod1').click()
       .wait(6000)
@@ -63,15 +63,15 @@ describe('Student dashboard', () => {
     // TODO add test for all notes showing up in DOM
   })
 
-  it.skip('Should have a footer', () => {
-    cy.get('footer').contains('Ben')
-      .get('footer').contains('Genevieve')
-      .get('footer').contains('Jessica')
-      .get('footer').contains('Jesus')
-      .get('footer').contains('Katie')
-      .get('footer').contains('Nikki')
-      .get('footer').contains('🦑')
-  })
+  // it('Should have a footer with all names present', () => {
+  //   cy.get('footer').contains('Ben')
+  //     .get('footer').contains('Genevieve')
+  //     .get('footer').contains('Jessica')
+  //     .get('footer').contains('Jesus')
+  //     .get('footer').contains('Katie')
+  //     .get('footer').contains('Nikki')
+  //     .get('footer').contains('🦑')
+  // })
 })
 
 describe('About page', () => {
@@ -85,7 +85,7 @@ describe('About page', () => {
 })
 
 describe('Invalid route', () => {
-  it('Should display a giant squid on the about page', () => {
+  it('Should display an error message when user navigates to invalid URL', () => {
     cy.visit('http://localhost:8080/squiddddddd')
       .get('#nope').contains('Go fish')
   })
