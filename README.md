@@ -27,7 +27,7 @@ Mesh is the [capstone project](https://mod4.turing.edu/projects/capstone.html) f
 
 ### MVP
 
-The MVP goal of this application is to offer students a centralized location for finding their project feedback for any project they complete in each of the four modules they move through during their time at Turing. 
+The MVP goal of the Mesh application is to offer students a centralized location for finding their project feedback for any project they complete in each of the four modules they move through during their time at Turing. 
  
 The userflow for this goal involves:
 
@@ -40,7 +40,7 @@ The userflow for this goal involves:
 
 ### Extensions
 
-The extension goal of this application is to offer instructors with a convenient, standardized way to grade student projects and provide student feedback. 
+The extension goal of the Mesh application is to offer instructors a convenient, standardized way to grade student projects and provide student feedback. 
 
 The userflow for this goal would involve:
 
@@ -57,7 +57,7 @@ The userflow for this goal would involve:
 
  - [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
 
- - [Deployed Backed]() NEED A LINK HERE
+ - [Deployed Backend](https://shrouded-citadel-55795.herokuapp.com/api/v1/students/1/student_projects?mod=1)
 
 ### Project Planning Resources
 
@@ -80,15 +80,13 @@ The userflow for this goal would involve:
 
 ## Functionality
 * [Student Dashboard](#student-dashboard)
-<!-- * [Adding Notes](#adding-notes) -->
-<!-- * [Responsive Design](#responsive-design) -->
 * [Accessibility](#accessibility)
 * [Error Handling](#error-handling)
-* [Loading Screen](#loading-screen)
 
-#### Student Dashboard
 
-### Views
+### Student Dashboard
+
+#### Views
 
 <img width="1411" alt="Screen Shot 2021-05-26 at 6 14 24 PM" src="https://user-images.githubusercontent.com/73088654/119746683-3d4b3e80-be4e-11eb-98bf-5a1abfd6370a.png">
 
@@ -97,9 +95,7 @@ The userflow for this goal would involve:
 <img width="1421" alt="Screen Shot 2021-05-26 at 6 17 54 PM" src="https://user-images.githubusercontent.com/73088654/119746882-b3e83c00-be4e-11eb-87e8-79051e045417.png">
 
 
-### User Flow
-
-MY GIF GOT CUT OFF RIGHT AT THE NOTE STUFF 😑
+#### User Flow
 
 ![image](https://media.giphy.com/media/XYM26YSii6u59bZE87/giphy.gif)
 
@@ -117,10 +113,9 @@ MY GIF GOT CUT OFF RIGHT AT THE NOTE STUFF 😑
 <!-- TODO add screenshot/gif -->
 <!-- ![image]() -->
 
-#### Accessibility 
+### Accessibility 
 <!-- TODO finish this -- need to check accessibility! -->
-Accessibility was a consideration throughout the development of this app. Mesh earned a score of xx% using the Lighthouse audit tool.
-<!-- , and the WAVE Web Accessibility Evaluation Tools shows zero errors and zero contrast errors.  -->
+Accessibility was a consideration throughout the development of this app. Mesh earned a score of 97% using the Lighthouse audit tool.
 
 <img width="1137" alt="Screen Shot 2021-05-26 at 5 55 11 PM" src="https://user-images.githubusercontent.com/73088654/119745536-91085880-be4b-11eb-8c54-3b6d754f2df0.png">
 
@@ -130,32 +125,34 @@ Accessibility was a consideration throughout the development of this app. Mesh e
 <!-- #### Loading Screen -->
 <!-- When the app is retrieving data, a message appears on the screen to say the data is being fetched. 🐾  -->
 
-#### Bad Routes
-When a user enters an invalid URL in the address bar, an error message appears. 🐾 
+### Error Handling
+When a user enters an invalid URL in the address bar, an error message appears.
 
 <img width="1138" alt="Screen Shot 2021-05-26 at 5 56 53 PM" src="https://user-images.githubusercontent.com/73088654/119745633-c3b25100-be4b-11eb-9bb7-6c54f7468d1a.png">
 
 ## Learning Goals
-- Learn and gain fluency with the Vue framework and Vuex for global state management
-- Work with a full-stack team to create a ...
-<!-- TODO finish these bullets -->
-- [Something about continuous integration with Travis CI]
-- [Insert verb here] end-to-end testing with Cypress
-- Use best practices for UI/UX, including wireframes, user personas, and testing
+- Explore and implement a Vue framework and Vuex for global state management
+- Demonstrate knowledge gained throughout the Turing program
+- Use an Agile process to turn well-defined requirements into deployed and production-ready software
+- Gain experience dividing applications into components and domains of responsibility to facilitate multi-developer teams.
+- Practice an advanced, professional git workflow using git rebase
+- Gain experience using Travis CI for continuous integration
+- Focus on communication between front-end and back-end teams in order to complete and deploy features
+- Use best practices for UI/UX, including wireframes, user personas, and end-to-end testing
 
 ## Future Iterations
 - Finish rubric component and POST request that would allow instructor to leave new feedback for their current students.
 - Build feature that would allow instructors to search for students by name.
 
 ## Technologies Used
-<!-- TODO find web badge image for Vue and Vuex -->
-- ![Vue]()
-- ![Vuex]()
+- ![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue-dot-js&logoColor=4FC08D)
+- ![Vuex](https://img.shields.io/badge/Vuex-58B17C?style=for-the-badge&logo=vuex&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 - ![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 - ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 - ![Cypress](https://img.shields.io/badge/cypress%20-%2317202C.svg?&style=for-the-badge&logo=cypress&logoColor=white)
 - ![Travis CI](https://img.shields.io/travis/73VW/TechnicalReport.svg?style=for-the-badge&label=Travis+CI)
+- ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Contributors
 * [Jessica J](https://github.com/m1073496) - Application Creator
@@ -163,12 +160,14 @@ When a user enters an invalid URL in the address bar, an error message appears. 
 * [Nikki P](https://github.com/piknikki) - Application Creator
 
 ## Contact
-[<img src="https://img.shields.io/badge/LinkedIn-Katie--B-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin1]
-[<img src="https://img.shields.io/badge/Github-KatieB-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github1]
-[<img src="https://img.shields.io/badge/LinkedIn-Katie--B-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin2]
-[<img src="https://img.shields.io/badge/Github-KatieB-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github2]
-[<img src="https://img.shields.io/badge/LinkedIn-Katie--B-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin3]
-[<img src="https://img.shields.io/badge/Github-KatieB-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github3]
+[<img src="https://img.shields.io/badge/LinkedIn-Jessica%20J-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin1]
+[<img src="https://img.shields.io/badge/Github-Jessica%20J-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github1]
+
+[<img src="https://img.shields.io/badge/LinkedIn-Katie%20B-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin2]
+[<img src="https://img.shields.io/badge/Github-Katie%20B-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github2]
+
+[<img src="https://img.shields.io/badge/LinkedIn-Nikki%20P-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin3]
+[<img src="https://img.shields.io/badge/Github-Nikki%20P-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github3]
 
 <!-- Personal Definitions  -->
 [linkedin1]: https://www.linkedin.com/in/jessica-justice2
