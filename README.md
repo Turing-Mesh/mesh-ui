@@ -57,7 +57,7 @@ The userflow for this goal would involve:
 
  - [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
 
- - [Deployed Backed]()
+ - [Deployed Backed]() NEED A LINK HERE
 
 ### Project Planning Resources
 
@@ -87,7 +87,7 @@ The userflow for this goal would involve:
 * [Loading Screen](#loading-screen)
 
 #### Student Dashboard
-<!-- TODO finish this -->
+
 ### Views
 
 <img width="1411" alt="Screen Shot 2021-05-26 at 6 14 24 PM" src="https://user-images.githubusercontent.com/73088654/119746683-3d4b3e80-be4e-11eb-98bf-5a1abfd6370a.png">
@@ -99,6 +99,8 @@ The userflow for this goal would involve:
 
 ### User Flow
 
+MY GIF GOT CUT OFF RIGHT AT THE NOTE STUFF 😑
+
 ![image](https://media.giphy.com/media/XYM26YSii6u59bZE87/giphy.gif)
 
 <!-- #### Adding Notes
@@ -106,7 +108,7 @@ The userflow for this goal would involve:
 <!-- When a user ... add notes ... -->
 
 <!-- TODO add screenshot/gif -->
-<!-- ![image]() --> -->
+<!-- ![image]() -->
 
 <!-- #### Responsive Design -->
 <!-- TODO finish this -->
