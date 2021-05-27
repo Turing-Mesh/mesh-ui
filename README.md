@@ -50,13 +50,13 @@ The userflow for this goal would involve:
 
 ## Associated Resources
 
- - View the deployed frontend site on Heroku: [Mesh](https://turing-mesh.herokuapp.com)
+ - [Deployed Application](https://turing-mesh.herokuapp.com)
 
- - Mesh backend API repo: [Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
+ - [Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
 
- - Mesh backend microservice repo: [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
+ - [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
 
- - Mesh backend API deployed site: ![]()
+ - [Deployed Backed]()
 
 ### Project Planning Resources
 
