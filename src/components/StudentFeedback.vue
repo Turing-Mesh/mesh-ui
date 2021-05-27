@@ -106,12 +106,8 @@ export default {
     }
   },
   created () {
-    if (this.project) {
+    if (this.project.student_comments !== null) {
       this.studentNotes = this.project.student_comments
-    }
-
-    if (this.project.student_comments === null) {
-      this.studentNotes.push('')
     }
   }
 }

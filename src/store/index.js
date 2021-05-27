@@ -15,10 +15,10 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
-    userId: 94,
-    userName: 'Lesha'
-    // userId: 1,
-    // userName: 'Olive'
+    // userId: 94,
+    // userName: 'Lesha'
+    userId: 1,
+    userName: 'Olive'
     // instructorAuth: true,
     // userId: 112,
     // userName: 'Daniele'
