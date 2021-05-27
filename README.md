@@ -1,4 +1,4 @@
-<h1 align="left">Mesh</h1>
+<h1 align="left">Mesh<span>[![Build Status](https://travis-ci.com/Turing-Mesh/mesh-ui.svg?branch=main)](https://travis-ci.com/Turing-Mesh/mesh-ui)</span></h1>
 
 <p>
    <a href="https://turing-mesh.herokuapp.com"><strong>Explore the app »</strong></a>
