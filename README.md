@@ -4,8 +4,7 @@
    <a href="https://turing-mesh.herokuapp.com"><strong>Explore the app »</strong></a>
 </p>
 
-<!-- TODO add overview screenshot -->
-![image]()
+<img width="1411" alt="Screen Shot 2021-05-26 at 6 14 24 PM" src="https://user-images.githubusercontent.com/73088654/119746683-3d4b3e80-be4e-11eb-98bf-5a1abfd6370a.png">
 
 
 
@@ -52,9 +51,9 @@ The userflow for this goal would involve:
 
 View the deployed frontend site on Heroku: [Mesh](https://turing-mesh.herokuapp.com)
 
-Mesh backend API repo: ![Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
+Mesh backend API repo: [Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
 
-Mesh backend microservice repo: ![Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
+Mesh backend microservice repo: [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
 
 Mesh backend API deployed site: ![]()
 
@@ -69,7 +68,7 @@ Mesh backend API deployed site: ![]()
 
 ## Functionality
 * [Student Dashboard](#student-dashboard)
-* [Adding Notes](#adding-notes)
+<!-- * [Adding Notes](#adding-notes) -->
 <!-- * [Responsive Design](#responsive-design) -->
 * [Accessibility](#accessibility)
 * [Error Handling](#error-handling)
