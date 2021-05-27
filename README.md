@@ -76,7 +76,16 @@ Mesh backend API deployed site: ![]()
 
 #### Student Dashboard
 <!-- TODO finish this -->
-When a user visits the site they... 
+### Views
+
+<img width="1411" alt="Screen Shot 2021-05-26 at 6 14 24 PM" src="https://user-images.githubusercontent.com/73088654/119746683-3d4b3e80-be4e-11eb-98bf-5a1abfd6370a.png">
+
+<img width="1421" alt="Screen Shot 2021-05-26 at 6 19 23 PM" src="https://user-images.githubusercontent.com/73088654/119746977-f3af2380-be4e-11eb-8a23-20347b2c9dc4.png">
+
+<img width="1421" alt="Screen Shot 2021-05-26 at 6 17 54 PM" src="https://user-images.githubusercontent.com/73088654/119746882-b3e83c00-be4e-11eb-87e8-79051e045417.png">
+
+
+### User Flow
 
 ![image](https://media.giphy.com/media/XYM26YSii6u59bZE87/giphy.gif)
 
