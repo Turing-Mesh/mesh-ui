@@ -48,14 +48,25 @@ The userflow for this goal would involve:
    - Filling out a form auto-populated with the rubric categories associated with the project selected
    - Submitting their feedback through the Mesh app
 
+## Associated Resources
 
-View the deployed frontend site on Heroku: [Mesh](https://turing-mesh.herokuapp.com)
+ - View the deployed frontend site on Heroku: [Mesh](https://turing-mesh.herokuapp.com)
 
-Mesh backend API repo: [Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
+ - Mesh backend API repo: [Mesh Backend Repo](https://github.com/Turing-Mesh/mesh-backend)
 
-Mesh backend microservice repo: [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
+ - Mesh backend microservice repo: [Mesh Microservice Repo](https://github.com/Turing-Mesh/mesh_microservice)
 
-Mesh backend API deployed site: ![]()
+ - Mesh backend API deployed site: ![]()
+
+### Project Planning Resources
+
+ - [Wireframes](https://miro.com/app/board/o9J_lErRCD0=/?userEmail=benjamin.fulton99@gmail.com&track=true&utm_source=notification&utm_medium=email&utm_campaign=add-to-team-and-board&utm_content=go-to-board)
+
+ - [API Contract](https://github.com/Turing-Mesh/mesh-backend/blob/main/API_contract.md)
+
+ - [Project Board](https://github.com/orgs/Turing-Mesh/projects/1)
+
+ - [Reference Data](https://docs.google.com/spreadsheets/d/1mRK9-sHrwfJPVUcuMwOk2LYnr9MR_bL_j6D28WhUhbU/edit#gid=0)
 
 ## Installation
 
