@@ -103,7 +103,6 @@ export default {
     }
   },
   created () {
-    // console.log(this.$store.state.form)
     this.$store.dispatch('sendFeedback', this.createFeedback)
   }
 }

@@ -65,7 +65,6 @@ export default new Vuex.Store({
       context.commit('setAllModules', payload)
     },
     addNotesToProject (context, { userId, projectId, notes }) {
-      console.log(notes)
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${userId}/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
@@ -104,7 +103,6 @@ export default new Vuex.Store({
       }
     },
     sendFeedback (context, feedback) {
-      console.log(feedback)
       return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/10/students/201/student_projects', {
         method: 'POST',
         headers: {
@@ -141,7 +139,6 @@ export default new Vuex.Store({
       })
         .then(response => response.json)
         .then(data => {
-          console.log(data)
         })
     },
     setLoggedInUser (context, payload) {
