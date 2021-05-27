@@ -11,6 +11,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+* [Associated Resources](#associated-resources)
 * [Installation](#installation)
 * [Functionality](#functionality)
 * [Learning Goals](#learning-goals)
