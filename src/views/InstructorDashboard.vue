@@ -63,6 +63,7 @@ export default {
       'fetchModule'
     ]),
     getInfo (id) {
+      this.$store.dispatch('clearSelected', {})
       this.$store.dispatch('setStudentData', id)
     }
   },

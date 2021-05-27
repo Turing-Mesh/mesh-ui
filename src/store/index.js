@@ -30,6 +30,9 @@ export default new Vuex.Store({
     setAllModules (state, singleModule) {
       if (singleModule === []) {
         state.allModules = singleModule
+      } else if (state.allModules.length === 4) {
+        state.allModules = []
+        state.allModules.push(singleModule)
       } else {
         state.allModules.push(singleModule)
       }
@@ -53,7 +56,6 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    // actions call mutations
     fetchModule (context, studentData) {
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
         .then(response => response.json())
@@ -89,6 +91,10 @@ export default new Vuex.Store({
       if (foundStudent) {
         context.commit('setCurrentStudent', foundStudent)
       }
+    },
+    clearSelected (context, payload) {
+      context.commit('setCurrentProject', {})
+      context.commit('setCurrentModule', {})
     },
     getForm (context, fetchDetails) {
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
@@ -139,6 +145,7 @@ export default new Vuex.Store({
       })
         .then(response => response.json)
         .then(data => {
+          console.log(data)
         })
     },
     setLoggedInUser (context, payload) {
