@@ -31,8 +31,6 @@ import { mapActions, mapState } from 'vuex'
 import InstructorDashboard from '@/views/InstructorDashboard'
 
 export default {
-  // set initial state here
-  // save in state in store
   data () {
     return {
       // instructorNameHardCoded: 'Leta',
@@ -60,12 +58,12 @@ export default {
     ])
   },
   created () {
-    let payload
-    for (let i = 1; i < 5; i++) {
-      payload = { studentMod: i, studentId: this.userId }
-      // payload = { studentMod: i, studentId: 94 }
-      console.log(payload)
-      this.fetchModule(payload)
+    if (!this.instructorAuth) {
+      let payload
+      for (let i = 1; i < 5; i++) {
+        payload = { studentMod: i, studentId: this.userId }
+        this.fetchModule(payload)
+      }
     }
   }
 }

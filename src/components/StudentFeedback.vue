@@ -92,7 +92,6 @@ export default {
       this.showNoteForm = !this.showNoteForm
     },
     AddNote () {
-      console.log(this.project.id)
       this.studentNotes.push(this.formData.note)
       const payload = {
         userId: this.userId,
@@ -107,7 +106,6 @@ export default {
     }
   },
   created () {
-    console.log(this.project)
     if (this.project) {
       this.studentNotes = this.project.student_comments
     }

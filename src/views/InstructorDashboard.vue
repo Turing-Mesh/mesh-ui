@@ -54,7 +54,8 @@ export default {
       'authenticated',
       'instructorAuth',
       'myStudents',
-      'currentStudent'
+      'currentStudent',
+      'allModules'
     ])
   },
   methods: {
@@ -62,6 +63,7 @@ export default {
       'fetchModule'
     ]),
     getInfo (id) {
+      this.$store.dispatch('clearSelected', {})
       this.$store.dispatch('setStudentData', id)
     }
   },
@@ -69,12 +71,8 @@ export default {
     this.$store.dispatch('fetchMyStudents', 1)
   },
   updated () {
-    if (this.currentStudent.attributes) {
-      let payload
-      for (let i = 1; i < 5; i++) {
-        payload = { studentMod: i, studentId: this.currentStudent.attributes.user_id }
-        this.fetchModule(payload)
-      }
+    if (this.$route.params.id) {
+      this.$store.dispatch('fetchModule', { studentId: this.currentStudent.attributes.user_id, studentMod: this.$route.params.id })
     }
   }
 }

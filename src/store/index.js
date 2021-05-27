@@ -28,7 +28,14 @@ export default new Vuex.Store({
       state.currentModule = payload
     },
     setAllModules (state, singleModule) {
-      state.allModules.push(singleModule)
+      if (singleModule === []) {
+        state.allModules = singleModule
+      } else if (state.allModules.length === 4) {
+        state.allModules = []
+        state.allModules.push(singleModule)
+      } else {
+        state.allModules.push(singleModule)
+      }
     },
     setMyStudents (state, myStudents) {
       state.myStudents = myStudents
@@ -49,7 +56,6 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    // actions call mutations
     fetchModule (context, studentData) {
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${studentData.studentId}/student_projects?mod=${studentData.studentMod}`)
         .then(response => response.json())
@@ -57,8 +63,10 @@ export default new Vuex.Store({
           context.commit('setAllModules', data)
         })
     },
+    clearAllModules (context, payload) {
+      context.commit('setAllModules', payload)
+    },
     addNotesToProject (context, { userId, projectId, notes }) {
-      console.log(notes)
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/students/${userId}/student_projects/${projectId}`, {
         method: 'PATCH',
         headers: {
@@ -84,6 +92,10 @@ export default new Vuex.Store({
         context.commit('setCurrentStudent', foundStudent)
       }
     },
+    clearSelected (context, payload) {
+      context.commit('setCurrentProject', {})
+      context.commit('setCurrentModule', {})
+    },
     getForm (context, fetchDetails) {
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${fetchDetails.instructorId}/students/${fetchDetails.studentId}/project_templates?mod=${fetchDetails.modNum}&project_number=${fetchDetails.projectNum}`)
         .then(response => response.json())
@@ -97,7 +109,6 @@ export default new Vuex.Store({
       }
     },
     sendFeedback (context, feedback) {
-      console.log(feedback)
       return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/10/students/201/student_projects', {
         method: 'POST',
         headers: {
