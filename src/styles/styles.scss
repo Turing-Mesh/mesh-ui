@@ -92,8 +92,8 @@ a {
 .main {
   display: flex;
   flex-flow: row nowrap;
-  margin: 20px auto;
-  height: 90vh;
+  margin: 20px auto 40px;
+  //height: 100vh;
 }
 
 .turing-logo {
@@ -128,11 +128,11 @@ a {
 }
 
 .feedback-container {
-  min-height: 300px;
-  margin: 20px;
-  padding: 20px;
-  border: 2px solid grey;
-  border-radius: 15px;
+  //min-height: 300px;
+  //margin: 20px;
+  //padding: 20px;
+  //border: 2px solid grey;
+  //border-radius: 15px;
 
   &__category {
     margin-top: 15px;
@@ -144,7 +144,7 @@ a {
     }
 
     &--comments {
-      margin: 20px;
+      //margin: 20px;
       //font-size: 1.3em;
     }
   }
@@ -171,12 +171,12 @@ a {
   }
 
   &--comments {
-    margin-left: 20px;
+    margin-top: 5px;
   }
 }
 
 .s-text-body {
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 
 .mod-title {
@@ -287,6 +287,11 @@ a {
 .router-link-active .project-tab {
   width: auto;
   border-bottom: 5px solid $turing-blue;
+}
+
+.project-name {
+  border-bottom: 5px solid $turing-blue;
+  padding-top: 20px;
 }
 
 // *** Student Notes *** //
