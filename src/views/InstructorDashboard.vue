@@ -105,4 +105,8 @@ export default {
   margin: 10px;
 }
 
+.stu-btn {
+  width: 80%;
+}
+
 </style>
