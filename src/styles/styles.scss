@@ -128,11 +128,6 @@ a {
 }
 
 .feedback-container {
-  min-height: 300px;
-  margin: 20px;
-  padding: 20px;
-  border: 2px solid grey;
-  border-radius: 15px;
 
   &__category {
     margin-top: 15px;
@@ -141,11 +136,6 @@ a {
       margin: 10px 0;
       display: inline;
       color: #4C4D4F;
-    }
-
-    &--comments {
-      margin: 20px;
-      //font-size: 1.3em;
     }
   }
 
