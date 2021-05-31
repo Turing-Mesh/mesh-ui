@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="upper-project">
-      <h3 class="project-name"><em>{{ project.name }}</em></h3>
+      <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
       <Category :projectFeedback="project.project_feedback[0]"/>
       <Category :projectFeedback="project.project_feedback[1]"/>
       <Category :projectFeedback="project.project_feedback[2]"/>

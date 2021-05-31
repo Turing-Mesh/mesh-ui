@@ -159,14 +159,10 @@ a {
   &--progress {
     width: 40%;
   }
-
-  &--comments {
-    margin-left: 20px;
-  }
 }
 
 .s-text-body {
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 
 .mod-title {
@@ -203,6 +199,11 @@ a {
       font-weight: var(--s-font-weight-bold);
     }
   }
+}
+
+.project-name {
+  border-bottom: 5px solid $turing-blue;
+  padding-top: 20px;
 }
 
 .overall-container {
