@@ -15,7 +15,10 @@
             </span>
             <div class="instr-form-row__item">
               <!--    each input will need a name, so we can collect the data before handing over to the fetch POST request -->
+              <label for="num-field-1">Numerical Score:</label>
+              <br>
               <input
+                id="num-field-1"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -23,9 +26,13 @@
                 step="0.5"
                 placeholder="Whole or half numbers only"
               />
+              <br>
+              <label for="text-field-1">Comments:</label>
+              <br>
               <textarea
+                id="text-field-1"
                 class="instr-form-row__item--input"
-                rows="4"
+                rows="1"
                 placeholder="How can this student improve?"
                 required
               />
@@ -37,7 +44,10 @@
               {{ this.$store.state.form.data.attributes.rubric_template[1].rubric_category_name }}
             </span>
             <div class="instr-form-row__item">
+              <label for="num-field-2">Numerical Score:</label>
+              <br>
               <input
+                id="num-field-2"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -45,9 +55,13 @@
                 step="0.5"
                 placeholder="Whole or half numbers only"
               />
+              <br>
+              <label for="text-field-2">Comments:</label>
+              <br>
               <textarea
+                id="text-field-2"
                 class="instr-form-row__item--input"
-                rows="4"
+                rows="1"
                 placeholder="How can this student improve?"
                 required
               />
@@ -59,7 +73,10 @@
               {{ this.$store.state.form.data.attributes.rubric_template[2].rubric_category_name }}
             </span>
             <div class="instr-form-row__item">
+              <label for="num-field-3">Numerical Score:</label>
+              <br>
               <input
+                id="num-field-3"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -67,9 +84,13 @@
                 step="0.5"
                 placeholder="Whole or half numbers only"
               />
+              <br>
+              <label for="text-field-3">Comments:</label>
+              <br>
               <textarea
+                id="text-field-3"
                 class="instr-form-row__item--input"
-                rows="4"
+                rows="1"
                 placeholder="How can this student improve?"
                 required
               />
@@ -81,7 +102,10 @@
               {{ this.$store.state.form.data.attributes.rubric_template[3].rubric_category_name }}
             </span>
             <div class="instr-form-row__item">
+              <label for="num-field-4">Numerical Score:</label>
+              <br>
               <input
+                id="num-field-4"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -89,9 +113,13 @@
                 step="0.5"
                 placeholder="Whole or half numbers only"
               />
+              <br>
+              <label for="text-field-4">Comments:</label>
+              <br>
               <textarea
+                id="text-field-4"
                 class="instr-form-row__item--input"
-                rows="4"
+                rows="1"
                 placeholder="How can this student improve?"
                 required
               />
@@ -108,12 +136,24 @@
             Overall
           </span>
       <div class="instr-form-row__item">
-        <input class="feedback-row--progress instr-form-row__item--input"
-               type="number"
-               placeholder="Whole or half numbers only"/>
+        <label for="num-field-5">Numerical Score:</label>
+        <br>
+        <input
+          id="num-field-5"
+          class="feedback-row--progress instr-form-row__item--input"
+          type="number"
+          min="1"
+          max="4"
+          step="0.5"
+          placeholder="Whole or half numbers only"
+        />
+        <br>
+        <label for="text-field-5">Comments:</label>
+        <br>
         <textarea
+          id="text-field-5"
           class="instr-form-row__item--input"
-          rows="4"
+          rows="1"
           placeholder="How can this student improve?"
           required
         />

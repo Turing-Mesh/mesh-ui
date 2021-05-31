@@ -441,10 +441,19 @@ footer {
 
   &__item {
     padding: 5px 0;
+    display: block;
 
     &--input {
-      padding: 5px;
-      margin: 5px;
+      padding: 10px 5px 5px 0;
+      margin: 5px 0 35px;
+      border: none;
+      border-bottom: 4px solid darkgrey;
+    }
+
+    &--input:focus {
+      border: none;
+      outline: none;
+      border-bottom: 4px solid $turing-blue;
     }
 
     &--title {
