@@ -10,6 +10,13 @@
       <Project :project="this.project"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
+          <img
+            @click="toggleNoteForm"
+            class="expanding-arrow"
+            :class="{ 'expanded': showNoteForm}"
+            src="../assets/arrow.svg"
+            alt="expanding arrow"
+          >
           <span class="s-h2">Student Notes</span>
         </p>
         <div class="current-notes">
@@ -18,9 +25,9 @@
           </ul>
         </div>
         <div class="form-container">
-          <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">
-            {{ showNoteForm ? 'Hide form' : 'Add new note' }}
-          </button>
+<!--          <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">-->
+<!--            {{ showNoteForm ? 'Hide form' : 'Add new note' }}-->
+<!--          </button>-->
           <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
             <div class="note form-container__item--note">
               <textarea class="note__textarea"

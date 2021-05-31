@@ -281,11 +281,25 @@ a {
 
 // *** Student Notes *** //
 .notes-container {
-  min-height: 300px;
   margin-top: 40px;
   padding: 20px;
-  border: 2px solid grey;
-  border-radius: 15px;
+  border-left: 10px solid #bcbec0;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+  //border-radius: 15px;
+}
+
+.expanding-arrow {
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  height: 15px;
+  width: 15px;
+  margin: 0 10px 5px;
+}
+
+.expanded {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
 }
 
 .form-container {
