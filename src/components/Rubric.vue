@@ -1,5 +1,5 @@
 <template>
-  <form id="form">
+  <form id="form"  @click.prevent="createFeedback">
     <div class="upper-project">
       <h3 class="project-name">
         <em>
@@ -112,11 +112,10 @@
       </div>
     </div>
     <div>
-      <button>Submit</button>
+      <button class="s-button s-button-primary">Submit</button>
     </div>
   </form>
 </template>
-<button v-on:click="e => createFeedback(e)"></button>
 <script>
 export default {
   data () {
