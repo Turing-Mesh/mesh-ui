@@ -1,14 +1,21 @@
 <template>
   <div class="student-data">
-    <span>{{ this.$store.state.currentStudent.attributes.first_name + " " + this.$store.state.currentStudent.attributes.last_name}}</span>
-    <span>Student ID: {{ this.$store.state.currentStudent.attributes.user_id }}</span>
-    <span>Cohort {{ this.$store.state.currentStudent.attributes.current_cohort }}</span>
+    <span>{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
+    <span>Student ID: {{ currentStudent.attributes.user_id }}</span>
+    <span>Cohort {{ currentStudent.attributes.current_cohort }}</span>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'StudentData'
+  name: 'StudentData',
+  computed: {
+    ...mapState([
+      'currentStudent'
+    ])
+  }
 }
 </script>
 
