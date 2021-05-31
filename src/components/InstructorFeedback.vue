@@ -1,19 +1,21 @@
 <template>
   <section class="feedback-container s-content">
     <ProjectNav />
-
+    <section class="instructor-feedback-container">
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
 
-      <button v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
+      <button v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data"
+              class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
 
-    <div v-if="this.project">
-      <Project :project="this.project"/>
-    </div>
+      <div v-if="this.project">
+        <Project :project="this.project"/>
+      </div>
 
-    <div v-else-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
-      <Rubric v-if="$route.params.project_id"/>
-    </div>
+      <div v-else-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
+        <Rubric v-if="$route.params.project_id"/>
+      </div>
+    </section>
   </section>
 </template>
 

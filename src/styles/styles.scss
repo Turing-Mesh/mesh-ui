@@ -437,4 +437,25 @@ footer {
   display: flex;
   flex-flow: column;
   align-items: stretch;
+  padding: 20px 0;
+
+  &__item {
+    padding: 5px 0;
+
+    &--input {
+      padding: 5px;
+      margin: 5px;
+    }
+
+    &--title {
+    }
+  }
+}
+
+.submit-feedback {
+  margin: 0 auto;
+}
+
+.instructor-feedback-container {
+  margin: 40px;
 }

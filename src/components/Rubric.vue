@@ -10,13 +10,13 @@
       <div class="feedback-container__category">
         <div class="instr-form">
           <div class="instr-form-row">
-            <span class="s-h2 instr-form-row__item--title">
+            <span class="s-h2 instr-form-row__item">
               {{ this.$store.state.form.data.attributes.rubric_template[0].rubric_category_name }}
             </span>
-            <div class="instr-form-row__item--inputs">
+            <div class="instr-form-row__item">
               <!--    each input will need a name, so we can collect the data before handing over to the fetch POST request -->
               <input
-                class="feedback-row--progress"
+                class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
                 max="4"
@@ -24,6 +24,7 @@
                 placeholder="Whole or half numbers only"
               />
               <textarea
+                class="instr-form-row__item--input"
                 rows="4"
                 placeholder="How can this student improve?"
                 required
@@ -32,12 +33,12 @@
           </div>
 
           <div class="instr-form-row">
-            <span class="s-h2 instr-form-row__item--title">
+            <span class="s-h2 instr-form-row__item">
               {{ this.$store.state.form.data.attributes.rubric_template[1].rubric_category_name }}
             </span>
-            <div class="instr-form-row__item--inputs">
+            <div class="instr-form-row__item">
               <input
-                class="feedback-row--progress"
+                class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
                 max="4"
@@ -45,6 +46,7 @@
                 placeholder="Whole or half numbers only"
               />
               <textarea
+                class="instr-form-row__item--input"
                 rows="4"
                 placeholder="How can this student improve?"
                 required
@@ -53,12 +55,12 @@
           </div>
 
           <div class="instr-form-row">
-            <span class="s-h2 instr-form-row__item--title">
+            <span class="s-h2 instr-form-row__item">
               {{ this.$store.state.form.data.attributes.rubric_template[2].rubric_category_name }}
             </span>
-            <div class="instr-form-row__item--inputs">
+            <div class="instr-form-row__item">
               <input
-                class="feedback-row--progress"
+                class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
                 max="4"
@@ -66,6 +68,7 @@
                 placeholder="Whole or half numbers only"
               />
               <textarea
+                class="instr-form-row__item--input"
                 rows="4"
                 placeholder="How can this student improve?"
                 required
@@ -74,12 +77,12 @@
           </div>
 
           <div class="instr-form-row">
-            <span class="s-h2 instr-form-row__item--title">
+            <span class="s-h2 instr-form-row__item">
               {{ this.$store.state.form.data.attributes.rubric_template[3].rubric_category_name }}
             </span>
-            <div class="instr-form-row__item--inputs">
+            <div class="instr-form-row__item">
               <input
-                class="feedback-row--progress"
+                class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
                 max="4"
@@ -87,6 +90,7 @@
                 placeholder="Whole or half numbers only"
               />
               <textarea
+                class="instr-form-row__item--input"
                 rows="4"
                 placeholder="How can this student improve?"
                 required
@@ -103,18 +107,20 @@
           <span class="s-h2 instr-form-row__item--title">
             Overall
           </span>
-      <div class="instr-form-row__item--inputs">
-        <input class="feedback-row--progress" type="number" placeholder="Whole or half numbers only"/>
+      <div class="instr-form-row__item">
+        <input class="feedback-row--progress instr-form-row__item--input"
+               type="number"
+               placeholder="Whole or half numbers only"/>
         <textarea
+          class="instr-form-row__item--input"
           rows="4"
           placeholder="How can this student improve?"
           required
         />
       </div>
     </div>
-    <div>
-      <button class="s-button s-button-primary">Submit</button>
-    </div>
+
+    <button class="s-button s-button-primary">Submit</button>
   </form>
 </template>
 <script>
