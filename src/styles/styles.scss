@@ -427,3 +427,14 @@ footer {
 .student-data {
   font-size: 1.3rem;
 }
+
+#form {
+  margin: 20px auto;
+  padding-left: 30px;
+}
+
+.instr-form-row {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+}

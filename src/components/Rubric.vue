@@ -1,37 +1,119 @@
 <template>
-  <form>
+  <form id="form">
     <div class="upper-project">
+      <h3 class="project-name">
+        <em>
+<!--       We will need to find the project name somehow   {{ project.name }}-->
+          Project Name goes here
+        </em>
+      </h3>
       <div class="feedback-container__category">
-        <div class="feedback-row">
-          <span class="s-h2 feedback-row--label">{{ this.$store.state.form.data.attributes.rubric_template[0].rubric_category_name }}<input placeholder="Comments" /></span>
-          <input class="feedback-row--progress progress-bar" :style="{ width: 150 + 'px'}" placeholder="Score 1 - 4"/>
-        </div>
-        <div class="feedback-row">
-          <span class="s-h2 feedback-row--label">{{ this.$store.state.form.data.attributes.rubric_template[1].rubric_category_name }}<input placeholder="Comments" /></span>
-          <input class="feedback-row--progress progress-bar" :style="{ width: 150 + 'px'}" placeholder="Score 1 - 4"/>
-        </div>
-        <div class="feedback-row">
-          <span class="s-h2 feedback-row--label">{{ this.$store.state.form.data.attributes.rubric_template[2].rubric_category_name }}<input placeholder="Comments" /></span>
-          <input class="feedback-row--progress progress-bar" :style="{ width: 150 + 'px'}" placeholder="Score 1 - 4"/>
-        </div>
-        <div class="feedback-row">
-          <span class="s-h2 feedback-row--label">{{ this.$store.state.form.data.attributes.rubric_template[3].rubric_category_name }}<input placeholder="Comments" /></span>
-          <input class="feedback-row--progress progress-bar" :style="{ width: 150 + 'px'}" placeholder="Score 1 - 4"/>
-        </div>
-      </div>
-    </div>
-    <hr class="feedback-container__dividing-line">
-    <div class="overall-container">
-      <span class="s-h2 feedback-container__category--label overall">Overall</span>
-      <div class="progress-bar-overall" id="bar-average">
-        <div class="progress-bar-overall__score-wrapper">
-          <div class="progress-bar-overall__score-wrapper--number">
-            AVERAGE SCORE
+        <div class="instr-form">
+          <div class="instr-form-row">
+            <span class="s-h2 instr-form-row__item--title">
+              {{ this.$store.state.form.data.attributes.rubric_template[0].rubric_category_name }}
+            </span>
+            <div class="instr-form-row__item--inputs">
+              <input
+                class="feedback-row--progress"
+                type="number"
+                min="1"
+                max="4"
+                step="0.5"
+                placeholder="Whole or half numbers only"
+              />
+              <textarea
+                rows="4"
+                placeholder="How can this student improve?"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="instr-form-row">
+            <span class="s-h2 instr-form-row__item--title">
+              {{ this.$store.state.form.data.attributes.rubric_template[1].rubric_category_name }}
+            </span>
+            <div class="instr-form-row__item--inputs">
+              <input
+                class="feedback-row--progress"
+                type="number"
+                min="1"
+                max="4"
+                step="0.5"
+                placeholder="Whole or half numbers only"
+              />
+              <textarea
+                rows="4"
+                placeholder="How can this student improve?"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="instr-form-row">
+            <span class="s-h2 instr-form-row__item--title">
+              {{ this.$store.state.form.data.attributes.rubric_template[2].rubric_category_name }}
+            </span>
+            <div class="instr-form-row__item--inputs">
+              <input
+                class="feedback-row--progress"
+                type="number"
+                min="1"
+                max="4"
+                step="0.5"
+                placeholder="Whole or half numbers only"
+              />
+              <textarea
+                rows="4"
+                placeholder="How can this student improve?"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="instr-form-row">
+            <span class="s-h2 instr-form-row__item--title">
+              {{ this.$store.state.form.data.attributes.rubric_template[3].rubric_category_name }}
+            </span>
+            <div class="instr-form-row__item--inputs">
+              <input
+                class="feedback-row--progress"
+                type="number"
+                min="1"
+                max="4"
+                step="0.5"
+                placeholder="Whole or half numbers only"
+              />
+              <textarea
+                rows="4"
+                placeholder="How can this student improve?"
+                required
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <input placeholder="Project comments" class="feedback-container__category--comments s-text-body">
+
+    <hr class="feedback-container__dividing-line">
+
+    <div class="instr-form-row">
+          <span class="s-h2 instr-form-row__item--title">
+            Overall
+          </span>
+      <div class="instr-form-row__item--inputs">
+        <input class="feedback-row--progress" type="number" placeholder="Whole or half numbers only"/>
+        <textarea
+          rows="4"
+          placeholder="How can this student improve?"
+          required
+        />
+      </div>
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
   </form>
 </template>
 <button v-on:click="e => createFeedback(e)"></button>
