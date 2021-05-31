@@ -48,7 +48,8 @@ describe('Student dashboard', () => {
       .url().should('eq', 'http://localhost:8080/modules/2/project/4')
   })
 
-  it.only('Should accept and display user-entered notes', () => {
+  it
+  ('Should accept and display user-entered notes', () => {
     cy.get('[data-cy=mod1').click()
       .wait(6000)
       .get('.project-tab').contains('Project 2').click()
