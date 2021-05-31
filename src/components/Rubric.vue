@@ -14,6 +14,7 @@
               {{ this.$store.state.form.data.attributes.rubric_template[0].rubric_category_name }}
             </span>
             <div class="instr-form-row__item--inputs">
+              <!--    each input will need a name, so we can collect the data before handing over to the fetch POST request -->
               <input
                 class="feedback-row--progress"
                 type="number"
