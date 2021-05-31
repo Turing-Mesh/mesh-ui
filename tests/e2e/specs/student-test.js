@@ -63,15 +63,15 @@ describe('Student dashboard', () => {
     // TODO add test for all notes showing up in DOM
   })
 
-  // it('Should have a footer with all names present', () => {
-  //   cy.get('footer').contains('Ben')
-  //     .get('footer').contains('Genevieve')
-  //     .get('footer').contains('Jessica')
-  //     .get('footer').contains('Jesus')
-  //     .get('footer').contains('Katie')
-  //     .get('footer').contains('Nikki')
-  //     .get('footer').contains('🦑')
-  // })
+  it('Should have a footer with all names present', () => {
+    cy.get('footer').contains('Ben')
+      .get('footer').contains('Genevieve')
+      .get('footer').contains('Jessica')
+      .get('footer').contains('Jesus')
+      .get('footer').contains('Katie')
+      .get('footer').contains('Nikki')
+      .get('footer').contains('🦑')
+  })
 })
 
 describe('About page', () => {
