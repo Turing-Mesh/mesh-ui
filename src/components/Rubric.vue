@@ -129,7 +129,7 @@
       </div>
     </div>
 
-    <hr class="feedback-container__dividing-line">
+<!--    <hr class="feedback-container__dividing-line">-->
 
     <div class="instr-form-row">
           <span class="s-h2 instr-form-row__item--title">
