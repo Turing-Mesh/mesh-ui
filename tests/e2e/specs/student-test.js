@@ -53,25 +53,24 @@ describe('Student dashboard', () => {
       .wait(6000)
       .get('.project-tab').contains('Project 2').click()
       .get('.current-notes').children().children().should('exist')
-      .get('button').contains('Add new note').click()
-      .get('.note__textarea').type('This is my first test note!')
+      .get('.expanding-arrow').click()
+      .get('.note__textarea').should('exist')
       .get('button').contains('Add').click()
-      .get('button').contains('Hide form').click()
+      .get('.note__textarea').type('This is a brand new test note!')
+      .get('.expanding-arrow').click()
       .get('.note__textarea').should('not.exist')
-      .get('button').contains('Add new note').click()
-      .get('.note__textarea').type('This is my second test note!')
     // TODO add test for all notes showing up in DOM
   })
 
-  // it('Should have a footer with all names present', () => {
-  //   cy.get('footer').contains('Ben')
-  //     .get('footer').contains('Genevieve')
-  //     .get('footer').contains('Jessica')
-  //     .get('footer').contains('Jesus')
-  //     .get('footer').contains('Katie')
-  //     .get('footer').contains('Nikki')
-  //     .get('footer').contains('🦑')
-  // })
+  it('Should have a footer with all names present', () => {
+    cy.get('footer').contains('Ben')
+      .get('footer').contains('Genevieve')
+      .get('footer').contains('Jessica')
+      .get('footer').contains('Jesus')
+      .get('footer').contains('Katie')
+      .get('footer').contains('Nikki')
+      .get('footer').contains('🦑')
+  })
 })
 
 describe('About page', () => {
