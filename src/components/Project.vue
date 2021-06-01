@@ -2,6 +2,11 @@
   <div>
     <div class="upper-project">
       <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
+      <div class="tricolor">
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+      </div>
       <Category :projectFeedback="project.project_feedback[0]"/>
       <Category :projectFeedback="project.project_feedback[1]"/>
       <Category :projectFeedback="project.project_feedback[2]"/>
