@@ -25,9 +25,6 @@
           </ul>
         </div>
         <div class="form-container">
-<!--          <button @click="toggleNoteForm" class="s-button s-button-secondary show form-container__item">-->
-<!--            {{ showNoteForm ? 'Hide form' : 'Add new note' }}-->
-<!--          </button>-->
           <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
             <div class="note form-container__item--note">
               <textarea class="note__textarea"
