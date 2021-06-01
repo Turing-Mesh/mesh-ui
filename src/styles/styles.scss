@@ -421,7 +421,13 @@ footer {
 }
 
 .student-name {
+  list-style-type: none;
   color: #4C4D4F;
+  margin: 10px;
+}
+
+.stu-btn {
+  width: 70%;
 }
 
 .student-data {
@@ -467,4 +473,17 @@ footer {
 
 .instructor-feedback-container {
   margin: 40px;
+}
+
+.search-students-btn,
+.current-students-btn {
+  margin: 5px;
+  width: 80%;
+}
+
+.search-input {
+  border-radius: 5px;
+  margin: 10px auto;
+  font-size: 1.2rem;
+  width: 100%;
 }
