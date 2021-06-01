@@ -201,7 +201,7 @@ a {
 }
 
 .project-name {
-  border-bottom: 5px solid $turing-blue;
+  //border-bottom: 5px solid $turing-blue;
   padding-top: 20px;
 }
 
@@ -241,6 +241,27 @@ a {
       font-weight: var(--s-font-weight-bold);
     }
   }
+}
+
+.tricolor {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+}
+
+.yellow {
+  width: 34%;
+  background: $turing-yellow;
+}
+.red {
+  width: 33%;
+  background: $turing-red;
+}
+.blue {
+  width: 33%;
+  background: $turing-blue;
 }
 
 // *** Project Navigation *** //
