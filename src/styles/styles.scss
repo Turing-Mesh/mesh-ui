@@ -120,7 +120,6 @@ a {
   color: #12F1FC !important;
 }
 
-
 // *** Student Feedback *** //
 .upper-project {
   margin: 10px 0;
@@ -203,6 +202,8 @@ a {
 .project-name {
   //border-bottom: 5px solid $turing-blue;
   padding-top: 20px;
+  background: #eeeff0;
+  padding-left: 10px;
 }
 
 .overall-container {
@@ -248,18 +249,21 @@ a {
   flex-flow: row nowrap;
   justify-content: space-evenly;
   align-items: center;
-  height: 50px;
+  //height: 10px;
 }
 
 .yellow {
+  height: 10px;
   width: 34%;
   background: $turing-yellow;
 }
 .red {
+  height: 10px;
   width: 33%;
   background: $turing-red;
 }
 .blue {
+  height: 10px;
   width: 33%;
   background: $turing-blue;
 }
