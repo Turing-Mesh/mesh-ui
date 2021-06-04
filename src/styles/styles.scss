@@ -17,7 +17,6 @@ $roboto: 'Roboto Slab', serif;
 body {
   font-family: Helvetica, sans-serif;
   color: #4C4D4F;
-  margin: 10px 40px;
 }
 
 a {
@@ -29,20 +28,19 @@ a {
 }
 
 // *** Header *** //
-.header {
-  padding: 10px 20px;
-  margin: 0 auto;
-}
-
 .header-wrapper {
+  box-shadow: 0 5px 5px grey;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
 .greeting {
-  margin: 0 40px;
+  margin: 20px 40px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
 }
 
 .logo-container {
@@ -328,7 +326,7 @@ a.project.router-link-exact-active.router-link-active {
   transition: transform 0.2s ease;
   height: 20px;
   width: 20px;
-  margin: 10px 10px 0;
+  margin: 10px 5px 0 10px;
 }
 
 .expanded {
@@ -381,20 +379,32 @@ textarea {
 }
 
 footer {
-  //position: fixed;
-  //left: 0;
-  //bottom: 0;
-  flex-shrink: 0;
-  padding: 20px;
-  width: 100%;
-  text-align: center;
-  font-size: 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: #4C4D4F;
+  color: white;
+  padding: 20px 0;
 }
 
-.greeting {
-  margin: 0 40px;
-  font-size: 1.2rem;
-}
+//.s-footer {
+//  //@extend .s-p-4;
+//  //@extend .s-bg-gray-800;
+//  display: flex;
+//  flex-direction: row;
+//  justify-content: space-between;
+//  align-items: center;
+//}
+//
+//.s-footer-content {
+//  * {
+//    //@extend .s-my-0;
+//    //@extend .s-text-gray-100;
+//    //@extend .s-text-start;
+//  }
+//}
 
 .login,
 .signup {
