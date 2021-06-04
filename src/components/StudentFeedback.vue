@@ -14,30 +14,34 @@
       <Project :project="this.project"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
+          <span class="s-h2">Student Notes</span>
+        </p>
+
+        <div class="current-notes">
+          <ul>
+            <li v-for="(note, index) in studentNotes" :key="index" class="s-text-body">{{ note }}</li>
+          </ul>
+        </div>
+
+        <div class="arrow-row" @click="toggleNoteForm">
           <img
-            @click="toggleNoteForm"
             class="expanding-arrow"
             :class="{ 'expanded': showNoteForm}"
             src="../assets/arrow.svg"
             alt="expanding arrow"
-          >
-          <span class="s-h2">Student Notes</span>
-        </p>
-        <div class="current-notes">
-          <ul>
-            <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
-          </ul>
+          > <span class="s-text-body">Add more notes.....</span>
         </div>
+
         <div class="form-container">
           <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
             <div class="note form-container__item--note">
-              <textarea class="note__textarea"
-                        v-model="formData.note"
-                        rows="4"
-                        placeholder="Make notes for yourself here . . . "
-                        required
-              >
-              </textarea>
+            <textarea class="note__textarea"
+                      v-model="formData.note"
+                      rows="4"
+                      placeholder="Make notes for yourself here . . . "
+                      required
+            >
+            </textarea>
             </div>
             <div class="buttons form-container__item--buttons">
               <button class="s-button s-button-primary-inverse reset" type="reset">Reset</button>
