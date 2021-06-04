@@ -122,7 +122,7 @@ a {
 
 // *** Student Feedback *** //
 .upper-project {
-  margin: 10px 0;
+  //margin: 10px 0;
 }
 
 .feedback-container {
@@ -201,9 +201,8 @@ a {
 
 .project-name {
   //border-bottom: 5px solid $turing-blue;
-  padding-top: 20px;
   background: #eeeff0;
-  padding-left: 10px;
+  padding: 10px;
 }
 
 .overall-container {
@@ -276,10 +275,12 @@ a {
 }
 
 .project-tab {
-  width: auto;
+  //background: #eeeff0;
+  background: white;
 }
 
 .project-tab:hover {
+  background: #eeeff0;
   border-bottom: 5px solid $turing-blue;
 }
 
@@ -289,6 +290,8 @@ a {
   border: 5px solid transparent;
   width: auto;
   transition: border-color 0.3s;
+  //background: #eeeff0;
+  background: white;
 }
 
 .project-btn {
@@ -301,7 +304,12 @@ a {
 
 .router-link-active .project-tab {
   width: auto;
+  background: #eeeff0;
   border-bottom: 5px solid $turing-blue;
+}
+
+a.project.router-link-exact-active.router-link-active {
+  background: #eeeff0;
 }
 
 // *** Student Notes *** //
