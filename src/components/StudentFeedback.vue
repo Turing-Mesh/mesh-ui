@@ -2,10 +2,14 @@
   <section class="feedback-container">
     <ProjectNav :mod="this.$route.params.id"/>
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
-      <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
-
-      <h1 v-else-if="!this.project" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-
+      <div class="msg-container">
+        <div v-if="!$route.params.project_id">
+          <h1 class="s-h1">Select a project to get started!</h1>
+        </div>
+        <div v-else-if="!this.project" >
+          <h1 class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
+        </div>
+      </div>
     <div v-if="this.project">
       <Project :project="this.project"/>
       <section class="notes-container">
