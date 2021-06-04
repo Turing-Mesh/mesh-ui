@@ -23,7 +23,6 @@
         </section>
 
         <section v-if="this.$store.state.currentStudent.id" class="right-section">
-          <StudentData />
           <ModuleNav :loggedIn="loggedIn" :class="{ 'instructor-left-section': instructorAuth }"/>
           <InstructorFeedback v-if="$route.params.id"/>
         </section>
@@ -43,11 +42,8 @@
 import ModuleNav from '@/components/ModuleNav'
 import InstructorFeedback from '@/components/InstructorFeedback'
 import { mapActions, mapState } from 'vuex'
-import StudentData from '@/components/StudentData'
 
 export default {
-  // set initial state here
-  // save in state in store
   data () {
     return {
       showSearch: false,
@@ -56,7 +52,6 @@ export default {
     }
   },
   components: {
-    StudentData,
     ModuleNav,
     InstructorFeedback
   },
