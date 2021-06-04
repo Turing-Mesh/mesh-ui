@@ -472,20 +472,14 @@ footer {
   border-radius: 0;
 }
 
-// todo ==> come back to this
 .selected {
   background: #eeeff0;
   border-left: 5px solid $turing-yellow;
   border-radius: 0;
 }
 
-.student-data {
-  font-size: 1.3rem;
-}
-
-#form {
-  //margin: 20px auto;
-  //padding-left: 30px;
+.editing {
+  color: $turing-red;
 }
 
 .instr-form-row {
