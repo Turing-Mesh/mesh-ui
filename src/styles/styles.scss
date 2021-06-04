@@ -473,11 +473,11 @@ footer {
 }
 
 // todo ==> come back to this
-//.stu-btn:active {
-//  background: #eeeff0;
-//  border-left: 5px solid $turing-yellow;
-//  border-radius: 0;
-//}
+.selected {
+  background: #eeeff0;
+  border-left: 5px solid $turing-yellow;
+  border-radius: 0;
+}
 
 .student-data {
   font-size: 1.3rem;
