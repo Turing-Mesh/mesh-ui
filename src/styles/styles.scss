@@ -461,16 +461,31 @@ footer {
 }
 
 .stu-btn {
-  width: 70%;
+  width: 50%;
+  border: none;
+  background: white
 }
+
+.stu-btn:hover {
+  background: #eeeff0;
+  border-left: 5px solid $turing-yellow;
+  border-radius: 0;
+}
+
+// todo ==> come back to this
+//.stu-btn:active {
+//  background: #eeeff0;
+//  border-left: 5px solid $turing-yellow;
+//  border-radius: 0;
+//}
 
 .student-data {
   font-size: 1.3rem;
 }
 
 #form {
-  margin: 20px auto;
-  padding-left: 30px;
+  //margin: 20px auto;
+  //padding-left: 30px;
 }
 
 .instr-form-row {
@@ -505,8 +520,14 @@ footer {
   margin: 0 auto;
 }
 
+.msg-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .instructor-feedback-container {
-  margin: 40px;
 }
 
 .search-students-btn,

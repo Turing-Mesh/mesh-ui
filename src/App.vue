@@ -19,14 +19,14 @@
         />
       </section>
     </div>
-    <Footer />
+<!--    <Footer />-->
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
 import ModuleNav from '@/components/ModuleNav'
-import Footer from '@/components/Footer'
+// import Footer from '@/components/Footer'
 import { mapActions, mapState } from 'vuex'
 import InstructorDashboard from '@/views/InstructorDashboard'
 
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    Footer,
+    // Footer,
     ModuleNav,
     Header,
     InstructorDashboard

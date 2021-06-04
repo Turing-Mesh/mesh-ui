@@ -11,7 +11,10 @@
             <button  @click="showStudents = !showStudents" class="s-button current-students-btn">Current Students</button>
               <ul v-if="showStudents" class="student-name-container">
                 <li class="student-name" v-for="student in myStudents.data" :key="student.id">
-                  <button class="s-button s-button-secondary stu-btn" @click="getInfo(student.id)">{{ student.attributes.first_name }}</button>
+                  <button
+                    class="s-button s-button-secondary stu-btn"
+                    @click="getInfo(student.id)">{{ student.attributes.first_name }}
+                  </button>
                 </li>
               </ul>
           </div>
@@ -46,7 +49,8 @@ export default {
   data () {
     return {
       showSearch: false,
-      showStudents: false
+      showStudents: false,
+      isActive: false
     }
   },
   components: {
