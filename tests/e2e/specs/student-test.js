@@ -74,7 +74,7 @@ describe('Student dashboard', () => {
 })
 
 describe('About page', () => {
-  it.only('Should display a giant squid on the about page', () => {
+  it('Should display a giant squid on the about page', () => {
     cy.visit('http://localhost:8080/')
       .get('.name').click()
       .url().should('eq', 'http://localhost:8080/about')
