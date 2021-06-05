@@ -62,7 +62,7 @@ describe('Student dashboard', () => {
     // TODO add test for all notes showing up in DOM
   })
 
-  it('Should have a footer with all names present', () => {
+  it.skip('Should have a footer with all names present', () => {
     cy.get('footer').contains('Ben')
       .get('footer').contains('Genevieve')
       .get('footer').contains('Jessica')
