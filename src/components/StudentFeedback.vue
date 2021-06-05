@@ -94,7 +94,7 @@ export default {
       'loggedIn',
       'authenticated',
       'instructorAuth',
-      'userId'
+      'user'
     ]),
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
@@ -107,7 +107,7 @@ export default {
     AddNote () {
       this.studentNotes.push(this.formData.note)
       const payload = {
-        userId: this.userId,
+        userId: this.user.userId,
         projectId: this.project.id,
         notes: this.studentNotes
       }

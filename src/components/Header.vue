@@ -17,11 +17,11 @@
 
       <div v-if="loggedIn" class="link-container">
         <router-link to="/about">
-          <h3 class="name">Hi, {{ userName ? userName : '🦑' }}</h3>
+          <h3 class="name">Hi, {{ user.userName ? user.userName : '🦑' }}</h3>
         </router-link>
         <div>
           <a class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
-            <h3 class="date">Current Mod: {{ currentModNum }}</h3>
+            <h3 class="date">Current Mod: {{ user.currentModNum }}</h3>
           </a>
         </div>
         <div class="logout" >
@@ -55,9 +55,7 @@ export default {
       'loggedIn',
       'authenticated',
       'instructorAuth',
-      'userId',
-      'userName',
-      'currentModNum'
+      'user'
     ])
   }
 }

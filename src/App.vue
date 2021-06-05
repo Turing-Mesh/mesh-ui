@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :loggedIn="loggedIn" :userName="userName"/>
+    <Header :loggedIn="loggedIn" :userName="user.userName"/>
 
     <InstructorDashboard v-if="instructorAuth"
                 :loggedIn="loggedIn"
@@ -46,8 +46,7 @@ export default {
       'loggedIn',
       'authenticated',
       'instructorAuth',
-      'userId',
-      'userName'
+      'user'
     ])
   },
   methods: {
@@ -59,7 +58,7 @@ export default {
     if (!this.instructorAuth) {
       let payload
       for (let i = 1; i < 5; i++) {
-        payload = { studentMod: i, studentId: this.userId }
+        payload = { studentMod: i, studentId: this.user.userId }
         this.fetchModule(payload)
       }
     }
