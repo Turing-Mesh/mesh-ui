@@ -17,7 +17,7 @@
 
       <div v-if="loggedIn" class="link-container">
         <router-link to="/about">
-          <h3 class="name">Hi, {{ userName ? userName : 'Jessica' }}</h3>
+          <h3 class="name">Hi, {{ userName ? userName : '🦑' }}</h3>
         </router-link>
         <div>
           <a class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
