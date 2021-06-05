@@ -1,12 +1,12 @@
 <template>
   <form id="form"  @click.prevent="createFeedback">
     <div class="upper-project">
-      <h3 class="project-name">
-        <em>
-<!--       We will need to find the project name somehow   {{ project.name }}-->
-          Project Name goes here
-        </em>
-      </h3>
+      <h2 class="project-name s-h2"><em><span class="editing">Editing:</span> Project Name</em></h2>
+      <div class="tricolor">
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+      </div>
       <div class="feedback-container__category">
         <div class="instr-form">
           <div class="instr-form-row">

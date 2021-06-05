@@ -6,14 +6,27 @@
           <img class="logo rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
         </router-link>
       </div>
-      <div class="link-container">
-        <h2 class="date">
-          <img class="calendar" alt="Calendar icon" src="../assets/calendar.svg">
+
+      <h2 class="date">
+        <!--          <img class="calendar" alt="Calendar icon" src="../assets/calendar.svg">-->
+        <a class="outside-link" href="https://frontend.turing.edu/today/" target="_blank">
+          <i class="calendar fal fa-calendar-alt"></i>
           {{ date }}
-        </h2>
-        <router-link v-if="loggedIn" to="/about">
-          <h3 class="name">Hi, {{ userName ? userName : 'Jessica' }}</h3>
+        </a>
+      </h2>
+
+      <div v-if="loggedIn" class="link-container">
+        <router-link to="/about">
+          <h3 class="name">Hi, {{ user.userName ? user.userName : '🦑' }}</h3>
         </router-link>
+        <div>
+          <a class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
+            <h3 class="date">Current Mod: {{ user.currentModNum }}</h3>
+          </a>
+        </div>
+        <div class="logout" >
+          <i class="fas fa-sign-out-alt"> </i>
+        </div>
       </div>
     </div>
 
@@ -29,15 +42,21 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
       date: new Date().toLocaleDateString()
     }
   },
-  props: {
-    loggedIn: Boolean,
-    userName: String
+  computed: {
+    ...mapState([
+      'loggedIn',
+      'authenticated',
+      'instructorAuth',
+      'user'
+    ])
   }
 }
 </script>

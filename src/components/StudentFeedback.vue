@@ -2,38 +2,47 @@
   <section class="feedback-container">
     <ProjectNav :mod="this.$route.params.id"/>
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
-      <h1 v-if="!$route.params.project_id" class="s-h1">Select a project to get started!</h1>
-
-      <h1 v-else-if="!this.project" class="s-h1">There is nothing for this project yet. Stay tuned.</h1>
-
+      <div class="msg-container">
+        <div v-if="!$route.params.project_id">
+          <h1 class="s-h1">Select a project to get started!</h1>
+        </div>
+        <div v-else-if="!this.project"  class="msg-container">
+          <h1 class="s-h1">There is nothing for this project yet. </h1>
+          <h1 class="s-h1">Stay tuned.</h1>
+        </div>
+      </div>
     <div v-if="this.project">
       <Project :project="this.project"/>
       <section class="notes-container">
         <p class="feedback-container__category--label">
+          <span class="s-h2">Student Notes</span>
+        </p>
+
+        <div class="current-notes">
+          <ul>
+            <li v-for="(note, index) in studentNotes" :key="index" class="s-text-body">{{ note }}</li>
+          </ul>
+        </div>
+
+        <div class="arrow-row" @click="toggleNoteForm">
           <img
-            @click="toggleNoteForm"
             class="expanding-arrow"
             :class="{ 'expanded': showNoteForm}"
             src="../assets/arrow.svg"
             alt="expanding arrow"
-          >
-          <span class="s-h2">Student Notes</span>
-        </p>
-        <div class="current-notes">
-          <ul>
-            <li v-for="(note, index) in studentNotes" :key="index">{{ note }}</li>
-          </ul>
+          > <span class="s-text-body">Add more notes.....</span>
         </div>
+
         <div class="form-container">
           <form @submit.prevent="AddNote" v-if="showNoteForm" class="form-container__item">
             <div class="note form-container__item--note">
-              <textarea class="note__textarea"
-                        v-model="formData.note"
-                        rows="4"
-                        placeholder="Make notes for yourself here . . . "
-                        required
-              >
-              </textarea>
+            <textarea class="note__textarea"
+                      v-model="formData.note"
+                      rows="4"
+                      placeholder="Make notes for yourself here . . . "
+                      required
+            >
+            </textarea>
             </div>
             <div class="buttons form-container__item--buttons">
               <button class="s-button s-button-primary-inverse reset" type="reset">Reset</button>
@@ -85,7 +94,7 @@ export default {
       'loggedIn',
       'authenticated',
       'instructorAuth',
-      'userId'
+      'user'
     ]),
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
@@ -98,7 +107,7 @@ export default {
     AddNote () {
       this.studentNotes.push(this.formData.note)
       const payload = {
-        userId: this.userId,
+        userId: this.user.userId,
         projectId: this.project.id,
         notes: this.studentNotes
       }

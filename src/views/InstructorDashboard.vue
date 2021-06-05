@@ -10,15 +10,19 @@
 
             <button  @click="showStudents = !showStudents" class="s-button current-students-btn">Current Students</button>
               <ul v-if="showStudents" class="student-name-container">
-                <li class="student-name" v-for="student in myStudents.data" :key="student.id">
-                  <button class="s-button s-button-secondary stu-btn" @click="getInfo(student.id)">{{ student.attributes.first_name }}</button>
+                <li class="student-name" v-for="student in myStudents.data" :key="student.id" >
+                  <button
+                    class="s-button s-button-secondary stu-btn"
+                    :id="student.id"
+                    :class="{ 'selected' : currentStudent.id === student.id }"
+                    @click="getInfo(student.id)">{{ student.attributes.first_name }}
+                  </button>
                 </li>
               </ul>
           </div>
         </section>
 
         <section v-if="this.$store.state.currentStudent.id" class="right-section">
-          <StudentData />
           <ModuleNav :loggedIn="loggedIn" :class="{ 'instructor-left-section': instructorAuth }"/>
           <InstructorFeedback v-if="$route.params.id"/>
         </section>
@@ -38,19 +42,16 @@
 import ModuleNav from '@/components/ModuleNav'
 import InstructorFeedback from '@/components/InstructorFeedback'
 import { mapActions, mapState } from 'vuex'
-import StudentData from '@/components/StudentData'
 
 export default {
-  // set initial state here
-  // save in state in store
   data () {
     return {
       showSearch: false,
-      showStudents: false
+      showStudents: false,
+      id: 0
     }
   },
   components: {
-    StudentData,
     ModuleNav,
     InstructorFeedback
   },

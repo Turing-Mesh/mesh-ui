@@ -62,7 +62,7 @@ describe('Student dashboard', () => {
     // TODO add test for all notes showing up in DOM
   })
 
-  it('Should have a footer with all names present', () => {
+  it.skip('Should have a footer with all names present', () => {
     cy.get('footer').contains('Ben')
       .get('footer').contains('Genevieve')
       .get('footer').contains('Jessica')
@@ -74,12 +74,12 @@ describe('Student dashboard', () => {
 })
 
 describe('About page', () => {
-  it('Should display a giant squid on the about page', () => {
+  it('Should display a Profile on the about page', () => {
     cy.visit('http://localhost:8080/')
       .get('.name').click()
       .url().should('eq', 'http://localhost:8080/about')
-      .get('h1').should('exist')
-      .get('.squid').should('exist')
+      .get('h1').contains('Profile')
+      .get('.about').find('h2').should('have.length', 5)
   })
 })
 

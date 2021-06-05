@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="upper-project">
-      <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
+      <a class="outside-link" href="https://backend.turing.edu/module1/projects/war_or_peace/" target="_blank">
+        <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
+      </a>
       <div class="tricolor">
         <div class="yellow"></div>
         <div class="red"></div>
