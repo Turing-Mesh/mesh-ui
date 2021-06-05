@@ -74,11 +74,12 @@ describe('Student dashboard', () => {
 })
 
 describe('About page', () => {
-  it('Should display a giant squid on the about page', () => {
+  it('Should display a Profile on the about page', () => {
     cy.visit('http://localhost:8080/')
       .get('.name').click()
       .url().should('eq', 'http://localhost:8080/about')
       .get('h1').contains('Profile')
+      .get('.about').find('h2').should('have.length', 5)
   })
 })
 
