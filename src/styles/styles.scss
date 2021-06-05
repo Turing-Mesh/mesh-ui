@@ -23,13 +23,17 @@ a {
   text-decoration:none;
 }
 
+.outside-link {
+  color: #68696b;
+}
+
 .s-h2 {
   color: #4C4D4F;
 }
 
 // *** Header *** //
 .header-wrapper {
-  box-shadow: 0 5px 5px grey;
+  box-shadow: 0 2px 2px grey;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -48,7 +52,7 @@ a {
 }
 
 .logo {
-  width: 100px;
+  width: 75px;
 }
 
 //.rotating {
@@ -59,9 +63,24 @@ a {
 //}
 
 .calendar {
-  width: 30px;
+  width: 20px;
 }
 
+.date {
+  font-size: 1.5rem;
+  padding: 0 20px;
+  color: #68696b;
+}
+
+.name {
+  font-size: 1.7rem;
+  padding: 0 20px;
+  color: #4C4D4F;
+}
+
+.logout {
+  font-size: 2rem;
+}
 
 .link-container {
   display: flex;
@@ -70,13 +89,6 @@ a {
   align-items: center;
   font-size: 2rem;
   margin-right: 0;
-}
-
-.date,
-.name {
-  font-size: 2rem;
-  padding: 0 20px;
-  color: #4C4D4F;
 }
 
 // *** Main *** //

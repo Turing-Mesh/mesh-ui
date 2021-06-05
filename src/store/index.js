@@ -16,7 +16,8 @@ export default new Vuex.Store({
     authenticated: true,
     instructorAuth: false,
     userId: 94,
-    userName: 'Lesha'
+    userName: 'Lesha',
+    currentModNum: 4
     // userId: 1,
     // userName: 'Olive'
     // instructorAuth: true,
