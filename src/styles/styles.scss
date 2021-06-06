@@ -253,6 +253,18 @@ a {
   padding: 20px 20px 10px;
 }
 
+.project-name-hacky {
+  //border-bottom: 5px solid $turing-blue;
+  background: #eeeff0;
+  padding: 20px 20px 10px;
+  text-decoration: none;
+}
+
+.project-name:hover,
+.project-name-hacky:hover {
+  color: #0492a5;
+}
+
 .overall-container {
   display: flex;
   flex-flow: row nowrap;

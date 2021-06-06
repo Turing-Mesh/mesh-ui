@@ -15,6 +15,7 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: true,
+    hacky: true,
     // user: {
     //   userId: 94,
     //   userName: 'Lesha',
@@ -51,7 +52,6 @@ export default new Vuex.Store({
     //   pronouns: 'he/him',
     //   currentModNum: 3,
     //   currentProjNum: 4,
-    //   hacky: true,
     //   currentCohort: '2102',
     //   program: 'BE'
     // }

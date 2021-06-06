@@ -13,7 +13,7 @@
         </div>
 
       <!--    begin hardcoded info  -->
-        <div v-else-if="user.hacky && !this.project" class="upper-project-hack">
+        <div v-else-if="this.hacky && !this.project" class="upper-project-hack">
           <div class="upper-project">
             <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
               <h2 class="project-name s-link s-h2"><em>Sweater Weather</em></h2>
@@ -114,7 +114,8 @@ export default {
       'loggedIn',
       'authenticated',
       'instructorAuth',
-      'user'
+      'user',
+      'hacky'
     ]),
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
