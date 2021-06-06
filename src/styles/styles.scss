@@ -188,6 +188,7 @@ a {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  padding-top: 20px;
 
   &--label {
     width: 60%;
@@ -198,6 +199,10 @@ a {
 
   &--progress {
     width: 40%;
+  }
+
+  &--comments {
+    margin: 10px 0;
   }
 }
 
