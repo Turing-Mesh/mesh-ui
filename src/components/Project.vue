@@ -9,10 +9,9 @@
         <div class="red"></div>
         <div class="blue"></div>
       </div>
-      <Category :projectFeedback="project.project_feedback[0]"/>
-      <Category :projectFeedback="project.project_feedback[1]"/>
-      <Category :projectFeedback="project.project_feedback[2]"/>
-      <Category :projectFeedback="project.project_feedback[3]"/>
+      <div v-for="(projectData, index) in project.project_feedback" :key="index">
+        <Category :projectFeedback="projectData"/>
+      </div>
     </div>
 
     <hr class="feedback-container__dividing-line">

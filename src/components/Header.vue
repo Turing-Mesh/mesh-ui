@@ -5,6 +5,7 @@
         <router-link to="/">
           <img class="logo rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
         </router-link>
+        <h1 class="s-h1 greeting">Mesh</h1>
       </div>
 
       <div v-if="loggedIn" class="link-container">
@@ -35,10 +36,6 @@
       <a class="outside-link" href="https://frontend.turing.edu/projects/" target="_blank">
         <h3 class="s-h3">Projects</h3>
       </a>
-    </div>
-
-    <div v-else-if="!loggedIn" class="greeting">
-      <h3>You must be logged in to see your feedback.</h3>
     </div>
   </div>
 </template>
