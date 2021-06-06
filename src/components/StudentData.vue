@@ -1,8 +1,8 @@
 <template>
   <div class="student-data">
-    <span>{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
-    <span>Student ID: {{ currentStudent.attributes.user_id }}</span>
-    <span>Cohort {{ currentStudent.attributes.current_cohort }}</span>
+    <span class="s-h3">{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
+    <span class="s-text-body">Student ID: {{ currentStudent.attributes.user_id }}</span>
+    <span class="s-text-body">Cohort {{ currentStudent.attributes.current_cohort }}</span>
   </div>
 </template>
 
