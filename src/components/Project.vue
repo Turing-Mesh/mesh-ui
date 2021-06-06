@@ -29,7 +29,7 @@
     </div>
     <p class="feedback-container__category--comments s-text-body">
       {{ project.instructor_comments }}
-    </p><Project :project="this.project"/>
+    </p>
   </div>
 </template>
 
