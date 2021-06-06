@@ -25,6 +25,7 @@
           </div>
         </div>
       <!--    end of hardcoded info  -->
+
         <div v-else-if="!this.project"  class="msg-container">
           <h1 class="s-h1">There is nothing for this project yet. </h1>
           <h1 class="s-h1">Stay tuned.</h1>

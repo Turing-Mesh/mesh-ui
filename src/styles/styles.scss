@@ -590,3 +590,17 @@ footer {
   font-size: 1.2rem;
   width: 100%;
 }
+
+@media only screen and (max-width: 830px) {
+  .router-link-active .project-tab,
+  .router-link-active .project-btn {
+    background: transparent;
+    font-size: 1.2rem;
+  }
+
+  .project-tab,
+  .project-btn {
+    background: transparent;
+    font-size: 1.2rem;
+  }
+}
