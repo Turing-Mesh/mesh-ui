@@ -1,8 +1,8 @@
 <template>
   <div class="student-data">
     <span class="s-h3">{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
-    <span class="s-text-body">Student ID: {{ currentStudent.attributes.user_id }}</span>
-    <span class="s-text-body">Cohort {{ currentStudent.attributes.current_cohort }}</span>
+    <span class="s-text-body">Preferred Name: {{ currentStudent.attributes.first_name }}</span>
+    <span class="s-text-body">Pronouns: {{ currentStudent.attributes.pronouns }}</span>
   </div>
 </template>
 

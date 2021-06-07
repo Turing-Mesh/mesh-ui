@@ -14,56 +14,26 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true,
-    hacky: true,
-    // user: {
-    //   userId: 94,
-    //   userName: 'Lesha',
-    //   lastName: 'Hilpert',
-    //   pronouns: 'she/her',
-    //   currentModNum: 1,
-    //   currentProjNum: 4,
-    //   currentCohort: '2105',
-    //   program: 'BE'
-    // }
-
-    // user: {
-    //   userId: 1,
-    //   userName: 'Olive',
-    //   lastName: 'Renner',
-    //   currentModNum: 4,
-    //   currentProjNum: 2,
-    //   currentCohort: '2011',
-    //   program: 'FE'
-    // }
-    // user: {
-    //   userId: 97,
-    //   userName: 'Gene',
-    //   lastName: 'Kutch',
-    //   currentModNum: 1,
-    //   currentProjectNum: 4,
-    //   currentCohort: '2105',
-    //   program: 'BE'
-    // }
-    // user: {
-    //   userId: 41,
-    //   userName: 'Mark',
-    //   lastName: 'Weissnat',
-    //   pronouns: 'he/him',
-    //   currentModNum: 3,
-    //   currentProjNum: 4,
-    //   currentCohort: '2102',
-    //   program: 'BE'
-    // }
+    instructorAuth: false,
     user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
+      userId: 41,
+      userName: 'Mark',
+      lastName: 'Weissnat',
+      pronouns: 'he/him',
       currentModNum: 3,
-      currentProjNum: null,
-      currentCohort: null,
+      currentProjNum: 4,
+      currentCohort: '2102',
       program: 'BE'
     }
+    // user: {
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
+    //   currentModNum: 3,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
+    // }
   },
   mutations: {
     setCurrentModule (state, payload) {

@@ -155,19 +155,6 @@ a {
 }
 
 // *** Student Feedback *** //
-.upper-project-hack {
-  //margin: 10px 0;
-  width: 100%;
-}
-
-.msg-container-hack {
-  height: 200px;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .feedback-container {
 
   &__category {
@@ -253,15 +240,7 @@ a {
   padding: 20px 20px 10px;
 }
 
-.project-name-hacky {
-  //border-bottom: 5px solid $turing-blue;
-  background: #eeeff0;
-  padding: 20px 20px 10px;
-  text-decoration: none;
-}
-
-.project-name:hover,
-.project-name-hacky:hover {
+.project-name:hover {
   color: #0492a5;
 }
 
