@@ -14,27 +14,27 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true,
-    // user: {
-    //   userId: 41,
-    //   userName: 'Mark',
-    //   lastName: 'Weissnat',
-    //   pronouns: 'he/him',
-    //   currentModNum: 3,
-    //   currentProjNum: 4,
-    //   currentCohort: '2102',
-    //   program: 'BE'
-    // }
+    instructorAuth: false,
     user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
-      pronouns: 'they/them',
+      userId: 41,
+      userName: 'Mark',
+      lastName: 'Weissnat',
+      pronouns: 'he/him',
       currentModNum: 3,
-      currentProjNum: null,
-      currentCohort: null,
+      currentProjNum: 4,
+      currentCohort: '2102',
       program: 'BE'
     }
+    // user: {
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
+    //   pronouns: 'they/them',
+    //   currentModNum: 3,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
+    // }
   },
   mutations: {
     setCurrentModule (state, payload) {
