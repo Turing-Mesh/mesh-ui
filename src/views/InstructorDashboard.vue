@@ -75,7 +75,8 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('fetchMyStudents', 1)
+    console.log()
+    this.$store.dispatch('fetchMyStudents', 3)
   },
   updated () {
     if (this.$route.params.id) {

@@ -16,7 +16,7 @@
         <div v-else-if="user.hacky && !this.project" class="upper-project-hack">
           <div class="upper-project">
             <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
-              <h2 class="project-name s-h2"><em>Sweater Weather</em></h2>
+              <h2 class="project-name s-link s-h2"><em>Sweater Weather</em></h2>
             </a>
             <div class="tricolor">
               <div class="yellow"></div>

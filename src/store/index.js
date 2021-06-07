@@ -14,16 +14,18 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: false,
+    instructorAuth: true,
     // user: {
     //   userId: 94,
     //   userName: 'Lesha',
     //   lastName: 'Hilpert',
+    //   pronouns: 'she/her',
     //   currentModNum: 1,
     //   currentProjNum: 4,
     //   currentCohort: '2105',
     //   program: 'BE'
     // }
+
     // user: {
     //   userId: 1,
     //   userName: 'Olive',
@@ -33,24 +35,35 @@ export default new Vuex.Store({
     //   currentCohort: '2011',
     //   program: 'FE'
     // }
-    user: {
-      userId: 97,
-      userName: 'Gene',
-      lastName: 'Kutch',
-      currentModNum: 1,
-      currentProjectNum: 4,
-      currentCohort: '2105',
-      program: 'BE'
-    }
     // user: {
-    //   userId: 112,
-    //   userName: 'Daniele',
-    //   lastName: 'Littel',
-    //   currentModNum: 3,
-    //   currentProjNum: null,
-    //   currentCohort: null,
+    //   userId: 97,
+    //   userName: 'Gene',
+    //   lastName: 'Kutch',
+    //   currentModNum: 1,
+    //   currentProjectNum: 4,
+    //   currentCohort: '2105',
     //   program: 'BE'
     // }
+    // user: {
+    //   userId: 41,
+    //   userName: 'Mark',
+    //   lastName: 'Weissnat',
+    //   pronouns: 'he/him',
+    //   currentModNum: 3,
+    //   currentProjNum: 4,
+    //   hacky: true,
+    //   currentCohort: '2102',
+    //   program: 'BE'
+    // }
+    user: {
+      userId: 112,
+      userName: 'Daniele',
+      lastName: 'Littel',
+      currentModNum: 3,
+      currentProjNum: null,
+      currentCohort: null,
+      program: 'BE'
+    }
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -109,7 +122,7 @@ export default new Vuex.Store({
         })
     },
     fetchMyStudents (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/122/students?mod=${module}`)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/112/students?mod=${module}`)
         .then(response => response.json())
         .then(data => {
           context.commit('setMyStudents', data)
