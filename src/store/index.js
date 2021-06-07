@@ -34,6 +34,15 @@ export default new Vuex.Store({
     //   program: 'FE'
     // }
     // user: {
+    //   userId: 97,
+    //   userName: 'Gene',
+    //   lastName: 'Kutch',
+    //   currentModNum: 1,
+    //   currentProjectNum: 4,
+    //   currentCohort: '2105',
+    //   program: 'BE'
+    // }
+    // user: {
     //   userId: 112,
     //   userName: 'Daniele',
     //   lastName: 'Littel',
@@ -129,41 +138,43 @@ export default new Vuex.Store({
       }
     },
     sendFeedback (context, feedback) {
-      return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/10/students/201/student_projects', {
+      console.log('form id in state', this.state.form.data.id)
+      console.log(this.state.currentStudent.attributes.user_id)
+      console.log(feedback)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${this.state.user.userId}/students/${this.state.currentStudent.attributes.user_id}/student_projects`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          instructor_id: 10,
-          student_id: 201,
-          project_template_id: 16,
-          instructor_comments: 'Aw yeeeahhh',
-          project_feedback: [
-            {
-              rubric_template_category_id: 3,
-              score: 4.0,
-              comment: 'yes sire'
-            },
-            {
-              rubric_template_category_id: 4,
-              score: 2.0,
-              comment: 'gangsta shit'
-            },
-            {
-              rubric_template_category_id: 5,
-              score: 1.0,
-              comment: 'wow'
-            },
-            {
-              rubric_template_category_id: 6,
-              score: 3.0,
-              comment: 'holy moly'
-            }
-          ]
-        })
+        body: JSON.stringify(feedback)
+        // ({
+        //   project_template_id: feedback.project_template_id,
+        //   instructor_comments: feedback.instructor_comments,
+        //   project_feedback: [
+        //     {
+        //       rubric_template_category_id: feedback,
+        //       score: 4.0,
+        //       comment: 'yes sire'
+        //     },
+        //     {
+        //       rubric_template_category_id: 4,
+        //       score: 2.0,
+        //       comment: 'gangsta shit'
+        //     },
+        //     {
+        //       rubric_template_category_id: 5,
+        //       score: 1.0,
+        //       comment: 'wow'
+        //     },
+        //     {
+        //       rubric_template_category_id: 6,
+        //       score: 3.0,
+        //       comment: 'holy moly'
+        //     }
+        //   ]
+        // })
       })
-        .then(response => response.json)
+        .then(response => response.json())
         .then(data => {
           console.log(data)
         })
