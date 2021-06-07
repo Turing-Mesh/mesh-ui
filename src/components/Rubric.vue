@@ -160,7 +160,7 @@
       </div>
     </div>
 
-    <button class="s-button s-button-primary">Submit</button>
+    <button class="s-button s-button-primary" @click="submitFeedback">Submit</button>
   </form>
 </template>
 <script>
@@ -230,8 +230,10 @@ export default {
       return newFeedback
     }
   },
-  created () {
-    this.$store.dispatch('sendFeedback', this.createFeedback)
+  methods: {
+    submitFeedback () {
+      this.$store.dispatch('sendFeedback', this.feedback)
+    }
   }
 }
 </script>

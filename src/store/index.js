@@ -14,16 +14,16 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: false,
-    user: {
-      userId: 94,
-      userName: 'Lesha',
-      lastName: 'Hilpert',
-      currentModNum: 1,
-      currentProjNum: 4,
-      currentCohort: '2105',
-      program: 'BE'
-    }
+    instructorAuth: true,
+    // user: {
+    //   userId: 94,
+    //   userName: 'Lesha',
+    //   lastName: 'Hilpert',
+    //   currentModNum: 1,
+    //   currentProjNum: 4,
+    //   currentCohort: '2105',
+    //   program: 'BE'
+    // }
     // user: {
     //   userId: 1,
     //   userName: 'Olive',
@@ -34,14 +34,23 @@ export default new Vuex.Store({
     //   program: 'FE'
     // }
     // user: {
-    //   userId: 112,
-    //   userName: 'Daniele',
-    //   lastName: 'Littel',
-    //   currentModNum: 3,
-    //   currentProjNum: null,
-    //   currentCohort: null,
+    //   userId: 97,
+    //   userName: 'Gene',
+    //   lastName: 'Kutch',
+    //   currentModNum: 1,
+    //   currentProjectNum: 4,
+    //   currentCohort: '2105',
     //   program: 'BE'
     // }
+    user: {
+      userId: 112,
+      userName: 'Daniele',
+      lastName: 'Littel',
+      currentModNum: 3,
+      currentProjNum: null,
+      currentCohort: null,
+      program: 'BE'
+    }
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -129,15 +138,18 @@ export default new Vuex.Store({
       }
     },
     sendFeedback (context, feedback) {
-      return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/10/students/201/student_projects', {
+      console.log('form id in state', this.state.form.data.id)
+      console.log(this.state.currentStudent.attributes.user_id)
+      console.log(feedback)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${this.state.user.userId}/students/${this.state.currentStudent.attributes.user_id}/student_projects`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          instructor_id: 10,
-          student_id: 201,
-          project_template_id: 16,
+          // instructor_id: Number(this.state.user.userId),
+          // student_id: Number(this.state.currentStudent.attributes.user_id),
+          project_template_id: this.state.form.data.id,
           instructor_comments: 'Aw yeeeahhh',
           project_feedback: [
             {
@@ -163,7 +175,7 @@ export default new Vuex.Store({
           ]
         })
       })
-        .then(response => response.json)
+        .then(response => response.json())
         .then(data => {
           console.log(data)
         })
