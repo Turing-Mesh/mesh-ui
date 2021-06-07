@@ -96,6 +96,23 @@ a {
   font-size: 2rem;
 }
 
+.user-icon {
+  margin: 0 10px;
+}
+
+.user-data {
+  font-weight: 400;
+}
+
+.profile-links {
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 // *** Main *** //
 .landing {
   display: flex;
@@ -136,8 +153,17 @@ a {
 }
 
 // *** Student Feedback *** //
-.upper-project {
+.upper-project-hack {
   //margin: 10px 0;
+  width: 100%;
+}
+
+.msg-container-hack {
+  height: 200px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .feedback-container {

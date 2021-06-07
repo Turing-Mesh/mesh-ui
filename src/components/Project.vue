@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="upper-project">
-      <a class="outside-link" href="https://backend.turing.edu/module1/projects/war_or_peace/" target="_blank">
+      <a class="outside-link" href="https://backend.turing.edu/module3/projects/consultancy/" target="_blank">
         <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
       </a>
       <div class="tricolor">
@@ -29,7 +29,7 @@
     </div>
     <p class="feedback-container__category--comments s-text-body">
       {{ project.instructor_comments }}
-    </p>
+    </p><Project :project="this.project"/>
   </div>
 </template>
 

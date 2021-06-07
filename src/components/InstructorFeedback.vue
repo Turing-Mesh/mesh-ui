@@ -1,5 +1,5 @@
 <template>
-  <section class="feedback-container s-content">
+  <section class="feedback-container">
     <ProjectNav />
     <section class="instructor-feedback-container">
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
