@@ -1,5 +1,5 @@
 <template>
-  <form id="form" ref="my_input">
+  <form id="form">
     <div class="upper-project">
       <h2 class="project-name s-h2"><em><span class="editing">Editing:</span> Project Name</em></h2>
       <div class="tricolor">
@@ -207,7 +207,14 @@ export default {
           }
         ]
       }
+      console.log(this.feedback)
       this.$store.dispatch('sendFeedback', this.feedback)
+    }
+  },
+  updated () {
+    console.log('UPDATED FIRST')
+    if (this.feedback) {
+      console.log('UPDATED')
     }
   }
 }
