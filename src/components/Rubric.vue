@@ -1,5 +1,5 @@
 <template>
-  <form id="form"  @click.prevent="createFeedback">
+  <form id="form" ref="my_input">
     <div class="upper-project">
       <h2 class="project-name s-h2"><em><span class="editing">Editing:</span> Project Name</em></h2>
       <div class="tricolor">
@@ -19,6 +19,7 @@
               <br>
               <input
                 id="num-field-1"
+                v-model="first_score"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -31,6 +32,7 @@
               <br>
               <textarea
                 id="text-field-1"
+                v-model="first_comment"
                 class="instr-form-row__item--input"
                 rows="1"
                 placeholder="How can this student improve?"
@@ -48,6 +50,7 @@
               <br>
               <input
                 id="num-field-2"
+                v-model="second_score"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -60,6 +63,7 @@
               <br>
               <textarea
                 id="text-field-2"
+                v-model="second_comment"
                 class="instr-form-row__item--input"
                 rows="1"
                 placeholder="How can this student improve?"
@@ -77,6 +81,7 @@
               <br>
               <input
                 id="num-field-3"
+                v-model="third_score"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -89,6 +94,7 @@
               <br>
               <textarea
                 id="text-field-3"
+                v-model="third_comment"
                 class="instr-form-row__item--input"
                 rows="1"
                 placeholder="How can this student improve?"
@@ -106,6 +112,7 @@
               <br>
               <input
                 id="num-field-4"
+                v-model="fourth_score"
                 class="feedback-row--progress instr-form-row__item--input"
                 type="number"
                 min="1"
@@ -118,6 +125,7 @@
               <br>
               <textarea
                 id="text-field-4"
+                v-model="fourth_comment"
                 class="instr-form-row__item--input"
                 rows="1"
                 placeholder="How can this student improve?"
@@ -152,6 +160,7 @@
         <br>
         <textarea
           id="text-field-5"
+          v-model="overall_comments"
           class="instr-form-row__item--input"
           rows="1"
           placeholder="How can this student improve?"
@@ -160,78 +169,44 @@
       </div>
     </div>
 
-    <button class="s-button s-button-primary" @click="submitFeedback">Submit</button>
+    <button class="s-button s-button-primary" @click.prevent="submitFeedback">Submit</button>
   </form>
 </template>
 <script>
 export default {
   data () {
     return {
-      overallComments: '',
-      categoryScores: [],
-      feedback: {
-        project_template_id: 16,
-        instructor_comments: 'Aw yeeeahhh',
-        project_feedback: [
-          {
-            rubric_template_category_id: 3,
-            score: 4.0,
-            comment: 'yes sire'
-          },
-          {
-            rubric_template_category_id: 4,
-            score: 2.0,
-            comment: 'gangsta shit'
-          },
-          {
-            rubric_template_category_id: 5,
-            score: 1.0,
-            comment: 'wow'
-          },
-          {
-            rubric_template_category_id: 6,
-            score: 3.0,
-            comment: 'holy moly'
-          }
-        ]
-      }
-    }
-  },
-  computed: {
-    createFeedback: function () {
-      const newFeedback = {
-        // instructor_id: 10,
-        // student_id: 201,
-        project_template_id: 16,
-        instructor_comments: 'Aw yeeeahhh',
-        project_feedback: [
-          {
-            rubric_template_category_id: 3,
-            score: 4.0,
-            comment: 'yes sire'
-          },
-          {
-            rubric_template_category_id: 4,
-            score: 2.0,
-            comment: 'gangsta shit'
-          },
-          {
-            rubric_template_category_id: 5,
-            score: 1.0,
-            comment: 'wow'
-          },
-          {
-            rubric_template_category_id: 6,
-            score: 3.0,
-            comment: 'holy moly'
-          }
-        ]
-      }
-      return newFeedback
+      feedback: {}
     }
   },
   methods: {
     submitFeedback () {
+      this.feedback = {
+        project_template_id: this.$store.state.form.data.id,
+        instructor_comments: this.overall_comments,
+        project_feedback: [
+          {
+            rubric_template_category_id: this.$store.state.form.data.attributes.rubric_template[0].rubric_category_template_id,
+            score: this.first_score,
+            comment: this.first_comment
+          },
+          {
+            rubric_template_category_id: this.$store.state.form.data.attributes.rubric_template[1].rubric_category_template_id,
+            score: this.second_score,
+            comment: this.second_comment
+          },
+          {
+            rubric_template_category_id: this.$store.state.form.data.attributes.rubric_template[2].rubric_category_template_id,
+            score: this.third_score,
+            comment: this.third_comment
+          },
+          {
+            rubric_template_category_id: this.$store.state.form.data.attributes.rubric_template[3].rubric_category_template_id,
+            score: this.fourth_score,
+            comment: this.fourth_comment
+          }
+        ]
+      }
       this.$store.dispatch('sendFeedback', this.feedback)
     }
   }

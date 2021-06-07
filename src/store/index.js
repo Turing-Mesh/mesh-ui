@@ -14,7 +14,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true,
+    instructorAuth: false,
     // user: {
     //   userId: 94,
     //   userName: 'Lesha',
@@ -33,24 +33,24 @@ export default new Vuex.Store({
     //   currentCohort: '2011',
     //   program: 'FE'
     // }
-    // user: {
-    //   userId: 97,
-    //   userName: 'Gene',
-    //   lastName: 'Kutch',
-    //   currentModNum: 1,
-    //   currentProjectNum: 4,
-    //   currentCohort: '2105',
-    //   program: 'BE'
-    // }
     user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
-      currentModNum: 3,
-      currentProjNum: null,
-      currentCohort: null,
+      userId: 97,
+      userName: 'Gene',
+      lastName: 'Kutch',
+      currentModNum: 1,
+      currentProjectNum: 4,
+      currentCohort: '2105',
       program: 'BE'
     }
+    // user: {
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
+    //   currentModNum: 3,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
+    // }
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -146,34 +146,33 @@ export default new Vuex.Store({
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          // instructor_id: Number(this.state.user.userId),
-          // student_id: Number(this.state.currentStudent.attributes.user_id),
-          project_template_id: this.state.form.data.id,
-          instructor_comments: 'Aw yeeeahhh',
-          project_feedback: [
-            {
-              rubric_template_category_id: 3,
-              score: 4.0,
-              comment: 'yes sire'
-            },
-            {
-              rubric_template_category_id: 4,
-              score: 2.0,
-              comment: 'gangsta shit'
-            },
-            {
-              rubric_template_category_id: 5,
-              score: 1.0,
-              comment: 'wow'
-            },
-            {
-              rubric_template_category_id: 6,
-              score: 3.0,
-              comment: 'holy moly'
-            }
-          ]
-        })
+        body: JSON.stringify(feedback)
+        // ({
+        //   project_template_id: feedback.project_template_id,
+        //   instructor_comments: feedback.instructor_comments,
+        //   project_feedback: [
+        //     {
+        //       rubric_template_category_id: feedback,
+        //       score: 4.0,
+        //       comment: 'yes sire'
+        //     },
+        //     {
+        //       rubric_template_category_id: 4,
+        //       score: 2.0,
+        //       comment: 'gangsta shit'
+        //     },
+        //     {
+        //       rubric_template_category_id: 5,
+        //       score: 1.0,
+        //       comment: 'wow'
+        //     },
+        //     {
+        //       rubric_template_category_id: 6,
+        //       score: 3.0,
+        //       comment: 'holy moly'
+        //     }
+        //   ]
+        // })
       })
         .then(response => response.json())
         .then(data => {
