@@ -11,25 +11,6 @@
           <h1 class="s-h1">There is nothing for this module yet. </h1>
           <h1 class="s-h1">Stay tuned.</h1>
         </div>
-
-<!--      &lt;!&ndash;    begin hardcoded info  &ndash;&gt;-->
-<!--        <div v-else-if="this.hacky && !this.project" class="upper-project-hack">-->
-<!--          <div class="upper-project">-->
-<!--            <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">-->
-<!--              <h2 class="project-name s-link s-h2"><em>Sweater Weather</em></h2>-->
-<!--            </a>-->
-<!--            <div class="tricolor">-->
-<!--              <div class="yellow"></div>-->
-<!--              <div class="red"></div>-->
-<!--              <div class="blue"></div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="msg-container-hack">-->
-<!--            <h1 class="s-h2">There is nothing for this project yet. </h1>-->
-<!--            <h1 class="s-h2">Stay tuned.</h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      &lt;!&ndash;    end of hardcoded info  &ndash;&gt;-->
       </div>
     <div v-if="this.project">
       <Project :project="this.project"/>
