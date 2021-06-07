@@ -8,22 +8,7 @@
           <h1 class="s-h1">Select a project to get started!</h1>
         </div>
 
-        <div v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="upper-project-hack">
-          <!--    begin hardcoded info  -->
-          <div v-if="this.hacky && !this.project" class="">
-<!--            <div class="">-->
-              <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
-                <h2 class="project-name-hacky s-link s-h2"><em>Sweater Weather</em></h2>
-              </a>
-              <div class="tricolor">
-                <div class="yellow"></div>
-                <div class="red"></div>
-                <div class="blue"></div>
-              </div>
-<!--            </div>-->
-          </div>
-          <!--    end of hardcoded info  -->
-
+        <div v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="upper-project">
           <h1 class="s-h1">There's no feedback yet for this project.</h1>
           <button class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
         </div>
@@ -59,8 +44,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'currentStudent',
-      'hacky'
+      'currentStudent'
     ]),
     project: function () {
       return this.$store.getters.getSelectedProject(this.$route.params.id, this.$route.params.project_id)
