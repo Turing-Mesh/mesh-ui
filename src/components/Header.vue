@@ -8,6 +8,10 @@
         <h1 class="s-h1 greeting">Mesh</h1>
       </div>
 
+      <div>
+        <h3 class="name">{{ user.id === 112 ? 'Student' : 'Instructor' }}</h3>
+      </div>
+
       <div v-if="loggedIn" class="link-container">
         <router-link to="/about">
           <h3 class="name">Hi, {{ user.userName ? user.userName : '🦑' }}
