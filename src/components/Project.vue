@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="upper-project">
-      <a class="outside-link" href="https://backend.turing.edu/module1/projects/war_or_peace/" target="_blank">
+      <a class="outside-link" href="https://backend.turing.edu/module3/projects/consultancy/" target="_blank">
         <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
       </a>
       <div class="tricolor">
@@ -9,10 +9,9 @@
         <div class="red"></div>
         <div class="blue"></div>
       </div>
-      <Category :projectFeedback="project.project_feedback[0]"/>
-      <Category :projectFeedback="project.project_feedback[1]"/>
-      <Category :projectFeedback="project.project_feedback[2]"/>
-      <Category :projectFeedback="project.project_feedback[3]"/>
+      <div v-for="(projectData, index) in project.project_feedback" :key="index">
+        <Category :projectFeedback="projectData"/>
+      </div>
     </div>
 
     <hr class="feedback-container__dividing-line">

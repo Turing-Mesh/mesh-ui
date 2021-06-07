@@ -5,13 +5,12 @@ describe('Student dashboard', () => {
 
   it('Should have a header with all components present', () => {
     cy.get('img').should('have.class', 'logo rotating')
-      .get('.date').contains(/\d\d\d\d/) //regex to find four digits in a row
+      // .get('.date').contains(/\d\d\d\d/) //regex to find four digits in a row
       .get('h3').contains(/Hi\,\s[A-Z][a-z]/) //regex to find "Hi,", space, capital letter, lowercase letter
   })
 
   it('Should have a have a subheader with all components present', () => {
-    cy.get('h2').contains('Welcome to Mesh.')
-      .get('p').contains('see your feedback')
+    cy.get('.profile-links').find('a').should('have.length', 3)
   })
 
   it('Should have a sidebar with all components present', () => {
@@ -79,7 +78,7 @@ describe('About page', () => {
       .get('.name').click()
       .url().should('eq', 'http://localhost:8080/about')
       .get('h1').contains('Profile')
-      .get('.about').find('h2').should('have.length', 5)
+      .get('.about').find('h2').should('have.length', 6)
   })
 })
 

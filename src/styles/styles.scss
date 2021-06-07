@@ -25,6 +25,7 @@ a {
 
 .outside-link {
   color: #68696b;
+  margin-top: 15px;
 }
 
 .s-h2 {
@@ -38,17 +39,17 @@ a {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 20px 20px 10px;
 }
 
 .greeting {
   margin: 20px 40px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
 }
 
 .logo-container {
-  margin: 20px;
+  margin: 0 10px;
+  display: flex;
+
 }
 
 .logo {
@@ -96,6 +97,24 @@ a {
   font-size: 2rem;
 }
 
+.user-icon {
+  margin: 0 10px;
+}
+
+.user-data {
+  font-weight: 400;
+}
+
+.profile-links {
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0 2px 2px grey;
+}
+
 // *** Main *** //
 .landing {
   display: flex;
@@ -107,7 +126,7 @@ a {
 .main {
   display: flex;
   flex-flow: row nowrap;
-  margin: 20px auto 40px;
+  margin: 60px auto 40px;
 }
 
 .turing-logo {
@@ -136,10 +155,6 @@ a {
 }
 
 // *** Student Feedback *** //
-.upper-project {
-  //margin: 10px 0;
-}
-
 .feedback-container {
 
   &__category {
@@ -161,6 +176,7 @@ a {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  padding-top: 20px;
 
   &--label {
     width: 60%;
@@ -171,6 +187,10 @@ a {
 
   &--progress {
     width: 40%;
+  }
+
+  &--comments {
+    margin: 10px 0;
   }
 }
 
@@ -218,6 +238,10 @@ a {
   //border-bottom: 5px solid $turing-blue;
   background: #eeeff0;
   padding: 20px 20px 10px;
+}
+
+.project-name:hover {
+  color: #0492a5;
 }
 
 .overall-container {
@@ -563,4 +587,18 @@ footer {
   margin: 10px auto;
   font-size: 1.2rem;
   width: 100%;
+}
+
+@media only screen and (max-width: 830px) {
+  .router-link-active .project-tab,
+  .router-link-active .project-btn {
+    background: transparent;
+    font-size: 1.2rem;
+  }
+
+  .project-tab,
+  .project-btn {
+    background: transparent;
+    font-size: 1.2rem;
+  }
 }

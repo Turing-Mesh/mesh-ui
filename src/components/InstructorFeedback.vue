@@ -1,5 +1,5 @@
 <template>
-  <section class="feedback-container s-content">
+  <section class="feedback-container">
     <ProjectNav />
     <section class="instructor-feedback-container">
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
@@ -8,7 +8,7 @@
           <h1 class="s-h1">Select a project to get started!</h1>
         </div>
 
-        <div v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="msg-container">
+        <div v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="upper-project">
           <h1 class="s-h1">There's no feedback yet for this project.</h1>
           <button class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
         </div>

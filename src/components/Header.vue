@@ -5,38 +5,41 @@
         <router-link to="/">
           <img class="logo rotating" alt="Mesh logo" src="../assets/mesh-logo.png">
         </router-link>
+        <h1 class="s-h1 greeting">Mesh</h1>
       </div>
 
-      <h2 class="date">
-        <!--          <img class="calendar" alt="Calendar icon" src="../assets/calendar.svg">-->
-        <a class="outside-link" href="https://frontend.turing.edu/today/" target="_blank">
-          <i class="calendar fal fa-calendar-alt"></i>
-          {{ date }}
-        </a>
-      </h2>
+      <div>
+        <h3 class="">{{ user.userId === 112 ? 'Instructor' : 'Student' }}</h3>
+      </div>
 
       <div v-if="loggedIn" class="link-container">
         <router-link to="/about">
-          <h3 class="name">Hi, {{ user.userName ? user.userName : '🦑' }}</h3>
+          <h3 class="name">Hi, {{ user.userName ? user.userName : '🦑' }}
+          <span class="user-icon"><i class="fas fa-user-circle"></i></span>
+          </h3>
         </router-link>
-        <div>
-          <a class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
-            <h3 class="date">Current Mod: {{ user.currentModNum }}</h3>
-          </a>
-        </div>
+
         <div class="logout" >
           <i class="fas fa-sign-out-alt"> </i>
         </div>
       </div>
     </div>
 
-    <div v-if="loggedIn" class="greeting s-content">
-      <h2 class="s-h2">Welcome to Mesh.</h2>
-      <p v-if="this.$store.state.instructorAuth === false">Click on a module and then a project, to see your feedback.</p>
-    </div>
+    <div v-if="loggedIn" class="profile-links">
+      <a v-if="user.program === 'FE'" class="outside-link" href="https://frontend.turing.edu/today/" target="_blank">
+        <h3 class="s-h3">Calendar</h3>
+      </a>
+      <a v-else class="outside-link" href="https://backend.turing.edu/additional_resources/calendars" target="_blank">
+        <h3 class="s-h3">Calendar</h3>
+      </a>
 
-    <div v-else-if="!loggedIn" class="greeting">
-      <h3>You must be logged in to see your feedback.</h3>
+      <a class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
+        <h3 class="s-h3">Lessons</h3>
+      </a>
+
+      <a class="outside-link" href="https://frontend.turing.edu/projects/" target="_blank">
+        <h3 class="s-h3">Projects</h3>
+      </a>
     </div>
   </div>
 </template>

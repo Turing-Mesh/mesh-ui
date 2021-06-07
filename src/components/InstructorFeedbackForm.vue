@@ -1,5 +1,5 @@
 <template>
-  <section class="feedback-container s-content">
+  <section class="feedback-container">
     <ProjectNav />
     <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
     <!--      <h1 v-if="!$route.params.project_id && !this.$store.state.myStudents" class="s-h1">Select a project to get started!</h1>-->
