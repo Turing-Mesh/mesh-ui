@@ -25,6 +25,16 @@ export default new Vuex.Store({
     //   currentCohort: '2102',
     //   program: 'BE'
     // }
+    // user: {
+    //   userId: 97,
+    //   userName: 'Gene',
+    //   lastName: 'Kutch',
+    //   pronouns: 'he/him',
+    //   currentModNum: 1,
+    //   currentProjectNum: 4,
+    //   currentCohort: '2105',
+    //   program: 'BE'
+    // }
     user: {
       userId: 112,
       userName: 'Daniele',
