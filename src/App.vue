@@ -55,6 +55,7 @@ export default {
     ])
   },
   created () {
+    console.log(this.user)
     if (!this.instructorAuth) {
       let payload
       for (let i = 1; i < 5; i++) {
