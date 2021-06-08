@@ -18,8 +18,8 @@
 
     <div class="overall-container">
       <span class="s-h2 feedback-container__category--label overall">Overall</span>
-      <div class="progress-bar-overall" id="bar-average">
-        <div class="progress-bar-overall__score-wrapper">
+      <div class="progress-bar-overall" :class="barBackground" id="bar-average">
+        <div class="progress-bar-overall__score-wrapper" :class="scoreWrapper">
           <div class="progress-bar-overall__score-wrapper--number">
             {{ Number(this.project.average_score).toFixed(2) }}
           </div>
@@ -46,6 +46,22 @@ export default {
   },
   props: {
     project: Object
+  },
+  computed: {
+    barBackground: function () {
+      return {
+        redbg: this.project.average_score <= 1,
+        yellowbg: this.project.average_score > 1 && this.project.average_score < 3,
+        greenbg: this.project.average_score >= 3
+      }
+    },
+    scoreWrapper: function () {
+      return {
+        redwrap: this.project.average_score <= 1,
+        yellowwrap: this.project.average_score > 1 && this.project.average_score < 3,
+        greenwrap: this.project.average_score >= 3
+      }
+    }
   }
 }
 </script>

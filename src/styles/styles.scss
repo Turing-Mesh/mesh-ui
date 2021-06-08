@@ -234,30 +234,6 @@ a {
   }
 }
 
-.bg-red {
-  background: red;
-}
-
-.bg-yellow {
-  background: yellow;
-}
-
-.bg-green {
-  background: green;
-}
-
-.wrap-red {
-  border: 2px solid red;
-}
-
-.wrap-yellow {
-  border: 2px solid yellow;
-}
-
-.wrap-green {
-  border: 2px solid green;
-}
-
 .project-name {
   //border-bottom: 5px solid $turing-blue;
   background: #eeeff0;
@@ -286,14 +262,14 @@ a {
   margin-left: 20px;
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: var(--s-color-cyan-400);
+  //background-color: var(--s-color-cyan-400);
 
   &__score-wrapper {
     margin: 0 auto;
     width: 55px;
     background-color: white;
     border-radius: 800px;
-    border: 2px solid var(--s-color-cyan-400);
+    //border: 2px solid var(--s-color-cyan-400);
 
     &--number {
       height: 26px;
@@ -328,6 +304,30 @@ a {
   height: 10px;
   width: 33%;
   background: $turing-blue;
+}
+
+.redbg {
+  background-color: red;
+}
+
+.yellowbg {
+  background-color: $turing-yellow;
+}
+
+.greenbg {
+  background-color: green;
+}
+
+.redwrap {
+  border: 2px solid red;
+}
+
+.yellowwrap {
+  border: 2px solid $turing-yellow;
+}
+
+.greenwrap {
+  border: 2px solid green;
 }
 
 // *** Project Navigation *** //

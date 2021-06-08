@@ -10,7 +10,7 @@
         <div class="progress-bar__score-wrapper"
              :class="scoreWrapper"
         >
-          <div class="progress-bar__score-wrapper--number">
+          <div class="progress-bar__score-wrapper--number" >
             {{ projectFeedback.score }}
           </div>
         </div>
@@ -31,18 +31,18 @@ export default {
   computed: {
     barBackground: function () {
       return {
-        red: this.projectFeedback.score <= 1,
-        yellow: this.projectFeedback.score > 1 && this.projectFeedback.score < 3,
-        green: this.projectFeedback.score >= 3
+        redbg: this.projectFeedback.score <= 1,
+        yellowbg: this.projectFeedback.score > 1 && this.projectFeedback.score < 3,
+        greenbg: this.projectFeedback.score >= 3
+      }
+    },
+    scoreWrapper: function () {
+      return {
+        redwrap: this.projectFeedback.score <= 1,
+        yellowwrap: this.projectFeedback.score > 1 && this.projectFeedback.score < 3,
+        greenwrap: this.projectFeedback.score >= 3
       }
     }
-    // scoreWrapper: function () {
-    //   return {
-    //     red: this.projectFeedback.score <= 1,
-    //     yellow: this.projectFeedback.score > 1 && this.projectFeedback.score < 3,
-    //     green: this.projectFeedback.score >= 3
-    //   }
-    // }
   },
   props: {
     projectFeedback: Object
