@@ -32,7 +32,6 @@ describe('Student dashboard', () => {
       .get('.project-tab').contains('Project 4')
       .get('.project-tab').contains('Project 3').click()
       .wait(1000)
-      .get('.upper-project').should('exist')
       .get('.project-name').contains(/[A-Z][a-z]{2}/)
       .get('.feedback-container__category').should('have.length', 4)
       .get('.feedback-row--comments').should('have.length', 4)
