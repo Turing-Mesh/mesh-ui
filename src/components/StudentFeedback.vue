@@ -119,7 +119,7 @@ export default {
     }
   },
   created () {
-    if (this.project.student_comments !== null) {
+    if (this.project && this.project.student_comments !== null) {
       this.studentNotes = this.project.student_comments
     }
   }

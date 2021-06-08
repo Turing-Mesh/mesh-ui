@@ -3,6 +3,7 @@
     <span class="s-h3">{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
     <span class="s-text-body">Preferred Name: {{ currentStudent.attributes.first_name }}</span>
     <span class="s-text-body">Pronouns: {{ currentStudent.attributes.user_id === 41 ? 'he/him' : 'she/her' }}</span>
+    <span class="s-text-body">Repeater: No</span>
   </div>
 </template>
 
