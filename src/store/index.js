@@ -15,7 +15,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true,
+    instructorAuth: false,
     //  *** best user for testing *** //
     // user: {
     //   userId: 94,
@@ -38,16 +38,16 @@ export default new Vuex.Store({
     //   program: 'BE'
     // }
     // *** guinea pig for testing feedback submission *** //
-    // user: {
-    //   userId: 97,
-    //   userName: 'Gene',
-    //   lastName: 'Kutch',
-    //   pronouns: 'he/him',
-    //   currentModNum: 1,
-    //   currentProjectNum: 4,
-    //   currentCohort: '2105',
-    //   program: 'BE'
-    // }
+    user: {
+      userId: 43,
+      userName: 'Gene',
+      lastName: 'Kutch',
+      pronouns: 'he/him',
+      currentModNum: 1,
+      currentProjectNum: 4,
+      currentCohort: '2105',
+      program: 'BE'
+    }
     // *** user for other random testing of student view *** //
     // user: {
     //   userId: 1,
@@ -59,16 +59,16 @@ export default new Vuex.Store({
     //   program: 'FE'
     // }
     // *** user for instructor view in demo *** //
-    user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
-      pronouns: 'they/them',
-      currentModNum: 3,
-      currentProjNum: null,
-      currentCohort: null,
-      program: 'BE'
-    }
+    // user: {
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
+    //   pronouns: 'they/them',
+    //   currentModNum: 3,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
+    // }
   },
   mutations: {
     setCurrentModule (state, payload) {

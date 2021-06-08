@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a class="outside-link" href="https://backend.turing.edu/module3/projects/consultancy/" target="_blank">
+    <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(project.name)}`" target="_blank">
       <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
     </a>
     <div class="tricolor">
@@ -61,6 +61,14 @@ export default {
         yellowwrap: this.project.average_score > 1 && this.project.average_score < 3,
         greenwrap: this.project.average_score >= 3
       }
+    }
+    // underSlugify: function (name) {
+    //   return name.split(' ').join('_').toLowerCase()
+    // }
+  },
+  methods: {
+    slug (name) {
+      return name.split(' ').join('_').toLowerCase()
     }
   }
 }
