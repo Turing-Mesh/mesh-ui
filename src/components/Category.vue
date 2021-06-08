@@ -4,8 +4,12 @@
       <span class="s-h2 feedback-row--label">
       {{ projectFeedback.rubric_category_name }}
       </span>
-      <div class="feedback-row--progress progress-bar" :style="{ width: projectFeedback.score * 80 + 'px'}">
-        <div class="progress-bar__score-wrapper">
+      <div class="feedback-row--progress progress-bar"
+           :class="barBackground"
+           :style="{ width: projectFeedback.score * 80 + 'px'}">
+        <div class="progress-bar__score-wrapper"
+             :class="scoreWrapper"
+        >
           <div class="progress-bar__score-wrapper--number">
             {{ projectFeedback.score }}
           </div>
@@ -20,6 +24,26 @@
 
 <script>
 export default {
+  data () {
+    return {
+    }
+  },
+  computed: {
+    barBackground: function () {
+      return {
+        red: this.projectFeedback.score <= 1,
+        yellow: this.projectFeedback.score > 1 && this.projectFeedback.score < 3,
+        green: this.projectFeedback.score >= 3
+      }
+    }
+    // scoreWrapper: function () {
+    //   return {
+    //     red: this.projectFeedback.score <= 1,
+    //     yellow: this.projectFeedback.score > 1 && this.projectFeedback.score < 3,
+    //     green: this.projectFeedback.score >= 3
+    //   }
+    // }
+  },
   props: {
     projectFeedback: Object
   }

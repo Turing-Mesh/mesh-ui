@@ -210,7 +210,7 @@ a {
   display: inline-block;
   width: 100px;
   border-radius: 800px;
-  background-color: var(--s-color-yellow-500);
+  //background-color: var(--s-color-yellow-500);
   margin-left: 20px;
   padding-left: 10px;
   font-size: 1.25rem;
@@ -232,6 +232,30 @@ a {
       font-weight: var(--s-font-weight-bold);
     }
   }
+}
+
+.bg-red {
+  background: red;
+}
+
+.bg-yellow {
+  background: yellow;
+}
+
+.bg-green {
+  background: green;
+}
+
+.wrap-red {
+  border: 2px solid red;
+}
+
+.wrap-yellow {
+  border: 2px solid yellow;
+}
+
+.wrap-green {
+  border: 2px solid green;
 }
 
 .project-name {
