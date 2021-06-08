@@ -1,6 +1,8 @@
 <template>
   <form id="form">
-    <h2 class="project-name s-h2"><em><span class="editing">Editing: </span>Sweater Weather</em></h2>
+    <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
+      <h2 class="project-name s-h2"><em><span class="editing">Editing: </span>Sweater Weather</em></h2>
+    </a>
     <div class="tricolor">
       <div class="yellow"></div>
       <div class="red"></div>

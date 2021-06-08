@@ -15,16 +15,17 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: false,
-    user: {
-      userId: 94,
-      userName: 'Lesha',
-      lastName: 'Hilpert',
-      currentModNum: 1,
-      currentProjNum: 4,
-      currentCohort: '2105',
-      program: 'BE'
-    }
+    instructorAuth: true,
+    //  *** best user for testing *** //
+    // user: {
+    //   userId: 94,
+    //   userName: 'Lesha',
+    //   lastName: 'Hilpert',
+    //   currentModNum: 1,
+    //   currentProjNum: 4,
+    //   currentCohort: '2105',
+    //   program: 'BE'
+    // }
     //  *** user for student view in demo *** //
     // user: {
     //   userId: 41,
@@ -58,16 +59,16 @@ export default new Vuex.Store({
     //   program: 'FE'
     // }
     // *** user for instructor view in demo *** //
-    // user: {
-    //   userId: 112,
-    //   userName: 'Daniele',
-    //   lastName: 'Littel',
-    //   pronouns: 'they/them',
-    //   currentModNum: 3,
-    //   currentProjNum: null,
-    //   currentCohort: null,
-    //   program: 'BE'
-    // }
+    user: {
+      userId: 112,
+      userName: 'Daniele',
+      lastName: 'Littel',
+      pronouns: 'they/them',
+      currentModNum: 3,
+      currentProjNum: null,
+      currentCohort: null,
+      program: 'BE'
+    }
   },
   mutations: {
     setCurrentModule (state, payload) {
