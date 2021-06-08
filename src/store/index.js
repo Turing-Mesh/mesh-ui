@@ -25,8 +25,9 @@ export default new Vuex.Store({
       currentCohort: '2105',
       program: 'BE'
     }
+    //  *** user for student view in demo *** //
     // user: {
-    //   userId: 84,
+    //   userId: 41,
     //   userName: 'Mark',
     //   lastName: 'Weissnat',
     //   pronouns: 'he/him',
@@ -35,6 +36,7 @@ export default new Vuex.Store({
     //   currentCohort: '2102',
     //   program: 'BE'
     // }
+    // *** guinea pig for testing feedback submission *** //
     // user: {
     //   userId: 97,
     //   userName: 'Gene',
@@ -45,6 +47,7 @@ export default new Vuex.Store({
     //   currentCohort: '2105',
     //   program: 'BE'
     // }
+    // *** user for other random testing of student view *** //
     // user: {
     //   userId: 1,
     //   userName: 'Olive',
@@ -54,6 +57,7 @@ export default new Vuex.Store({
     //   currentCohort: '2011',
     //   program: 'FE'
     // }
+    // *** user for instructor view in demo *** //
     // user: {
     //   userId: 112,
     //   userName: 'Daniele',

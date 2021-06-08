@@ -210,7 +210,7 @@ a {
   display: inline-block;
   width: 100px;
   border-radius: 800px;
-  background-color: var(--s-color-yellow-500);
+  //background-color: var(--s-color-yellow-500);
   margin-left: 20px;
   padding-left: 10px;
   font-size: 1.25rem;
@@ -262,14 +262,14 @@ a {
   margin-left: 20px;
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: var(--s-color-cyan-400);
+  //background-color: var(--s-color-cyan-400);
 
   &__score-wrapper {
     margin: 0 auto;
     width: 55px;
     background-color: white;
     border-radius: 800px;
-    border: 2px solid var(--s-color-cyan-400);
+    //border: 2px solid var(--s-color-cyan-400);
 
     &--number {
       height: 26px;
@@ -306,6 +306,45 @@ a {
   background: $turing-blue;
 }
 
+
+.redbg {
+  background-color: $turing-red;
+}
+
+.yellowbg {
+  background-color: #f9ae06;
+}
+
+.greenbg {
+  background-color: #54ae4d;
+}
+
+.redwrap {
+  border: 2px solid $turing-red;
+}
+
+.yellowwrap {
+  border: 2px solid #f9ae06;
+}
+
+.greenwrap {
+  border: 2px solid #54ae4d;
+}
+
+.upper-project {
+  background: #eeeff0;
+}
+
+.upper-hacky {
+  background: #eeeff0;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
 // *** Project Navigation *** //
 .projects-container {
   display: grid;
@@ -320,7 +359,7 @@ a {
 }
 
 .project-tab:hover {
-  background: #eeeff0;
+  //background: #eeeff0;
   border-bottom: 5px solid $turing-blue;
 }
 

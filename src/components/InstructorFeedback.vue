@@ -3,12 +3,14 @@
     <ProjectNav />
     <section class="instructor-feedback-container">
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
-      <div class="msg-container">
+      <div class="msg-container ">
         <div v-if="!$route.params.project_id">
           <h1 class="s-h1">Select a project to get started!</h1>
         </div>
+
         <h1 v-else-if="this.$store.state.confirmation">{{ this.$store.state.confirmation }}</h1>
-        <div v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="upper-project">
+
+        <div v-else-if="!this.project && this.$store.state.myStudents.data.length && !this.$store.state.form.data" class="upper-hacky">
           <h1 class="s-h1">There's no feedback yet for this project.</h1>
           <button class="s-button submit-feedback" @click="getForm">Submit Feedback</button>
         </div>
