@@ -4,7 +4,7 @@
          name: 'Project',
          params: { id: $route.params.id, project_id: 1 }
        }">
-      <button class="project-btn"><span class="project-tab">Project 1</span></button>
+      <button class="project-btn" :style="$route.params.id === 1 ? 'active' : ''"><span class="project-tab">Project 1</span></button>
     </router-link>
     <router-link v-show="mod !== 4" class="project" :to="{
          name: 'Project',

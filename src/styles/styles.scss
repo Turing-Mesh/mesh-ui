@@ -308,32 +308,41 @@ a {
 
 
 .redbg {
-  background-color: red;
+  background-color: $turing-red;
 }
 
 .yellowbg {
-  background-color: #ffe605;
+  background-color: #f9ae06;
 }
 
 .greenbg {
-  background-color: green;
+  background-color: #54ae4d;
 }
 
 .redwrap {
-  border: 2px solid red;
+  border: 2px solid $turing-red;
 }
 
 .yellowwrap {
-  border: 2px solid #ffe605;
+  border: 2px solid #f9ae06;
 }
 
 .greenwrap {
-  border: 2px solid green;
+  border: 2px solid #54ae4d;
 }
 
 .upper-project {
   background: #eeeff0;
-  padding: 15px;
+}
+
+.upper-hacky {
+  background: #eeeff0;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
 // *** Project Navigation *** //
@@ -350,7 +359,7 @@ a {
 }
 
 .project-tab:hover {
-  background: #eeeff0;
+  //background: #eeeff0;
   border-bottom: 5px solid $turing-blue;
 }
 

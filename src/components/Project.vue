@@ -8,7 +8,7 @@
       <div class="red"></div>
       <div class="blue"></div>
     </div>
-    <div class="upper-project">
+    <div class="">
       <div v-for="(projectData, index) in project.project_feedback" :key="index">
         <Category :projectFeedback="projectData"/>
       </div>
