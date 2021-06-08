@@ -8,9 +8,9 @@
         <h1 class="s-h1 greeting">Mesh</h1>
       </div>
 
-      <div>
-        <h3 class="">{{ user.userId === 110 ? 'Instructor' : 'Student' }}</h3>
-      </div>
+<!--      <div>-->
+<!--        <h3 class="">{{ user.userId === 110 ? 'Instructor' : 'Student' }}</h3>-->
+<!--      </div>-->
 
       <div v-if="loggedIn" class="link-container">
         <router-link to="/about">
