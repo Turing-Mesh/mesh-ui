@@ -306,12 +306,13 @@ a {
   background: $turing-blue;
 }
 
+
 .redbg {
   background-color: red;
 }
 
 .yellowbg {
-  background-color: $turing-yellow;
+  background-color: #ffe605;
 }
 
 .greenbg {
@@ -323,11 +324,15 @@ a {
 }
 
 .yellowwrap {
-  border: 2px solid $turing-yellow;
+  border: 2px solid #ffe605;
 }
 
 .greenwrap {
   border: 2px solid green;
+}
+
+.upper-project {
+  background: #eeeff0;
 }
 
 // *** Project Navigation *** //
