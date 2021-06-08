@@ -207,7 +207,7 @@ export default {
           }
         ]
       }
-      console.log(this.feedback)
+      this.$store.dispatch('sendModule', this.$route.params.id)
       this.$store.dispatch('sendFeedback', this.feedback)
     }
   },
