@@ -4,6 +4,7 @@
     <span class="s-text-body">Preferred Name: {{ currentStudent.attributes.first_name }}</span>
     <span class="s-text-body">Pronouns: {{ currentStudent.attributes.user_id === 41 ? 'he/him' : 'she/her' }}</span>
     <span class="s-text-body">Repeater: No</span>
+    <span>Student ID: {{ currentStudent.attributes.user_id }}</span>
   </div>
 </template>
 

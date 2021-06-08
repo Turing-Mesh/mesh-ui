@@ -9,7 +9,7 @@
       </div>
 
       <div>
-        <h3 class="">{{ user.userId === 112 ? 'Instructor' : 'Student' }}</h3>
+        <h3 class="">{{ user.userId === 110 ? 'Instructor' : 'Student' }}</h3>
       </div>
 
       <div v-if="loggedIn" class="link-container">

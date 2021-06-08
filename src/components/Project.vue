@@ -1,8 +1,11 @@
 <template>
   <div>
-    <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(project.name)}`" target="_blank">
-      <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
-    </a>
+    <h2 class="project-name s-h2">
+<!--      https://frontend.turing.edu/projects/module-3/niche-audience.html-->
+      <a href="https://frontend.turing.edu/projects/module-3/niche-audience.html" target="_blank">
+        <em class="outside-link" >{{ project.name }}</em>
+      </a>
+    </h2>
     <div class="tricolor">
       <div class="yellow"></div>
       <div class="red"></div>

@@ -1,8 +1,10 @@
 <template>
   <form id="form">
-    <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
-      <h2 class="project-name s-h2"><em><span class="editing">Editing: </span>Sweater Weather</em></h2>
-    </a>
+    <h2 class="project-name s-h2">
+      <a href="https://frontend.turing.edu/projects/module-3/ideas-4-ideaboxes.html" target="_blank">
+        <em class="outside-link" ><span class="editing">Editing: </span>Sweater Weather</em>
+      </a>
+    </h2>
     <div class="tricolor">
       <div class="yellow"></div>
       <div class="red"></div>
@@ -211,6 +213,9 @@ export default {
       }
       this.$store.dispatch('sendModule', this.$route.params.id)
       this.$store.dispatch('sendFeedback', this.feedback)
+    },
+    slug (name) {
+      return name.split(' ').join('_').toLowerCase()
     }
   },
   updated () {

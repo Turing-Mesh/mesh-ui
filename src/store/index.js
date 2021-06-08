@@ -28,14 +28,14 @@ export default new Vuex.Store({
     // }
     //  *** user for student view in demo *** //
     // user: {
-    //   userId: 41,
-    //   userName: 'Mark',
-    //   lastName: 'Weissnat',
-    //   pronouns: 'he/him',
+    //   userId: 29,
+    //   userName: 'Maia',
+    //   lastName: 'Hauck',
+    //   pronouns: 'she/her',
     //   currentModNum: 3,
     //   currentProjNum: 4,
     //   currentCohort: '2102',
-    //   program: 'BE'
+    //   program: 'FE'
     // }
     // *** guinea pig for testing feedback submission *** //
     // user: {
@@ -60,14 +60,14 @@ export default new Vuex.Store({
     // }
     // *** user for instructor view in demo *** //
     user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
+      userId: 110,
+      userName: 'Bradley',
+      lastName: 'Heaney',
       pronouns: 'they/them',
       currentModNum: 3,
       currentProjNum: null,
       currentCohort: null,
-      program: 'BE'
+      program: 'FE'
     }
   },
   mutations: {
@@ -137,7 +137,7 @@ export default new Vuex.Store({
         })
     },
     fetchMyStudents (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/112/students?mod=${module}`)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/110/students?mod=${module}`)
         .then(response => response.json())
         .then(data => {
           context.commit('setMyStudents', data)
