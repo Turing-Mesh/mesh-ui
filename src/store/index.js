@@ -25,16 +25,16 @@ export default new Vuex.Store({
     //   currentCohort: '2105',
     //   program: 'BE'
     // }
-    // user: {
-    //   userId: 84,
-    //   userName: 'Mark',
-    //   lastName: 'Weissnat',
-    //   pronouns: 'he/him',
-    //   currentModNum: 3,
-    //   currentProjNum: 4,
-    //   currentCohort: '2102',
-    //   program: 'BE'
-    // }
+    user: {
+      userId: 84,
+      userName: 'Mark',
+      lastName: 'Weissnat',
+      pronouns: 'he/him',
+      currentModNum: 3,
+      currentProjNum: 4,
+      currentCohort: '2102',
+      program: 'BE'
+    }
     // user: {
     //   userId: 97,
     //   userName: 'Gene',
@@ -45,15 +45,15 @@ export default new Vuex.Store({
     //   currentCohort: '2105',
     //   program: 'BE'
     // }
-    user: {
-      userId: 1,
-      userName: 'Olive',
-      lastName: 'Renner',
-      currentModNum: 4,
-      currentProjNum: 2,
-      currentCohort: '2011',
-      program: 'FE'
-    }
+    // user: {
+    //   userId: 1,
+    //   userName: 'Olive',
+    //   lastName: 'Renner',
+    //   currentModNum: 4,
+    //   currentProjNum: 2,
+    //   currentCohort: '2011',
+    //   program: 'FE'
+    // }
     // user: {
     //   userId: 112,
     //   userName: 'Daniele',
