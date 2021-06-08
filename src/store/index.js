@@ -5,16 +5,26 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    currentModule: {},
+    currentModule: '',
     allModules: [],
     selectedProject: {},
     myStudents: [],
     currentStudent: {},
     form: {},
+    confirmation: '',
     currentProject: {},
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
+    user: {
+      userId: 94,
+      userName: 'Lesha',
+      lastName: 'Hilpert',
+      currentModNum: 1,
+      currentProjNum: 4,
+      currentCohort: '2105',
+      program: 'BE'
+    }
     // user: {
     //   userId: 84,
     //   userName: 'Mark',
@@ -35,15 +45,15 @@ export default new Vuex.Store({
     //   currentCohort: '2105',
     //   program: 'BE'
     // }
-    user: {
-      userId: 1,
-      userName: 'Olive',
-      lastName: 'Renner',
-      currentModNum: 4,
-      currentProjNum: 2,
-      currentCohort: '2011',
-      program: 'FE'
-    }
+    // user: {
+    //   userId: 1,
+    //   userName: 'Olive',
+    //   lastName: 'Renner',
+    //   currentModNum: 4,
+    //   currentProjNum: 2,
+    //   currentCohort: '2011',
+    //   program: 'FE'
+    // }
     // user: {
     //   userId: 112,
     //   userName: 'Daniele',
@@ -76,7 +86,9 @@ export default new Vuex.Store({
       state.currentStudent = foundStudent
     },
     setForm (state, formData) {
+      console.log(formData)
       state.form = formData
+      console.log(state.form)
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
@@ -85,6 +97,14 @@ export default new Vuex.Store({
       state.userId = payload.userId
       state.userName = payload.userName
       state.instructorAuth = payload.instructorAuth
+    },
+    updateProject (state, payload) {
+      const foundModule = state.allModules.find(module => Number(module.data.attributes.mod) === state.currentModule)
+      const foundIndex = state.allModules.indexOf(foundModule)
+      state.allModules[foundIndex].data.attributes.student_projects.push(payload.data.attributes.student_projects[0])
+    },
+    setConfirmation (state, payload) {
+      state.confirmation = payload
     }
   },
   actions: {
@@ -136,57 +156,34 @@ export default new Vuex.Store({
         })
     },
     clearForm (context, projectNum) {
-      if (this.state.form.data.attributes.mod !== projectNum) {
+      if (this.state.form.data.attributes.mod && this.state.form.data.attributes.mod !== projectNum) {
         context.commit('setForm', {})
       }
     },
     sendFeedback (context, feedback) {
-      console.log('form id in state', this.state.form.data.id)
-      console.log(this.state.currentStudent.attributes.user_id)
-      console.log(feedback)
+      context.commit('setForm', {})
+      context.commit('setConfirmation', 'Submitted!')
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${this.state.user.userId}/students/${this.state.currentStudent.attributes.user_id}/student_projects`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(feedback)
-        // ({
-        //   project_template_id: feedback.project_template_id,
-        //   instructor_comments: feedback.instructor_comments,
-        //   project_feedback: [
-        //     {
-        //       rubric_template_category_id: feedback,
-        //       score: 4.0,
-        //       comment: 'yes sire'
-        //     },
-        //     {
-        //       rubric_template_category_id: 4,
-        //       score: 2.0,
-        //       comment: 'gangsta shit'
-        //     },
-        //     {
-        //       rubric_template_category_id: 5,
-        //       score: 1.0,
-        //       comment: 'wow'
-        //     },
-        //     {
-        //       rubric_template_category_id: 6,
-        //       score: 3.0,
-        //       comment: 'holy moly'
-        //     }
-        //   ]
-        // })
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          context.commit('updateProject', data)
         })
     },
     setLoggedInUser (context, payload) {
       return context.commit('setCurrentUser', payload)
+    },
+    sendModule (context, payload) {
+      context.commit('setCurrentModule', payload)
+    },
+    clearConfirmation (context, payload) {
+      context.commit('setConfirmation', payload)
     }
-  },
-  modules: {
   },
   getters: {
     getSelectedProject: (state) => (selectedModuleNum, selectedProjectNum) => {
