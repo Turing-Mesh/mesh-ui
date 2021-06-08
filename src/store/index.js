@@ -16,25 +16,25 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
-    // user: {
-    //   userId: 94,
-    //   userName: 'Lesha',
-    //   lastName: 'Hilpert',
-    //   currentModNum: 1,
-    //   currentProjNum: 4,
-    //   currentCohort: '2105',
-    //   program: 'BE'
-    // }
     user: {
-      userId: 84,
-      userName: 'Mark',
-      lastName: 'Weissnat',
-      pronouns: 'he/him',
-      currentModNum: 3,
+      userId: 94,
+      userName: 'Lesha',
+      lastName: 'Hilpert',
+      currentModNum: 1,
       currentProjNum: 4,
-      currentCohort: '2102',
+      currentCohort: '2105',
       program: 'BE'
     }
+    // user: {
+    //   userId: 84,
+    //   userName: 'Mark',
+    //   lastName: 'Weissnat',
+    //   pronouns: 'he/him',
+    //   currentModNum: 3,
+    //   currentProjNum: 4,
+    //   currentCohort: '2102',
+    //   program: 'BE'
+    // }
     // user: {
     //   userId: 97,
     //   userName: 'Gene',
