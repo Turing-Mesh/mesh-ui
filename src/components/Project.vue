@@ -1,14 +1,14 @@
 <template>
   <div>
+    <a class="outside-link" href="https://backend.turing.edu/module3/projects/consultancy/" target="_blank">
+      <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
+    </a>
+    <div class="tricolor">
+      <div class="yellow"></div>
+      <div class="red"></div>
+      <div class="blue"></div>
+    </div>
     <div class="upper-project">
-      <a class="outside-link" href="https://backend.turing.edu/module3/projects/consultancy/" target="_blank">
-        <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
-      </a>
-      <div class="tricolor">
-        <div class="yellow"></div>
-        <div class="red"></div>
-        <div class="blue"></div>
-      </div>
       <div v-for="(projectData, index) in project.project_feedback" :key="index">
         <Category :projectFeedback="projectData"/>
       </div>
