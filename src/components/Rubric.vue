@@ -1,7 +1,8 @@
 <template>
   <form id="form">
     <h2 class="project-name s-h2">
-      <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(projectName)}`" target="_blank">
+<!--      <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(projectName)}`" target="_blank">-->
+      <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
         <em class="outside-link" ><span class="editing">Editing: </span>Sweater Weather</em>
       </a>
     </h2>
@@ -183,7 +184,6 @@ export default {
       feedback: {}
     }
   },
-  props: ['projectName'],
   methods: {
     submitFeedback () {
       this.feedback = {
@@ -214,9 +214,6 @@ export default {
       }
       this.$store.dispatch('sendModule', this.$route.params.id)
       this.$store.dispatch('sendFeedback', this.feedback)
-    },
-    slug (name) {
-      return name.split(' ').join('_').toLowerCase()
     }
   },
   updated () {
