@@ -149,17 +149,6 @@
             Overall
           </span>
       <div class="instr-form-row__item">
-        <label for="num-field-5">Numerical Score:</label>
-        <br>
-        <input
-          id="num-field-5"
-          class="feedback-row--progress instr-form-row__item--input"
-          type="number"
-          min="1"
-          max="4"
-          step="0.5"
-          placeholder="Whole or half numbers only"
-        />
         <br>
         <label for="text-field-5">Comments:</label>
         <br>
@@ -214,12 +203,6 @@ export default {
       }
       this.$store.dispatch('sendModule', this.$route.params.id)
       this.$store.dispatch('sendFeedback', this.feedback)
-    }
-  },
-  updated () {
-    console.log('UPDATED FIRST')
-    if (this.feedback) {
-      console.log('UPDATED')
     }
   }
 }

@@ -15,7 +15,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true,
+    instructorAuth: false,
     //  *** best user for e2e testing -- don't change info on this one *** //
     // user: {
     //   userId: 42,
@@ -28,16 +28,16 @@ export default new Vuex.Store({
     //   program: 'BE'
     // }
     //  *** user for student view in demo *** //
-    // user: {
-    //   userId: 46,
-    //   userName: 'Han',
-    //   lastName: 'Schultz',
-    //   pronouns: 'he/him',
-    //   currentModNum: 3,
-    //   currentProjNum: 4,
-    //   currentCohort: '2102',
-    //   program: 'BE'
-    // }
+    user: {
+      userId: 46,
+      userName: 'Han',
+      lastName: 'Schultz',
+      pronouns: 'he/him',
+      currentModNum: 3,
+      currentProjNum: 4,
+      currentCohort: '2102',
+      program: 'BE'
+    }
     // *** guinea pig for testing feedback submission -- mod 1, so lots of opportunities *** //
     // user: {
     //   userId: 94,
@@ -50,16 +50,16 @@ export default new Vuex.Store({
     //   program: 'BE'
     // }
     // *** user for instructor view in demo *** //
-    user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
-      pronouns: 'they/them',
-      currentModNum: 3,
-      currentProjNum: null,
-      currentCohort: null,
-      program: 'BE'
-    }
+    // user: {
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
+    //   pronouns: 'they/them',
+    //   currentModNum: 3,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
+    // }
   },
   mutations: {
     setCurrentModule (state, payload) {
