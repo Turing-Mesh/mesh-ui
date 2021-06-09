@@ -16,58 +16,49 @@ export default new Vuex.Store({
     loggedIn: true,
     authenticated: true,
     instructorAuth: false,
-    //  *** best user for testing *** //
+    //  *** best user for e2e testing -- don't change info on this one *** //
     user: {
-      userId: 94,
-      userName: 'Lesha',
-      lastName: 'Hilpert',
-      currentModNum: 1,
+      userId: 42,
+      userName: 'Maia',
+      lastName: 'X',
+      pronouns: 'she/her',
+      currentModNum: 3,
       currentProjNum: 4,
-      currentCohort: '2105',
+      currentCohort: '2102',
       program: 'BE'
     }
     //  *** user for student view in demo *** //
     // user: {
-    //   userId: 29,
-    //   userName: 'Maia',
-    //   lastName: 'Hauck',
-    //   pronouns: 'she/her',
+    //   userId: 46,
+    //   userName: 'Han',
+    //   lastName: 'X',
+    //   pronouns: 'he/him',
     //   currentModNum: 3,
     //   currentProjNum: 4,
     //   currentCohort: '2102',
-    //   program: 'FE'
+    //   program: 'BE'
     // }
-    // *** guinea pig for testing feedback submission *** //
+    // *** guinea pig for testing feedback submission -- mod 1, so lots of opportunities *** //
     // user: {
-    //   userId: 43,
-    //   userName: 'Gene',
+    //   userId: 94,
+    //   userName: 'Olive',
     //   lastName: 'Kutch',
-    //   pronouns: 'he/him',
+    //   pronouns: 'they/them',
     //   currentModNum: 1,
     //   currentProjectNum: 4,
     //   currentCohort: '2105',
     //   program: 'BE'
     // }
-    // *** user for other random testing of student view *** //
-    // user: {
-    //   userId: 1,
-    //   userName: 'Olive',
-    //   lastName: 'Renner',
-    //   currentModNum: 4,
-    //   currentProjNum: 2,
-    //   currentCohort: '2011',
-    //   program: 'FE'
-    // }
     // *** user for instructor view in demo *** //
     // user: {
-    //   userId: 110,
-    //   userName: 'Bradley',
-    //   lastName: 'Heaney',
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
     //   pronouns: 'they/them',
     //   currentModNum: 3,
     //   currentProjNum: null,
     //   currentCohort: null,
-    //   program: 'FE'
+    //   program: 'BE'
     // }
   },
   mutations: {
@@ -137,7 +128,7 @@ export default new Vuex.Store({
         })
     },
     fetchMyStudents (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/110/students?mod=${module}`)
+      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/112/students?mod=${module}`)
         .then(response => response.json())
         .then(data => {
           context.commit('setMyStudents', data)
