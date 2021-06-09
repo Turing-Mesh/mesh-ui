@@ -1,8 +1,10 @@
 <template>
   <div>
-    <a class="outside-link" href="https://backend.turing.edu/module3/projects/consultancy/" target="_blank">
-      <h2 class="project-name s-h2"><em>{{ project.name }}</em></h2>
-    </a>
+    <h2 class="project-name s-h2">
+      <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(project.name)}`" target="_blank">
+        <em class="outside-link" >{{ project.name }}</em>
+      </a>
+    </h2>
     <div class="tricolor">
       <div class="yellow"></div>
       <div class="red"></div>
@@ -61,6 +63,11 @@ export default {
         yellowwrap: this.project.average_score > 1 && this.project.average_score < 3,
         greenwrap: this.project.average_score >= 3
       }
+    }
+  },
+  methods: {
+    slug (name) {
+      return name.split(' ').join('_').toLowerCase()
     }
   }
 }

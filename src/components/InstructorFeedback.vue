@@ -1,6 +1,6 @@
 <template>
   <section class="feedback-container">
-    <ProjectNav />
+    <ProjectNav :mod="this.$route.params.id"/>
     <section class="instructor-feedback-container">
       <!--      <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif" alt="loading spinner gif">-->
       <div class="msg-container ">

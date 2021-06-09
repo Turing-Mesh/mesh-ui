@@ -1,6 +1,11 @@
 <template>
   <form id="form">
-    <h2 class="project-name s-h2"><em><span class="editing">Editing: </span>Sweater Weather</em></h2>
+    <h2 class="project-name s-h2">
+<!--      <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(projectName)}`" target="_blank">-->
+      <a class="outside-link" href="https://backend.turing.edu/module3/projects/sweater_weather/" target="_blank">
+        <em class="outside-link" ><span class="editing">Editing: </span>Sweater Weather</em>
+      </a>
+    </h2>
     <div class="tricolor">
       <div class="yellow"></div>
       <div class="red"></div>

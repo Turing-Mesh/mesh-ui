@@ -11,7 +11,7 @@
 
       <div v-else class="landing">
         <h1 class="s-h1">Welcome, Turing Instructor!</h1>
-        <h2 class="s-h2">You are currently teaching Mod 1!</h2>
+        <h2 class="s-h2">You are currently teaching Mod 3!</h2>
       </div>
       <img class="turing-logo" src="https://assets.turing.edu/turing-school-mark-gray.png" alt="Turing logo">
     </section>
