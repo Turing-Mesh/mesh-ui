@@ -2,7 +2,7 @@
   <div class="student-data">
     <span class="s-h3">{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
     <span class="s-text-body">Preferred Name: {{ currentStudent.attributes.first_name }}</span>
-    <span class="s-text-body">Pronouns: {{ currentStudent.attributes.user_id === 29 ? 'she/her' : 'he/him' }}</span>
+    <span class="s-text-body">Pronouns: {{ pronouns() }}</span>
     <span class="s-text-body">Repeater: No</span>
     <span>Student ID: {{ currentStudent.attributes.user_id }}</span>
   </div>
@@ -17,6 +17,17 @@ export default {
     ...mapState([
       'currentStudent'
     ])
+  },
+  methods: {
+    pronouns () {
+      if (this.currentStudent.attributes.user_id === 48 || this.currentStudent.attributes.user_id === 52 || this.currentStudent.attributes.user_id === 50) {
+        return 'she/her'
+      } else if (this.currentStudent.attributes.user_id === 46 || this.currentStudent.attributes.user_id === 44 || this.currentStudent.attributes.user_id === 40) {
+        return 'he/him'
+      } else {
+        return 'they/them'
+      }
+    }
   }
 }
 </script>
