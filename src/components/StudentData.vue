@@ -1,10 +1,10 @@
 <template>
   <div class="student-data">
     <span class="s-h3">{{ currentStudent.attributes.first_name + " " + currentStudent.attributes.last_name}}</span>
-    <span class="s-text-body">Preferred Name: {{ currentStudent.attributes.first_name }}</span>
+    <span class="s-text-body">Preferred Name: {{ currentStudent.attributes.first_name === 'Cornell' ? 'Abe' : currentStudent.attributes.first_name }}</span>
     <span class="s-text-body">Pronouns: {{ pronouns() }}</span>
-    <span class="s-text-body">Repeater: No</span>
-    <span>Student ID: {{ currentStudent.attributes.user_id }}</span>
+    <span class="s-text-body">Repeater: {{ this.currentStudent.attributes.user_id === 44 ? 'Yes' : 'No' }}</span>
+<!--    <span>Student ID: {{ currentStudent.attributes.user_id }}</span>-->
   </div>
 </template>
 
@@ -21,11 +21,11 @@ export default {
   methods: {
     pronouns () {
       if (this.currentStudent.attributes.user_id === 48 || this.currentStudent.attributes.user_id === 52 || this.currentStudent.attributes.user_id === 50) {
-        return 'she/her'
+        return 'She/Her'
       } else if (this.currentStudent.attributes.user_id === 46 || this.currentStudent.attributes.user_id === 44 || this.currentStudent.attributes.user_id === 40) {
-        return 'he/him'
+        return 'He/Him'
       } else {
-        return 'they/them'
+        return 'They/Them'
       }
     }
   }
