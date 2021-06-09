@@ -21,7 +21,7 @@
       </div>
 
       <div v-else-if="!this.project && this.$store.state.myStudents && this.$store.state.form.data">
-        <Rubric v-if="$route.params.project_id"/>
+        <Rubric v-if="$route.params.project_id" :projectName="this.project ? this.project.name : null"/>
       </div>
     </section>
   </section>

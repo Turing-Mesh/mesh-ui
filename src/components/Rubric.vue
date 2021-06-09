@@ -1,8 +1,8 @@
 <template>
   <form id="form">
     <h2 class="project-name s-h2">
-      <a href="https://frontend.turing.edu/projects/module-3/ideas-4-ideaboxes.html" target="_blank">
-        <em class="outside-link" ><span class="editing">Editing: </span>Idea Boxes</em>
+      <a class="outside-link" :href="`https://backend.turing.edu/module3/projects/${slug(projectName)}`" target="_blank">
+        <em class="outside-link" ><span class="editing">Editing: </span>Sweater Weather</em>
       </a>
     </h2>
     <div class="tricolor">
@@ -183,6 +183,7 @@ export default {
       feedback: {}
     }
   },
+  props: ['projectName'],
   methods: {
     submitFeedback () {
       this.feedback = {
