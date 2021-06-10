@@ -218,7 +218,13 @@ export default {
       second_score: null,
       third_score: null,
       fourth_score: null,
-      fifth_score: null
+      fifth_score: null,
+      first_comment: null,
+      second_comment: null,
+      third_comment: null,
+      fourth_comment: null,
+      fifth_comment: null,
+      overall_comments: null
     }
   },
   methods: {
