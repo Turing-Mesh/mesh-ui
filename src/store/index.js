@@ -15,7 +15,7 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: true,
+    instructorAuth: false,
     //  *** best user for e2e testing -- don't change info on this one *** //
     // user: {
     //   userId: 42,
@@ -39,27 +39,27 @@ export default new Vuex.Store({
     //   program: 'BE'
     // }
     // *** guinea pig for testing feedback submission -- mod 1, so lots of opportunities *** //
-    // user: {
-    //   userId: 51,
-    //   userName: 'Sabina',
-    //   lastName: 'X',
-    //   pronouns: 'they/them',
-    //   currentModNum: 1,
-    //   currentProjectNum: 4,
-    //   currentCohort: '2105',
-    //   program: 'BE'
-    // }
-    // *** user for instructor view in demo *** //
     user: {
-      userId: 112,
-      userName: 'Daniele',
-      lastName: 'Littel',
+      userId: 43,
+      userName: 'Porter',
+      lastName: 'X',
       pronouns: 'they/them',
-      currentModNum: 3,
-      currentProjNum: null,
-      currentCohort: null,
+      currentModNum: 1,
+      currentProjectNum: 4,
+      currentCohort: '2105',
       program: 'BE'
     }
+    // *** user for instructor view in demo *** //
+    // user: {
+    //   userId: 112,
+    //   userName: 'Daniele',
+    //   lastName: 'Littel',
+    //   pronouns: 'they/them',
+    //   currentModNum: 3,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
+    // }
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -82,9 +82,7 @@ export default new Vuex.Store({
       state.currentStudent = foundStudent
     },
     setForm (state, formData) {
-      console.log(formData)
       state.form = formData
-      console.log(state.form)
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
@@ -158,7 +156,7 @@ export default new Vuex.Store({
     },
     sendFeedback (context, feedback) {
       context.commit('setForm', {})
-      context.commit('setConfirmation', 'Submitted!')
+      context.commit('setConfirmation', 'Success! Your feedback has been submitted; the student will be notified by email.')
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${this.state.user.userId}/students/${this.state.currentStudent.attributes.user_id}/student_projects`, {
         method: 'POST',
         headers: {

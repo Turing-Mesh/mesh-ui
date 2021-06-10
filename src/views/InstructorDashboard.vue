@@ -78,7 +78,6 @@ export default {
     }
   },
   created () {
-    console.log()
     this.$store.dispatch('fetchMyStudents', 3)
   },
   updated () {
