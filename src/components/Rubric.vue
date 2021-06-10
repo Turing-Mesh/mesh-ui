@@ -19,7 +19,7 @@
               {{ this.$store.state.form.data.attributes.rubric_template[0].rubric_category_name }}
             </span>
             <div class="instr-form-row__item">
-              <!--    each input will need a name, so we can collect the data before handing over to the fetch POST request -->
+              <!--    todo ==> use v-for to dynamically create these categories so we have all categories for the rubric -->
               <label for="num-field-1">Numerical Score:</label>
               <br>
               <input
@@ -138,6 +138,37 @@
               />
             </div>
           </div>
+
+          <div class="instr-form-row">
+            <span class="s-h2 instr-form-row__item">
+              {{ this.$store.state.form.data.attributes.rubric_template[4].rubric_category_name }}
+            </span>
+            <div class="instr-form-row__item">
+              <label for="num-field-5">Numerical Score:</label>
+              <br>
+              <input
+                id="num-field-5"
+                v-model="fifth_score"
+                class="feedback-row--progress instr-form-row__item--input"
+                type="number"
+                min="1"
+                max="4"
+                step="0.5"
+                placeholder="Whole or half numbers only"
+              />
+              <br>
+              <label for="text-field-5">Comments:</label>
+              <br>
+              <textarea
+                id="text-field-5"
+                v-model="fifth_comment"
+                class="instr-form-row__item--input"
+                rows="1"
+                placeholder="How can this student improve?"
+                required
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -162,10 +193,10 @@
 <!--        />-->
         <h4>Overall Score:  {{ overallScoreCalc() }}</h4>
         <br>
-        <label for="text-field-5">Comments:</label>
+        <label for="text-field-6">Comments:</label>
         <br>
         <textarea
-          id="text-field-5"
+          id="text-field-6"
           v-model="overall_comments"
           class="instr-form-row__item--input"
           rows="1"
@@ -186,7 +217,8 @@ export default {
       first_score: null,
       second_score: null,
       third_score: null,
-      fourth_score: null
+      fourth_score: null,
+      fifth_score: null
     }
   },
   methods: {
@@ -214,6 +246,11 @@ export default {
             rubric_template_category_id: this.$store.state.form.data.attributes.rubric_template[3].rubric_category_template_id,
             score: this.fourth_score,
             comment: this.fourth_comment
+          },
+          {
+            rubric_template_category_id: this.$store.state.form.data.attributes.rubric_template[4].rubric_category_template_id,
+            score: this.fifth_score,
+            comment: this.fifth_comment
           }
         ]
       }
@@ -221,7 +258,7 @@ export default {
       this.$store.dispatch('sendFeedback', this.feedback)
     },
     overallScoreCalc () {
-      return (Number(this.first_score) + Number(this.second_score) + Number(this.third_score) + Number(this.fourth_score)) / 4
+      return (Number(this.first_score) + Number(this.second_score) + Number(this.third_score) + Number(this.fourth_score) + Number(this.fifth_score)) / this.$store.state.form.data.attributes.rubric_template.length
     }
   }
 }
