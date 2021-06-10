@@ -142,7 +142,7 @@
       </div>
     </div>
 
-<!--    <hr class="feedback-container__dividing-line">-->
+    <hr class="feedback-container__dividing-line">
 
     <div class="instr-form-row">
           <span class="s-h2 instr-form-row__item--title">
@@ -160,7 +160,7 @@
 <!--          step="0.5"-->
 <!--          placeholder="Whole or half numbers only"-->
 <!--        />-->
-        Overall Score:  {{ overallScoreCalc() }}
+        <h4>Overall Score:  {{ overallScoreCalc() }}</h4>
         <br>
         <label for="text-field-5">Comments:</label>
         <br>
