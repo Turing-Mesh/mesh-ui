@@ -149,6 +149,18 @@
             Overall
           </span>
       <div class="instr-form-row__item">
+<!--        <label for="num-field-5">Numerical Score:</label>-->
+<!--        <br>-->
+<!--        <input-->
+<!--          id="num-field-5"-->
+<!--          class="feedback-row&#45;&#45;progress instr-form-row__item&#45;&#45;input"-->
+<!--          type="number"-->
+<!--          min="1"-->
+<!--          max="4"-->
+<!--          step="0.5"-->
+<!--          placeholder="Whole or half numbers only"-->
+<!--        />-->
+        Overall Score:  {{ overallScoreCalc() }}
         <br>
         <label for="text-field-5">Comments:</label>
         <br>
@@ -170,7 +182,11 @@
 export default {
   data () {
     return {
-      feedback: {}
+      feedback: {},
+      first_score: null,
+      second_score: null,
+      third_score: null,
+      fourth_score: null
     }
   },
   methods: {
@@ -203,6 +219,9 @@ export default {
       }
       this.$store.dispatch('sendModule', this.$route.params.id)
       this.$store.dispatch('sendFeedback', this.feedback)
+    },
+    overallScoreCalc () {
+      return (Number(this.first_score) + Number(this.second_score) + Number(this.third_score) + Number(this.fourth_score)) / 4
     }
   }
 }
