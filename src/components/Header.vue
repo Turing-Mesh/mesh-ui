@@ -33,11 +33,17 @@
         <h3 class="s-h3">Calendar</h3>
       </a>
 
-      <a class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
+      <a v-if="user.program === 'FE'" class="outside-link" href="https://frontend.turing.edu/lessons/" target="_blank">
+        <h3 class="s-h3">Lessons</h3>
+      </a>
+      <a v-else class="outside-link" href="https://backend.turing.edu/module3/" target="_blank">
         <h3 class="s-h3">Lessons</h3>
       </a>
 
-      <a class="outside-link" href="https://frontend.turing.edu/projects/" target="_blank">
+      <a v-if="user.program === 'FE'" class="outside-link" href="https://frontend.turing.edu/projects/" target="_blank">
+        <h3 class="s-h3">Projects</h3>
+      </a>
+      <a v-else class="outside-link" href="https://backend.turing.edu/module3/projects/" target="_blank">
         <h3 class="s-h3">Projects</h3>
       </a>
     </div>

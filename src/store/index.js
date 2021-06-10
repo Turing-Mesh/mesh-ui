@@ -28,27 +28,27 @@ export default new Vuex.Store({
     //   program: 'BE'
     // }
     //  *** user for student view in demo *** //
-    user: {
-      userId: 46,
-      userName: 'Han',
-      lastName: 'Schultz',
-      pronouns: 'he/him',
-      currentModNum: 3,
-      currentProjNum: 4,
-      currentCohort: '2102',
-      program: 'BE'
-    }
-    // *** guinea pig for testing feedback submission -- mod 1, so lots of opportunities *** //
     // user: {
-    //   userId: 94,
-    //   userName: 'Olive',
-    //   lastName: 'Kutch',
-    //   pronouns: 'they/them',
-    //   currentModNum: 1,
-    //   currentProjectNum: 4,
-    //   currentCohort: '2105',
+    //   userId: 46,
+    //   userName: 'Han',
+    //   lastName: 'Schultz',
+    //   pronouns: 'he/him',
+    //   currentModNum: 3,
+    //   currentProjNum: 4,
+    //   currentCohort: '2102',
     //   program: 'BE'
     // }
+    // *** guinea pig for testing feedback submission -- mod 1, so lots of opportunities *** //
+    user: {
+      userId: 43,
+      userName: 'Porter',
+      lastName: 'X',
+      pronouns: 'they/them',
+      currentModNum: 1,
+      currentProjectNum: 4,
+      currentCohort: '2105',
+      program: 'BE'
+    }
     // *** user for instructor view in demo *** //
     // user: {
     //   userId: 112,
@@ -82,9 +82,7 @@ export default new Vuex.Store({
       state.currentStudent = foundStudent
     },
     setForm (state, formData) {
-      console.log(formData)
       state.form = formData
-      console.log(state.form)
     },
     setCurrentProject (state, payload) {
       state.currentProject = payload
@@ -158,7 +156,7 @@ export default new Vuex.Store({
     },
     sendFeedback (context, feedback) {
       context.commit('setForm', {})
-      context.commit('setConfirmation', 'Submitted!')
+      context.commit('setConfirmation', 'Success! Your feedback has been submitted; the student will be notified by email.')
       return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/${this.state.user.userId}/students/${this.state.currentStudent.attributes.user_id}/student_projects`, {
         method: 'POST',
         headers: {
