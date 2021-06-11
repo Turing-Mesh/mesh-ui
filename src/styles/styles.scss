@@ -395,6 +395,15 @@ a.project.router-link-exact-active.router-link-active {
   background: #eeeff0;
 }
 
+.active {
+  background: #eeeff0;
+}
+
+.active-tab {
+  background: #eeeff0;
+  border-bottom: 5px solid $turing-blue;
+}
+
 // *** Student Notes *** //
 .notes-container {
   margin-top: 40px;

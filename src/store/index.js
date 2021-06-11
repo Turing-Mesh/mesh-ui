@@ -17,11 +17,21 @@ export default new Vuex.Store({
     authenticated: true,
     instructorAuth: false,
     //  *** best user for e2e testing -- don't change info on this one *** //
+    user: {
+      userId: 41,
+      userName: 'Aldo',
+      lastName: 'Maggio',
+      pronouns: 'They/Them',
+      currentModNum: 3,
+      currentProjNum: 4,
+      currentCohort: '2102',
+      program: 'BE'
+    }
     // user: {
-    //   userId: 42,
-    //   userName: 'Maia',
-    //   lastName: 'Hauck',
-    //   pronouns: 'she/her',
+    //   userId: 45,
+    //   userName: 'Cornell',
+    //   lastName: 'Stroman',
+    //   pronouns: 'They/Them',
     //   currentModNum: 3,
     //   currentProjNum: 4,
     //   currentCohort: '2102',
@@ -39,16 +49,16 @@ export default new Vuex.Store({
     //   program: 'BE'
     // }
     // *** guinea pig for testing feedback submission -- mod 1, so lots of opportunities *** //
-    user: {
-      userId: 43,
-      userName: 'Porter',
-      lastName: 'X',
-      pronouns: 'they/them',
-      currentModNum: 1,
-      currentProjectNum: 4,
-      currentCohort: '2105',
-      program: 'BE'
-    }
+    // user: {
+    //   userId: 43,
+    //   userName: 'Porter',
+    //   lastName: 'X',
+    //   pronouns: 'they/them',
+    //   currentModNum: 1,
+    //   currentProjectNum: 4,
+    //   currentCohort: '2105',
+    //   program: 'BE'
+    // }
     // *** user for instructor view in demo *** //
     // user: {
     //   userId: 112,

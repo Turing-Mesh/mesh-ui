@@ -1,11 +1,14 @@
 <template>
   <nav class="projects-container">
-    <router-link class="project" :to="{
+    <router-link class="project"
+                 :class="Number($route.params.project_id) === 1 ? 'active' : ''"
+                 :to="{
          name: 'Project',
          params: { id: $route.params.id, project_id: 1 }
        }">
-<!--      todo ==> fix this conditional styling-->
-      <button class="project-btn" :style="Number($route.params.id) === 1 ? 'active' : ''"><span class="project-tab">Project 1</span></button>
+      <button class="project-btn">
+        <span class="project-tab" :class="Number($route.params.project_id) === 1 ? 'active-tab' : ''">Project 1</span>
+      </button>
     </router-link>
     <router-link v-show="mod !== 4" class="project" :to="{
          name: 'Project',
