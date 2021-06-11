@@ -176,22 +176,18 @@
 <!--    <hr class="feedback-container__dividing-line">-->
 
     <div class="instr-form-row">
-          <span class="s-h2 instr-form-row__item--title">
-            Overall
-          </span>
       <div class="instr-form-row__item">
-<!--        <label for="num-field-5">Numerical Score:</label>-->
-<!--        <br>-->
-<!--        <input-->
-<!--          id="num-field-5"-->
-<!--          class="feedback-row&#45;&#45;progress instr-form-row__item&#45;&#45;input"-->
-<!--          type="number"-->
-<!--          min="1"-->
-<!--          max="4"-->
-<!--          step="0.5"-->
-<!--          placeholder="Whole or half numbers only"-->
-<!--        />-->
-        <h4>Overall Score:  {{ overallScoreCalc() }}</h4>
+        <div class="overall-container">
+          <span class="s-h2 feedback-container__category--label overall">Overall</span>
+          <div class="progress-bar-overall" :class="barBackground" id="bar-average">
+            <div class="progress-bar-overall__score-wrapper" :class="scoreWrapper">
+              <div class="progress-bar-overall__score-wrapper--number">
+<!--                {{ Number(this.project.average_score).toFixed(2) }}-->
+                {{ overallScoreCalc() }}
+              </div>
+            </div>
+          </div>
+        </div>
         <br>
         <label for="text-field-6">Comments:</label>
         <br>
@@ -224,7 +220,24 @@ export default {
       third_comment: null,
       fourth_comment: null,
       fifth_comment: null,
+      overall_score: null,
       overall_comments: null
+    }
+  },
+  computed: {
+    barBackground: function () {
+      return {
+        redbg: this.overall_score <= 1,
+        yellowbg: this.overall_score > 1 && this.overall_score < 3,
+        greenbg: this.overall_score >= 3
+      }
+    },
+    scoreWrapper: function () {
+      return {
+        redwrap: this.overall_score <= 1,
+        yellowwrap: this.overall_score > 1 && this.overall_score < 3,
+        greenwrap: this.overall_score >= 3
+      }
     }
   },
   methods: {
@@ -264,7 +277,10 @@ export default {
       this.$store.dispatch('sendFeedback', this.feedback)
     },
     overallScoreCalc () {
-      return (Number(this.first_score) + Number(this.second_score) + Number(this.third_score) + Number(this.fourth_score) + Number(this.fifth_score)) / this.$store.state.form.data.attributes.rubric_template.length
+      //  Number(this.project.average_score).toFixed(2)
+      const total = Number(this.first_score) + Number(this.second_score) + Number(this.third_score) + Number(this.fourth_score) + Number(this.fifth_score)
+      this.overall_score = Number((total) / this.$store.state.form.data.attributes.rubric_template.length).toFixed(2)
+      return this.overall_score
     }
   }
 }
