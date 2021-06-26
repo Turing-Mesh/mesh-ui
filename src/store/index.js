@@ -69,6 +69,17 @@ export default new Vuex.Store({
     //   currentProjNum: null,
     //   currentCohort: null,
     //   program: 'BE'
+    // },
+    // *** Instructor user for testing purposes -- also change instructor id number at line 140 inside the fetch *** //
+    // user: {
+    //   userId: 122,
+    //   userName: 'Louie',
+    //   lastName: 'Schroeder',
+    //   pronouns: 'they/them',
+    //   currentModNum: 1,
+    //   currentProjNum: null,
+    //   currentCohort: null,
+    //   program: 'BE'
     // }
   },
   mutations: {
@@ -136,7 +147,8 @@ export default new Vuex.Store({
         })
     },
     fetchMyStudents (context, module) {
-      return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/112/students?mod=${module}`)
+      return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/122/students?mod=1')
+      // return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/112/students?mod=${module}`)
         .then(response => response.json())
         .then(data => {
           context.commit('setMyStudents', data)
