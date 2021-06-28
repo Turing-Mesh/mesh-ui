@@ -15,18 +15,18 @@ export default new Vuex.Store({
     currentProject: {},
     loggedIn: true,
     authenticated: true,
-    instructorAuth: false,
+    instructorAuth: true,
     //  *** best user for e2e testing -- don't change info on this one *** //
-    user: {
-      userId: 41,
-      userName: 'Aldo',
-      lastName: 'Maggio',
-      pronouns: 'They/Them',
-      currentModNum: 3,
-      currentProjNum: 4,
-      currentCohort: '2102',
-      program: 'BE'
-    }
+    // user: {
+    //   userId: 41,
+    //   userName: 'Aldo',
+    //   lastName: 'Maggio',
+    //   pronouns: 'They/Them',
+    //   currentModNum: 3,
+    //   currentProjNum: 4,
+    //   currentCohort: '2102',
+    //   program: 'BE'
+    // }
     // user: {
     //   userId: 45,
     //   userName: 'Cornell',
@@ -71,16 +71,16 @@ export default new Vuex.Store({
     //   program: 'BE'
     // },
     // *** Instructor user for testing purposes -- also change instructor id number at line 140 inside the fetch *** //
-    // user: {
-    //   userId: 122,
-    //   userName: 'Louie',
-    //   lastName: 'Schroeder',
-    //   pronouns: 'they/them',
-    //   currentModNum: 1,
-    //   currentProjNum: null,
-    //   currentCohort: null,
-    //   program: 'BE'
-    // }
+    user: {
+      userId: 122,
+      userName: 'Louie',
+      lastName: 'Schroeder',
+      pronouns: 'they/them',
+      currentModNum: 1,
+      currentProjNum: null,
+      currentCohort: null,
+      program: 'BE'
+    }
   },
   mutations: {
     setCurrentModule (state, payload) {
@@ -147,6 +147,7 @@ export default new Vuex.Store({
         })
     },
     fetchMyStudents (context, module) {
+      console.log(module)
       return fetch('https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/122/students?mod=1')
       // return fetch(`https://shrouded-citadel-55795.herokuapp.com/api/v1/instructors/112/students?mod=${module}`)
         .then(response => response.json())
