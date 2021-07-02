@@ -645,11 +645,19 @@ footer {
   width: 80%;
 }
 
-.search-input {
-  border-radius: 5px;
+.search-input-container {
+  //border-radius: 5px;
   margin: 10px auto;
-  font-size: 1.2rem;
   width: 100%;
+}
+
+.search-input {
+  padding: 5px;
+  font-size: 1.2rem;
+  line-height: 35px;
+}
+
+input::placeholder {
 }
 
 @media only screen and (max-width: 830px) {

@@ -4,8 +4,9 @@
         <section class="left-section">
           <div class="instructor-main">
             <button @click="showSearch = !showSearch" class="s-button search-students-btn">Search All Students</button>
-              <div class="search-input" v-if="showSearch">
-                <input placeholder="Student name">
+              <div class="search-input-container" v-if="showSearch">
+                <input class="search-input" placeholder="Student name">
+<!--                <input class="search-input" placeholder="Last name">-->
               </div>
 
             <button  @click="showStudents = !showStudents" class="s-button current-students-btn">Current Students</button>
