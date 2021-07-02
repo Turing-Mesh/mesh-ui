@@ -1,20 +1,12 @@
 <template>
   <div class="about">
-<!--    <h1 class="s-h1">-->
-<!--      <span>{{ instructorAuth ? 'Instructor ' : 'Student ' }}</span>-->
-<!--      Profile-->
-<!--    </h1>-->
-    <h2 class="s-h1">{{ user.userName }} {{ user.lastName }}
-      <span class="user-data">({{ user.pronouns }})</span>
-    </h2>
-<!--    <h2 class="s-h2">Id: <span class="user-data">{{ user.userId }}</span></h2>-->
-    <h2 class="s-h2">Current Cohort/Program:
+    <section class="about-toprow">
+      <h2 class="s-h1">{{ user.userName }} {{ user.lastName }}
+        <span class="user-data pronouns">({{ user.pronouns }})</span>
+      </h2>
       <span class="user-data">{{ user.currentCohort }} {{ user.program }}</span>
-    </h2>
-    <h2 class="s-h2">Current Module: <span class="user-data">{{ user.currentModNum }}</span></h2>
-    <h2 class="s-h2" v-if="user.currentProjNum">Current Project: <span class="user-data">{{ user.currentProjNum }}</span></h2>
-    <br>
-    <!--    <h3 class="date" v-if="!instructorAuth">You received feedback for Mod1/Project3 on June 1, 2021</h3>-->
+    </section>
+      Module {{ user.currentModNum }}<span v-if="user.currentProjNum">, Project {{ user.currentProjNum }}</span>
   </div>
 </template>
 
